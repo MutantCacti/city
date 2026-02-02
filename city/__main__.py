@@ -6,7 +6,6 @@ Entry point and parser for the city command line.
 Created: 2026-02-02
  Author: Maxence Morel Dierckx
 '''
-import subprocess
 import argparse
 import json
 from pathlib import Path
@@ -16,12 +15,14 @@ ROOT = HERE.parent
 
 # MARK: configure
 
-def configure(args: Namespace):
+def configure(args):
     # TODO: interactive config generator
+    print(args.file)
     pass
 
-def run(args: Namespace):
+def run(args):
     # TODO: entry point to the full run through (bounded by instance count)
+    print(args.config, args.steps, args.debug)
     pass
 
 def main():
@@ -33,10 +34,10 @@ def main():
 
     # configure subcommand
     configure_parser = subparsers.add_parser(
-        'configure','conf',
+        'configure',
         help='Generate a config file with the interactive CLI'
     )
-    configure_parsers.add_argument(
+    configure_parser.add_argument(
         '--file', '-f',
         required=True,
         help='Path to config file, new or existing'
@@ -56,7 +57,7 @@ def main():
     run_parser.add_argument(
         '--steps', '-s',
         type=int,
-        default=-1
+        default=-1,
         help='Number of steps to run (overrides instance count)'
     )
     run_parser.add_argument(

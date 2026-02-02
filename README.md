@@ -20,13 +20,6 @@ city makes the ethnographic study of LLMs across generations possible via contex
 
 ## usage
 
-city includes two interactive elements: 
-
-- `city`, the command line tool, used to run the server
-- `gazette`, a web site that presents the server state interactively
-
-### city
-
 city simulates the LLM society based on a given configuration. It also allows guided generation of configuration files.
 
 ```bash
@@ -34,19 +27,7 @@ city simulates the LLM society based on a given configuration. It also allows gu
 city configure --file example/config.json [--tutorial]
 
 # Run a configured city
-city run --config example/config.json [--steps N] [--verbose]
+city run --config example/config.json [--steps STEPS] [--debug]
 ```
 
 See `example/config.json` for a sample configuration.
-
-### gazette
-
-gazette reads from a running or completed city and presents it as a web UI.
-
-```bash
-# Point gazette at a running city server
-gazette --city http://localhost:PORT
-
-# Or at a completed run's data directory
-gazette --data example/results/
-```

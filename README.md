@@ -1,6 +1,6 @@
 # city
 
-A controlled environment for observing LLM societies.
+A generational simulator for LLM societies.
 
 ## purpose
 

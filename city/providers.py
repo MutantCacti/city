@@ -3,7 +3,7 @@ city/city/providers.py
 
 LLM provider classes.
 
-Created: 2026-02-2
+Created: 2026-02-02
  Author: Maxence Morel Dierckx
 '''
 import os
@@ -24,9 +24,9 @@ class Provider(ABC):
         return
 
     @abstractmethod
-    def transform_context(self, context: list[dict]) -> list[dict]:
-        '''Create and append a chat completion to passed messages'''
-        return  
+    def transform_context(self, context: list[dict]) -> dict:
+        '''Create and return a chat completion from passed messages'''
+        return
 
     @abstractmethod
     def get_name(self) -> str:
@@ -46,15 +46,14 @@ class DeepSeekProvider(Provider):
         self.client = OpenAI(api_key=api_key, base_url=base_url)
         self.model = model
 
-    def transform_context(self, context: list[dict]) -> list[dict]:
+    def transform_context(self, context: list[dict]) -> dict:
         response = self.client.chat.completions.create(
             model=self.model,
             messages=context,
             stream=False
         )
         msg = response.choices[0].message
-        context.append({'role': msg.role, 'content': msg.content})
-        return context
+        return {'role': msg.role, 'content': msg.content}
 
     def get_name(self) -> str:
         return "deepseek"
@@ -71,7 +70,7 @@ class AnthropicProvider(Provider):
         self.client = Anthropic()
         self.model = model
 
-    def transform_context(self, context: list[dict]) -> list[dict]:
+    def transform_context(self, context: list[dict]) -> dict:
         system = None
         messages = context
         if context[0]['role'] == 'system':
@@ -83,8 +82,7 @@ class AnthropicProvider(Provider):
             kwargs['system'] = system
 
         response = self.client.messages.create(**kwargs)
-        context.append({'role': 'assistant', 'content': response.content[0].text})
-        return context
+        return {'role': 'assistant', 'content': response.content[0].text}
 
     def get_name(self) -> str:
         return "anthropic"

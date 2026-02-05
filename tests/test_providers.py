@@ -11,7 +11,7 @@ import pytest
 from unittest.mock import MagicMock
 from city.providers import get_provider
 
-PROD = os.environ.get('PROD')
+PROD = os.environ.get('PROD') == 'true'
 
 
 class TestDeepSeekProvider:
@@ -34,10 +34,8 @@ class TestDeepSeekProvider:
             deepseek_provider.client.chat.completions.create = MagicMock(return_value=mock_response)
 
         result = deepseek_provider.transform_context(context)
-        assert len(result) == 2
-        assert result[0] == {'role': 'user', 'content': 'Somebody is glad that you exist!'}
-        assert result[1]['role'] == 'assistant'
-        assert result[1]['content'] is not None
+        assert result['role'] == 'assistant'
+        assert result['content'] is not None
 
     def test_deepseek_provider_name(self):
         deepseek_provider = get_provider('deepseek', 'deepseek-chat')
@@ -66,10 +64,8 @@ class TestAnthropicProvider:
             anthropic_provider.client.messages.create = MagicMock(return_value=mock_response)
 
         result = anthropic_provider.transform_context(context)
-        assert len(result) == 2
-        assert result[0] == {'role': 'user', 'content': 'Somebody is glad that you exist!'}
-        assert result[1]['role'] == 'assistant'
-        assert result[1]['content'] is not None
+        assert result['role'] == 'assistant'
+        assert result['content'] is not None
 
     def test_anthropic_provider_name(self):
         anthropic_provider = get_provider('anthropic', 'claude-sonnet-4-5-20250929')

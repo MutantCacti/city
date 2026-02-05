@@ -7,7 +7,7 @@ Created: 2026-02-05
 '''
 import pytest
 from unittest.mock import MagicMock
-from city.primitives import Message, Context, Instance, Space
+from city.primitives import Message, Instance, Space
 from city.providers import get_provider
 
 
@@ -24,49 +24,12 @@ class TestMessage:
         assert msg.to_dict() == {'role': 'assistant', 'content': 'Hi there'}
 
 
-class TestContext:
-    '''Test the Context class'''
-
-    def test_context_init_with_message(self):
-        msg = Message('system', 'You are helpful.')
-        ctx = Context(msg)
-        assert len(ctx.messages) == 1
-        assert ctx.messages[0] is msg
-
-    def test_context_init_none(self):
-        ctx = Context(None)
-        assert len(ctx.messages) == 0
-
-    def test_context_add(self):
-        ctx = Context(None)
-        msg = Message('user', 'Hello')
-        ctx.add(msg)
-        assert len(ctx.messages) == 1
-        assert ctx.messages[0] is msg
-
-    def test_context_get_last(self):
-        ctx = Context(None)
-        ctx.add(Message('user', 'First'))
-        ctx.add(Message('assistant', 'Second'))
-        last = ctx.get_last()
-        assert last.content == 'Second'
-
-    def test_context_to_dicts(self):
-        ctx = Context(Message('system', 'Be nice.'))
-        ctx.add(Message('user', 'Hi'))
-        result = ctx.to_dicts()
-        assert result == [
-            {'role': 'system', 'content': 'Be nice.'},
-            {'role': 'user', 'content': 'Hi'}
-        ]
-
-
 class TestInstance:
     '''Test the Instance class'''
 
     def test_instance_init_with_context(self):
         provider = get_provider('deepseek', 'deepseek-chat')
-        ctx = Context(Message('system', 'You exist.'))
+        ctx = [Message('system', 'You exist.')]
         instance = Instance(provider, ctx)
         assert instance.context is ctx
         assert instance.provider is provider
@@ -75,19 +38,18 @@ class TestInstance:
         provider = get_provider('deepseek', 'deepseek-chat')
         instance = Instance(provider)
         assert instance.context is not None
-        assert len(instance.context.messages) == 0
+        assert len(instance.context) == 0
 
     def test_instance_prompt(self):
         provider = get_provider('deepseek', 'deepseek-chat')
         instance = Instance(provider)
         instance.prompt(Message('user', 'Hello'))
-        assert len(instance.context.messages) == 1
-        assert instance.context.get_last().content == 'Hello'
+        assert len(instance.context) == 1
+        assert instance.context[-1].content == 'Hello'
 
     def test_instance_get_response(self):
         provider = get_provider('deepseek', 'deepseek-chat')
-        ctx = Context(Message('system', 'You are helpful.'))
-        ctx.add(Message('user', 'Hi'))
+        ctx = [Message('system', 'You are helpful.'), Message('user', 'Hi')]
         instance = Instance(provider, ctx)
 
         # Mock the provider
@@ -102,11 +64,11 @@ class TestInstance:
         assert response['role'] == 'assistant'
         assert response['content'] == 'Hello!'
         # Check it was added to context
-        assert instance.context.get_last().content == 'Hello!'
+        assert instance.context[-1].content == 'Hello!'
 
     def test_instance_to_dict(self):
         provider = get_provider('deepseek', 'deepseek-chat')
-        ctx = Context(Message('user', 'Test'))
+        ctx = [Message('user', 'Test')]
         instance = Instance(provider, ctx)
         d = instance.to_dict()
         assert d['provider'] == 'deepseek'

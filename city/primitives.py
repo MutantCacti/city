@@ -20,67 +20,68 @@ class Message:
         return {'role': self.role, 'content': self.content}
 
 
-class Context:
-    '''A list of messages'''
-
-    def __init__(self, initial_prompt: Message | None = None) -> None:
-        self.messages = []
-        if initial_prompt is not None:
-            self.messages.append(initial_prompt)
-
-    def add(self, message: Message) -> None:
-        self.messages.append(message)
-
-    def get_last(self) -> Message:
-        return self.messages[-1]
-
-    def to_dicts(self) -> list[dict[str, str]]:
-        return [msg.to_dict() for msg in self.messages]
-
-
 class Instance:
     '''A composed model and context constituting an individual in the city'''
 
-    def __init__(self, provider, context: Context | None = None) -> None:
+    def __init__(self, provider, context: list[Message] | None = None) -> None:
         self.provider = provider
-        self.context = context if context is not None else Context()
+        self.context = context if context is not None else []
 
     def prompt(self, message: Message) -> None:
-        self.context.add(message)
+        self.context.append(message)
 
     def get_response(self) -> Message:
-        '''Get response from provider, converting Context <-> list[dict]'''
-        dicts = self.context.to_dicts()
+        dicts = [msg.to_dict() for msg in self.context]
         response = self.provider.transform_context(dicts)
-        self.context.add(Message(response['role'], response['content']))
+        self.context.append(Message(response['role'], response['content']))
         return response
 
     def to_dict(self) -> dict:
         return {
             'provider': self.provider.get_name(),
             'model': self.provider.model,
-            'context': self.context.to_dicts()
+            'context': [msg.to_dict() for msg in self.context]
         }
 
 
 class Space:
     '''A group chat with multiple instances'''
 
-    def __init__(self, name: str):
+    def __init__(self, name: str) -> None:
         self.name = name
-        self.instances: Set[Instance] = set()
+        self.instances: list[Instance] = []
+        self.pointers: dict[Instance, int] = {}
+        self.chat: list[tuple[Instance, Message]] = []
 
-    def add_instance(self, instance: Instance):
-        self.instances.add(instance)
+    '''Instance management'''
 
-    def add_instances(self, instances: list[Instance] | Set[Instance]):
-        self.instances.update(instances)
+    def add_instance(self, instance: Instance) -> None:
+        self.instances.append(instance)
+        self.pointers[instance] = 0
 
-    def remove_instance(self, instance: Instance):
-        try:
-            self.instances.remove(instance)
-        except KeyError:
+    def add_instances(self, instances: list[Instance] | Set[Instance]) -> None:
+        for instance in instances:
+            self.add_instance(instance)
+
+    def remove_instance(self, instance: Instance) -> None:
+        if instance not in self.instances:
             return
+        self.instances.remove(instance)
+        self.pointers.pop(instance)
 
-    def clear(self):
+    '''Chat management'''
+
+    def add_message(self, message: Message, instance: Instance) -> None:
+        assert instance in self.instances
+        entry = (instance, message)
+        self.chat.append(entry)
+    
+    def read_messages(self, instance: Instance) -> list[tuple[Instance, Message]]:
+        pointer = self.pointers.get(instance)
+        return self.chat[pointer:]
+    
+    def advance_pointer(self, instance: Instance) -> None:
+        self.pointers[instance] = len(self.chat)
+
+    def clear(self) -> None:
         self.instances.clear()

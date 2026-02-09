@@ -1,0 +1,40 @@
+Table spaces {
+    space_id int [pk, increment]
+    name varchar [not null]
+}
+
+Table space_messages {
+    space_id int [pk, ref: > spaces.space_id]
+    message_id int [pk, ref: - messages.message_id]
+    instance_id int [ref: > instances.instance_id]
+    position int [not null]
+}
+
+Table space_instances {
+    space_id int [pk, ref: > spaces.space_id]
+    instance_id int [pk, ref: > instances.instance_id]
+    pointer int [default: 0]
+}
+
+Table instances {
+    instance_id int [pk, increment]
+    provider_id int [ref: > providers.provider_id]
+}
+
+Table instance_messages {
+    instance_id int [pk, ref: > instances.instance_id]
+    message_id int [pk, ref: - messages.message_id]
+    position int [not null]
+}
+
+Table messages {
+    message_id int [pk, increment]
+    role varchar(16) [not null]
+    content text [not null]
+}
+
+Table providers {
+    provider_id int [pk, increment]
+    provider_name varchar(64)
+    model_name varchar(256)
+}

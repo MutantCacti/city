@@ -82,6 +82,3 @@ class Space:
     
     def advance_pointer(self, instance: Instance) -> None:
         self.pointers[instance] = len(self.chat)
-
-    def clear(self) -> None:
-        self.instances.clear()

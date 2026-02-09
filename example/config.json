@@ -1,6 +1,5 @@
 {
     "name": "example",
-    "mode": "serial",
     "provider": "deepseek",
     "model_id": "deepseek-chat",
     "max_instances": 10,

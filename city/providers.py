@@ -16,27 +16,27 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Provider(ABC):
-    '''Base provider interface'''
+    '''Base provider interface.'''
 
     @abstractmethod
     def __init__(self, model):
-        '''Initialise the client'''
+        '''Initialise the client.'''
         return
 
     @abstractmethod
     def transform_context(self, context: list[dict]) -> dict:
-        '''Create and return a chat completion from passed messages'''
+        '''Create and return a chat completion from passed messages.'''
         return
 
     @abstractmethod
     def get_name(self) -> str:
-        '''Get the provider name'''
+        '''Get the provider name.'''
         return
 
 
 class DeepSeekProvider(Provider):
     def __init__(self, model):
-        '''Initialise the OpenAI client'''
+        '''Initialise the OpenAI client.'''
 
         base_url = 'https://api.deepseek.com'
         api_key = os.environ.get('DEEPSEEK_API_KEY')
@@ -61,7 +61,7 @@ class DeepSeekProvider(Provider):
 
 class AnthropicProvider(Provider):
     def __init__(self, model):
-        '''Initialise the Anthropic client'''
+        '''Initialise the Anthropic client.'''
 
         api_key = os.environ.get('ANTHROPIC_API_KEY')
         if not api_key:

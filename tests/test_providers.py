@@ -15,7 +15,7 @@ PROD = os.environ.get('PROD') == 'true'
 
 
 class TestDeepSeekProvider:
-    '''Test the DeepSeek provider'''
+    '''Test the DeepSeek provider.'''
 
     def test_deepseek_provider_init(self):
         deepseek_provider = get_provider('deepseek', 'deepseek-chat')
@@ -48,7 +48,7 @@ class TestDeepSeekProvider:
 
 
 class TestAnthropicProvider:
-    '''Test the Anthropic provider'''
+    '''Test the Anthropic provider.'''
 
     def test_anthropic_provider_init(self):
         anthropic_provider = get_provider('anthropic', 'claude-sonnet-4-5-20250929')

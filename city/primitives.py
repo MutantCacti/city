@@ -10,7 +10,7 @@ from typing import Set
 
 
 class Message:
-    '''A message to or from an LLM instance. Contains a role and content'''
+    '''A message to or from an LLM instance. Contains a role and content.'''
 
     def __init__(self, role: str, content: str) -> None:
         self.role = role
@@ -21,7 +21,7 @@ class Message:
 
 
 class Instance:
-    '''A composed model and context constituting an individual in the city'''
+    '''A composed model and context constituting an individual in the city.'''
 
     def __init__(self, provider, context: list[Message] | None = None) -> None:
         self.provider = provider
@@ -45,7 +45,7 @@ class Instance:
 
 
 class Space:
-    '''A group chat with multiple instances'''
+    '''A group chat with multiple instances.'''
 
     def __init__(self, name: str) -> None:
         self.name = name
@@ -53,7 +53,7 @@ class Space:
         self.pointers: dict[Instance, int] = {}
         self.chat: list[tuple[Instance, Message]] = []
 
-    '''Instance management'''
+    '''Instance management.'''
 
     def add_instance(self, instance: Instance) -> None:
         self.instances.append(instance)
@@ -69,7 +69,7 @@ class Space:
         self.instances.remove(instance)
         self.pointers.pop(instance)
 
-    '''Chat management'''
+    '''Chat management.'''
 
     def add_message(self, message: Message, instance: Instance) -> None:
         assert instance in self.instances

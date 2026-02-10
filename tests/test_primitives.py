@@ -12,7 +12,7 @@ from city.providers import get_provider
 
 
 class TestMessage:
-    '''Test the Message class'''
+    '''Test the Message class.'''
 
     def test_message_init(self):
         msg = Message('user', 'Hello')
@@ -25,7 +25,7 @@ class TestMessage:
 
 
 class TestInstance:
-    '''Test the Instance class'''
+    '''Test the Instance class.'''
 
     def test_instance_init_with_context(self):
         provider = get_provider('deepseek', 'deepseek-chat')
@@ -77,7 +77,7 @@ class TestInstance:
 
 
 class TestSpace:
-    '''Test the Space class'''
+    '''Test the Space class.'''
 
     def test_space_init(self):
         space = Space('town_square')

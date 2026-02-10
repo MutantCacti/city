@@ -1,6 +1,6 @@
 Table spaces {
     space_id int [pk, increment]
-    name varchar [not null]
+    name varchar(256)
 }
 
 Table space_messages {
@@ -35,6 +35,6 @@ Table messages {
 
 Table providers {
     provider_id int [pk, increment]
-    provider_name varchar(64)
-    model_name varchar(256)
+    provider_name varchar(64) [not null]
+    model_name varchar(256) [not null]
 }

@@ -1,5 +1,5 @@
 '''
-city/tests/test_providers.py
+tests/test_providers.py
 
 Automated unit tests for provider classes.
 

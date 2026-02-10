@@ -1,5 +1,5 @@
 '''
-city/tests/test_types.py
+tests/test_types.py
 
 Automated unit tests for type primitives.
 

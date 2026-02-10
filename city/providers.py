@@ -1,5 +1,5 @@
 '''
-city/city/providers.py
+city/providers.py
 
 LLM provider classes.
 

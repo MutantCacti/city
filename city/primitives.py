@@ -1,5 +1,5 @@
 '''
-city/city/primitives.py
+city/primitives.py
 
 Primitives for the city network.
 

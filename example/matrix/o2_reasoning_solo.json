@@ -1,0 +1,10 @@
+{
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": ["A", "B", "C"],
+    "trigger": ["A", "B", "C"],
+    "n_instances": 1,
+    "act_keyword": "ACT",
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+}

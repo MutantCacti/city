@@ -53,7 +53,12 @@ class DeepSeekProvider(Provider):
             stream=False
         )
         msg = response.choices[0].message
-        return {'role': msg.role, 'content': msg.content}
+        usage = response.usage
+        return {
+            'role': msg.role, 'content': msg.content,
+            'prompt_tokens': usage.prompt_tokens if usage else 0,
+            'completion_tokens': usage.completion_tokens if usage else 0,
+        }
 
     def get_name(self) -> str:
         return "deepseek"
@@ -77,21 +82,60 @@ class AnthropicProvider(Provider):
             system = context[0]['content']
             messages = context[1:]
 
-        kwargs = dict(model=self.model, messages=messages, max_tokens=1024)
+        # Anthropic requires strict role alternation — merge consecutive same-role messages
+        merged = []
+        for msg in messages:
+            if merged and merged[-1]['role'] == msg['role']:
+                merged[-1] = {**merged[-1], 'content': merged[-1]['content'] + '\n' + msg['content']}
+            else:
+                merged.append(dict(msg))
+
+        kwargs = dict(model=self.model, messages=merged, max_tokens=1024)
         if system:
             kwargs['system'] = system
 
         response = self.client.messages.create(**kwargs)
-        return {'role': 'assistant', 'content': response.content[0].text}
+        return {
+            'role': 'assistant', 'content': response.content[0].text,
+            'prompt_tokens': response.usage.input_tokens if response.usage else 0,
+            'completion_tokens': response.usage.output_tokens if response.usage else 0,
+        }
 
     def get_name(self) -> str:
         return "anthropic"
 
 
+class LocalProvider(Provider):
+    def __init__(self, model, base_url='http://localhost:8126/v1'):
+        '''Initialise the OpenAI client pointed at a local llama.cpp server.'''
+        self.client = OpenAI(api_key='local', base_url=base_url)
+        self.model = model
+
+    def transform_context(self, context: list[dict]) -> dict:
+        response = self.client.chat.completions.create(
+            model=self.model,
+            messages=context,
+            stream=False
+        )
+        msg = response.choices[0].message
+        usage = response.usage
+        return {
+            'role': msg.role, 'content': msg.content,
+            'prompt_tokens': usage.prompt_tokens if usage else 0,
+            'completion_tokens': usage.completion_tokens if usage else 0,
+        }
+
+    def get_name(self) -> str:
+        return "local"
+
+
 PROVIDERS = {
     'deepseek': DeepSeekProvider,
     'anthropic': AnthropicProvider,
+    'local': LocalProvider,
 }
 
-def get_provider(name: str, model: str) -> Provider:
+def get_provider(name: str, model: str, base_url: str = None) -> Provider:
+    if name == 'local' and base_url:
+        return LocalProvider(model, base_url=base_url)
     return PROVIDERS[name](model)

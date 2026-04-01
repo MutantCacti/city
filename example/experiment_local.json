@@ -1,0 +1,13 @@
+{
+    "seed": 42,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": ["A", "B", "C"],
+    "trigger": ["A", "B", "C"],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": "http://localhost:8000/v1",
+    "tick_seconds": 0.0,
+    "system_prompt": "Respond [ACT] if the last three states were A then B then C. Otherwise respond [WAIT]. Respond with only one word: [ACT] or [WAIT]."
+}

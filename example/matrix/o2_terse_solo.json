@@ -1,0 +1,10 @@
+{
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": ["A", "B", "C"],
+    "trigger": ["A", "B", "C"],
+    "n_instances": 1,
+    "act_keyword": "ACT",
+    "tick_seconds": 1.0,
+    "system_prompt": "Respond [ACT] if the last three states were A then B then C. Otherwise respond [WAIT]."
+}

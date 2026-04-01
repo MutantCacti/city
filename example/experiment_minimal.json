@@ -1,0 +1,10 @@
+{
+    "seed": 42,
+    "n_trials": 20,
+    "p_switch": 0.5,
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "tick_seconds": 0.5,
+    "system_prompt": "Respond [ACT] if the current state is B and the previous state was A. Otherwise respond [WAIT]."
+}

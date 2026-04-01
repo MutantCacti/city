@@ -1,0 +1,10 @@
+{
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": ["A", "B"],
+    "trigger": ["A", "B"],
+    "n_instances": 2,
+    "act_keyword": "ACT",
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A or B. Your task: when you see B immediately following A, include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what was the previous state? What is the current state? Is this a B that followed an A? Then give your answer."
+}

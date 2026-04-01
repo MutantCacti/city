@@ -104,6 +104,7 @@ class Instance(Base):
     provider_id = Column(Integer, ForeignKey('providers.provider_id'), nullable=False)
 
     messages = relationship('Message', secondary=instance_messages, back_populates='instances', lazy='selectin')
+    spaces = relationship('Space', secondary=space_instances, back_populates='instances', lazy='selectin')
     provider = relationship('Provider', back_populates='instances', lazy='selectin')
 
 
@@ -138,7 +139,7 @@ class SpaceService:
     async def create_space(db: AsyncSession, name: str) -> Space:
         '''Create a Space.'''
         try:
-            space = Space(name=name)
+            space = Space(space_name=name)
             db.add(space)
             await db.commit()
             await db.refresh(space)
@@ -248,6 +249,55 @@ class SpaceService:
         except Exception:
             await db.rollback()
             raise
+
+    @staticmethod
+    async def get_unread_messages(db: AsyncSession, space_id: int, instance_id: int) -> list['Message']:
+        '''Get messages in a space that are unread by the given instance (message_id > pointer).'''
+        # Get the read pointer
+        result = await db.execute(
+            select(space_instances.c.message_id)
+            .where(space_instances.c.space_id == space_id)
+            .where(space_instances.c.instance_id == instance_id)
+        )
+        row = result.first()
+        if row is None:
+            return []
+        pointer = row[0] or 0
+
+        # Get messages after the pointer
+        result = await db.execute(
+            select(Message)
+            .join(space_messages, space_messages.c.message_id == Message.message_id)
+            .where(space_messages.c.space_id == space_id)
+            .where(Message.message_id > pointer)
+            .order_by(Message.message_id)
+        )
+        return list(result.scalars().all())
+
+    @staticmethod
+    async def advance_pointer(db: AsyncSession, space_id: int, instance_id: int) -> None:
+        '''Advance an instance's read pointer to the latest message in the space.'''
+        try:
+            # Get the latest message id in the space
+            result = await db.execute(
+                select(space_messages.c.message_id)
+                .where(space_messages.c.space_id == space_id)
+                .order_by(space_messages.c.message_id.desc())
+                .limit(1)
+            )
+            row = result.first()
+            latest_id = row[0] if row else 0
+
+            await db.execute(
+                space_instances.update()
+                .where(space_instances.c.space_id == space_id)
+                .where(space_instances.c.instance_id == instance_id)
+                .values(message_id=latest_id)
+            )
+            await db.commit()
+        except Exception:
+            await db.rollback()
+            raise
     
 
 # MARK: Instance
@@ -308,6 +358,17 @@ class InstanceService:
             await db.rollback()
             raise
     
+
+    @staticmethod
+    async def get_context(db: AsyncSession, instance_id: int) -> list['Message']:
+        '''Get an instance's full context (all messages in order).'''
+        result = await db.execute(
+            select(Message)
+            .join(instance_messages, instance_messages.c.message_id == Message.message_id)
+            .where(instance_messages.c.instance_id == instance_id)
+            .order_by(Message.message_id)
+        )
+        return list(result.scalars().all())
 
     @staticmethod
     async def add_message_to_instance(db: AsyncSession, instance_id: int, message_id: int) -> bool:

@@ -1,0 +1,544 @@
+{
+  "timestamp": "2026-03-24T04:55:45.452930",
+  "config": {
+    "seed": 53,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 1,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "B",
+    "C",
+    "C",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "C",
+    "A",
+    "B",
+    "C",
+    "B",
+    "B",
+    "C",
+    "B",
+    "A",
+    "B",
+    "B",
+    "C",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "C",
+    "C",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is just:  \nB  \n\nRecent states (last 3 or fewer): [B]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nHere, we only have one state (B), so the sequence A,B,C is not present.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 96,
+      "completion_tokens": 80,
+      "peer_responses": []
+    },
+    {
+      "step": 2,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C  \n\nRecent states (last 3 or fewer): [B, C]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nHere, the last two are B, C. That\u2019s not A,B,C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 183,
+      "completion_tokens": 81,
+      "peer_responses": []
+    },
+    {
+      "step": 3,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C  \n\nRecent states (last 3 or fewer): [C, C]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nHere, the last two are C, C (or last three if we go back: B, C, C).  \nB, C, C is not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 271,
+      "completion_tokens": 103,
+      "peer_responses": []
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B  \n\nRecent states (last 3 or fewer): [C, C, B]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: C, C, B \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 381,
+      "completion_tokens": 86,
+      "peer_responses": []
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B  \n\nRecent states (last 3 or fewer): [B, B]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: C, B, B \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 474,
+      "completion_tokens": 86,
+      "peer_responses": []
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B  \n\nRecent states (last 3 or fewer): [B, B, B]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: B, B, B \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 567,
+      "completion_tokens": 90,
+      "peer_responses": []
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A  \n\nRecent states (last 3 or fewer): [B, B, A]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: B, B, A \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 664,
+      "completion_tokens": 92,
+      "peer_responses": []
+    },
+    {
+      "step": 8,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A  \n\nRecent states (last 3 or fewer): [B, A, A]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: B, A, A \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 763,
+      "completion_tokens": 94,
+      "peer_responses": []
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B  \n\nRecent states (last 3 or fewer): [A, A, B]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: A, A, B \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 864,
+      "completion_tokens": 96,
+      "peer_responses": []
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B \u2192 A  \n\nRecent states (last 3 or fewer): [A, B, A]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: A, B, A \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 967,
+      "completion_tokens": 98,
+      "peer_responses": []
+    },
+    {
+      "step": 11,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B \u2192 A \u2192 C  \n\nRecent states (last 3 or fewer): [B, A, C]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: B, A, C \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1072,
+      "completion_tokens": 100,
+      "peer_responses": []
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B \u2192 A \u2192 C \u2192 A  \n\nRecent states (last 3 or fewer): [A, C, A]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: A, C, A \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1179,
+      "completion_tokens": 102,
+      "peer_responses": []
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B \u2192 A \u2192 C \u2192 A \u2192 B  \n\nRecent states (last 3 or fewer): [C, A, B]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: C, A, B \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1288,
+      "completion_tokens": 104,
+      "peer_responses": []
+    },
+    {
+      "step": 14,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B \u2192 A \u2192 C \u2192 A \u2192 B \u2192 C  \n\nRecent states (last 3 or fewer): [A, B, C]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: A, B, C \u2192 yes, that\u2019s exactly A, then B, then C.  \n\nTherefore: **[ACT]**",
+      "correct": true,
+      "prompt_tokens": 1399,
+      "completion_tokens": 112,
+      "peer_responses": []
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B \u2192 A \u2192 C \u2192 A \u2192 B \u2192 C \u2192 B  \n\nRecent states (last 3 or fewer): [B, C, B]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: B, C, B \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1518,
+      "completion_tokens": 108,
+      "peer_responses": []
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B \u2192 A \u2192 C \u2192 A \u2192 B \u2192 C \u2192 B \u2192 B  \n\nRecent states (last 3 or fewer): [C, B, B]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: C, B, B \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1633,
+      "completion_tokens": 110,
+      "peer_responses": []
+    },
+    {
+      "step": 17,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B \u2192 A \u2192 C \u2192 A \u2192 B \u2192 C \u2192 B \u2192 B \u2192 C  \n\nRecent states (last 3 or fewer): [B, B, C]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: B, B, C \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1750,
+      "completion_tokens": 112,
+      "peer_responses": []
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B \u2192 A \u2192 C \u2192 A \u2192 B \u2192 C \u2192 B \u2192 B \u2192 C \u2192 B  \n\nRecent states (last 3 or fewer): [B, C, B]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: B, C, B \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1869,
+      "completion_tokens": 114,
+      "peer_responses": []
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B \u2192 A \u2192 C \u2192 A \u2192 B \u2192 C \u2192 B \u2192 B \u2192 C \u2192 B \u2192 A  \n\nRecent states (last 3 or fewer): [C, B, A]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: C, B, A \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1990,
+      "completion_tokens": 116,
+      "peer_responses": []
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B \u2192 A \u2192 C \u2192 A \u2192 B \u2192 C \u2192 B \u2192 B \u2192 C \u2192 B \u2192 A \u2192 B  \n\nRecent states (last 3 or fewer): [B, A, B]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: B, A, B \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2113,
+      "completion_tokens": 118,
+      "peer_responses": []
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B \u2192 A \u2192 C \u2192 A \u2192 B \u2192 C \u2192 B \u2192 B \u2192 C \u2192 B \u2192 A \u2192 B \u2192 B  \n\nRecent states (last 3 or fewer): [A, B, B]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: A, B, B \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2238,
+      "completion_tokens": 120,
+      "peer_responses": []
+    },
+    {
+      "step": 22,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B \u2192 A \u2192 C \u2192 A \u2192 B \u2192 C \u2192 B \u2192 B \u2192 C \u2192 B \u2192 A \u2192 B \u2192 B \u2192 C  \n\nRecent states (last 3 or fewer): [B, B, C]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: B, B, C \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2365,
+      "completion_tokens": 122,
+      "peer_responses": []
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B \u2192 A \u2192 C \u2192 A \u2192 B \u2192 C \u2192 B \u2192 B \u2192 C \u2192 B \u2192 A \u2192 B \u2192 B \u2192 C \u2192 B  \n\nRecent states (last 3 or fewer): [B, C, B]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: B, C, B \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2494,
+      "completion_tokens": 124,
+      "peer_responses": []
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B \u2192 A \u2192 C \u2192 A \u2192 B \u2192 C \u2192 B \u2192 B \u2192 C \u2192 B \u2192 A \u2192 B \u2192 B \u2192 C \u2192 B \u2192 A  \n\nRecent states (last 3 or fewer): [C, B, A]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: C, B, A \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2625,
+      "completion_tokens": 126,
+      "peer_responses": []
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B \u2192 A \u2192 C \u2192 A \u2192 B \u2192 C \u2192 B \u2192 B \u2192 C \u2192 B \u2192 A \u2192 B \u2192 B \u2192 C \u2192 B \u2192 A \u2192 A  \n\nRecent states (last 3 or fewer): [B, A, A]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: B, A, A \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2758,
+      "completion_tokens": 128,
+      "peer_responses": []
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B \u2192 A \u2192 C \u2192 A \u2192 B \u2192 C \u2192 B \u2192 B \u2192 C \u2192 B \u2192 A \u2192 B \u2192 B \u2192 C \u2192 B \u2192 A \u2192 A \u2192 B  \n\nRecent states (last 3 or fewer): [A, A, B]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: A, A, B \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2893,
+      "completion_tokens": 130,
+      "peer_responses": []
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B \u2192 A \u2192 C \u2192 A \u2192 B \u2192 C \u2192 B \u2192 B \u2192 C \u2192 B \u2192 A \u2192 B \u2192 B \u2192 C \u2192 B \u2192 A \u2192 A \u2192 B \u2192 B  \n\nRecent states (last 3 or fewer): [A, B, B]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: A, B, B \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3030,
+      "completion_tokens": 132,
+      "peer_responses": []
+    },
+    {
+      "step": 28,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B \u2192 A \u2192 C \u2192 A \u2192 B \u2192 C \u2192 B \u2192 B \u2192 C \u2192 B \u2192 A \u2192 B \u2192 B \u2192 C \u2192 B \u2192 A \u2192 A \u2192 B \u2192 B \u2192 C  \n\nRecent states (last 3 or fewer): [B, B, C]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: B, B, C \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3169,
+      "completion_tokens": 134,
+      "peer_responses": []
+    },
+    {
+      "step": 29,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B \u2192 A \u2192 C \u2192 A \u2192 B \u2192 C \u2192 B \u2192 B \u2192 C \u2192 B \u2192 A \u2192 B \u2192 B \u2192 C \u2192 B \u2192 A \u2192 A \u2192 B \u2192 B \u2192 C \u2192 C  \n\nRecent states (last 3 or fewer): [B, C, C]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: B, C, C \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3310,
+      "completion_tokens": 136,
+      "peer_responses": []
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is:  \nB \u2192 C \u2192 C \u2192 B \u2192 B \u2192 B \u2192 A \u2192 A \u2192 B \u2192 A \u2192 C \u2192 A \u2192 B \u2192 C \u2192 B \u2192 B \u2192 C \u2192 B \u2192 A \u2192 B \u2192 B \u2192 C \u2192 B \u2192 A \u2192 A \u2192 B \u2192 B \u2192 C \u2192 C \u2192 B  \n\nRecent states (last 3 or fewer): [C, C, B]  \n\nWe need to check if the last three states in order are A, then B, then C.  \n\nLast three states: C, C, B \u2192 not A, B, C.  \n\nTherefore: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3453,
+      "completion_tokens": 138,
+      "peer_responses": []
+    }
+  ],
+  "summary": {
+    "accuracy": 1.0,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 1,
+    "n_wait_trials": 29
+  }
+}

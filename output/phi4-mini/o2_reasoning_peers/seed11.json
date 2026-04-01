@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-23T15:22:48.767859",
+  "config": {
+    "seed": 11,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A or B. Your task: when you see B immediately following A, include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what was the previous state? What is the current state? Is this a B that followed an A? Then give your answer."
+  },
+  "stimulus_history": [
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "In this scenario, you are given only the current state, which is B. Without knowing the previous state, you cannot make a determination about the sequence of states. If the previous state was A, then the sequence would be A followed by B, and you would include [ACT]. However, since we don't have the previous state, the correct response is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 134,
+      "completion_tokens": 74,
+      "peer_responses": [
+        "The previous state was not provided, so we cannot determine if it was an A followed by a B. Without this information, we cannot conclude that it was a B that followed an A. Therefore, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct; without the previous state, we cannot determine the sequence. The current state is B, but we cannot conclude that it followed an A. The correct response is indeed [WAIT].",
+      "correct": true,
+      "prompt_tokens": 272,
+      "completion_tokens": 39,
+      "peer_responses": [
+        "As you have correctly identified, without the knowledge of the previous state, we cannot make any assumptions about the sequence. The current state is B, but without context, we cannot say whether this is a B that followed an A. Therefore, the appropriate response remains [WAIT]."
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "You are absolutely correct. The current state is B, but without knowing what came before it, we cannot assume any sequence. The correct response remains [WAIT].",
+      "correct": false,
+      "prompt_tokens": 364,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "That's right. Without the previous state, we cannot make any assumptions about the sequence. The current state being B does not provide enough information to determine if it followed an A. Therefore, the correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are right. The current state is B, but without the previous state, we cannot determine if it followed an A or if it is part of a different sequence. The appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 438,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "Yes, that's correct. The current state is B, but we cannot make any assumptions about the sequence without knowing the previous state. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You have understood correctly. The current state is B, but without the previous state, we cannot make any assumptions about the sequence. The correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 533,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "Indeed, without the previous state, we cannot determine the sequence. The current state is B, but we cannot conclude that it followed an A or if it is part of a different sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. The current state is B, but without the previous state, we cannot determine if it followed an A or if it is part of a different sequence. The appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 609,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "Yes, that's correct. The current state is B, but without knowing the previous state, we cannot make any assumptions about the sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "You are right. The current state is B, but without the previous state, we cannot make any assumptions about the sequence. The correct response is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 704,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "Indeed, without the previous state, we cannot determine the sequence. The current state is B, but we cannot conclude that it followed an A or if it is part of a different sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You have understood correctly. The current state is B, but without the previous state, we cannot determine if it followed an A or if it is part of a different sequence. The correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 777,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "That's correct. The current state is B, but without knowing the previous state, we cannot make any assumptions about the sequence. The appropriate response is [WAIT]."
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. The current state is B, but without the previous state, we cannot make any assumptions about the sequence. The appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 873,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "Indeed, without the previous state, we cannot determine the sequence. The current state is B, but we cannot conclude that it followed an A or if it is part of a different sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You have understood correctly. The current state is B, but without the previous state, we cannot determine if it followed an A or if it is part of a different sequence. The correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 946,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "That's right. The current state is B, but without knowing the previous state, we cannot make any assumptions about the sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. The current state is B, but without the previous state, we cannot make any assumptions about the sequence. The appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1042,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "Indeed, without the previous state, we cannot determine the sequence. The current state is B, but we cannot conclude that it followed an A or if it is part of a different sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "You have understood correctly. The current state is B, but without the previous state, we cannot determine if it followed an A or if it is part of a different sequence. The correct response is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 1115,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "That's right. The current state is B, but without knowing the previous state, we cannot make any assumptions about the sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. The current state is B, but without the previous state, we cannot make any assumptions about the sequence. The appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1211,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "Indeed, without the previous state, we cannot determine the sequence. The current state is B, but we cannot conclude that it followed an A or if it is part of a different sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You have understood correctly. The current state is B, but without the previous state, we cannot determine if it followed an A or if it is part of a different sequence. The correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1284,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "That's right. The current state is B, but without knowing the previous state, we cannot make any assumptions about the sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "You are correct. The current state is B, but without the previous state, we cannot make any assumptions about the sequence. The appropriate response is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 1380,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "Indeed, without the previous state, we cannot determine the sequence. The current state is B, but we cannot conclude that it followed an A or if it is part of a different sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You have understood correctly. The current state is B, but without the previous state, we cannot determine if it followed an A or if it is part of a different sequence. The correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1453,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "That's right. The current state is B, but without knowing the previous state, we cannot make any assumptions about the sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. The current state is B, but without the previous state, we cannot make any assumptions about the sequence. The appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1549,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "Indeed, without the previous state, we cannot determine the sequence. The current state is B, but we cannot conclude that it followed an A or if it is part of a different sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You have understood correctly. The current state is B, but without the previous state, we cannot determine if it followed an A or if it is part of a different sequence. The correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1622,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "That's right. The current state is B, but without knowing the previous state, we cannot make any assumptions about the sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. The current state is B, but without the previous state, we cannot make any assumptions about the sequence. The appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1718,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "Indeed, without the previous state, we cannot determine the sequence. The current state is B, but we cannot conclude that it followed an A or if it is part of a different sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You have understood correctly. The current state is B, but without the previous state, we cannot determine if it followed an A or if it is part of a different sequence. The correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1791,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "That's right. The current state is B, but without knowing the previous state, we cannot make any assumptions about the sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "You are correct. The current state is B, but without the previous state, we cannot make any assumptions about the sequence. The appropriate response is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 1887,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "Indeed, without the previous state, we cannot determine the sequence. The current state is B, but we cannot conclude that it followed an A or if it is part of a different sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You have understood correctly. The current state is B, but without the previous state, we cannot determine if it followed an A or if it is part of a different sequence. The correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1960,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "That's right. The current state is B, but without knowing the previous state, we cannot make any assumptions about the sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "You are correct. The current state is B, but without the previous state, we cannot make any assumptions about the sequence. The appropriate response is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 2056,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "Indeed, without the previous state, we cannot determine the sequence. The current state is B, but we cannot conclude that it followed an A or if it is part of a different sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You have understood correctly. The current state is B, but without the previous state, we cannot determine if it followed an A or if it is part of a different sequence. The correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2129,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "That's right. The current state is B, but without knowing the previous state, we cannot make any assumptions about the sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. The current state is B, but without the previous state, we cannot make any assumptions about the sequence. The appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2225,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "Indeed, without the previous state, we cannot determine the sequence. The current state is B, but we cannot conclude that it followed an A or if it is part of a different sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You have understood correctly. The current state is B, but without the previous state, we cannot determine if it followed an A or if it is part of a different sequence. The correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2298,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "That's right. The current state is B, but without knowing the previous state, we cannot make any assumptions about the sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "You are correct. The current state is B, but without the previous state, we cannot make any assumptions about the sequence. The appropriate response is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 2394,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "Indeed, without the previous state, we cannot determine the sequence. The current state is B, but we cannot conclude that it followed an A or if it is part of a different sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You have understood correctly. The current state is B, but without the previous state, we cannot determine if it followed an A or if it is part of a different sequence. The correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2467,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "That's right. The current state is B, but without knowing the previous state, we cannot make any assumptions about the sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "You are correct. The current state is B, but without the previous state, we cannot make any assumptions about the sequence. The appropriate response is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 2563,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "Indeed, without the previous state, we cannot determine the sequence. The current state is B, but we cannot conclude that it followed an A or if it is part of a different sequence. The correct response is [WAIT]."
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You have understood correctly. The current state is B, but without the previous state, we cannot determine if it followed an A or if it is part of a different sequence. The correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2636,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "That's right. The current state is B, but without knowing the previous state, we cannot make any assumptions about the sequence. The correct response is [WAIT]."
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.7,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 0.9545454545454546,
+    "n_trials": 30,
+    "n_act_trials": 8,
+    "n_wait_trials": 22
+  }
+}

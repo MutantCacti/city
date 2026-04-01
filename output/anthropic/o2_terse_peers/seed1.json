@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-24T17:10:44.105298",
+  "config": {
+    "seed": 1,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "anthropic",
+    "model_name": "claude-haiku-4-5-20251001",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.2,
+    "system_prompt": "Respond [ACT] if the last two states were A then B. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B\n\nI'm waiting for the pattern A then B to appear. [WAIT]",
+      "correct": true,
+      "prompt_tokens": 70,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "[WAIT]\n\n(The last state is B, but I need two consecutive states A then B to respond with [ACT]. Currently I only have one state on record.)"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A\n\nI'm waiting for the pattern A then B to appear. [WAIT]",
+      "correct": true,
+      "prompt_tokens": 145,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then A, not A then B. I'm waiting for the pattern A then B to occur.)"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A\n\nI'm waiting for the pattern A then B to appear. [WAIT]",
+      "correct": true,
+      "prompt_tokens": 223,
+      "completion_tokens": 40,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are A then A, not A then B. I'm still waiting for the pattern A then B to occur.)"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B\n\nThe last two states are A then B. This matches the required pattern. [ACT]",
+      "correct": true,
+      "prompt_tokens": 291,
+      "completion_tokens": 45,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are A then B. This matches the required pattern.)"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B\n\nThe last two states are B then B, not A then B. The pattern has been broken. [WAIT]",
+      "correct": true,
+      "prompt_tokens": 369,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then B, not A then B. The pattern has been broken.)"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B, A\n\nThe last two states are B then A, not A then B. Still waiting for the pattern A then B to occur. [WAIT]",
+      "correct": true,
+      "prompt_tokens": 459,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then A, not A then B. Still waiting for the pattern A then B to occur.)"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B, A, A\n\nThe last two states are A then A, not A then B. Still waiting for the pattern A then B to occur. [WAIT]",
+      "correct": true,
+      "prompt_tokens": 556,
+      "completion_tokens": 61,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are A then A, not A then B. Still waiting for the pattern A then B to occur.)"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B, A, A, B\n\nThe last two states are A then B. This matches the required pattern. [ACT]",
+      "correct": true,
+      "prompt_tokens": 645,
+      "completion_tokens": 53,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are A then B. This matches the required pattern.)"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B, A, A, B, B\n\nThe last two states are B then B, not A then B. The pattern has been broken. [WAIT]",
+      "correct": true,
+      "prompt_tokens": 731,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then B, not A then B. The pattern has been broken.)"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B, A, A, B, B, A\n\nThe last two states are B then A, not A then B. Still waiting for the pattern A then B to occur. [WAIT]",
+      "correct": true,
+      "prompt_tokens": 829,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then A, not A then B. Still waiting for the pattern A then B to occur.)"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B, A, A, B, B, A, A\n\nThe last two states are A then A, not A then B. Still waiting for the pattern A then B to occur. [WAIT]",
+      "correct": true,
+      "prompt_tokens": 902,
+      "completion_tokens": 69,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B, A, A, B, B, A, A, B\n\nThe last two states are A then B. This matches the required pattern. [ACT]",
+      "correct": true,
+      "prompt_tokens": 977,
+      "completion_tokens": 61,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I need to correct this. Let me review:\n\nCurrent sequence: B, A, A, B, B, A, A, B, B, A, A, B, A\n\nThe last two states are B then A, not A then B. The pattern has been broken. [WAIT]\n\n(The previous state was B, and the current state is A, which gives us B then A, not the required A then B pattern.)",
+      "correct": true,
+      "prompt_tokens": 1066,
+      "completion_tokens": 97,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are A then B. This matches the required pattern.)"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B, A, A, B, B, A, A, B, A, A\n\nThe last two states are A then A, not A then B. Still waiting for the pattern A then B to occur. [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1196,
+      "completion_tokens": 75,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then A, not A then B. The pattern has been broken.)"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B, A, A, B, B, A, A, B, A, A, B\n\nThe last two states are A then B. This matches the required pattern. [ACT]",
+      "correct": true,
+      "prompt_tokens": 1299,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are A then B. This matches the required pattern.)"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B, A, A, B, B, A, A, B, A, A, B, B\n\nThe last two states are B then B, not A then B. The pattern has been broken. [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1399,
+      "completion_tokens": 74,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then B, not A then B. The pattern has been broken.)"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B, A, A, B, B, A, A, B, A, A, B, B, B\n\nThe last two states are B then B, not A then B. The pattern remains broken. [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1505,
+      "completion_tokens": 75,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then B, not A then B. The pattern remains broken.)"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B, A, A, B, B, A, A, B, A, A, B, B, B, B\n\nThe last two states are B then B, not A then B. The pattern remains broken. [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1612,
+      "completion_tokens": 77,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then B, not A then B. The pattern remains broken.)"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B, A, A, B, B, A, A, B, A, A, B, B, B, B, B\n\nThe last two states are B then B, not A then B. The pattern remains broken. [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1721,
+      "completion_tokens": 79,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then B, not A then B. The pattern remains broken.)"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B, A, A, B, B, A, A, B, A, A, B, B, B, B, B, B\n\nThe last two states are B then B, not A then B. The pattern remains broken. [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1832,
+      "completion_tokens": 81,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then B, not A then B. The pattern remains broken.)"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B, A, A, B, B, A, A, B, A, A, B, B, B, B, B, B, B\n\nThe last two states are B then B, not A then B. The pattern remains broken. [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1945,
+      "completion_tokens": 83,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then B, not A then B. The pattern remains broken.)"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B, A, A, B, B, A, A, B, A, A, B, B, B, B, B, B, B, B\n\nThe last two states are B then B, not A then B. The pattern remains broken. [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2034,
+      "completion_tokens": 85,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B, A, A, B, B, A, A, B, A, A, B, B, B, B, B, B, B, B, A\n\nThe last two states are B then A, not A then B. Still waiting for the pattern A then B to occur. [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2157,
+      "completion_tokens": 93,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then A, not A then B. Still waiting for the pattern A then B to occur.)"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are A then A, not A then B. Still waiting for the pattern A then B to occur.)"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are A then A, not A then B. Still waiting for the pattern A then B to occur.)"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B, A, A, B, B, A, A, B, A, A, B, B, B, B, B, B, B, B, A, A, A, A, B\n\nThe last two states are A then B. This matches the required pattern. [ACT]",
+      "correct": true,
+      "prompt_tokens": 2482,
+      "completion_tokens": 91,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are A then B. This matches the required pattern.)"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B, A, A, B, B, A, A, B, A, A, B, B, B, B, B, B, B, B, A, A, A, A, B, A\n\nThe last two states are B then A, not A then B. The pattern has been broken. [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2606,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then A, not A then B. The pattern has been broken.)"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B, A, A, B, B, A, A, B, A, A, B, B, B, B, B, B, B, B, A, A, A, A, B, A, B\n\nThe last two states are A then B. This matches the required pattern. [ACT]",
+      "correct": true,
+      "prompt_tokens": 2732,
+      "completion_tokens": 95,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are A then B. This matches the required pattern.)"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states:\n\nCurrent sequence: B, A, A, B, B, A, A, B, B, A, A, B, A, A, B, B, B, B, B, B, B, B, A, A, A, A, B, A, B, B\n\nThe last two states are B then B, not A then B. The pattern has been broken. [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2860,
+      "completion_tokens": 102,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then B, not A then B. The pattern has been broken.)"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 1.0,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 6,
+    "n_wait_trials": 24
+  }
+}

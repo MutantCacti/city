@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-23T15:34:21.916702",
+  "config": {
+    "seed": 10,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "C",
+    "A",
+    "C",
+    "C",
+    "A",
+    "C",
+    "A",
+    "A",
+    "A",
+    "C",
+    "C",
+    "B",
+    "C",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "C",
+    "A",
+    "C",
+    "A",
+    "C",
+    "C",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The sequence provided is C, which does not match the required sequence of A, B, C. As such, the correct response is to indicate that we are waiting for the correct sequence to appear. The answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 155,
+      "completion_tokens": 47,
+      "peer_responses": [
+        "Based on the instructions provided, we are to look for a specific sequence of states: A followed by B followed by C. The sequence you have provided is just C, which does not match the required sequence of A, B, C.\n\nTherefore, the answer is: [WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your observation is correct. The sequence provided is C, which does not match the required sequence of A, B, C. We are still waiting for the correct sequence to appear. The answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 261,
+      "completion_tokens": 43,
+      "peer_responses": [
+        "Indeed, the sequence provided is C, which does not match the required sequence of A, B, C. Therefore, we are still in the process of observing the sequence and have not yet seen the correct sequence. The answer remains: [WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. Since the current state is C and we are still waiting for the sequence A, B, C to occur, the correct response remains: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 360,
+      "completion_tokens": 46,
+      "peer_responses": [
+        "Apologies for any confusion. As you have indicated the current state is C, and we are still awaiting the sequence A, B, C, the appropriate response is indeed: [WAIT]. We continue to observe for the correct sequence."
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 461,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Absolutely, your understanding is correct. With the current state being C, we are still in the process of observing the sequence. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 561,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. As the current state is C, we are still awaiting the sequence A, B, C. The correct response remains: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 661,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 761,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 861,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 961,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 1061,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 1161,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 1261,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 1361,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 1461,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 1561,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 1661,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 1761,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 1861,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 1961,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": false,
+      "prompt_tokens": 2061,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 2161,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 2261,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 2361,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 2461,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 2561,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 2661,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 2761,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 2861,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 2961,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the current state being C, we are still waiting for the sequence A, B, C to occur. The appropriate response is: [WAIT]. We will continue to observe for the next state in the sequence.",
+      "correct": true,
+      "prompt_tokens": 3061,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "Understood. The current state is C, and we are still awaiting the sequence A, B, C. The correct response is: [WAIT]. We will continue to observe for the next state in the sequence."
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.9666666666666667,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 1,
+    "n_wait_trials": 29
+  }
+}

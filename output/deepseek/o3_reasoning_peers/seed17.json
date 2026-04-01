@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-24T03:13:55.273672",
+  "config": {
+    "seed": 17,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "C",
+    "C",
+    "B",
+    "A",
+    "C",
+    "B",
+    "C",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "C",
+    "B",
+    "A",
+    "C",
+    "C",
+    "C",
+    "B",
+    "C",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "C",
+    "A",
+    "A",
+    "B",
+    "C"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, only one state has been observed: **C**.  \n\nThe sequence so far is:  \nC  \n\nNo three states have occurred yet, and the last three states (if we consider just C) are not A, B, C in order.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 101,
+      "completion_tokens": 103,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, only two states have been observed:  \n1. C  \n2. C  \n\nThe sequence so far is: C, C  \n\nNo three states yet, and the last two (C, C) are not A, B, C in order.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 216,
+      "completion_tokens": 104,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n\nThe last three states are: C, C, B  \n\nThat is **C, C, B**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 332,
+      "completion_tokens": 103,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n\nThe last three states are: C, B, A  \n\nThat is **C, B, A**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 447,
+      "completion_tokens": 107,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n\nThe last three states are: B, A, C  \n\nThat is **B, A, C**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 566,
+      "completion_tokens": 111,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n\nThe last three states are: A, C, B  \n\nThat is **A, C, B**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 689,
+      "completion_tokens": 115,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n\nThe last three states are: B, C, C  \n\nThat is **B, C, C**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 816,
+      "completion_tokens": 119,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n\nThe last three states are: C, B, A  \n\nThat is **C, B, A**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 947,
+      "completion_tokens": 123,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n\nThe last three states are: A, B, C? Wait, check carefully:  \n\nState 7: C  \nState 8: A  \nState 9: B  \n\nSo last three are **C, A, B**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1082,
+      "completion_tokens": 153,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n10. A  \n\nThe last three states are: B, A, A? Wait, check carefully:  \n\nState 8: A  \nState 9: B  \nState 10: A  \n\nSo last three are **A, B, A**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1247,
+      "completion_tokens": 157,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n10. A  \n11. B  \n\nThe last three states are: A, B, B? Wait, check carefully:  \n\nState 9: B  \nState 10: A  \nState 11: B  \n\nSo last three are **B, A, B**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1416,
+      "completion_tokens": 161,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n10. A  \n11. B  \n12. B  \n\nThe last three states are: A, B, B  \n\nThat is **A, B, B**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1589,
+      "completion_tokens": 139,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n10. A  \n11. B  \n12. B  \n13. C  \n\nThe last three states are: B, B, C  \n\nThat is **B, B, C**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1740,
+      "completion_tokens": 143,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n10. A  \n11. B  \n12. B  \n13. C  \n14. B  \n\nThe last three states are: B, C, B  \n\nThat is **B, C, B**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1895,
+      "completion_tokens": 147,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n10. A  \n11. B  \n12. B  \n13. C  \n14. B  \n15. A  \n\nThe last three states are: C, B, A  \n\nThat is **C, B, A**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2054,
+      "completion_tokens": 151,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n10. A  \n11. B  \n12. B  \n13. C  \n14. B  \n15. A  \n16. C  \n\nThe last three states are: B, A, C  \n\nThat is **B, A, C**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2217,
+      "completion_tokens": 155,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n10. A  \n11. B  \n12. B  \n13. C  \n14. B  \n15. A  \n16. C  \n17. C  \n\nThe last three states are: A, C, C  \n\nThat is **A, C, C**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2384,
+      "completion_tokens": 159,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n10. A  \n11. B  \n12. B  \n13. C  \n14. B  \n15. A  \n16. C  \n17. C  \n18. C  \n\nThe last three states are: C, C, C  \n\nThat is **C, C, C**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2555,
+      "completion_tokens": 163,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n10. A  \n11. B  \n12. B  \n13. C  \n14. B  \n15. A  \n16. C  \n17. C  \n18. C  \n19. B  \n\nThe last three states are: C, C, B  \n\nThat is **C, C, B**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2730,
+      "completion_tokens": 167,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n10. A  \n11. B  \n12. B  \n13. C  \n14. B  \n15. A  \n16. C  \n17. C  \n18. C  \n19. B  \n20. C  \n\nThe last three states are: C, B, C  \n\nThat is **C, B, C**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2909,
+      "completion_tokens": 171,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n10. A  \n11. B  \n12. B  \n13. C  \n14. B  \n15. A  \n16. C  \n17. C  \n18. C  \n19. B  \n20. C  \n21. B  \n\nThe last three states are: B, C, B  \n\nThat is **B, C, B**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3092,
+      "completion_tokens": 175,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n10. A  \n11. B  \n12. B  \n13. C  \n14. B  \n15. A  \n16. C  \n17. C  \n18. C  \n19. B  \n20. C  \n21. B  \n22. A  \n\nThe last three states are: C, B, A  \n\nThat is **C, B, A**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3279,
+      "completion_tokens": 179,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n10. A  \n11. B  \n12. B  \n13. C  \n14. B  \n15. A  \n16. C  \n17. C  \n18. C  \n19. B  \n20. C  \n21. B  \n22. A  \n23. A  \n\nThe last three states are: B, A, A  \n\nThat is **B, A, A**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3470,
+      "completion_tokens": 183,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n10. A  \n11. B  \n12. B  \n13. C  \n14. B  \n15. A  \n16. C  \n17. C  \n18. C  \n19. B  \n20. C  \n21. B  \n22. A  \n23. A  \n24. B  \n\nThe last three states are: A, A, B  \n\nThat is **A, A, B**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3665,
+      "completion_tokens": 187,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n10. A  \n11. B  \n12. B  \n13. C  \n14. B  \n15. A  \n16. C  \n17. C  \n18. C  \n19. B  \n20. C  \n21. B  \n22. A  \n23. A  \n24. B  \n25. B  \n\nThe last three states are: A, B, B  \n\nThat is **A, B, B**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3864,
+      "completion_tokens": 191,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n10. A  \n11. B  \n12. B  \n13. C  \n14. B  \n15. A  \n16. C  \n17. C  \n18. C  \n19. B  \n20. C  \n21. B  \n22. A  \n23. A  \n24. B  \n25. B  \n26. C  \n\nThe last three states are: B, B, C  \n\nThat is **B, B, C**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 4067,
+      "completion_tokens": 195,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n10. A  \n11. B  \n12. B  \n13. C  \n14. B  \n15. A  \n16. C  \n17. C  \n18. C  \n19. B  \n20. C  \n21. B  \n22. A  \n23. A  \n24. B  \n25. B  \n26. C  \n27. A  \n\nThe last three states are: B, C, A  \n\nThat is **B, C, A**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 4274,
+      "completion_tokens": 199,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n10. A  \n11. B  \n12. B  \n13. C  \n14. B  \n15. A  \n16. C  \n17. C  \n18. C  \n19. B  \n20. C  \n21. B  \n22. A  \n23. A  \n24. B  \n25. B  \n26. C  \n27. A  \n28. A  \n\nThe last three states are: C, A, A  \n\nThat is **C, A, A**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 4485,
+      "completion_tokens": 203,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n10. A  \n11. B  \n12. B  \n13. C  \n14. B  \n15. A  \n16. C  \n17. C  \n18. C  \n19. B  \n20. C  \n21. B  \n22. A  \n23. A  \n24. B  \n25. B  \n26. C  \n27. A  \n28. A  \n29. B  \n\nThe last three states are: A, A, B  \n\nThat is **A, A, B**, not **A, B, C**.  \n\nThus, the required pattern **A then B then C** is not present.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 4700,
+      "completion_tokens": 207,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nSo far, the states observed in order are:  \n1. C  \n2. C  \n3. B  \n4. A  \n5. C  \n6. B  \n7. C  \n8. A  \n9. B  \n10. A  \n11. B  \n12. B  \n13. C  \n14. B  \n15. A  \n16. C  \n17. C  \n18. C  \n19. B  \n20. C  \n21. B  \n22. A  \n23. A  \n24. B  \n25. B  \n26. C  \n27. A  \n28. A  \n29. B  \n30. C  \n\nThe last three states are: A, B, C  \n\nThat is **A, B, C** exactly in order.  \n\nThus, the required pattern **A then B then C** is present.  \n\nAnswer: **[ACT]**",
+      "correct": true,
+      "prompt_tokens": 4919,
+      "completion_tokens": 205,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 1.0,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 1,
+    "n_wait_trials": 29
+  }
+}

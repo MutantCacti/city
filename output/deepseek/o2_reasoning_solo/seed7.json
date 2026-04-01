@@ -1,0 +1,514 @@
+{
+  "timestamp": "2026-03-23T15:47:58.857636",
+  "config": {
+    "seed": 7,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 1,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A or B. Your task: when you see B immediately following A, include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what was the previous state? What is the current state? Is this a B that followed an A? Then give your answer."
+  },
+  "stimulus_history": [
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 86,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 97,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": true,
+      "prompt_tokens": 108,
+      "completion_tokens": 3,
+      "peer_responses": []
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 118,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 129,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": false,
+      "prompt_tokens": 140,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 151,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": true,
+      "prompt_tokens": 162,
+      "completion_tokens": 3,
+      "peer_responses": []
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 172,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 183,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 194,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 205,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": false,
+      "prompt_tokens": 216,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 227,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": true,
+      "prompt_tokens": 238,
+      "completion_tokens": 3,
+      "peer_responses": []
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 248,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 259,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 270,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 281,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 292,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": false,
+      "prompt_tokens": 303,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 314,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 325,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 336,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": false,
+      "prompt_tokens": 347,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 358,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 369,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": true,
+      "prompt_tokens": 380,
+      "completion_tokens": 3,
+      "peer_responses": []
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 390,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 401,
+      "completion_tokens": 4,
+      "peer_responses": []
+    }
+  ],
+  "summary": {
+    "accuracy": 0.8666666666666667,
+    "act_accuracy": 0.5,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 8,
+    "n_wait_trials": 22
+  }
+}

@@ -1,0 +1,514 @@
+{
+  "timestamp": "2026-03-23T15:26:53.970628",
+  "config": {
+    "seed": 2,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 1,
+    "tick_seconds": 0.0,
+    "system_prompt": "Respond [ACT] if the last two states were A then B. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 27,
+      "completion_tokens": 3,
+      "peer_responses": []
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 37,
+      "completion_tokens": 3,
+      "peer_responses": []
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": false,
+      "prompt_tokens": 47,
+      "completion_tokens": 3,
+      "peer_responses": []
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "It seems there might be a misunderstanding. If you are indicating a transition from state A to state B, then the response should be [WAIT] as it is not a transition from A to A. If you are asking for the response to the current state being A, then the response is [ACT] as it is a transition from B to A. Could you please clarify your request?",
+      "correct": false,
+      "prompt_tokens": 57,
+      "completion_tokens": 78,
+      "peer_responses": []
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand that you are indicating the current state is A. If this is a continuation of a sequence where the last two states were A then B, the response should be [ACT] as it is a transition from B to A. If this is not a transition and you are simply stating the current state, then the response is [WAIT]. Could you please provide more context or clarify your intent?",
+      "correct": false,
+      "prompt_tokens": 142,
+      "completion_tokens": 80,
+      "peer_responses": []
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on your indication that the current state is A, and assuming this is not a transition from a previous state, the appropriate response would be [WAIT], as there is no indication of a transition from another state. If you are expecting a response based on a sequence of states, please provide the previous states for accurate processing.",
+      "correct": true,
+      "prompt_tokens": 229,
+      "completion_tokens": 65,
+      "peer_responses": []
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B, and without additional context indicating a transition from another state, the response is [WAIT]. If you are expecting a response based on a sequence of states, please provide the previous states for accurate processing.",
+      "correct": false,
+      "prompt_tokens": 301,
+      "completion_tokens": 48,
+      "peer_responses": []
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B. If this is not a transition from a previous state, the response is [WAIT]. If you are expecting a response based on a sequence of states, please provide the previous states for accurate processing.",
+      "correct": true,
+      "prompt_tokens": 356,
+      "completion_tokens": 48,
+      "peer_responses": []
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B. If this is not a transition from a previous state, the response is [WAIT]. If you are expecting a response based on a sequence of states, please provide the previous states for accurate processing.",
+      "correct": true,
+      "prompt_tokens": 411,
+      "completion_tokens": 48,
+      "peer_responses": []
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] The transition from state B to state A has occurred. If this sequence is relevant to a specific context or system you are referring to, please provide more details so I can assist you accordingly.",
+      "correct": false,
+      "prompt_tokens": 466,
+      "completion_tokens": 41,
+      "peer_responses": []
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] The transition to state A has been identified. If this is part of a sequence or system where transitions are being tracked, and this is the first transition to state A after a previous state, the response is [ACT]. If there is more context needed for accurate processing, please provide additional information.",
+      "correct": false,
+      "prompt_tokens": 514,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is A. If this is not a transition from another state, the response is [WAIT]. If you are expecting a response based on a sequence of states, please provide the previous states for accurate processing.",
+      "correct": true,
+      "prompt_tokens": 583,
+      "completion_tokens": 47,
+      "peer_responses": []
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] The transition to state A has been identified. If this is part of a sequence or system where transitions are being tracked, and this is the first transition to state A after a previous state, the response is [ACT]. If there is more context needed for accurate processing, please provide additional information.",
+      "correct": false,
+      "prompt_tokens": 637,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] The transition to state A has been identified. If this is part of a sequence or system where transitions are being tracked, and this is the first transition to state A after a previous state, the response is [ACT]. If there is more context needed for accurate processing, please provide additional information.",
+      "correct": false,
+      "prompt_tokens": 706,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B. If this is not a transition from a previous state, the response is [WAIT]. If you are expecting a response based on a sequence of states, please provide the previous states for accurate processing.",
+      "correct": false,
+      "prompt_tokens": 775,
+      "completion_tokens": 48,
+      "peer_responses": []
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B. If this is not a transition from a previous state, the response is [WAIT]. If you are expecting a response based on a sequence of states, please provide the previous states for accurate processing.",
+      "correct": true,
+      "prompt_tokens": 830,
+      "completion_tokens": 48,
+      "peer_responses": []
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B. If this is not a transition from a previous state, the response is [WAIT]. If you are expecting a response based on a sequence of states, please provide the previous states for accurate processing.",
+      "correct": true,
+      "prompt_tokens": 885,
+      "completion_tokens": 48,
+      "peer_responses": []
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B. If this is not a transition from a previous state, the response is [WAIT]. If you are expecting a response based on a sequence of states, please provide the previous states for accurate processing.",
+      "correct": true,
+      "prompt_tokens": 940,
+      "completion_tokens": 48,
+      "peer_responses": []
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] The transition to state A has been identified. If this is part of a sequence or system where transitions are being tracked, and this is the first transition to state A after a previous state, the response is [ACT]. If there is more context needed for accurate processing, please provide additional information.",
+      "correct": false,
+      "prompt_tokens": 995,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] The transition to state A has been identified. If this is part of a sequence or system where transitions are being tracked, and this is the first transition to state A after a previous state, the response is [ACT]. If there is more context needed for accurate processing, please provide additional information.",
+      "correct": false,
+      "prompt_tokens": 1064,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B. If this is not a transition from a previous state, the response is [WAIT]. If you are expecting a response based on a sequence of states, please provide the previous states for accurate processing.",
+      "correct": false,
+      "prompt_tokens": 1133,
+      "completion_tokens": 48,
+      "peer_responses": []
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B. If this is not a transition from a previous state, the response is [WAIT]. If you are expecting a response based on a sequence of states, please provide the previous states for accurate processing.",
+      "correct": true,
+      "prompt_tokens": 1188,
+      "completion_tokens": 48,
+      "peer_responses": []
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] The transition to state A has been identified. If this is part of a sequence or system where transitions are being tracked, and this is the first transition to state A after a previous state, the response is [ACT]. If there is more context needed for accurate processing, please provide additional information.",
+      "correct": false,
+      "prompt_tokens": 1243,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B. If this is not a transition from a previous state, the response is [WAIT]. If you are expecting a response based on a sequence of states, please provide the previous states for accurate processing.",
+      "correct": false,
+      "prompt_tokens": 1312,
+      "completion_tokens": 48,
+      "peer_responses": []
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] The transition to state A has been identified. If this is part of a sequence or system where transitions are being tracked, and this is the first transition to state A after a previous state, the response is [ACT]. If there is more context needed for accurate processing, please provide additional information.",
+      "correct": false,
+      "prompt_tokens": 1367,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] The transition to state A has been identified. If this is part of a sequence or system where transitions are being tracked, and this is the first transition to state A after a previous state, the response is [ACT]. If there is more context needed for accurate processing, please provide additional information.",
+      "correct": false,
+      "prompt_tokens": 1436,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] The transition to state A has been identified. If this is part of a sequence or system where transitions are being tracked, and this is the first transition to state A after a previous state, the response is [ACT]. If there is more context needed for accurate processing, please provide additional information.",
+      "correct": false,
+      "prompt_tokens": 1505,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B. If this is not a transition from a previous state, the response is [WAIT]. If you are expecting a response based on a sequence of states, please provide the previous states for accurate processing.",
+      "correct": false,
+      "prompt_tokens": 1574,
+      "completion_tokens": 48,
+      "peer_responses": []
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B. If this is not a transition from a previous state, the response is [WAIT]. If you are expecting a response based on a sequence of states, please provide the previous states for accurate processing.",
+      "correct": true,
+      "prompt_tokens": 1629,
+      "completion_tokens": 48,
+      "peer_responses": []
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B. If this is not a transition from a previous state, the response is [WAIT]. If you are expecting a response based on a sequence of states, please provide the previous states for accurate processing.",
+      "correct": true,
+      "prompt_tokens": 1684,
+      "completion_tokens": 48,
+      "peer_responses": []
+    }
+  ],
+  "summary": {
+    "accuracy": 0.36666666666666664,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 0.4583333333333333,
+    "n_trials": 30,
+    "n_act_trials": 6,
+    "n_wait_trials": 24
+  }
+}

@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-23T15:19:30.855857",
+  "config": {
+    "seed": 4,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A or B. Your task: when you see B immediately following A, include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what was the previous state? What is the current state? Is this a B that followed an A? Then give your answer."
+  },
+  "stimulus_history": [
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The sequence provided only includes the current state, which is B. Without information about the previous state, we cannot conclude whether this is a B that followed an A. Hence, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 131,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "The previous state was not provided, and the current state is B. Without knowing what the previous state was, we cannot determine if this is a B that followed an A. Therefore, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "As you have correctly identified, without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, the correct response is indeed [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": true,
+      "prompt_tokens": 265,
+      "completion_tokens": 76,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state is a B following an A. However, since only the current state is given as B, and no information about the previous state is provided, we cannot make any conclusions about the sequence. Therefore, the correct response remains [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. Without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response remains [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": true,
+      "prompt_tokens": 444,
+      "completion_tokens": 85,
+      "peer_responses": [
+        "I apologize for any confusion. To clarify, without knowing the previous state in the sequence, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response is [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "As you've stated, without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response is indeed [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": false,
+      "prompt_tokens": 621,
+      "completion_tokens": 86,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state is a B following an A. However, since only the current state is given as B, and no information about the previous state is provided, we cannot make any conclusions about the sequence. Therefore, the correct response is [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. Without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response is [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": true,
+      "prompt_tokens": 799,
+      "completion_tokens": 85,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state is a B following an A. However, since only the current state is given as B, and no information about the previous state is provided, we cannot make any conclusions about the sequence. Therefore, the correct response remains [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. Without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response is [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": true,
+      "prompt_tokens": 976,
+      "completion_tokens": 85,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state is a B following an A. However, since only the current state is given as B, and no information about the previous state is provided, we cannot make any conclusions about the sequence. Therefore, the correct response remains [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "You are correct. Without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response is [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": false,
+      "prompt_tokens": 1153,
+      "completion_tokens": 85,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state is a B following an A. However, since only the current state is given as B, and no information about the previous state is provided, we cannot make any conclusions about the sequence. Therefore, the correct response remains [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. Without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response is [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": true,
+      "prompt_tokens": 1330,
+      "completion_tokens": 85,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state is a B following an A. However, since only the current state is given as B, and no information about the previous state is provided, we cannot make any conclusions about the sequence. Therefore, the correct response remains [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. Without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response is [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": true,
+      "prompt_tokens": 1507,
+      "completion_tokens": 85,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state is a B following an A. However, since only the current state is given as B, and no information about the previous state is provided, we cannot make any conclusions about the sequence. Therefore, the correct response remains [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "You are correct. Without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response is [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": false,
+      "prompt_tokens": 1684,
+      "completion_tokens": 85,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state is a B following an A. However, since only the current state is given as B, and no information about the previous state is provided, we cannot make any conclusions about the sequence. Therefore, the correct response remains [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. Without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response is [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": true,
+      "prompt_tokens": 1861,
+      "completion_tokens": 85,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state is a B following an A. However, since only the current state is given as B, and no information about the previous state is provided, we cannot make any conclusions about the sequence. Therefore, the correct response remains [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. Without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response is [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": true,
+      "prompt_tokens": 2038,
+      "completion_tokens": 85,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state is a B following an A. However, since only the current state is given as B, and no information about the previous state is provided, we cannot make any conclusions about the sequence. Therefore, the correct response remains [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. Without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response is [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": true,
+      "prompt_tokens": 2215,
+      "completion_tokens": 85,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state is a B following an A. However, since only the current state is given as B, and no information about the previous state is provided, we cannot make any conclusions about the sequence. Therefore, the correct response remains [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. Without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response is [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": true,
+      "prompt_tokens": 2392,
+      "completion_tokens": 85,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state is a B following an A. However, since only the current state is given as B, and no information about the previous state is provided, we cannot make any conclusions about the sequence. Therefore, the correct response remains [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "You are correct. Without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response is [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": false,
+      "prompt_tokens": 2569,
+      "completion_tokens": 85,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state is a B following an A. However, since only the current state is given as B, and no information about the previous state is provided, we cannot make any conclusions about the sequence. Therefore, the correct response remains [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. Without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response is [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": true,
+      "prompt_tokens": 2746,
+      "completion_tokens": 85,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state is a B following an A. However, since only the current state is given as B, and no information about the previous state is provided, we cannot make any conclusions about the sequence. Therefore, the correct response remains [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. Without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response is [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": true,
+      "prompt_tokens": 2923,
+      "completion_tokens": 85,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state is a B following an A. However, since only the current state is given as B, and no information about the previous state is provided, we cannot make any conclusions about the sequence. Therefore, the correct response remains [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. Without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response is [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": true,
+      "prompt_tokens": 3100,
+      "completion_tokens": 85,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state is a B following an A. However, since only the current state is given as B, and no information about the previous state is provided, we cannot make any conclusions about the sequence. Therefore, the correct response remains [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "You are correct. Without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response is [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": false,
+      "prompt_tokens": 3277,
+      "completion_tokens": 85,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state is a B following an A. However, since only the current state is given as B, and no information about the previous state is provided, we cannot make any conclusions about the sequence. Therefore, the correct response remains [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. Without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response is [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": true,
+      "prompt_tokens": 3454,
+      "completion_tokens": 85,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state is a B following an A. However, since only the current state is given as B, and no information about the previous state is provided, we cannot make any conclusions about the sequence. Therefore, the correct response remains [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "You are correct. Without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response is [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": false,
+      "prompt_tokens": 3631,
+      "completion_tokens": 85,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state is a B following an A. However, since only the current state is given as B, and no information about the previous state is provided, we cannot make any conclusions about the sequence. Therefore, the correct response remains [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. Without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response is [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": true,
+      "prompt_tokens": 3808,
+      "completion_tokens": 85,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state is a B following an A. However, since only the current state is given as B, and no information about the previous state is provided, we cannot make any conclusions about the sequence. Therefore, the correct response remains [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You are correct. Without the previous state, we cannot determine if the current state is a B following an A. The sequence must include both the previous and current states to make such a determination. Since only the current state is provided as B, and we do not have information about what came before it, the correct response is [WAIT]. If you can provide the previous state, I would be happy to assist you further.",
+      "correct": true,
+      "prompt_tokens": 3985,
+      "completion_tokens": 85,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state is a B following an A. However, since only the current state is given as B, and no information about the previous state is provided, we cannot make any conclusions about the sequence. Therefore, the correct response remains [WAIT]. If you can provide the previous state, I can then give you the appropriate response."
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "I understand that you are looking for a confirmation of the previous state to determine if the current state"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "",
+      "correct": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "",
+      "correct": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.7333333333333333,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 8,
+    "n_wait_trials": 22
+  }
+}

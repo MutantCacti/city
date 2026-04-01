@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-23T17:18:19.975001",
+  "config": {
+    "seed": 7,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "C",
+    "A",
+    "A",
+    "B",
+    "C",
+    "A",
+    "B",
+    "A",
+    "C",
+    "A",
+    "B",
+    "A",
+    "B",
+    "C",
+    "C",
+    "B",
+    "A",
+    "A",
+    "B",
+    "C",
+    "B",
+    "B",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe start with the first observed state: **B**.  \nWe need to check if the last three states in order are **A, then B, then C**.  \nSo far, we only have one state: B.  \nThat\u2019s not enough for the sequence A\u2192B\u2192C.  \n\nThus, answer is:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 101,
+      "completion_tokens": 79,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. Previous state: B  \n2. New state: A  \n\nSequence of recent states (in order observed): B, A  \n\nWe need the last three to be A, B, C.  \nLast two are B, A \u2192 not A, B, C.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 192,
+      "completion_tokens": 73,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n\nRecent states in order: A, B  \n\nWe need the last three to be A, B, C.  \nCurrently last two: A, B \u2014 missing C as the third.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 277,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n\nRecent states in order: B, A  \n\nWe need the last three to be A, B, C.  \nLast two: B, A \u2014 not matching A, B, C.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 356,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n\nRecent states in order: A, A  \n\nWe need the last three to be A, B, C.  \nLast two: A, A \u2014 not matching A, B, C.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 440,
+      "completion_tokens": 76,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n\nRecent states in order: A, B  \n\nWe need the last three to be A, B, C.  \nLast two: A, B \u2014 missing C as the third.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 528,
+      "completion_tokens": 78,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n\nRecent states in order: B, A  \n\nWe need the last three to be A, B, C.  \nLast two: B, A \u2014 not matching A, B, C.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 618,
+      "completion_tokens": 84,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n\nRecent states in order: A, C  \n\nWe need the last three to be A, B, C.  \nLast three states: B, A, C \u2192 not A, B, C.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 714,
+      "completion_tokens": 90,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n\nRecent states in order: C, A  \n\nWe need the last three to be A, B, C.  \nLast two: C, A \u2014 not matching A, B, C.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 816,
+      "completion_tokens": 92,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n10. A  \n\nRecent states in order: A, A  \n\nWe need the last three to be A, B, C.  \nLast two: A, A \u2014 not matching A, B, C.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 920,
+      "completion_tokens": 96,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n10. A  \n11. B  \n\nRecent states in order: A, B  \n\nWe need the last three to be A, B, C.  \nLast two: A, B \u2014 missing C as the third.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1028,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n10. A  \n11. B  \n12. C  \n\nRecent states in order: B, C  \n\nWe need the last three to be A, B, C.  \nLast three states: A, B, C \u2192 Yes!  \n\nCheck:  \n- State 10: A  \n- State 11: B  \n- State 12: C  \n\nThat\u2019s A then B then C in order.  \n\nSo answer:  \n\n**[ACT]**",
+      "correct": true,
+      "prompt_tokens": 1138,
+      "completion_tokens": 136,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n10. A  \n11. B  \n12. C  \n13. A  \n\nRecent states in order: C, A  \n\nWe need the last three to be A, B, C.  \nLast three states: B, C, A \u2192 not A, B, C.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1285,
+      "completion_tokens": 110,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n10. A  \n11. B  \n12. C  \n13. A  \n14. B  \n\nRecent states in order: A, B  \n\nWe need the last three to be A, B, C.  \nLast two: A, B \u2014 missing C as the third.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1407,
+      "completion_tokens": 110,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n10. A  \n11. B  \n12. C  \n13. A  \n14. B  \n15. A  \n\nRecent states in order: B, A  \n\nWe need the last three to be A, B, C.  \nLast two: B, A \u2014 not matching A, B, C.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1529,
+      "completion_tokens": 116,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n10. A  \n11. B  \n12. C  \n13. A  \n14. B  \n15. A  \n16. C  \n\nRecent states in order: A, C  \n\nWe need the last three to be A, B, C.  \nLast three states: B, A, C \u2192 not A, B, C.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1657,
+      "completion_tokens": 122,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n10. A  \n11. B  \n12. C  \n13. A  \n14. B  \n15. A  \n16. C  \n17. A  \n\nRecent states in order: C, A  \n\nWe need the last three to be A, B, C.  \nLast two: C, A \u2014 not matching A, B, C.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1791,
+      "completion_tokens": 124,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n10. A  \n11. B  \n12. C  \n13. A  \n14. B  \n15. A  \n16. C  \n17. A  \n18. B  \n\nRecent states in order: A, B  \n\nWe need the last three to be A, B, C.  \nLast two: A, B \u2014 missing C as the third.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1927,
+      "completion_tokens": 126,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n10. A  \n11. B  \n12. C  \n13. A  \n14. B  \n15. A  \n16. C  \n17. A  \n18. B  \n19. A  \n\nRecent states in order: B, A  \n\nWe need the last three to be A, B, C.  \nLast two: B, A \u2014 not matching A, B, C.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2065,
+      "completion_tokens": 132,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n10. A  \n11. B  \n12. C  \n13. A  \n14. B  \n15. A  \n16. C  \n17. A  \n18. B  \n19. A  \n20. B  \n\nRecent states in order: A, B  \n\nWe need the last three to be A, B, C.  \nLast two: A, B \u2014 missing C as the third.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2209,
+      "completion_tokens": 134,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n10. A  \n11. B  \n12. C  \n13. A  \n14. B  \n15. A  \n16. C  \n17. A  \n18. B  \n19. A  \n20. B  \n21. C  \n\nRecent states in order: B, C  \n\nWe need the last three to be A, B, C.  \nLast three states: A, B, C \u2192 Yes!  \n\nCheck:  \n- State 19: A  \n- State 20: B  \n- State 21: C  \n\nThat\u2019s A then B then C in order.  \n\nSo answer:  \n\n**[ACT]**",
+      "correct": true,
+      "prompt_tokens": 2355,
+      "completion_tokens": 172,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n10. A  \n11. B  \n12. C  \n13. A  \n14. B  \n15. A  \n16. C  \n17. A  \n18. B  \n19. A  \n20. B  \n21. C  \n22. C  \n\nRecent states in order: C, C  \n\nWe need the last three to be A, B, C.  \nLast three states: B, C, C \u2192 not A, B, C.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2538,
+      "completion_tokens": 146,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n10. A  \n11. B  \n12. C  \n13. A  \n14. B  \n15. A  \n16. C  \n17. A  \n18. B  \n19. A  \n20. B  \n21. C  \n22. C  \n23. B  \n\nRecent states in order: C, B  \n\nWe need the last three to be A, B, C.  \nLast two: C, B \u2014 not matching A, B, C.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2696,
+      "completion_tokens": 148,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n10. A  \n11. B  \n12. C  \n13. A  \n14. B  \n15. A  \n16. C  \n17. A  \n18. B  \n19. A  \n20. B  \n21. C  \n22. C  \n23. B  \n24. A  \n\nRecent states in order: B, A  \n\nWe need the last three to be A, B, C.  \nLast two: B, A \u2014 not matching A, B, C.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2856,
+      "completion_tokens": 152,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n10. A  \n11. B  \n12. C  \n13. A  \n14. B  \n15. A  \n16. C  \n17. A  \n18. B  \n19. A  \n20. B  \n21. C  \n22. C  \n23. B  \n24. A  \n25. A  \n\nRecent states in order: A, A  \n\nWe need the last three to be A, B, C.  \nLast two: A, A \u2014 not matching A, B, C.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3020,
+      "completion_tokens": 156,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n10. A  \n11. B  \n12. C  \n13. A  \n14. B  \n15. A  \n16. C  \n17. A  \n18. B  \n19. A  \n20. B  \n21. C  \n22. C  \n23. B  \n24. A  \n25. A  \n26. B  \n\nRecent states in order: A, B  \n\nWe need the last three to be A, B, C.  \nLast two: A, B \u2014 missing C as the third.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3188,
+      "completion_tokens": 158,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n10. A  \n11. B  \n12. C  \n13. A  \n14. B  \n15. A  \n16. C  \n17. A  \n18. B  \n19. A  \n20. B  \n21. C  \n22. C  \n23. B  \n24. A  \n25. A  \n26. B  \n27. C  \n\nRecent states in order: B, C  \n\nWe need the last three to be A, B, C.  \nLast three states: A, B, C \u2192 Yes!  \n\nCheck:  \n- State 25: A  \n- State 26: B  \n- State 27: C  \n\nThat\u2019s A then B then C in order.  \n\nSo answer:  \n\n**[ACT]**",
+      "correct": true,
+      "prompt_tokens": 3358,
+      "completion_tokens": 196,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n10. A  \n11. B  \n12. C  \n13. A  \n14. B  \n15. A  \n16. C  \n17. A  \n18. B  \n19. A  \n20. B  \n21. C  \n22. C  \n23. B  \n24. A  \n25. A  \n26. B  \n27. C  \n28. B  \n\nRecent states in order: C, B  \n\nWe need the last three to be A, B, C.  \nLast two: C, B \u2014 not matching A, B, C.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3565,
+      "completion_tokens": 168,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n10. A  \n11. B  \n12. C  \n13. A  \n14. B  \n15. A  \n16. C  \n17. A  \n18. B  \n19. A  \n20. B  \n21. C  \n22. C  \n23. B  \n24. A  \n25. A  \n26. B  \n27. C  \n28. B  \n29. B  \n\nRecent states in order: B, B  \n\nWe need the last three to be A, B, C.  \nLast two: B, B \u2014 not matching A, B, C.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3745,
+      "completion_tokens": 172,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. B  \n2. A  \n3. B  \n4. A  \n5. A  \n6. B  \n7. A  \n8. C  \n9. A  \n10. A  \n11. B  \n12. C  \n13. A  \n14. B  \n15. A  \n16. C  \n17. A  \n18. B  \n19. A  \n20. B  \n21. C  \n22. C  \n23. B  \n24. A  \n25. A  \n26. B  \n27. C  \n28. B  \n29. B  \n30. A  \n\nRecent states in order: B, A  \n\nWe need the last three to be A, B, C.  \nLast two: B, A \u2014 not matching A, B, C.  \n\nSo answer:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3929,
+      "completion_tokens": 176,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 1.0,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 3,
+    "n_wait_trials": 27
+  }
+}

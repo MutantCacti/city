@@ -1,0 +1,544 @@
+{
+  "timestamp": "2026-03-23T15:35:12.654144",
+  "config": {
+    "seed": 1,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 1,
+    "tick_seconds": 0.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "B",
+    "C",
+    "C",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "C",
+    "C",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "C",
+    "C",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "C",
+    "B",
+    "B",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the given instruction, we need to check if the sequence ends with A then B then C. The recent state provided is B. Since we do not have the preceding state, we cannot determine if the sequence ends with A then B then C. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 96,
+      "completion_tokens": 59,
+      "peer_responses": []
+    },
+    {
+      "step": 2,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Following the given instruction, we need to check if the sequence ends with A then B then C. The recent state provided is C. Without knowing the preceding states, we cannot confirm if the sequence ends with A then B then C. Thus, the answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 162,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 3,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. Per the instruction, we need to check if the sequence ends with A then B then C. The most recent state provided is C. However, we still lack information about the states that came before C. Without the preceding states, we cannot definitively say that the sequence ends with A then B then C. Therefore, the answer is still [WAIT].",
+      "correct": true,
+      "prompt_tokens": 224,
+      "completion_tokens": 77,
+      "peer_responses": []
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is B, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 308,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I apologize for any confusion. As per the instructions, we need to check if the sequence ends with A then B then C. The current state is B. Without knowledge of the preceding states, we cannot confirm if the sequence ends with A then B then C. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 376,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is A, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 444,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is A, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 512,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is B, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 580,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 9,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is C, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": false,
+      "prompt_tokens": 648,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 10,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is C, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 716,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is A, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 784,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is A, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 852,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is B, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 920,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is A, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 988,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is A, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1056,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is B, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1124,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is B, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1192,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is B, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1260,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 19,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is C, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1328,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 20,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is C, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1396,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is B, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1464,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is A, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1532,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is A, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1600,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is A, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1668,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is A, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1736,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is B, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1804,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 27,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is C, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": false,
+      "prompt_tokens": 1872,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is B, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1940,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is B, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2008,
+      "completion_tokens": 61,
+      "peer_responses": []
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are asking for the same type of analysis as before. Given the current state is B, we must check if the sequence ends with A then B then C. However, since we do not have information about the previous states, we cannot confirm the sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2076,
+      "completion_tokens": 61,
+      "peer_responses": []
+    }
+  ],
+  "summary": {
+    "accuracy": 0.9333333333333333,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 2,
+    "n_wait_trials": 28
+  }
+}

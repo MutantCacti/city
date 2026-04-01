@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-23T15:31:35.057044",
+  "config": {
+    "seed": 4,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "B",
+    "B",
+    "A",
+    "C",
+    "B",
+    "B",
+    "B",
+    "C",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "C",
+    "B",
+    "C",
+    "A",
+    "C",
+    "B",
+    "C",
+    "B",
+    "B",
+    "C",
+    "B",
+    "A",
+    "C",
+    "C",
+    "A",
+    "C"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The sequence provided is incomplete, as we only have the current state, which is B. Without knowing the previous state, we cannot confirm if the sequence is A followed by B followed by C. We need more information to determine if the sequence ends with A then B then C. Therefore, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 181,
+      "completion_tokens": 65,
+      "peer_responses": [
+        "Based on the instruction, we are to look for a specific sequence of states: A followed by B followed by C. The recent state provided is B. Since we do not have the previous state to confirm if it was A, and we don't have the next state to confirm if it will be C, we cannot conclude that the sequence ends with A then B then C. Therefore, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I apologize for any confusion. To clarify, we are indeed looking for a specific sequence of states: A followed by B followed by C. You have provided the current state, which is B. However, to determine if we are in the sequence A followed by B followed by C, we need to know both the previous and the next states.\n\n- If the previous state was A, then we are currently in the sequence.\n- If the next state is C, then we are at the end of the sequence.\n\nSince we only have the current state (B) and no information about what came before or what comes after, we cannot confirm that we are in the sequence A followed by B followed by C. We need more information to make a definitive conclusion.\n\nTherefore, the correct response is still [WAIT], as we do not have enough information to determine if the sequence ends with A then B then C.",
+      "correct": true,
+      "prompt_tokens": 478,
+      "completion_tokens": 182,
+      "peer_responses": [
+        "I understand that you are looking for a more detailed explanation. Let's break down the sequence and the conditions you've provided:\n\n1. We are looking for a specific sequence: A followed by B followed by C.\n2. We are given the current state, which is B.\n3. We need to know the previous state to determine if we are indeed in sequence A followed by B followed by C.\n4. We also need to know the next state to confirm if the sequence ends with A then B then C.\n\nSince we only have the current state (B) and no information about the previous or next states, we cannot confirm the sequence. The sequence could have started with A and is currently at B, but without knowing what comes after B, we cannot complete the sequence. Similarly, if the sequence started with A but did not continue to C, we would still not have the complete sequence.\n\nTherefore, with the information provided, we cannot conclude that the sequence ends with A then B then C. The correct response remains [WAIT] because we do not have enough information to make a definitive statement about the sequence."
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are looking for a more detailed explanation. Let's break down the sequence and the conditions you've provided:\n\n1. We are looking for a specific sequence: A followed by B followed by C.\n2. We are given the current state, which is B.\n3. We need to know the previous state to determine if we are indeed in sequence A followed by B followed by C.\n4. We also need to know the next state to confirm if the sequence ends with A then B then C.\n\nSince we only have the current state (B) and no information about the previous or next states, we cannot confirm the sequence. The sequence could have started with A and is currently at B, but without knowing what comes after B, we cannot complete the sequence. Similarly, if the sequence started with A but did not continue to C, we would still not have the complete sequence.\n\nTherefore, with the information provided, we cannot conclude that the sequence ends with A then B then C. The correct response remains [WAIT], as we do not have enough information to make a definitive statement about the sequence.",
+      "correct": true,
+      "prompt_tokens": 892,
+      "completion_tokens": 223,
+      "peer_responses": [
+        "I understand that you are looking for a more detailed explanation. Let's break down the sequence and the conditions you've provided:\n\n1. We are looking for a specific sequence: A followed by B followed by C.\n2. We are given the current state, which is B.\n3. We need to know the previous state to determine if we are indeed in sequence A followed by B followed by C.\n4. We also need to know the next state to confirm if the sequence ends with A then B then C.\n\nSince we only have the current state (B) and no information about the previous or next states, we cannot confirm the sequence. The sequence could have started with A and is currently at B, but without knowing what comes after B, we cannot complete the sequence. Similarly, if the sequence started with A but did not continue to C, we would still not have the complete sequence.\n\nTherefore, with the information provided, we cannot conclude that the sequence ends with A then B then C. The correct response remains [WAIT] because we do not have enough information to make a definitive statement about the sequence."
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are looking for a more detailed explanation. Let's break down the sequence and the conditions you've provided:\n\n1. We are looking for a specific sequence: A followed by B followed by C.\n2. We are given the current state, which is B.\n3. We need to know the previous state to determine if we are indeed in sequence A followed by B followed by C.\n4. We also need to know the next state to confirm if the sequence ends with A then B then C.\n\nSince we only have the current state (B) and no information about the previous or next states, we cannot confirm the sequence. The sequence could have started with A and is currently at B, but without knowing what comes after B, we cannot complete the sequence. Similarly, if the sequence started with A but did not continue to C, we would still not have the complete sequence.\n\nTherefore, with the information provided, we cannot conclude that the sequence ends with A then B then C. The correct response remains [WAIT], as we do not have enough information to make a definitive statement about the sequence.",
+      "correct": true,
+      "prompt_tokens": 1347,
+      "completion_tokens": 223,
+      "peer_responses": [
+        "I understand that you are looking for a more detailed explanation. Let's break down the sequence and the conditions you've provided:\n\n1. We are looking for a specific sequence: A followed by B followed by C.\n2. We are given the current state, which is B.\n3. We need to know the previous state to determine if we are indeed in sequence A followed by B followed by C.\n4. We also need to know the next state to confirm if the sequence ends with A then B then C.\n\nSince we only have the current state (B) and no information about the previous or next states, we cannot confirm the sequence. The sequence could have started with A and is currently at B, but without knowing what comes after B, we cannot complete the sequence. Similarly, if the sequence started with A but did not continue to C, we would still not have the complete sequence.\n\nTherefore, with the information provided, we cannot conclude that the sequence ends with A then B then C. The correct response remains [WAIT], as we do not have enough information to make a definitive statement about the sequence."
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are looking for a more detailed explanation. Let's break down the sequence and the conditions you've provided:\n\n1. We are looking for a specific sequence: A followed by B followed by C.\n2. We are given the current state, which is B.\n3. We need to know the previous state to determine if we are indeed in sequence A followed by B followed by C.\n4. We also need to know the next state to confirm if the sequence ends with A then B then C.\n\nSince we only have the current state (B) and no information about the previous or next states, we cannot confirm the sequence. The sequence could have started with A and is currently at B, but without knowing what comes after B, we cannot complete the sequence. Similarly, if the sequence started with A but did not continue to C, we would still not have the complete sequence.\n\nTherefore, with the information provided, we cannot conclude that the sequence ends with A then B then C. The correct response remains [WAIT], as we do not have enough information to make a definitive statement about the sequence.",
+      "correct": true,
+      "prompt_tokens": 1802,
+      "completion_tokens": 223,
+      "peer_responses": [
+        "I understand that you are looking for a more detailed explanation. Let's break down the sequence and the conditions you've provided:\n\n1. We are looking for a specific sequence: A followed by B followed by C.\n2. We are given the current state, which is B.\n3. We need to know the previous state to determine if we are indeed in sequence A followed by B followed by C.\n4. We also need to know the next state to confirm if the sequence ends with A then B then C.\n\nSince we only have the current state (B) and no information about the previous or next states, we cannot confirm the sequence. The sequence could have started with A and is currently at B, but without knowing what comes after B, we cannot complete the sequence. Similarly, if the sequence started with A but did not continue to C, we would still not have the complete sequence.\n\nTherefore, with the information provided, we cannot conclude that the sequence ends with A then B then C. The correct response remains [WAIT], as we do not have enough information to make a definitive statement about the sequence."
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are looking for a more detailed explanation. Let's break down the sequence and the conditions you've provided:\n\n1. We are looking for a specific sequence: A followed by B followed by C.\n2. We are given the current state, which is B.\n3. We need to know the previous state to determine if we are indeed in sequence A followed by B followed by C.\n4. We also need to know the next state to confirm if the sequence ends with A then B then C.\n\nSince we only have the current state (B) and no information about the previous or next states, we cannot confirm the sequence. The sequence could have started with A and is currently at B, but without knowing what comes after B, we cannot complete the sequence. Similarly, if the sequence started with A but did not continue to C, we would still not have the complete sequence.\n\nTherefore, with the information provided, we cannot conclude that the sequence ends with A then B then C. The correct response remains [WAIT], as we do not have enough information to make a definitive statement about the sequence.",
+      "correct": true,
+      "prompt_tokens": 2257,
+      "completion_tokens": 223,
+      "peer_responses": [
+        "I understand that you are looking for a more detailed explanation. Let's break down the sequence and the conditions you've provided:\n\n1. We are looking for a specific sequence: A followed by B followed by C.\n2. We are given the current state, which is B.\n3. We need to know the previous state to determine if we are indeed in sequence A followed by B followed by C.\n4. We also need to know the next state to confirm if the sequence ends with A then B then C.\n\nSince we only have the current state (B) and no information about the previous or next states, we cannot confirm the sequence. The sequence could have started with A and is currently at B, but without knowing what comes after B, we cannot complete the sequence. Similarly, if the sequence started with A but did not continue to C, we would still not have the complete sequence.\n\nTherefore, with the information provided, we cannot conclude that the sequence ends with A then B then C. The correct response remains [WAIT], as we do not have enough information to make a definitive statement about the sequence."
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are looking for a more detailed explanation. Let's break down the sequence and the conditions you've provided:\n\n1. We are looking for a specific sequence: A followed by B followed by C.\n2. We are given the current state, which is B.\n3. We need to know the previous state to determine if we are indeed in sequence A followed by B followed by C.\n4. We also need to know the next state to confirm if the sequence ends with A then B then C.\n\nSince we only have the current state (B) and no information about the previous or next states, we cannot confirm the sequence. The sequence could have started with A and is currently at B, but without knowing what comes after B, we cannot complete the sequence. Similarly, if the sequence started with A but did not continue to C, we would still not have the complete sequence.\n\nTherefore, with the information provided, we cannot conclude that the sequence ends with A then B then C. The correct response remains [WAIT], as we do not have enough information to make a definitive statement about the sequence.",
+      "correct": true,
+      "prompt_tokens": 2712,
+      "completion_tokens": 223,
+      "peer_responses": [
+        "I understand that you are looking for a more detailed explanation. Let's break down the sequence and the conditions you've provided:\n\n1. We are looking for a specific sequence: A followed by B followed by C.\n2. We are given the current state, which is B.\n3. We need to know the previous state to determine if we are indeed in sequence A followed by B followed by C.\n4. We also need to know the next state to confirm if the sequence ends with A then B then C.\n\nSince we only have the current state (B) and no information about the previous or next states, we cannot confirm the sequence. The sequence could have started with A and is currently at B, but without knowing what comes after B, we cannot complete the sequence. Similarly, if the sequence started with A but did not continue to C, we would still not have the complete sequence.\n\nTherefore, with the information provided, we cannot conclude that the sequence ends with A then B then C. The correct response remains [WAIT], as we do not have enough information to make a definitive statement about the sequence."
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are looking for a more detailed explanation. Let's break down the sequence and the conditions you've provided:\n\n1. We are looking for a specific sequence: A followed by B followed by C.\n2. We are given the current state, which is B.\n3. We need to know the previous state to determine if we are indeed in sequence A followed by B followed by C.\n4. We also need to know the next state to confirm if the sequence ends with A then B then C.\n\nSince we only have the current state (B) and no information about the previous or next states, we cannot confirm the sequence. The sequence could have started with A and is currently at B, but without knowing what comes after B, we cannot complete the sequence. Similarly, if the sequence started with A but did not continue to C, we would still not have the complete sequence.\n\nTherefore, with the information provided, we cannot conclude that the sequence ends with A then B then C. The correct response remains [WAIT], as we do not have enough information to make a definitive statement about the sequence.",
+      "correct": true,
+      "prompt_tokens": 3167,
+      "completion_tokens": 223,
+      "peer_responses": [
+        "I understand that you are looking for a more detailed explanation. Let's break down the sequence and the conditions you've provided:\n\n1. We are looking for a specific sequence: A followed by B followed by C.\n2. We are given the current state, which is B.\n3. We need to know the previous state to determine if we are indeed in sequence A followed by B followed by C.\n4. We also need to know the next state to confirm if the sequence ends with A then B then C.\n\nSince we only have the current state (B) and no information about the previous or next states, we cannot confirm the sequence. The sequence could have started with A and is currently at B, but without knowing what comes after B, we cannot complete the sequence. Similarly, if the sequence started with A but did not continue to C, we would still not have the complete sequence.\n\nTherefore, with the information provided, we cannot conclude that the sequence ends with A then B then C. The correct response remains [WAIT], as we do not have enough information to make a definitive statement about the sequence."
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are looking for a more detailed explanation. Let's break down the sequence and the conditions you've provided:\n\n1. We are looking for a specific sequence: A followed by B followed by C.\n2. We are given the current state, which is B.\n3. We need to know the previous state to determine if we are indeed in sequence A followed by B followed by C.\n4. We also need to know the next state to confirm if the sequence ends with A then B then C.\n\nSince we only have the current state (B) and no information about the previous or next states, we cannot confirm the sequence. The sequence could have started with A and is currently at B, but without knowing what comes after B, we cannot complete the sequence. Similarly, if the sequence started with A but did not continue to C, we would still not have the complete sequence.\n\nTherefore, with the information provided, we cannot conclude that the sequence ends with A then B then C. The correct response remains [WAIT], as we do not have enough information to make a definitive statement about the sequence.",
+      "correct": true,
+      "prompt_tokens": 3622,
+      "completion_tokens": 223,
+      "peer_responses": [
+        "I understand that you are looking for a more detailed explanation. Let's break down the sequence and the conditions you've provided:\n\n1. We are looking for a specific sequence: A followed by B followed by C.\n2. We are given the current state, which is B.\n3. We need to know the previous state to determine if we are indeed in sequence A followed by B followed by C.\n4. We also need to know the next state to confirm if the sequence ends with A then B then C.\n\nSince we only have the current state (B) and no information about the previous or next states, we cannot confirm the sequence. The sequence could have started with A and is currently at B, but without knowing what comes after B, we cannot complete the sequence. Similarly, if the sequence started with A but did not continue to C, we would still not have the complete sequence.\n\nTherefore, with the information provided, we cannot conclude that the sequence ends with A then B then C. The correct response remains [WAIT], as we do not have enough information to make a definitive statement about the sequence."
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that you are looking for a more detailed explanation. Let's break down the sequence and the",
+      "correct": true,
+      "prompt_tokens": 4077,
+      "completion_tokens": 19,
+      "peer_responses": [
+        "I understand that you are looking for a more detailed explanation. Let's break down the sequence and the conditions you've provided:\n\n1. We are looking for a specific sequence: A followed by B followed by C.\n2. We are given the current state, which is B.\n3. We need to know the previous state to determine if we are indeed in sequence A followed by B followed by C.\n4. We also need to know the next state to confirm if the sequence ends with A then B then C.\n\nSince we only have the current state (B) and no information about the previous or next states, we cannot confirm the sequence. The sequence could have started with A and is currently at B, but without knowing what comes after B, we cannot complete the sequence. Similarly, if the sequence started with A but did not continue to C, we would still not have the complete sequence.\n\nTherefore, with the information provided, we cannot conclude that the sequence ends with A then B then C. The correct response remains [WAIT], as we do not have enough information to make a definitive statement about the sequence."
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 1.0,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 0,
+    "n_wait_trials": 30
+  }
+}

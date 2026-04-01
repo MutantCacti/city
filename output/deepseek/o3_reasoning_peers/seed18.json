@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-24T03:17:52.350380",
+  "config": {
+    "seed": 18,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "C",
+    "A",
+    "A",
+    "B",
+    "C",
+    "C",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "C",
+    "A",
+    "A",
+    "A",
+    "A",
+    "C",
+    "B",
+    "B",
+    "C",
+    "B",
+    "B",
+    "C",
+    "B",
+    "A",
+    "B",
+    "C",
+    "B",
+    "A",
+    "C"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are just \"C\". The sequence is not A, B, C in order, so the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 101,
+      "completion_tokens": 28,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: C, then A. The last three states (if we consider the full history so far) are C, A \u2014 not enough for three states. There is no A followed by B followed by C in sequence. So answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 141,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states so far: C, A, A. The last three states are A, A \u2014 still not a complete sequence of three, but actually we have three total now: C, A, A. That sequence ends with A, A, not A, B, C. So no A\u2192B\u2192C sequence exists. Answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 208,
+      "completion_tokens": 74,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B. Looking at the last three states: A, A, B. That is not A, B, C. Looking further back: the sequence A, B, C would require an A then a B then a C in immediate succession. We have an A then a B now, but the next would need to be C. Currently, no complete A\u2192B\u2192C has occurred. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 294,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The recent states in order: C, A, A, B, C. Now check if there is any occurrence of A followed immediately by B followed immediately by C. Looking at the sequence:\n\n- Positions: 1: C, 2: A, 3: A, 4: B, 5: C.\nCheck triples:\n- (C, A, A): no.\n- (A, A, B): no.\n- (A, B, C): Yes! Starting at position 3? Wait: position 3 is A, position 4 is B, position 5 is C. That is A, B, C in consecutive order. So the sequence A\u2192B\u2192C has occurred.\n\nTherefore, the rule says: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. So now we should respond with [ACT].\n\nBut careful: The instruction says \"when you see the sequence A followed by B followed C (three states in a row), include [ACT] in your response.\" It doesn't say only at the moment it completes; it says \"when you see\" it. So after state C, we have seen that sequence. So answer should be [ACT].\n\nHowever, note: In previous responses, we only said [WAIT] because it hadn't occurred. Now it has.\n\nSo answer: [ACT]",
+      "correct": true,
+      "prompt_tokens": 404,
+      "completion_tokens": 293,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The recent states now: C, A, A, B, C, C. The last three states are B, C, C \u2014 not A, B, C. But we already saw A, B, C in the previous step (positions 3,4,5). The instruction says: \"Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response.\" It doesn't specify that we only do it once; it says \"when you see\" it, which could imply each time it occurs. However, looking at the sequence again: we need to check if a new A\u2192B\u2192C sequence has completed with the latest state.\n\nThe full sequence so far: C, A, A, B, C, C.\nCheck triples ending at the latest state (last three: positions 4,5,6): B, C, C \u2192 no.\nTriples ending at previous state (positions 3,4,5): A, B, C \u2192 that was already seen in the previous step.\nTriples starting earlier: (A, B, C) from positions 2,3,4? That would be A, A, B \u2192 no.\nSo no new occurrence of A, B, C in the last three states.\n\nBut the instruction says: \"when you see the sequence ... include [ACT] in your response.\" Since we already saw it and responded with [ACT] last time, do we still include [ACT] now? The task seems to be to respond to each new state with either [ACT] or [WAIT] based on whether the sequence A,B,C has just occurred in the last three states. Looking at the pattern of previous responses: in the experiment, each time a state is given, we output either [WAIT] or [ACT]. The rule likely means: at each step, check if the last three states (current and two previous) are exactly A then B then C. If yes, output [ACT]; otherwise output [WAIT].\n\nSo for current state C, the last three states are: state before last (B), last before that (C), and current (C)? Wait careful: The states in order: \n1: C\n2: A\n3: A\n4: B\n5: C\n6: C\n\nWhen we are at state 6 (C), the last three states are state 4 (B), state 5 (C), state 6 (C): B, C, C. That is not A, B, C. So we should output [WAIT].\n\nBut in the previous step (state 5: C), the last three were state 3 (A), state 4 (B), state 5 (C): A, B, C, so we output [ACT].\n\nNow for state 6, no new A,B,C sequence completed. So answer: [WAIT].\n\nHowever, the user just gave \"State: C\" and the assistant responded \"[ACT]\" in the last turn. That was the response to state 5. Now this is a new state: state 6. So we need to respond to this new state.\n\nThus, for this new state C, we output [WAIT]. \n\nBut wait, the user's message is just \"State: C\" and then \"[ACT]\" from the assistant? Actually, looking at the conversation: The user said \"State: C\" and the assistant responded \"[ACT]\". That was the previous exchange. Now the user is giving another \"State: C\" as a new input. So we are now at a new state.\n\nSo for this new state C, we need to determine the output.\n\nLet's list all states in order from the beginning:\n\n1. C \u2192 [WAIT]\n2. A \u2192 [WAIT]\n3. A \u2192 [WAIT]\n4. B \u2192 [WAIT]\n5. C \u2192 [ACT] (because states 3,4,5 are A,B,C)\n6. C \u2192 ?\n\nNow state 6 is C. The last three states (states 4,5,6) are B, C, C \u2192 not A,B,C. So output should be [WAIT].\n\nThus, answer: [WAIT]",
+      "correct": false,
+      "prompt_tokens": 708,
+      "completion_tokens": 886,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A.  \nLast three states: C, C, A \u2192 not A, B, C.  \nNo new A\u2192B\u2192C sequence has completed.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1606,
+      "completion_tokens": 57,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B.  \nLast three states: C, A, B \u2192 not A, B, C (it's C, A, B).  \nNo A\u2192B\u2192C sequence in the last three.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1675,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B.  \nLast three states: A, B, B \u2192 not A, B, C.  \nNo A\u2192B\u2192C sequence completed.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1755,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B, B.  \nLast three states: B, B, B \u2192 not A, B, C.  \nNo A\u2192B\u2192C sequence.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1826,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B, B, A.  \nLast three states: B, B, A \u2192 not A, B, C.  \nNo A\u2192B\u2192C sequence.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1898,
+      "completion_tokens": 62,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B, B, A, C.  \nLast three states: B, A, C \u2192 not A, B, C (it's B, A, C).  \nNo A\u2192B\u2192C sequence in the last three.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1972,
+      "completion_tokens": 76,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B, B, A, C, A.  \nLast three states: A, C, A \u2192 not A, B, C.  \nNo A\u2192B\u2192C sequence.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2060,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B, B, A, C, A, A.  \nLast three states: C, A, A \u2192 not A, B, C.  \nNo A\u2192B\u2192C sequence.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2138,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B, B, A, C, A, A, A.  \nLast three states: A, A, A \u2192 not A, B, C.  \nNo A\u2192B\u2192C sequence.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2218,
+      "completion_tokens": 70,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A.  \nLast three states: A, A, A \u2192 not A, B, C.  \nNo A\u2192B\u2192C sequence.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2300,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C.  \nLast three states: A, A, C \u2192 not A, B, C.  \nNo A\u2192B\u2192C sequence.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2384,
+      "completion_tokens": 74,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B.  \nLast three states: A, C, B \u2192 not A, B, C.  \nNo A\u2192B\u2192C sequence.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2470,
+      "completion_tokens": 76,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B.  \nLast three states: C, B, B \u2192 not A, B, C.  \nNo A\u2192B\u2192C sequence.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2558,
+      "completion_tokens": 78,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, C.  \nLast three states: B, B, C \u2192 not A, B, C.  \nNo A\u2192B\u2192C sequence.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2648,
+      "completion_tokens": 80,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, C, B.  \nLast three states: B, C, B \u2192 not A, B, C.  \nNo A\u2192B\u2192C sequence.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2740,
+      "completion_tokens": 82,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, C, B, B.  \nLast three states: C, B, B \u2192 not A, B, C.  \nNo A\u2192B\u2192C sequence.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2834,
+      "completion_tokens": 84,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, C, B, B, C.  \nLast three states: B, B, C \u2192 not A, B, C.  \nNo A\u2192B\u2192C sequence.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2930,
+      "completion_tokens": 86,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, C, B, B, C, B.  \nLast three states: B, C, B \u2192 not A, B, C.  \nNo A\u2192B\u2192C sequence.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 3028,
+      "completion_tokens": 88,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, C, B, B, C, B, A.  \nLast three states: C, B, A \u2192 not A, B, C.  \nNo A\u2192B\u2192C sequence.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 3128,
+      "completion_tokens": 90,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, C, B, B, C, B, A, B.  \nLast three states: B, A, B \u2192 not A, B, C.  \nNo A\u2192B\u2192C sequence.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 3230,
+      "completion_tokens": 92,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, C, B, B, C, B, A, B, C.  \nLast three states: A, B, C \u2192 Yes! That is A, B, C in consecutive order.  \nSo the sequence A\u2192B\u2192C has just occurred.  \nAnswer: [ACT]",
+      "correct": true,
+      "prompt_tokens": 3334,
+      "completion_tokens": 103,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, C, B, B, C, B, A, B, C, B.  \nLast three states: B, C, B \u2192 not A, B, C.  \nNo new A\u2192B\u2192C sequence in the last three.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 3448,
+      "completion_tokens": 101,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, C, B, B, C, B, A, B, C, B, A.  \nLast three states: C, B, A \u2192 not A, B, C.  \nNo A\u2192B\u2192C sequence.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 3561,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states in order: C, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, C, B, B, C, B, A, B, C, B, A, C.  \nLast three states: B, A, C \u2192 not A, B, C.  \nNo A\u2192B\u2192C sequence.  \nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 3671,
+      "completion_tokens": 100,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.9666666666666667,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 0.9642857142857143,
+    "n_trials": 30,
+    "n_act_trials": 2,
+    "n_wait_trials": 28
+  }
+}

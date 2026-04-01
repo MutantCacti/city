@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-24T17:48:44.191188",
+  "config": {
+    "seed": 29,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "anthropic",
+    "model_name": "claude-haiku-4-5-20251001",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.2,
+    "system_prompt": "Respond [ACT] if the last two states were A then B. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I acknowledge the instruction. I'm ready to monitor state transitions:\n\n- If I observe state A followed by state B in consecutive observations, I will respond with **[ACT]**\n- Otherwise, I will respond with **[WAIT]**\n\nCurrently, one state (A) has been observed. Waiting for the next state.",
+      "correct": true,
+      "prompt_tokens": 67,
+      "completion_tokens": 74,
+      "peer_responses": [
+        "[WAIT]\n\n(Only one state has been observed so far. I need to see two consecutive states of A then B to respond with [ACT].)"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Correct! The last two consecutive states were A followed by B, which matches the trigger condition. I responded with [ACT] as instructed.\n\nI'm now ready to continue monitoring for the next state transition.",
+      "correct": true,
+      "prompt_tokens": 172,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states were A then B, so I respond with [ACT].)"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Correct! The last two consecutive states are now A then A, which does not match the required pattern of A then B. I respond with [WAIT].\n\nReady to monitor the next state.",
+      "correct": true,
+      "prompt_tokens": 262,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now A then A, which does not match the pattern A then B, so I respond with [WAIT].)"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "You're right to correct yourself. Looking at the sequence: A, B, A, B\n\nThe last two consecutive states are indeed A then B, which matches the trigger condition exactly.\n\nThe correct response is **[ACT]**.\n\nThank you for the correction and for showing the self-check process. I'm ready to continue monitoring.",
+      "correct": true,
+      "prompt_tokens": 393,
+      "completion_tokens": 74,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now A then B. Wait - let me reconsider: the sequence of states observed has been A, B, A, B. The most recent two states are A then B, which matches the trigger condition.)\n\n[ACT]\n\n(The last two states were A then B, so I respond with [ACT].)"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Correct! The sequence is now A, B, A, B, B.\n\nThe last two consecutive states are B then B, which does not match the required pattern of A then B. I respond with [WAIT].\n\nReady to monitor the next state.",
+      "correct": true,
+      "prompt_tokens": 509,
+      "completion_tokens": 58,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now B then B, which does not match the pattern A then B, so I respond with [WAIT].)"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Correct! The sequence is now A, B, A, B, B, A.\n\nThe last two consecutive states are B then A, which does not match the required pattern of A then B. I respond with [WAIT].\n\nReady to monitor the next state.",
+      "correct": true,
+      "prompt_tokens": 609,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now B then A, which does not match the pattern A then B, so I respond with [WAIT].)"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Correct! The sequence is now A, B, A, B, B, A, A.\n\nThe last two consecutive states are A then A, which does not match the required pattern of A then B. I respond with [WAIT].\n\nReady to monitor the next state.",
+      "correct": true,
+      "prompt_tokens": 711,
+      "completion_tokens": 62,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now A then A, which does not match the pattern A then B, so I respond with [WAIT].)"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Correct! The sequence is now A, B, A, B, B, A, A, A.\n\nThe last two consecutive states are A then A, which does not match the required pattern of A then B. I respond with [WAIT].\n\nReady to monitor the next state.",
+      "correct": true,
+      "prompt_tokens": 815,
+      "completion_tokens": 64,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now A then A, which does not match the pattern A then B, so I respond with [WAIT].)"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Correct! The sequence is now A, B, A, B, B, A, A, A, B.\n\nThe last two consecutive states are A then B, which matches the required pattern exactly. I respond with [ACT].\n\nReady to monitor the next state.",
+      "correct": true,
+      "prompt_tokens": 917,
+      "completion_tokens": 61,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are now A then B, which matches the trigger condition, so I respond with [ACT].)"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Correct! The sequence is now A, B, A, B, B, A, A, A, B, A.\n\nThe last two consecutive states are B then A, which does not match the required pattern of A then B. I respond with [WAIT].\n\nReady to monitor the next state.",
+      "correct": true,
+      "prompt_tokens": 1020,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now B then A, which does not match the pattern A then B, so I respond with [WAIT].)"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now A then A, which does not match the pattern A then B, so I respond with [WAIT].)"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Let me trace through this carefully:\n\nPrevious sequence: A, B, A, B, B, A, A, A, B, A\n\nAfter \"State: A\" \u2192 sequence becomes: A, B, A, B, B, A, A, A, B, A, A\n- Last two states: A then A \u2192 [WAIT] \u2713\n\nAfter \"State: B\" \u2192 sequence becomes: A, B, A, B, B, A, A, A, B, A, A, B\n- Last two states: A then B \u2192 [ACT] \u2713\n\nYou're correct! The second response should be [ACT], not [WAIT]. The last two consecutive states are A then B, which matches the trigger condition.\n\nReady to monitor the next state.",
+      "correct": false,
+      "prompt_tokens": 1202,
+      "completion_tokens": 176,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are now A then B, which matches the trigger condition, so I respond with [ACT].)"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Correct! The sequence is now A, B, A, B, B, A, A, A, B, A, A, B, A.\n\nThe last two consecutive states are B then A, which does not match the required pattern of A then B. I respond with [WAIT].\n\nReady to monitor the next state.",
+      "correct": true,
+      "prompt_tokens": 1420,
+      "completion_tokens": 74,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now B then A, which does not match the pattern A then B, so I respond with [WAIT].)"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now A then A, which does not match the pattern A then B, so I respond with [WAIT].)"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me trace through this:\n\nPrevious sequence: A, B, A, B, B, A, A, A, B, A, A, B, A\n\nAfter \"State: A\" \u2192 sequence becomes: A, B, A, B, B, A, A, A, B, A, A, B, A, A\n- Last two states: A then A \u2192 [WAIT] \u2713\n\nAfter \"State: A\" \u2192 sequence becomes: A, B, A, B, B, A, A, A, B, A, A, B, A, A, A\n- Last two states: A then A \u2192 [WAIT] \u2713\n\nAfter \"State: A\" \u2192 sequence becomes: A, B, A, B, B, A, A, A, B, A, A, B, A, A, A, A\n- Last two states: A then A \u2192 [WAIT] \u2713\n\nAll three responses are correct! The pattern continues to be A then A, which does not match the required A then B trigger.\n\nReady to monitor the next state.",
+      "correct": true,
+      "prompt_tokens": 1612,
+      "completion_tokens": 244,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now A then A, which does not match the pattern A then B, so I respond with [WAIT].)"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Correct! The sequence is now A, B, A, B, B, A, A, A, B, A, A, B, A, A, A, A, A.\n\nThe last two consecutive states are A then A, which does not match the required pattern of A then B. I respond with [WAIT].\n\nReady to monitor the next state.",
+      "correct": true,
+      "prompt_tokens": 1898,
+      "completion_tokens": 82,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now A then A, which does not match the pattern A then B, so I respond with [WAIT].)"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Correct! The sequence is now A, B, A, B, B, A, A, A, B, A, A, B, A, A, A, A, A, A.\n\nThe last two consecutive states are A then A, which does not match the required pattern of A then B. I respond with [WAIT].\n\nReady to monitor the next state.",
+      "correct": true,
+      "prompt_tokens": 2022,
+      "completion_tokens": 84,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now A then A, which does not match the pattern A then B, so I respond with [WAIT].)"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Correct! The sequence is now A, B, A, B, B, A, A, A, B, A, A, B, A, A, A, A, A, A, B.\n\nThe last two consecutive states are A then B, which matches the required pattern exactly. I respond with [ACT].\n\nReady to monitor the next state.",
+      "correct": true,
+      "prompt_tokens": 2144,
+      "completion_tokens": 81,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are now A then B, which matches the trigger condition, so I respond with [ACT].)"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Correct! The sequence is now A, B, A, B, B, A, A, A, B, A, A, B, A, A, A, A, A, A, B, B.\n\nThe last two consecutive states are B then B, which does not match the required pattern of A then B. I respond with [WAIT].\n\nReady to monitor the next state.",
+      "correct": true,
+      "prompt_tokens": 2267,
+      "completion_tokens": 88,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now B then B, which does not match the pattern A then B, so I respond with [WAIT].)"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now B then A, which does not match the pattern A then B, so I respond with [WAIT].)"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me trace through this:\n\nPrevious sequence: A, B, A, B, B, A, A, A, B, A, A, B, A, A, A, A, A, A, B, B\n\nAfter \"State: A\" \u2192 sequence becomes: A, B, A, B, B, A, A, A, B, A, A, B, A, A, A, A, A, A, B, B, A\n- Last two states: B then A \u2192 [WAIT] \u2713\n\nAfter \"State: A\" \u2192 sequence becomes: A, B, A, B, B, A, A, A, B, A, A, B, A, A, A, A, A, A, B, B, A, A\n- Last two states: A then A \u2192 [WAIT] \u2713\n\nAll three responses are correct! The pattern transitions from B then A to A then A, neither of which matches the required A then B trigger.\n\nReady to monitor the next state.",
+      "correct": true,
+      "prompt_tokens": 2473,
+      "completion_tokens": 230,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now A then A, which does not match the pattern A then B, so I respond with [WAIT].)"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Correct! The sequence is now A, B, A, B, B, A, A, A, B, A, A, B, A, A, A, A, A, A, B, B, A, A, B.\n\nThe last two consecutive states are A then B, which matches the required pattern exactly. I respond with [ACT].\n\nReady to monitor the next state.",
+      "correct": true,
+      "prompt_tokens": 2741,
+      "completion_tokens": 89,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are now A then B, which matches the trigger condition, so I respond with [ACT].)"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Correct! The sequence is now A, B, A, B, B, A, A, A, B, A, A, B, A, A, A, A, A, A, B, B, A, A, B, B.\n\nThe last two consecutive states are B then B, which does not match the required pattern of A then B. I respond with [WAIT].\n\nReady to monitor the next state.",
+      "correct": true,
+      "prompt_tokens": 2872,
+      "completion_tokens": 96,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now B then B, which does not match the pattern A then B, so I respond with [WAIT].)"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me trace through this:\n\nPrevious sequence: A, B, A, B, B, A, A, A, B, A, A, B, A, A, A, A, A, A, B, B, A, A, B, B\n\nAfter \"State: B\" \u2192 sequence becomes: A, B, A, B, B, A, A, A, B, A, A, B, A, A, A, A, A, A, B, B, A, A, B, B, B\n- Last two states: B then B \u2192 [WAIT]\n\nAfter \"State: B\" \u2192 sequence becomes: A, B, A, B, B, A, A, A, B, A, A, B, A, A, A, A, A, A, B, B, A, A, B, B, B, B\n- Last two states: B then B \u2192 [WAIT] \u2713\n\nBoth responses are correct! The pattern continues to be B then B, which does not match the required A then B trigger.\n\nReady to monitor the next state.",
+      "correct": true,
+      "prompt_tokens": 3014,
+      "completion_tokens": 247,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now B then B, which does not match the pattern A then B, so I respond with [WAIT].)"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Correct! The sequence is now A, B, A, B, B, A, A, A, B, A, A, B, A, A, A, A, A, A, B, B, A, A, B, B, B, B, B.\n\nThe last two consecutive states are B then B, which does not match the required pattern of A then B. I respond with [WAIT].\n\nReady to monitor the next state.",
+      "correct": true,
+      "prompt_tokens": 3303,
+      "completion_tokens": 102,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now B then B, which does not match the pattern A then B, so I respond with [WAIT].)"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now B then A, which does not match the pattern A then B, so I respond with [WAIT].)"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now A then A, which does not match the pattern A then B, so I respond with [WAIT].)"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me trace through this carefully:\n\nPrevious sequence: A, B, A, B, B, A, A, A, B, A, A, B, A, A, A, A, A, A, B, B, A, A, B, B, B, B, B\n\nAfter \"State: A\" \u2192 sequence becomes: ...B, B, B, A\n- Last two states: B then A \u2192 [WAIT] \u2713\n\nAfter \"State: A\" \u2192 sequence becomes: ...B, B, A, A\n- Last two states: A then A \u2192 [WAIT] \u2713\n\nAfter \"State: A\" \u2192 sequence becomes: ...B, A, A, A\n- Last two states: A then A \u2192 [WAIT] \u2713\n\nAfter \"State: A\" \u2192 sequence becomes: ...A, A, A, A\n- Last two states: A then A \u2192 [WAIT] \u2713\n\nAll seven responses are correct! The pattern progresses through B then A, then multiple instances of A then A, none of which match the required A then B trigger.\n\nReady to monitor the next state.",
+      "correct": true,
+      "prompt_tokens": 3639,
+      "completion_tokens": 254,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now A then A, which does not match the pattern A then B, so I respond with [WAIT].)"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.9666666666666667,
+    "act_accuracy": 0.8333333333333334,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 6,
+    "n_wait_trials": 24
+  }
+}

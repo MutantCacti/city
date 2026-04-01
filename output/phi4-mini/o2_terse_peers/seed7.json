@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-23T15:26:05.941068",
+  "config": {
+    "seed": 7,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "Respond [ACT] if the last two states were A then B. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "As per your instructions, since the last two states were A then B, the response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 32,
+      "completion_tokens": 21,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Correct, since the last two states were A then B, the response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 65,
+      "completion_tokens": 18,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "No problem at all. If the last two states were A then B, then the response is indeed [WAIT].",
+      "correct": false,
+      "prompt_tokens": 115,
+      "completion_tokens": 23,
+      "peer_responses": [
+        "Apologies for any confusion. If the last two states were indeed A then B, the response is [WAIT]."
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [WAIT]. However, if you are currently indicating a new state, which is A, then the response would be [WAIT] as well, since you are not indicating a transition from A to B.",
+      "correct": true,
+      "prompt_tokens": 150,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, if the current state is A and you are indicating a new state, the response remains [WAIT], as there is no transition from A to B to indicate.",
+      "correct": true,
+      "prompt_tokens": 222,
+      "completion_tokens": 34,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, and you are indicating a new state, the response would be [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from B to another state, please provide the new state for an accurate response.",
+      "correct": false,
+      "prompt_tokens": 268,
+      "completion_tokens": 62,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is A and you are indicating a new state, the response remains [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from A to another state, please provide the new state for an accurate response.",
+      "correct": true,
+      "prompt_tokens": 342,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B and you are indicating a new state, the response would be [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from B to another state, please provide the new state for an accurate response.",
+      "correct": false,
+      "prompt_tokens": 414,
+      "completion_tokens": 61,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is A and you are indicating a new state, the response remains [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from A to another state, please provide the new state for an accurate response.",
+      "correct": true,
+      "prompt_tokens": 487,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is A and you are indicating a new state, the response remains [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from A to another state, please provide the new state for an accurate response.",
+      "correct": true,
+      "prompt_tokens": 559,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is A and you are indicating a new state, the response remains [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from A to another state, please provide the new state for an accurate response.",
+      "correct": true,
+      "prompt_tokens": 631,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is A and you are indicating a new state, the response remains [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from A to another state, please provide the new state for an accurate response.",
+      "correct": true,
+      "prompt_tokens": 703,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B and you are indicating a new state, the response would be [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from B to another state, please provide the new state for an accurate response.",
+      "correct": false,
+      "prompt_tokens": 775,
+      "completion_tokens": 61,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is A and you are indicating a new state, the response remains [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from A to another state, please provide the new state for an accurate response.",
+      "correct": true,
+      "prompt_tokens": 848,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B and you are indicating a new state, the response would be [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from B to another state, please provide the new state for an accurate response.",
+      "correct": false,
+      "prompt_tokens": 920,
+      "completion_tokens": 61,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is A and you are indicating a new state, the response remains [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from A to another state, please provide the new state for an accurate response.",
+      "correct": true,
+      "prompt_tokens": 993,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is A and you are indicating a new state, the response remains [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from A to another state, please provide the new state for an accurate response.",
+      "correct": true,
+      "prompt_tokens": 1065,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is A and you are indicating a new state, the response remains [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from A to another state, please provide the new state for an accurate response.",
+      "correct": true,
+      "prompt_tokens": 1137,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is A and you are indicating a new state, the response remains [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from A to another state, please provide the new state for an accurate response.",
+      "correct": true,
+      "prompt_tokens": 1209,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is A and you are indicating a new state, the response remains [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from A to another state, please provide the new state for an accurate response.",
+      "correct": true,
+      "prompt_tokens": 1281,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B and you are indicating a new state, the response would be [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from B to another state, please provide the new state for an accurate response.",
+      "correct": false,
+      "prompt_tokens": 1353,
+      "completion_tokens": 61,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is A and you are indicating a new state, the response remains [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from A to another state, please provide the new state for an accurate response.",
+      "correct": true,
+      "prompt_tokens": 1426,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is A and you are indicating a new state, the response remains [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from A to another state, please provide the new state for an accurate response.",
+      "correct": true,
+      "prompt_tokens": 1498,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is A and you are indicating a new state, the response remains [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from A to another state, please provide the new state for an accurate response.",
+      "correct": true,
+      "prompt_tokens": 1570,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B and you are indicating a new state, the response would be [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from B to another state, please provide the new state for an accurate response.",
+      "correct": false,
+      "prompt_tokens": 1642,
+      "completion_tokens": 61,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B and you are indicating a new state, the response would be [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from B to another state, please provide the new state for an accurate response.",
+      "correct": true,
+      "prompt_tokens": 1715,
+      "completion_tokens": 61,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is A and you are indicating a new state, the response remains [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from A to another state, please provide the new state for an accurate response.",
+      "correct": true,
+      "prompt_tokens": 1788,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B and you are indicating a new state, the response would be [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from B to another state, please provide the new state for an accurate response.",
+      "correct": false,
+      "prompt_tokens": 1860,
+      "completion_tokens": 61,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B and you are indicating a new state, the response would be [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from B to another state, please provide the new state for an accurate response.",
+      "correct": true,
+      "prompt_tokens": 1933,
+      "completion_tokens": 61,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B and you are indicating a new state, the response would be [WAIT], as there is no transition from A to B to indicate. If you are indicating a transition from B to another state, please provide the new state for an accurate response.",
+      "correct": true,
+      "prompt_tokens": 2006,
+      "completion_tokens": 61,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.7333333333333333,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 8,
+    "n_wait_trials": 22
+  }
+}

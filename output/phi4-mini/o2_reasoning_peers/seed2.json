@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-23T15:18:24.557131",
+  "config": {
+    "seed": 2,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A or B. Your task: when you see B immediately following A, include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what was the previous state? What is the current state? Is this a B that followed an A? Then give your answer."
+  },
+  "stimulus_history": [
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 117,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "The previous state was A, and the current state is B. Since this is a B that followed an A, the answer is [ACT]."
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 159,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "The previous state was A, and the current state is A. Since this is not a B that followed an A, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": false,
+      "prompt_tokens": 211,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "The previous state was not specified, and the current state is B. Since we cannot determine if this is a B that followed an A without knowing the sequence before it, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 263,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "The previous state was not specified, and the current state is A. Since we cannot determine if this is a B that followed an A without knowing the sequence before it, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 315,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "The previous state was not specified, and the current state is A. Since we cannot determine if this is a B that followed an A without knowing the sequence before it, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 367,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "The previous state was not specified, and the current state is A. Since we cannot determine if this is a B that followed an A without knowing the sequence before it, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": false,
+      "prompt_tokens": 419,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "The previous state was not specified, and the current state is B. Since we cannot determine if this is a B that followed an A without knowing the sequence before it, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 525,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "It seems there might be a misunderstanding. If the current state is B, we cannot determine if it followed an A without additional context. If you are asking whether the current state is B and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. Could you please clarify your question?"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 620,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for any confusion. If the current state is B, and you are to respond with [ACT] if it is true, then the answer is indeed [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is B, the correct response is [ACT]."
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 716,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for the confusion earlier. If the current state is A, and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is A, the correct response is indeed [ACT]."
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 810,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for any confusion. If the current state is A, and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is A, the correct response is [ACT]."
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 904,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for any confusion. If the current state is A, and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is A, the correct response is [ACT]."
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 998,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for any confusion. If the current state is A, and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is A, the correct response is [ACT]."
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 1092,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for any confusion. If the current state is A, and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is A, the correct response is [ACT]."
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": true,
+      "prompt_tokens": 1186,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for any confusion. If the current state is B, and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is B, the correct response is [ACT]."
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 1280,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for any confusion. If the current state is B, and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is B, the correct response is [ACT]."
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 1374,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for any confusion. If the current state is B, and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is B, the correct response is [ACT]."
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 1468,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for any confusion. If the current state is B, and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is B, the correct response is [ACT]."
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 1562,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for any confusion. If the current state is A, and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is A, the correct response is [ACT]."
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 1656,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for any confusion. If the current state is A, and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is A, the correct response is [ACT]."
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": true,
+      "prompt_tokens": 1750,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for any confusion. If the current state is B, and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is B, the correct response is [ACT]."
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 1844,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for any confusion. If the current state is B, and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is B, the correct response is [ACT]."
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 1938,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for any confusion. If the current state is A, and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is A, the correct response is [ACT]."
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": true,
+      "prompt_tokens": 2032,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for any confusion. If the current state is B, and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is B, the correct response is [ACT]."
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 2126,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for any confusion. If the current state is A, and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is A, the correct response is [ACT]."
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 2220,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for any confusion. If the current state is A, and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is A, the correct response is [ACT]."
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 2314,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for any confusion. If the current state is A, and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is A, the correct response is [ACT]."
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": true,
+      "prompt_tokens": 2408,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for any confusion. If the current state is B, and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is B, the correct response is [ACT]."
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 2502,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for any confusion. If the current state is B, and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is B, the correct response is [ACT]."
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 2596,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Apologies for any confusion. If the current state is B, and you are to respond with [ACT] if it is true, then the answer is [ACT]. If you are asking for a response based on a sequence where B follows A, and we don't have that sequence, the answer is [WAIT]. However, since you have confirmed the current state is B, the correct response is [ACT]."
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.3,
+    "act_accuracy": 0.6666666666666666,
+    "wait_accuracy": 0.20833333333333334,
+    "n_trials": 30,
+    "n_act_trials": 6,
+    "n_wait_trials": 24
+  }
+}

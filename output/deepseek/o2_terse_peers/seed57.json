@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-24T02:24:46.996636",
+  "config": {
+    "seed": 57,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "Respond [ACT] if the last two states were A then B. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The last two states were A then B, so the correct response is [ACT].",
+      "correct": false,
+      "prompt_tokens": 32,
+      "completion_tokens": 17,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then A. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 60,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were A then A. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 105,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The last two states were A then B. Since the condition \"last two states were A then B\" is met, the correct response is [ACT].",
+      "correct": true,
+      "prompt_tokens": 150,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then B. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 192,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then B. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 237,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then A. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 282,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were A then A. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 327,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were A then A. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 372,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The last two states were A then B. Since the condition \"last two states were A then B\" is met, the correct response is [ACT].",
+      "correct": true,
+      "prompt_tokens": 417,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then B. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 459,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then B. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 504,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then B. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 549,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then B. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 594,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then B. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 639,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then B. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 684,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then B. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 729,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then A. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 774,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were A then A. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 819,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were A then A. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 864,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were A then A. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 909,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The last two states were A then B. Since the condition \"last two states were A then B\" is met, the correct response is [ACT].",
+      "correct": true,
+      "prompt_tokens": 954,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then A. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 996,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The last two states were A then B. Since the condition \"last two states were A then B\" is met, the correct response is [ACT].",
+      "correct": true,
+      "prompt_tokens": 1041,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then A. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1083,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The last two states were A then B. Since the condition \"last two states were A then B\" is met, the correct response is [ACT].",
+      "correct": true,
+      "prompt_tokens": 1128,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then B. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1170,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then A. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1215,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The last two states were A then B. Since the condition \"last two states were A then B\" is met, the correct response is [ACT].",
+      "correct": true,
+      "prompt_tokens": 1260,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then A. Since the condition \"last two states were A then B\" is not met, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1302,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.9666666666666667,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 0.9583333333333334,
+    "n_trials": 30,
+    "n_act_trials": 6,
+    "n_wait_trials": 24
+  }
+}

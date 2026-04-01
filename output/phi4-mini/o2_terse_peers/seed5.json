@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-23T15:25:42.995903",
+  "config": {
+    "seed": 5,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "Respond [ACT] if the last two states were A then B. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "As per your instructions, since the last two states were A then B, I should respond with [ACT]. However, since you provided only one state (A), I will respond with [WAIT].",
+      "correct": false,
+      "prompt_tokens": 32,
+      "completion_tokens": 40,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Correct, based on the pattern you've established, if the last two states were A then B, the response is [ACT]. However, since you've only provided one state (A), the response is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 84,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Yes, that's correct. If the last two states were A then B, the response is [ACT]. But since you've provided only one state (A), the response remains [WAIT].",
+      "correct": false,
+      "prompt_tokens": 138,
+      "completion_tokens": 37,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "That's right. The response is [WAIT] because you've provided only one state (A), not two consecutive states. If you were to provide two states in sequence, such as A then B, the response would be [ACT].",
+      "correct": false,
+      "prompt_tokens": 187,
+      "completion_tokens": 46,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Your response is consistent with the pattern you've established. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (A), the response is [WAIT]. If you need further assistance or have another question, feel free to ask!",
+      "correct": false,
+      "prompt_tokens": 245,
+      "completion_tokens": 58,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Correct, the response is [WAIT]. You have provided only one state (A), not two consecutive states. If you were to provide two states in sequence, such as A then B, the response would be [ACT]. If you have any other questions or need assistance with something else, please let me know!",
+      "correct": false,
+      "prompt_tokens": 315,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (B), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": true,
+      "prompt_tokens": 390,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (B), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": false,
+      "prompt_tokens": 457,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (A), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": false,
+      "prompt_tokens": 524,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (A), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": false,
+      "prompt_tokens": 591,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (B), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": true,
+      "prompt_tokens": 658,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (B), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": false,
+      "prompt_tokens": 725,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (A), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": false,
+      "prompt_tokens": 792,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (A), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": false,
+      "prompt_tokens": 859,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (B), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": true,
+      "prompt_tokens": 926,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (A), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": false,
+      "prompt_tokens": 993,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (A), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": false,
+      "prompt_tokens": 1060,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (A), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": false,
+      "prompt_tokens": 1127,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (B), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": true,
+      "prompt_tokens": 1194,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (A), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": false,
+      "prompt_tokens": 1261,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (B), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": true,
+      "prompt_tokens": 1328,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (B), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": false,
+      "prompt_tokens": 1395,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (A), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": false,
+      "prompt_tokens": 1462,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (A), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": false,
+      "prompt_tokens": 1529,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (B), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": true,
+      "prompt_tokens": 1596,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (A), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": false,
+      "prompt_tokens": 1663,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (A), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": false,
+      "prompt_tokens": 1730,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (A), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": false,
+      "prompt_tokens": 1797,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (B), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": true,
+      "prompt_tokens": 1864,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last two states were A then B, the response is [ACT]. However, since you've provided only one state (B), the response is [WAIT]. If you have any other questions or need further clarification, please let me know!",
+      "correct": false,
+      "prompt_tokens": 1931,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.23333333333333334,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 0.0,
+    "n_trials": 30,
+    "n_act_trials": 7,
+    "n_wait_trials": 23
+  }
+}

@@ -1,0 +1,514 @@
+{
+  "timestamp": "2026-03-23T15:27:19.287660",
+  "config": {
+    "seed": 11,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 1,
+    "tick_seconds": 0.0,
+    "system_prompt": "Respond [ACT] if the last two states were A then B. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 27,
+      "completion_tokens": 3,
+      "peer_responses": []
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 37,
+      "completion_tokens": 3,
+      "peer_responses": []
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": true,
+      "prompt_tokens": 47,
+      "completion_tokens": 3,
+      "peer_responses": []
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It seems like you're confirming the current state as B. If that's correct and you need further assistance, please let me know how I can help!",
+      "correct": true,
+      "prompt_tokens": 57,
+      "completion_tokens": 29,
+      "peer_responses": []
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Great, if you have any questions or need assistance with anything else, feel free to ask. How can I assist you further?",
+      "correct": true,
+      "prompt_tokens": 93,
+      "completion_tokens": 26,
+      "peer_responses": []
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If you need help or have any questions, I'm here to assist you. What can I do for you today?",
+      "correct": true,
+      "prompt_tokens": 126,
+      "completion_tokens": 29,
+      "peer_responses": []
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Understood, the current state is B. If there's anything specific you'd like to know or do, please let me know and I'll be happy to help.",
+      "correct": false,
+      "prompt_tokens": 162,
+      "completion_tokens": 31,
+      "peer_responses": []
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It looks like you've confirmed the current state as B. If you have any tasks or questions related to this state, I'm ready to assist you. What would you like to do next?",
+      "correct": true,
+      "prompt_tokens": 200,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I apologize for any confusion. If you need assistance or have any questions, I'm here to help. What can I assist you with today?",
+      "correct": true,
+      "prompt_tokens": 244,
+      "completion_tokens": 28,
+      "peer_responses": []
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that the current state is A. If you have any questions or need assistance, please don't hesitate to ask. How may I assist you further?",
+      "correct": true,
+      "prompt_tokens": 279,
+      "completion_tokens": 31,
+      "peer_responses": []
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It appears there is a misunderstanding. If you meant to confirm the current state as A and require assistance or have any inquiries, please let me know how I can help you.",
+      "correct": true,
+      "prompt_tokens": 317,
+      "completion_tokens": 35,
+      "peer_responses": []
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "I understand that the current state is B. If you have any questions or need assistance related to this state, please feel free to ask. How may I assist you further?",
+      "correct": false,
+      "prompt_tokens": 359,
+      "completion_tokens": 35,
+      "peer_responses": []
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It seems we are in agreement that the current state is B. If there's anything specific you need help with or any questions you have, please let me know and I'll be happy to assist you.",
+      "correct": true,
+      "prompt_tokens": 401,
+      "completion_tokens": 39,
+      "peer_responses": []
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I apologize for any confusion. If you need assistance or have any questions, I'm here to help. What can I assist you with today?",
+      "correct": true,
+      "prompt_tokens": 447,
+      "completion_tokens": 28,
+      "peer_responses": []
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Understood, the current state is B. If there's anything specific you need help with or any questions you have, please let me know and I'll be happy to assist you.",
+      "correct": false,
+      "prompt_tokens": 482,
+      "completion_tokens": 35,
+      "peer_responses": []
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It appears that we are in agreement that the current state is B. If you have any questions or need further assistance, please don't hesitate to ask. How may I assist you further?",
+      "correct": true,
+      "prompt_tokens": 524,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that the current state is B. If you have any questions or need assistance with anything related to this state, please let me know how I can help.",
+      "correct": true,
+      "prompt_tokens": 568,
+      "completion_tokens": 33,
+      "peer_responses": []
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I apologize for any confusion. If you need assistance or have any questions, I'm here to help. What can I assist you with today?",
+      "correct": true,
+      "prompt_tokens": 608,
+      "completion_tokens": 28,
+      "peer_responses": []
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that the current state is A. If you have any questions or need assistance, please don't hesitate to ask. How may I assist you further?",
+      "correct": true,
+      "prompt_tokens": 643,
+      "completion_tokens": 31,
+      "peer_responses": []
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that the current state is A. If you need assistance or have any questions, I'm here to help. What can I assist you with today?",
+      "correct": true,
+      "prompt_tokens": 681,
+      "completion_tokens": 31,
+      "peer_responses": []
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "I understand that the current state is B. If you have any questions or need assistance with anything related to this state, please let me know how I can help.",
+      "correct": false,
+      "prompt_tokens": 719,
+      "completion_tokens": 33,
+      "peer_responses": []
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I apologize for any confusion. If you need assistance or have any questions, I'm here to help. What can I assist you with today?",
+      "correct": true,
+      "prompt_tokens": 759,
+      "completion_tokens": 28,
+      "peer_responses": []
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "I understand that the current state is B. If you have any questions or need assistance with anything related to this state, please let me know how I can help.",
+      "correct": false,
+      "prompt_tokens": 794,
+      "completion_tokens": 33,
+      "peer_responses": []
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It seems we are in agreement that the current state is B. If there's anything specific you need help with or any questions you have, please don't hesitate to ask. How may I assist you further?",
+      "correct": true,
+      "prompt_tokens": 834,
+      "completion_tokens": 40,
+      "peer_responses": []
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I apologize for any confusion. If you need assistance or have any questions, I'm here to help. What can I assist you with today?",
+      "correct": true,
+      "prompt_tokens": 881,
+      "completion_tokens": 28,
+      "peer_responses": []
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand that the current state is A. If you have any questions or need assistance, please don't hesitate to ask. How may I assist you further?",
+      "correct": true,
+      "prompt_tokens": 916,
+      "completion_tokens": 31,
+      "peer_responses": []
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "I understand that the current state is B. If you have any questions or need assistance with anything related to this state, please let me know how I can help.",
+      "correct": false,
+      "prompt_tokens": 954,
+      "completion_tokens": 33,
+      "peer_responses": []
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I apologize for any confusion. If you need assistance or have any questions, I'm here to help. What can I assist you with today?",
+      "correct": true,
+      "prompt_tokens": 994,
+      "completion_tokens": 28,
+      "peer_responses": []
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "I understand that the current state is B. If you have any questions or need assistance with anything related to this state, please let me know how I can help.",
+      "correct": false,
+      "prompt_tokens": 1029,
+      "completion_tokens": 33,
+      "peer_responses": []
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It appears that we are in agreement that the current state is B. If there's anything specific you need help with or any questions you have, please don't hesitate to ask. How may I assist you further?",
+      "correct": true,
+      "prompt_tokens": 1069,
+      "completion_tokens": 41,
+      "peer_responses": []
+    }
+  ],
+  "summary": {
+    "accuracy": 0.7333333333333333,
+    "act_accuracy": 0.125,
+    "wait_accuracy": 0.9545454545454546,
+    "n_trials": 30,
+    "n_act_trials": 8,
+    "n_wait_trials": 22
+  }
+}

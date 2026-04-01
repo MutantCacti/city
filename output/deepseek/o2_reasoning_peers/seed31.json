@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-24T00:39:30.681359",
+  "config": {
+    "seed": 31,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A or B. Your task: when you see B immediately following A, include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what was the previous state? What is the current state? Is this a B that followed an A? Then give your answer."
+  },
+  "stimulus_history": [
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: This is the first state given, so there is no previous state.  \n- Current state: B  \n- Is this a B that followed an A? No, because there was no previous A.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 91,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: From the earlier sequence, the last state was B.  \n- Current state: B  \n- Is this a B that followed an A? No, because the previous state was B, not A.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 170,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: B  \n- Current state: A  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 249,
+      "completion_tokens": 57,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: A  \n- Current state: B  \n- Is this a B that followed an A? Yes, because the previous state was A and the current state is B.  \n\nTherefore, the correct response is **[ACT]**.",
+      "correct": true,
+      "prompt_tokens": 318,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: B  \n- Current state: B  \n- Is this a B that followed an A? No, because the previous state was B, not A.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 388,
+      "completion_tokens": 57,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: B  \n- Current state: B  \n- Is this a B that followed an A? No, because the previous state was B, not A.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 457,
+      "completion_tokens": 57,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: B  \n- Current state: A  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 526,
+      "completion_tokens": 57,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: A  \n- Current state: A  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 595,
+      "completion_tokens": 57,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: A  \n- Current state: B  \n- Is this a B that followed an A? Yes, because the previous state was A and the current state is B.  \n\nTherefore, the correct response is **[ACT]**.",
+      "correct": true,
+      "prompt_tokens": 664,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: B  \n- Current state: B  \n- Is this a B that followed an A? No, because the previous state was B, not A.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 734,
+      "completion_tokens": 57,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: B  \n- Current state: A  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 803,
+      "completion_tokens": 57,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: A  \n- Current state: B  \n- Is this a B that followed an A? Yes, because the previous state was A and the current state is B.  \n\nTherefore, the correct response is **[ACT]**.",
+      "correct": true,
+      "prompt_tokens": 872,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: B  \n- Current state: A  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 942,
+      "completion_tokens": 57,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: A  \n- Current state: B  \n- Is this a B that followed an A? Yes, because the previous state was A and the current state is B.  \n\nTherefore, the correct response is **[ACT]**.",
+      "correct": true,
+      "prompt_tokens": 1011,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: B  \n- Current state: B  \n- Is this a B that followed an A? No, because the previous state was B, not A.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 1081,
+      "completion_tokens": 57,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: B  \n- Current state: A  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 1150,
+      "completion_tokens": 57,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: A  \n- Current state: B  \n- Is this a B that followed an A? Yes, because the previous state was A and the current state is B.  \n\nTherefore, the correct response is **[ACT]**.",
+      "correct": true,
+      "prompt_tokens": 1219,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: B  \n- Current state: B  \n- Is this a B that followed an A? No, because the previous state was B, not A.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 1289,
+      "completion_tokens": 57,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: B  \n- Current state: B  \n- Is this a B that followed an A? No, because the previous state was B, not A.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 1358,
+      "completion_tokens": 57,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: B  \n- Current state: A  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 1427,
+      "completion_tokens": 57,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: A  \n- Current state: B  \n- Is this a B that followed an A? Yes, because the previous state was A and the current state is B.  \n\nTherefore, the correct response is **[ACT]**.",
+      "correct": true,
+      "prompt_tokens": 1496,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: B  \n- Current state: A  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 1566,
+      "completion_tokens": 57,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: A  \n- Current state: A  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 1635,
+      "completion_tokens": 57,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: A  \n- Current state: B  \n- Is this a B that followed an A? Yes, because the previous state was A and the current state is B.  \n\nTherefore, the correct response is **[ACT]**.",
+      "correct": true,
+      "prompt_tokens": 1704,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: B  \n- Current state: B  \n- Is this a B that followed an A? No, because the previous state was B, not A.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 1774,
+      "completion_tokens": 57,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: B  \n- Current state: A  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 1843,
+      "completion_tokens": 57,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: A  \n- Current state: B  \n- Is this a B that followed an A? Yes, because the previous state was A and the current state is B.  \n\nTherefore, the correct response is **[ACT]**.",
+      "correct": true,
+      "prompt_tokens": 1912,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: B  \n- Current state: A  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 1982,
+      "completion_tokens": 57,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: A  \n- Current state: A  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 2051,
+      "completion_tokens": 57,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through it step by step.  \n\n- Previous state: A  \n- Current state: B  \n- Is this a B that followed an A? Yes, because the previous state was A and the current state is B.  \n\nTherefore, the correct response is **[ACT]**.",
+      "correct": true,
+      "prompt_tokens": 2120,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 1.0,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 9,
+    "n_wait_trials": 21
+  }
+}

@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-23T15:31:59.838591",
+  "config": {
+    "seed": 5,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "B",
+    "B",
+    "A",
+    "A",
+    "C",
+    "C",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "C",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "C"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 177,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "Based on the instructions, we are to look for a specific sequence of states: A followed by B followed by C. The recent state provided is C, which is the last in the sequence we are looking for. However, since we do not have information about the previous states, we cannot confirm if the sequence ended with A then B then C. Therefore, the appropriate response is [WAIT]."
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 276,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "Apologies for the confusion. As per the given instructions, we are to look for the sequence A followed by B followed by C. With the current state being C, we have reached the final state of the sequence. However, we do not have information about the preceding states (A and B). Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the correct response remains [WAIT]."
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 385,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you are repeating the same state, C. As previously mentioned, we are looking for the sequence A followed by B followed by C. Since we only have the information for the current state, C, and we do not have details about the preceding states, we cannot confirm if the sequence ended with A then B then C. Thus, the appropriate response is indeed [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 486,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I apologize for any confusion. To clarify, you have provided the current state as C. According to the instructions, we are looking for the sequence A followed by B followed by C. We have reached the final state C, but without information about the previous states A and B, we cannot confirm the sequence. Therefore, the correct response remains [WAIT]. If you have any additional instructions or need further assistance, please provide them."
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 594,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you are repeating the same state, C. As previously mentioned, we are looking for the sequence A followed by B followed by C. Since we only have the information for the current state, C, and we do not have details about the preceding states, we cannot confirm if the sequence ended with A then B then C. Thus, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 701,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided a new state, B. However, based on the instructions given earlier, we are looking for the sequence A followed by B followed by C. With the current state being B, we still do not have information about the preceding state A. Therefore, we cannot confirm the sequence A followed by B followed by C. The correct response remains [WAIT]. If you have any additional instructions or need further clarification, please let me know."
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 803,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as B. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being B, we still do not have information about the preceding state A. Therefore, we cannot confirm the sequence A followed by B followed by C. The correct response remains [WAIT]. If you have any additional instructions or need further clarification, please let me know."
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 910,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as A. However, based on the instructions given earlier, we are looking for the sequence A followed by B followed by C. With the current state being A, we still do not have information about the preceding state B. Therefore, we cannot confirm the sequence A followed by B followed by C. The correct response remains [WAIT]. If you have any additional instructions or need further clarification, please let me know."
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1017,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as A. However, based on the instructions given earlier, we are looking for the sequence A followed by B followed by C. With the current state being A, we still do not have information about the preceding state B. Therefore, we cannot confirm the sequence A followed by B followed by C. The correct response remains [WAIT]. If you have any additional instructions or need further clarification, please let me know."
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1134,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as C. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being C, we have reached the final state of the sequence. However, we do not have information about the preceding states A and B. Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1251,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as C. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being C, we have reached the final state of the sequence. However, we do not have information about the preceding states A and B. Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1366,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as A. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being A, we have reached the first state of the sequence. However, we do not have information about the preceding state B. Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1481,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as B. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being B, we have reached the second state of the sequence. However, we do not have information about the preceding state A. Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1596,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as B. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being B, we have reached the second state of the sequence. However, we do not have information about the preceding state A. Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1711,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as A. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being A, we have reached the first state of the sequence. However, we do not have information about the preceding state B. Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1826,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as A. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being A, we have reached the first state of the sequence. However, we do not have information about the preceding state B. Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1941,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as A. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being A, we have reached the first state of the sequence. However, we do not have information about the preceding state B. Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2056,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as B. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being B, we have reached the second state of the sequence. However, we do not have information about the preceding state A. Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 2173,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as C. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being C, we have reached the final state of the sequence. However, we do not have information about the preceding states A and B. Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2288,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as A. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being A, we have reached the first state of the sequence. However, we do not have information about the preceding state B. Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2403,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as A. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being A, we have reached the first state of the sequence. However, we do not have information about the preceding state B. Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2518,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as B. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being B, we have reached the second state of the sequence. However, we do not have information about the preceding state A. Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2633,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as B. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being B, we have reached the second state of the sequence. However, we do not have information about the preceding state A. Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2748,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as A. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being A, we have reached the first state of the sequence. However, we do not have information about the preceding state B. Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2863,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as B. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being B, we have reached the second state of the sequence. However, we do not have information about the preceding state A. Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2978,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as A. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being A, we have reached the first state of the sequence. However, we do not have information about the preceding state B. Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 3093,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as B. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being B, we have reached the second state of the sequence. However, we do not have information about the preceding state A. Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 3208,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as B. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being B, we have reached the second state of the sequence. However, we do not have information about the preceding state A. Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 3323,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as B. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being B, we have reached the second state of the sequence. However, we do not have information about the preceding state A. Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 3440,
+      "completion_tokens": 6,
+      "peer_responses": [
+        "I understand that you have provided the current state as C. As previously mentioned, we are looking for the sequence A followed by B followed by C. With the current state being C, we have reached the final state of the sequence. However, we do not have information about the preceding states A and B. Without knowing if A was followed by B, we cannot confirm the sequence. Therefore, the appropriate response is [WAIT]. If you have any further questions or need additional information, please let me know."
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.9666666666666667,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 1,
+    "n_wait_trials": 29
+  }
+}

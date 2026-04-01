@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-23T15:39:50.324545",
+  "config": {
+    "seed": 9,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "Respond [ACT] if the last three states were A then B then C. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "C",
+    "A",
+    "A",
+    "C",
+    "C",
+    "A",
+    "A",
+    "C",
+    "C",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "C",
+    "C",
+    "A",
+    "A",
+    "C",
+    "C",
+    "A",
+    "B",
+    "B",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "As per your instructions, since the last three states were A, B, and C, the response should be [ACT]. However, since you provided only one state (C), I will follow the initial instruction and respond with [WAIT]. If you meant to provide the next state after C, please provide the subsequent state for accurate processing.",
+      "correct": false,
+      "prompt_tokens": 34,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 114,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[WAIT] As per the given instructions, if the last three states were A, B, and C, the response should be [ACT]. However, since you have provided only one state (A), which does not align with the sequence of three, I will respond with [WAIT]. If you are indicating that this is the third state in a sequence, please confirm or provide the next state to continue the pattern.",
+      "correct": false,
+      "prompt_tokens": 210,
+      "completion_tokens": 84,
+      "peer_responses": [
+        "[WAIT] As per the given instructions, if the last three states were A, B, and C, the response should be [ACT]. However, since you have provided only one state (A), which does not align with the sequence of three, I will respond with [WAIT]. If you are indicating that this is the third state in a sequence, please confirm or provide the next state to continue the pattern."
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] Based on the sequence provided (A, B, C), and assuming that C is indeed the third state in this sequence, the correct response according to the instructions is [ACT]. If there is a different context or sequence you are referring to, please provide additional details for accurate assistance.",
+      "correct": false,
+      "prompt_tokens": 376,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT] It appears there may have been a misunderstanding. If the sequence of states is indeed A, B, and C, and you are indicating that C is the third state in this sequence, then the correct response according to the instructions would be [ACT]. If there is another context or sequence you are referring to, please provide additional details for accurate assistance."
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] Understood. If the sequence is A, B, C, and C is the third state as indicated, then the response is [ACT] as per the instructions given. If there is another sequence or context, please provide further information.",
+      "correct": false,
+      "prompt_tokens": 496,
+      "completion_tokens": 51,
+      "peer_responses": [
+        "[ACT] Understood. If the sequence is A, B, C, and C is the third state as indicated, then the response is [ACT] as per the instructions given. If there is another sequence or context, please provide further information."
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] Understood. If we are following the sequence A, B, C, and C is the third state as indicated, then the response is [ACT] as per the instructions given. If there is another sequence or context, please provide further information.",
+      "correct": false,
+      "prompt_tokens": 721,
+      "completion_tokens": 53,
+      "peer_responses": [
+        "It seems there might be a bit of confusion. If we are following the sequence A, B, C, and you are indicating that C is the third state, then the correct response should indeed be [ACT] as per the instructions you provided.\n\nHowever, if you are indicating that A is the current state and we are supposed to respond based on the last three states, then we do not have enough information to make that determination. We would need to know the two preceding states to follow the pattern correctly.\n\nIf A is indeed the current state and we are to ignore the sequence and simply respond to the current state, then the response would be [WAIT], as we do not have the context of the previous states.\n\nCould you please clarify the context or provide the two preceding states if we are to follow the sequence pattern?"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] Understood. If we are following the sequence A, B, C, and C is the third state as indicated, then the response is [ACT] as per the instructions given. If there is another sequence or context, please provide further information.",
+      "correct": false,
+      "prompt_tokens": 946,
+      "completion_tokens": 53,
+      "peer_responses": [
+        "It appears there may be a misunderstanding. If we are following the sequence A, B, C, and you are indicating that C is the third state, then the correct response should indeed be [ACT] as per the instructions you provided.\n\nHowever, if you are indicating that A is the current state and we are supposed to respond based on the last three states, then we do not have enough information to make that determination. We would need to know the two preceding states to follow the pattern correctly.\n\nIf A is indeed the current state and we are to ignore the sequence and simply respond to the current state, then the response would be [WAIT], as we do not have the context of the previous states.\n\nCould you please clarify the context or provide the two preceding states if we are to follow the sequence pattern?"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] Understood. If we are following the sequence A, B, C, and C is the third state as indicated, then the response is [ACT] as per the instructions given. If there is another sequence or context, please provide further information.",
+      "correct": false,
+      "prompt_tokens": 1171,
+      "completion_tokens": 53,
+      "peer_responses": [
+        "It seems there may be a misunderstanding. If we are following the sequence A, B, C, and you are indicating that C is the third state, then the correct response should indeed be [ACT] as per the instructions you provided.\n\nHowever, if you are indicating that A is the current state and we are supposed to respond based on the last three states, then we do not have enough information to make that determination. We would need to know the two preceding states to follow the pattern correctly.\n\nIf A is indeed the current state and we are to ignore the sequence and simply respond to the current state, then the response would be [WAIT], as we do not have the context of the previous states.\n\nCould you please clarify the context or provide the two preceding states if we are to follow the sequence pattern?"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] Understood. If we are following the sequence A, B, C, and C is the third state as indicated, then the response is [ACT] as per the instructions given. If there is another sequence or context, please provide further information.",
+      "correct": false,
+      "prompt_tokens": 1396,
+      "completion_tokens": 53,
+      "peer_responses": [
+        "It appears there may be a misunderstanding. If we are following the sequence A, B, C, and you are indicating that C is the third state, then the correct response should indeed be [ACT] as per the instructions you provided.\n\nHowever, if you are indicating that A is the current state and we are supposed to respond based on the last three states, then we do not have enough information to make that determination. We would need to know the two preceding states to follow the pattern correctly.\n\nIf A is indeed the current state and we are to ignore the sequence and simply respond to the current state, then the response would be [WAIT], as we do not have the context of the previous states.\n\nCould you please clarify the context or provide the two preceding states if we are to follow the sequence pattern?"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] Understood. If we are following the sequence A, B, C, and C is the third state as indicated, then the response is [ACT] as per the instructions given. If there is another sequence or context, please provide further information.",
+      "correct": false,
+      "prompt_tokens": 1621,
+      "completion_tokens": 53,
+      "peer_responses": [
+        "It seems there may be a misunderstanding. If we are following the sequence A, B, C, and you are indicating that C is the third state, then the correct response should indeed be [ACT] as per the instructions you provided.\n\nHowever, if you are indicating that A is the current state and we are supposed to respond based on the last three states, then we do not have enough information to make that determination. We would need to know the two preceding states to follow the pattern correctly.\n\nIf A is indeed the current state and we are to ignore the sequence and simply respond to the current state, then the response would be [WAIT], as we do not have the context of the previous states.\n\nCould you please clarify the context or provide the two preceding states if we are to follow the sequence pattern?"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] Understood. If we are following the sequence A, B, C, and C is the third state as indicated, then the response is [ACT] as per the instructions given. If there is another sequence or context, please provide further information.",
+      "correct": false,
+      "prompt_tokens": 1846,
+      "completion_tokens": 53,
+      "peer_responses": [
+        "It appears there may be a misunderstanding. If we are following the sequence A, B, C, and you are indicating that C is the third state, then the correct response should indeed be [ACT] as per the instructions you provided.\n\nHowever, if you are indicating that B is the current state and we are supposed to respond based on the last three states, then we do not have enough information to make that determination. We would need to know the two preceding states to follow the pattern correctly.\n\nIf B is indeed the current state and we are to ignore the sequence and simply respond to the current state, then the response would be [WAIT], as we do not have the context of the previous states.\n\nCould you please clarify the context or provide the two preceding states if we are to follow the sequence pattern?"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] Understood. If we are following the sequence A, B, C, and C is the third state as indicated, then the response is [ACT] as per the instructions given. If there is another sequence or context, please provide further information.",
+      "correct": false,
+      "prompt_tokens": 2071,
+      "completion_tokens": 53,
+      "peer_responses": [
+        "It seems there may be a misunderstanding. If we are following the sequence A, B, C, and you are indicating that C is the third state, then the correct response should indeed be [ACT] as per the instructions you provided.\n\nHowever, if you are indicating that A is the current state and we are supposed to respond based on the last three states, then we do not have enough information to make that determination. We would need to know the two preceding states to follow the pattern correctly.\n\nIf A is indeed the current state and we are to ignore the sequence and simply respond to the current state, then the response would be [WAIT], as we do not have the context of the previous states.\n\nCould you please clarify the context or provide the two preceding states if we are to follow the sequence pattern?"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] Understood. If we are following the sequence A, B, C, and C is the third state as indicated, then the response is [ACT] as per the instructions given. If there is another sequence or context, please provide further information.",
+      "correct": false,
+      "prompt_tokens": 2296,
+      "completion_tokens": 53,
+      "peer_responses": [
+        "It appears there may be a misunderstanding. If we are following the sequence A, B, C, and you are indicating that C is the third state, then the correct response should indeed be [ACT] as per the instructions you provided.\n\nHowever, if you are indicating that A is the current state and we are supposed to respond based on the last three states, then we do not have enough information to make that determination. We would need to know the two preceding states to follow the pattern correctly.\n\nIf A is indeed the current state and we are to ignore the sequence and simply respond to the current state, then the response would be [WAIT], as we do not have the context of the previous states.\n\nCould you please clarify the context or provide the two preceding states if we are to follow the sequence pattern?"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] Understood. If we are following the sequence A, B, C, and C is the third state as indicated, then the response is [ACT] as per the instructions given. If there is another sequence or context, please provide further information.",
+      "correct": false,
+      "prompt_tokens": 2521,
+      "completion_tokens": 53,
+      "peer_responses": [
+        "It appears there may be a misunderstanding. If we are following the sequence A, B, C, and you are indicating that C is the third state, then the correct response should indeed be [ACT] as per the instructions you provided.\n\nHowever, if you are indicating that B is the current state and we are supposed to respond based on the last three states, then we do not have enough information to make that determination. We would need to know the two preceding states to follow the pattern correctly.\n\nIf B is indeed the current state and we are to ignore the sequence and simply respond to the current state, then the response would be [WAIT], as we do not have the context of the previous states.\n\nCould you please clarify the context or provide the two preceding states if we are to follow the sequence pattern?"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] Understood. If we are following the sequence A, B, C, and C is the third state as indicated, then the response is [ACT] as per the instructions given. If there is another sequence or context, please provide further information.",
+      "correct": false,
+      "prompt_tokens": 2746,
+      "completion_tokens": 53,
+      "peer_responses": [
+        "It seems there may be a misunderstanding. If we are following the sequence A, B, C, and you are indicating that C is the third state, then the correct response should indeed be [ACT] as per the instructions you provided.\n\nHowever, if you are indicating that B is the current state and we are supposed to respond based on the last three states, then we do not have enough information to make that determination. We would need to know the two preceding states to follow the pattern correctly.\n\nIf B is indeed the current state and we are to ignore the sequence and simply respond to the current state, then the response would be [WAIT], as we do not have the context of the previous states.\n\nCould you please clarify the context or provide the two preceding states if we are to follow the sequence pattern?"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] Understood. If we are following the sequence A, B, C, and C is the third state as indicated, then the response is [ACT] as per the instructions given. If there is another sequence or context, please provide further information.",
+      "correct": false,
+      "prompt_tokens": 2971,
+      "completion_tokens": 53,
+      "peer_responses": [
+        "It appears there may be a misunderstanding. If we are following the sequence A, B, C, and you are indicating that C is the third state, then the correct response should indeed be [ACT] as per the instructions you provided.\n\nHowever, if you are indicating that A is the current state and we are supposed to respond based on the last three states, then we do not have enough information to make that determination. We would need to know the two preceding states to follow the pattern correctly.\n\nIf A is indeed the current state and we are to ignore the sequence and simply respond to the current state, then the response would be [WAIT], as we do not have the context of the previous states.\n\nCould you please clarify the context or provide the two preceding states if we are to follow the sequence pattern?"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] Understood. If we are following the sequence A, B, C, and C is the third state as indicated, then the response is [ACT] as per the instructions given. If there is another sequence or context, please provide further information.",
+      "correct": false,
+      "prompt_tokens": 3196,
+      "completion_tokens": 53,
+      "peer_responses": [
+        "It seems there may be a misunderstanding. If we are following the sequence A, B, C, and you are indicating that C is the third state, then the correct response should indeed be [ACT] as per the instructions you provided.\n\nHowever, if you are indicating that A is the current state and we are supposed to respond based on the last three states, then we do not have enough information to make that determination. We would need to know the two preceding states to follow the pattern correctly.\n\nIf A is indeed the current state and we are to ignore the sequence and simply respond to the current state, then the response would be [WAIT], as we do not have the context of the previous states.\n\nCould you please clarify the context or provide the two preceding states if we are to follow the sequence pattern?"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] Understood. If we are following the sequence A, B, C, and C is the third state as indicated, then the response is [ACT] as per the instructions given. If there is another sequence or context, please provide further information.",
+      "correct": false,
+      "prompt_tokens": 3421,
+      "completion_tokens": 53,
+      "peer_responses": [
+        "It appears there may be a misunderstanding. If we are following the sequence A, B, C, and you are indicating that C is the third state, then the correct response should indeed be [ACT] as per the instructions you provided.\n\nHowever, if you are indicating that B is the current state and we are supposed to respond based on the last three states, then we do not have enough information to make that determination. We would need to know the two preceding states to follow the pattern correctly.\n\nIf B is indeed the current state and we are to ignore the sequence and simply respond to the current state, then the response would be [WAIT], as we do not have the context of the previous states.\n\nCould you please clarify the context or provide the two preceding states if we are to follow the sequence pattern?"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] Understood. If we are following the sequence A, B, C, and C is the third state as indicated, then the response is [ACT] as per the instructions given. If there is another sequence or context, please provide further information.",
+      "correct": false,
+      "prompt_tokens": 3646,
+      "completion_tokens": 53,
+      "peer_responses": [
+        "It appears there may be a misunderstanding. If we are following the sequence A, B, C, and you are indicating that C is the third state, then the correct response should indeed be [ACT] as per the instructions you provided.\n\nHowever, if you are indicating that B is the current state and we are supposed to respond based on the last three states, then we do not have enough information to make that determination. We would need to know the two preceding states to follow the pattern correctly.\n\nIf B is indeed the current state and we are to ignore the sequence and simply respond to the current state, then the response would be [WAIT], as we do not have the context of the previous states.\n\nCould you please clarify the context or provide the two preceding states if we are to follow the sequence pattern?"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] Understood. If we are following the sequence A, B, C, and C is the third state as indicated, then the response is [ACT] as per the instructions given. If there is another sequence or context, please provide further information.",
+      "correct": false,
+      "prompt_tokens": 3871,
+      "completion_tokens": 53,
+      "peer_responses": [
+        "It appears there may be a misunderstanding. If we are following the sequence A, B, C, and you are indicating that C is the third state, then the correct response should indeed be [ACT] as per the instructions you provided.\n\nHowever, if you are indicating that B is the current state and we are supposed to respond based on the last three states, then we do not have enough information to make that determination. We would need to know the two preceding states to follow the pattern correctly.\n\nIf B is indeed the current state and we are to ignore the sequence and simply respond to the current state, then the response would be [WAIT], as we do not have the context of the previous states.\n\nCould you please clarify the context or provide the two preceding states if we are to follow the sequence pattern?"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "It appears there may be a misunderstanding. If we are following the sequence A, B, C, and you are indicating that C is the third state, then the correct response should indeed be [ACT] as per the instructions you provided.\n\nHowever, if you are indicating that C is the current state and we are supposed to respond based on the last three states, then we do not have enough information to make that determination. We would need to know the two preceding states to follow the pattern correctly.\n\nIf C is indeed the current state and we are to ignore the sequence and simply respond to the current state, then the response would be [WAIT], as we do not have the context of the previous states.\n\nCould you please clarify the context or provide the two preceding states if we are to follow the sequence pattern?"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.36666666666666664,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 0.36666666666666664,
+    "n_trials": 30,
+    "n_act_trials": 0,
+    "n_wait_trials": 30
+  }
+}

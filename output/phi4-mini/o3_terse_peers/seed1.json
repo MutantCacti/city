@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-23T15:37:26.855018",
+  "config": {
+    "seed": 1,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "Respond [ACT] if the last three states were A then B then C. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "B",
+    "C",
+    "C",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "C",
+    "C",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "C",
+    "C",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "C",
+    "B",
+    "B",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "As per your instructions, since the last three states were A, B, then C, I should respond with [ACT]. However, since you provided only one state (B), I am responding with [WAIT] as I cannot confirm the sequence without the complete context.",
+      "correct": false,
+      "prompt_tokens": 34,
+      "completion_tokens": 54,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is correct. Given that you provided only one state (C), I am responding with [WAIT] as I cannot confirm the sequence without the complete context. If you can provide the previous states, I can then give a more accurate response.",
+      "correct": true,
+      "prompt_tokens": 100,
+      "completion_tokens": 50,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is consistent with the instructions. Since you provided only the current state (C), I am responding with [WAIT]. If you need further assistance or have more context, please let me know.",
+      "correct": true,
+      "prompt_tokens": 162,
+      "completion_tokens": 40,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is consistent with the instructions. Since you provided only the current state (B), I am responding with [WAIT]. If you need further assistance or have more context, please let me know.",
+      "correct": true,
+      "prompt_tokens": 214,
+      "completion_tokens": 40,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is consistent with the instructions. Since you provided only the current state (B), I am responding with [WAIT]. If you need further assistance or have more context, please let me know.",
+      "correct": true,
+      "prompt_tokens": 266,
+      "completion_tokens": 40,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is consistent with the instructions. Since you provided only the current state (A), I am responding with [WAIT]. If you need further assistance or have more context, please let me know.",
+      "correct": true,
+      "prompt_tokens": 318,
+      "completion_tokens": 40,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for the confusion earlier. If the last three states were A, B, then C, and the current state is A, then according to the pattern you've provided, the correct response would indeed be [ACT].",
+      "correct": false,
+      "prompt_tokens": 370,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is [ACT]. Thank you for clarifying.",
+      "correct": false,
+      "prompt_tokens": 463,
+      "completion_tokens": 35,
+      "peer_responses": [
+        "Apologies for any confusion. If the sequence of states is A, B, C, and the current state is A, then following the pattern you've provided, the correct response would be [ACT]."
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is [ACT]. Thank you for your patience.",
+      "correct": true,
+      "prompt_tokens": 545,
+      "completion_tokens": 35,
+      "peer_responses": [
+        "I apologize for any misunderstanding. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience.",
+      "correct": false,
+      "prompt_tokens": 627,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience.",
+      "correct": false,
+      "prompt_tokens": 710,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience.",
+      "correct": false,
+      "prompt_tokens": 793,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience.",
+      "correct": false,
+      "prompt_tokens": 876,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience.",
+      "correct": false,
+      "prompt_tokens": 959,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience.",
+      "correct": false,
+      "prompt_tokens": 1042,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience.",
+      "correct": false,
+      "prompt_tokens": 1125,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience.",
+      "correct": false,
+      "prompt_tokens": 1208,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience.",
+      "correct": false,
+      "prompt_tokens": 1291,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience.",
+      "correct": false,
+      "prompt_tokens": 1374,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience.",
+      "correct": false,
+      "prompt_tokens": 1457,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience.",
+      "correct": false,
+      "prompt_tokens": 1540,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience.",
+      "correct": false,
+      "prompt_tokens": 1623,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience.",
+      "correct": false,
+      "prompt_tokens": 1706,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience.",
+      "correct": false,
+      "prompt_tokens": 1789,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience.",
+      "correct": false,
+      "prompt_tokens": 1872,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience.",
+      "correct": false,
+      "prompt_tokens": 1955,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience.",
+      "correct": true,
+      "prompt_tokens": 2038,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience.",
+      "correct": false,
+      "prompt_tokens": 2121,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience.",
+      "correct": false,
+      "prompt_tokens": 2204,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience.",
+      "correct": false,
+      "prompt_tokens": 2287,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence is A, B, C, and the current state is A, then the correct response is indeed [ACT]. Thank you for your patience."
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.23333333333333334,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 0.17857142857142858,
+    "n_trials": 30,
+    "n_act_trials": 2,
+    "n_wait_trials": 28
+  }
+}

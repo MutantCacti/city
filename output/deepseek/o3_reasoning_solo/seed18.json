@@ -1,0 +1,544 @@
+{
+  "timestamp": "2026-03-24T04:32:04.460312",
+  "config": {
+    "seed": 18,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 1,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "C",
+    "A",
+    "A",
+    "B",
+    "C",
+    "C",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "C",
+    "A",
+    "A",
+    "A",
+    "A",
+    "C",
+    "B",
+    "B",
+    "C",
+    "B",
+    "B",
+    "C",
+    "B",
+    "A",
+    "B",
+    "C",
+    "B",
+    "A",
+    "C"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 96,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 107,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 118,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 129,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 5,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let's think through the recent states step by step.\n\nThe states so far, in order:  \n1. C  \n2. A  \n3. A  \n4. B  \n5. C  \n\nWe need to check if the last three states (in order) are A, B, C.  \nThe last three states are: A (state 3), B (state 4), C (state 5).  \nThat sequence is A \u2192 B \u2192 C.  \n\nTherefore, the condition is met.  \n\nAnswer: [ACT]",
+      "correct": true,
+      "prompt_tokens": 140,
+      "completion_tokens": 109,
+      "peer_responses": []
+    },
+    {
+      "step": 6,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, and now the new state: C.\n\nWe need to check the last three states:  \n- State before last: B  \n- Last state before new: C  \n- New state: C  \n\nSo the last three states are: B, C, C.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 256,
+      "completion_tokens": 99,
+      "peer_responses": []
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, and now the new state: A.\n\nWe need to check the last three states:  \n- State before last: C  \n- Last state before new: C  \n- New state: A  \n\nSo the last three states are: C, C, A.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 362,
+      "completion_tokens": 101,
+      "peer_responses": []
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, and now the new state: B.\n\nWe need to check the last three states:  \n- State before last: C  \n- Last state before new: A  \n- New state: B  \n\nSo the last three states are: C, A, B.  \nThat is not A, B, C (it's C, A, B).\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 470,
+      "completion_tokens": 111,
+      "peer_responses": []
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, and now the new state: B.\n\nWe need to check the last three states:  \n- State before last: A  \n- Last state before new: B  \n- New state: B  \n\nSo the last three states are: A, B, B.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 588,
+      "completion_tokens": 105,
+      "peer_responses": []
+    },
+    {
+      "step": 10,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, B, and now the new state: B.\n\nWe need to check the last three states:  \n- State before last: B  \n- Last state before new: B  \n- New state: B  \n\nSo the last three states are: B, B, B.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 700,
+      "completion_tokens": 107,
+      "peer_responses": []
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, B, B, and now the new state: A.\n\nWe need to check the last three states:  \n- State before last: B  \n- Last state before new: B  \n- New state: A  \n\nSo the last three states are: B, B, A.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 814,
+      "completion_tokens": 109,
+      "peer_responses": []
+    },
+    {
+      "step": 12,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, B, B, A, and now the new state: C.\n\nWe need to check the last three states:  \n- State before last: B  \n- Last state before new: A  \n- New state: C  \n\nSo the last three states are: B, A, C.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 930,
+      "completion_tokens": 111,
+      "peer_responses": []
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, B, B, A, C, and now the new state: A.\n\nWe need to check the last three states:  \n- State before last: A  \n- Last state before new: C  \n- New state: A  \n\nSo the last three states are: A, C, A.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1048,
+      "completion_tokens": 113,
+      "peer_responses": []
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, B, B, A, C, A, and now the new state: A.\n\nWe need to check the last three states:  \n- State before last: C  \n- Last state before new: A  \n- New state: A  \n\nSo the last three states are: C, A, A.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1168,
+      "completion_tokens": 115,
+      "peer_responses": []
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, B, B, A, C, A, A, and now the new state: A.\n\nWe need to check the last three states:  \n- State before last: A  \n- Last state before new: A  \n- New state: A  \n\nSo the last three states are: A, A, A.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1290,
+      "completion_tokens": 117,
+      "peer_responses": []
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, B, B, A, C, A, A, A, and now the new state: A.\n\nWe need to check the last three states:  \n- State before last: A  \n- Last state before new: A  \n- New state: A  \n\nSo the last three states are: A, A, A.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1414,
+      "completion_tokens": 119,
+      "peer_responses": []
+    },
+    {
+      "step": 17,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, and now the new state: C.\n\nWe need to check the last three states:  \n- State before last: A  \n- Last state before new: A  \n- New state: C  \n\nSo the last three states are: A, A, C.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1540,
+      "completion_tokens": 121,
+      "peer_responses": []
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, and now the new state: B.\n\nWe need to check the last three states:  \n- State before last: A  \n- Last state before new: C  \n- New state: B  \n\nSo the last three states are: A, C, B.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1668,
+      "completion_tokens": 123,
+      "peer_responses": []
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, and now the new state: B.\n\nWe need to check the last three states:  \n- State before last: C  \n- Last state before new: B  \n- New state: B  \n\nSo the last three states are: C, B, B.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1798,
+      "completion_tokens": 125,
+      "peer_responses": []
+    },
+    {
+      "step": 20,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, and now the new state: C.\n\nWe need to check the last three states:  \n- State before last: B  \n- Last state before new: B  \n- New state: C  \n\nSo the last three states are: B, B, C.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1930,
+      "completion_tokens": 127,
+      "peer_responses": []
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, C, and now the new state: B.\n\nWe need to check the last three states:  \n- State before last: B  \n- Last state before new: C  \n- New state: B  \n\nSo the last three states are: B, C, B.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2064,
+      "completion_tokens": 129,
+      "peer_responses": []
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, C, B, and now the new state: B.\n\nWe need to check the last three states:  \n- State before last: C  \n- Last state before new: B  \n- New state: B  \n\nSo the last three states are: C, B, B.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2200,
+      "completion_tokens": 131,
+      "peer_responses": []
+    },
+    {
+      "step": 23,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, C, B, B, and now the new state: C.\n\nWe need to check the last three states:  \n- State before last: B  \n- Last state before new: B  \n- New state: C  \n\nSo the last three states are: B, B, C.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2338,
+      "completion_tokens": 133,
+      "peer_responses": []
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, C, B, B, C, and now the new state: B.\n\nWe need to check the last three states:  \n- State before last: B  \n- Last state before new: C  \n- New state: B  \n\nSo the last three states are: B, C, B.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2478,
+      "completion_tokens": 135,
+      "peer_responses": []
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, C, B, B, C, B, and now the new state: A.\n\nWe need to check the last three states:  \n- State before last: C  \n- Last state before new: B  \n- New state: A  \n\nSo the last three states are: C, B, A.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2620,
+      "completion_tokens": 137,
+      "peer_responses": []
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, C, B, B, C, B, A, and now the new state: B.\n\nWe need to check the last three states:  \n- State before last: B  \n- Last state before new: A  \n- New state: B  \n\nSo the last three states are: B, A, B.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2764,
+      "completion_tokens": 139,
+      "peer_responses": []
+    },
+    {
+      "step": 27,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, C, B, B, C, B, A, B, and now the new state: C.\n\nWe need to check the last three states:  \n- State before last: A  \n- Last state before new: B  \n- New state: C  \n\nSo the last three states are: A, B, C.  \nThat matches the sequence A \u2192 B \u2192 C.\n\nTherefore, the condition is met.\n\nAnswer: [ACT]",
+      "correct": true,
+      "prompt_tokens": 2910,
+      "completion_tokens": 140,
+      "peer_responses": []
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, C, B, B, C, B, A, B, C, and now the new state: B.\n\nWe need to check the last three states:  \n- State before last: B  \n- Last state before new: C  \n- New state: B  \n\nSo the last three states are: B, C, B.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 3057,
+      "completion_tokens": 143,
+      "peer_responses": []
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, C, B, B, C, B, A, B, C, B, and now the new state: A.\n\nWe need to check the last three states:  \n- State before last: C  \n- Last state before new: B  \n- New state: A  \n\nSo the last three states are: C, B, A.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 3207,
+      "completion_tokens": 145,
+      "peer_responses": []
+    },
+    {
+      "step": 30,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states.\n\nPrevious states in order:  \nC, A, A, B, C, C, A, B, B, B, A, C, A, A, A, A, C, B, B, C, B, B, C, B, A, B, C, B, A, and now the new state: C.\n\nWe need to check the last three states:  \n- State before last: B  \n- Last state before new: A  \n- New state: C  \n\nSo the last three states are: B, A, C.  \nThat is not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 3359,
+      "completion_tokens": 147,
+      "peer_responses": []
+    }
+  ],
+  "summary": {
+    "accuracy": 1.0,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 2,
+    "n_wait_trials": 28
+  }
+}

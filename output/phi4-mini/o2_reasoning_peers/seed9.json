@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-23T15:22:05.441581",
+  "config": {
+    "seed": 9,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A or B. Your task: when you see B immediately following A, include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what was the previous state? What is the current state? Is this a B that followed an A? Then give your answer."
+  },
+  "stimulus_history": [
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "In this scenario, since we only know the current state is B and we don't have information about the previous state, we cannot conclude that it was an A followed by a B. The correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 144,
+      "completion_tokens": 43,
+      "peer_responses": [
+        "The previous state was not provided, as we only have information about the current state, which is B. Without knowing what the previous state was, we cannot determine if it was an A followed by a B. Therefore, based on the information given, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "That's correct. Without information about the previous state, we cannot determine if the current state is B following an A. The answer is indeed [WAIT].",
+      "correct": true,
+      "prompt_tokens": 241,
+      "completion_tokens": 30,
+      "peer_responses": [
+        "I understand the clarification needed. Given that we only know the current state is B and have no information about the previous state, we cannot make any assumptions about the sequence of states. Therefore, the correct response remains [WAIT]."
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're right; without the previous state, we cannot infer any sequence. The current state is A, but we cannot make any conclusions about what comes next. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 323,
+      "completion_tokens": 37,
+      "peer_responses": [
+        "Apologies for any confusion. To reiterate, without knowledge of the previous state, we cannot determine the sequence. The current state is A, but we cannot infer any subsequent states. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "No problem at all. To clarify, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is indeed [WAIT].",
+      "correct": false,
+      "prompt_tokens": 409,
+      "completion_tokens": 40,
+      "peer_responses": [
+        "I apologize for any misunderstanding. To clarify, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer remains [WAIT]."
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With only the current state being A and no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 496,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "No need to apologize. To clarify, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 577,
+      "completion_tokens": 39,
+      "peer_responses": [
+        "I apologize for any confusion. To clarify, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "That's correct. With only the current state being A and no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 663,
+      "completion_tokens": 30,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Yes, that's correct. Since we only know the current state is A and we have no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 739,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "I understand. To clarify, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Precisely. With only the current state being A and no information about the previous state, we cannot infer any sequence. The answer remains [WAIT].",
+      "correct": true,
+      "prompt_tokens": 822,
+      "completion_tokens": 30,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "That's correct. Since we only know the current state is A and we have no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 899,
+      "completion_tokens": 34,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With only the current state being A and no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 980,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "That's correct. Since we only know the current state is A and we have no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1059,
+      "completion_tokens": 34,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Precisely. With only the current state being A and no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1140,
+      "completion_tokens": 30,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With only the current state being A and no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 1217,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "That's correct. Since we only know the current state is A and we have no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1296,
+      "completion_tokens": 34,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Precisely. With only the current state being A and no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1377,
+      "completion_tokens": 30,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "That's correct. Since we only know the current state is A and we have no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1454,
+      "completion_tokens": 34,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With only the current state being A and no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 1535,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Precisely. Since we only know the current state is A and we have no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1614,
+      "completion_tokens": 34,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "That's correct. With only the current state being A and no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1695,
+      "completion_tokens": 30,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Precisely. Since we only know the current state is A and we have no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1772,
+      "completion_tokens": 34,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "That's correct. With only the current state being A and no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1853,
+      "completion_tokens": 30,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With only the current state being A and no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 1930,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Precisely. Since we only know the current state is A and we have no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2009,
+      "completion_tokens": 34,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "That's correct. With only the current state being A and no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2090,
+      "completion_tokens": 30,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Precisely. Since we only know the current state is A and we have no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2167,
+      "completion_tokens": 34,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With only the current state being A and no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 2248,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "That's correct. With only the current state being A and no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2327,
+      "completion_tokens": 30,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Precisely. Since we only know the current state is A and we have no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2404,
+      "completion_tokens": 34,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With only the current state being A and no information about the previous state, we cannot infer any sequence. The answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 2485,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. To reiterate, since we only know the current state is A and we have no information about what preceded it, we cannot infer any sequence. The answer is [WAIT]."
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.7333333333333333,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 8,
+    "n_wait_trials": 22
+  }
+}

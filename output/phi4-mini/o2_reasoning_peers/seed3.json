@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-23T15:18:45.030921",
+  "config": {
+    "seed": 3,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A or B. Your task: when you see B immediately following A, include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what was the previous state? What is the current state? Is this a B that followed an A? Then give your answer."
+  },
+  "stimulus_history": [
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The sequence provided is only a single state, which is B. Without knowing the previous state, we cannot conclude whether it was an A followed by a B. Hence, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 117,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "The previous state was not provided, so we cannot determine if it was an A followed by a B. Therefore, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that is correct. If the current state is A, we still do not have enough information to determine if it was followed by a B or not. The answer is indeed [WAIT].",
+      "correct": true,
+      "prompt_tokens": 197,
+      "completion_tokens": 39,
+      "peer_responses": [
+        "Your response is correct. Without the context of the previous state, we cannot make any assumptions about the sequence. Therefore, the answer remains [WAIT]."
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "No problem at all. If the current state is A, we cannot infer the sequence that includes a B following an A. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 282,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being A, we cannot infer any sequence that includes a B following an A. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 359,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being A, we cannot infer any sequence that includes a B following an A. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 457,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 555,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 653,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 751,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 849,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 947,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 1045,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1143,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1241,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1339,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1437,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1535,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 1633,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1731,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1829,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1927,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2025,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 2123,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2221,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2319,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 2417,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2515,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2613,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 2711,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2809,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2907,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "Apologies for any confusion. You are correct; with only the current state being B, we cannot infer any sequence that includes a B following an A because we do not have information about the previous state. The answer is [WAIT]."
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.7666666666666667,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 7,
+    "n_wait_trials": 23
+  }
+}

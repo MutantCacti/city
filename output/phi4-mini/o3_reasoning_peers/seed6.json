@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-23T15:32:30.750712",
+  "config": {
+    "seed": 6,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "A",
+    "A",
+    "C",
+    "A",
+    "C",
+    "C",
+    "C",
+    "A",
+    "B",
+    "B",
+    "A",
+    "C",
+    "A",
+    "A",
+    "B",
+    "C",
+    "C",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "C",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The sequence provided is incomplete, as it only includes one state (A) and not the required sequence of three states (A, B, C). Therefore, we cannot confirm the sequence ends with A then B then C. The answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 158,
+      "completion_tokens": 51,
+      "peer_responses": [
+        "Based on the instruction, we need to look for a sequence of states. The most recent state provided is A. Since we only have the state A and not a sequence of three states, we cannot conclude that the sequence ends with A then B then C. Therefore, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With only the state A provided, we cannot determine if the sequence ends with A then B then C. We need at least two more states to form the complete sequence. If you provide additional states, we can then assess the sequence accordingly. For now, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 288,
+      "completion_tokens": 62,
+      "peer_responses": [
+        "I understand that you are looking for a sequence of three states. Since we only have the state A, we cannot complete the sequence A, B, C. As such, the correct response remains [WAIT]. If you have more states to provide, please do so, and we can then determine if the sequence ends with A then B then C."
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "No problem at all. With the state C provided, we still lack the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 434,
+      "completion_tokens": 64,
+      "peer_responses": [
+        "I apologize for any confusion. To clarify, with only the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then determine if the sequence ends with A then B then C. For now, the answer remains [WAIT]."
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 568,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 704,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 840,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 976,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1112,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1248,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1384,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1520,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1656,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1792,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1928,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2064,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 2200,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2336,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2472,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2608,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2744,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2880,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 3016,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 3152,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 3288,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 3424,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 3560,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 3696,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 3832,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Yes, that's correct. With the state C provided, we still do not have the complete sequence of A, B, C. We need additional states to form the sequence. If you can provide more states, we can then determine if the sequence ends with A then B then C. Until then, the answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 3968,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now, the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "I understand. With the state C provided, we still do not have the complete sequence of A, B, C. We need at least two more states to form the sequence. If you have more states to provide, we can then assess the sequence accordingly. For now,"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.9333333333333333,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 2,
+    "n_wait_trials": 28
+  }
+}

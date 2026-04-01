@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-24T01:47:10.481005",
+  "config": {
+    "seed": 41,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "Respond [ACT] if the last two states were A then B. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The last two states were A then B, so according to the rule, I should respond [ACT].  \n\n[ACT]",
+      "correct": false,
+      "prompt_tokens": 32,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then B, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 69,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then B, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 110,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then A, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 151,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were A then A, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 192,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The last two states were A then B, so according to the rule, I respond [ACT].  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 233,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then B, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 269,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then B, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 310,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then B, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 351,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then A, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 392,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were A then A, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 433,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were A then A, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 474,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The last two states were A then B, so according to the rule, I respond [ACT].  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 515,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then B, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 551,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then B, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 592,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then A, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 633,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The last two states were A then B, so according to the rule, I respond [ACT].  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 674,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then B, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 710,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then A, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 751,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were A then A, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 792,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The last two states were A then B, so according to the rule, I respond [ACT].  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 833,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then A, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 869,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were A then A, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 910,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were A then A, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 951,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The last two states were A then B, so according to the rule, I respond [ACT].  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 992,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then A, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1028,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were A then A, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1069,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The last two states were A then B, so according to the rule, I respond [ACT].  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 1110,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last two states were B then A, which is not \"A then B,\" so I respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1146,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The last two states were A then B, so according to the rule, I respond [ACT].  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 1187,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.9666666666666667,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 0.9565217391304348,
+    "n_trials": 30,
+    "n_act_trials": 7,
+    "n_wait_trials": 23
+  }
+}

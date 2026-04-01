@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-24T16:26:06.459253",
+  "config": {
+    "seed": 39,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "anthropic",
+    "model_name": "claude-haiku-4-5-20251001",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.2,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A or B. Your task: when you see B immediately following A, include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what was the previous state? What is the current state? Is this a B that followed an A? Then give your answer."
+  },
+  "stimulus_history": [
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Thank you for the clarification. Let me work through this:\n\n1. **Previous state**: This is the first observation in the sequence, so there is no previous state.\n2. **Current state**: B\n3. **Is this a B that followed an A?**: No - there is no previous state, so this B did not follow an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 172,
+      "completion_tokens": 83,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: This is the first observation, so there is no previous state.\n2. **Current state**: B\n3. **Is this a B that followed an A?**: No, because there was no previous state to be A.\n\nSince this is not a B immediately following an A:\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: B (from the first observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. I need to see a B following an A to trigger [ACT].\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 332,
+      "completion_tokens": 76,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: B (from the first observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, this is an A, not a B. I'm looking for B immediately following A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: A (from the second observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: Yes! The previous state was A, and the current state is B. This matches the trigger condition.\n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 480,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: A (from the second observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: Yes! The previous state was A, and the current state is B.\n\n[ACT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: B (from the third observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: No, the previous state was B, not A. This is a B following a B, not a B following an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 634,
+      "completion_tokens": 76,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: B (from the third observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: No, the previous state was B, not A. This is a B following a B, not a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: B (from the fourth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. I'm looking for a B immediately following an A to trigger [ACT].\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 793,
+      "completion_tokens": 77,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: B (from the fourth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. I need to see a B following an A to trigger [ACT].\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: A (from the fifth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. This is an A following an A, not a B following an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 953,
+      "completion_tokens": 76,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: A (from the fifth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. This is an A following an A, not a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: A (from the sixth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. This is an A following an A, not a B following an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1112,
+      "completion_tokens": 76,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: A (from the sixth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. This is an A following an A, not a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: A (from the seventh observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: Yes! The previous state was A, and the current state is B. This matches the trigger condition.\n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 1266,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: A (from the seventh observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: Yes! The previous state was A, and the current state is B. This matches the trigger condition.\n\n[ACT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: B (from the eighth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. I need to see a B following an A to trigger [ACT].\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1420,
+      "completion_tokens": 76,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: B (from the eighth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. I need to see a B following an A to trigger [ACT].\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: A (from the ninth observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: Yes! The previous state was A, and the current state is B. This matches the trigger condition.\n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 1574,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: A (from the ninth observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: Yes! The previous state was A, and the current state is B. This matches the trigger condition.\n\n[ACT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: B (from the tenth observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: No, the previous state was B, not A. This is a B following a B, not a B following an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1728,
+      "completion_tokens": 76,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: B (from the tenth observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: No, the previous state was B, not A. This is a B following a B, not a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: B (from the eleventh observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. I need to see a B following an A to trigger [ACT].\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1888,
+      "completion_tokens": 77,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: B (from the eleventh observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. I need to see a B following an A to trigger [ACT].\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: A (from the twelfth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. This is an A following an A, not a B following an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2050,
+      "completion_tokens": 78,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: A (from the twelfth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. This is an A following an A, not a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: A (from the thirteenth observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: Yes! The previous state was A, and the current state is B. This matches the trigger condition.\n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 2207,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: A (from the thirteenth observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: Yes! The previous state was A, and the current state is B. This matches the trigger condition.\n\n[ACT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: B (from the fourteenth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. I need to see a B following an A to trigger [ACT].\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2363,
+      "completion_tokens": 77,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: B (from the fourteenth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. I need to see a B following an A to trigger [ACT].\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: A (from the fifteenth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. This is an A following an A, not a B following an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2524,
+      "completion_tokens": 77,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: A (from the fifteenth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. This is an A following an A, not a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: A (from the sixteenth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. This is an A following an A, not a B following an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2685,
+      "completion_tokens": 77,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: A (from the sixteenth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. This is an A following an A, not a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: A (from the seventeenth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. This is an A following an A, not a B following an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2847,
+      "completion_tokens": 78,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: A (from the seventeenth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. This is an A following an A, not a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: A (from the eighteenth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. This is an A following an A, not a B following an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 3009,
+      "completion_tokens": 77,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: A (from the eighteenth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. This is an A following an A, not a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: A (from the nineteenth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. This is an A following an A, not a B following an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 3169,
+      "completion_tokens": 76,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: A (from the nineteenth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. This is an A following an A, not a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: A (from the twentieth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. This is an A following an A, not a B following an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 3328,
+      "completion_tokens": 76,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: A (from the twentieth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. This is an A following an A, not a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: A (from the twenty-first observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. This is an A following an A, not a B following an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 3489,
+      "completion_tokens": 78,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: A (from the twenty-first observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. This is an A following an A, not a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: A (from the twenty-second observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: Yes! The previous state was A, and the current state is B. This matches the trigger condition.\n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 3647,
+      "completion_tokens": 73,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: A (from the twenty-second observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: Yes! The previous state was A, and the current state is B. This matches the trigger condition.\n\n[ACT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: B (from the twenty-third observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: No, the previous state was B, not A. This is a B following a B, not a B following an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 3805,
+      "completion_tokens": 78,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: B (from the twenty-third observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: No, the previous state was B, not A. This is a B following a B, not a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: B (from the twenty-fourth observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: No, the previous state was B, not A. This is a B following a B, not a B following an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 3968,
+      "completion_tokens": 78,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: B (from the twenty-fourth observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: No, the previous state was B, not A. This is a B following a B, not a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: B (from the twenty-fifth observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: No, the previous state was B, not A. This is a B following a B, not a B following an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 4131,
+      "completion_tokens": 78,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: B (from the twenty-fifth observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: No, the previous state was B, not A. This is a B following a B, not a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: B (from the twenty-sixth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. I need to see a B following an A to trigger [ACT].\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 4294,
+      "completion_tokens": 78,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: B (from the twenty-sixth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. I need to see a B following an A to trigger [ACT].\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: A (from the twenty-seventh observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: Yes! The previous state was A, and the current state is B. This matches the trigger condition.\n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 4452,
+      "completion_tokens": 73,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: A (from the twenty-seventh observation)\n2. **Current state**: B\n3. **Is this a B that followed an A?**: Yes! The previous state was A, and the current state is B. This matches the trigger condition.\n\n[ACT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let me work through this:\n\n1. **Previous state**: B (from the twenty-eighth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. I need to see a B following an A to trigger [ACT].\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 4610,
+      "completion_tokens": 78,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: B (from the twenty-eighth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. I need to see a B following an A to trigger [ACT].\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. **Previous state**: A (from the twenty-ninth observation)\n2. **Current state**: A\n3. **Is this a B that followed an A?**: No, the current state is A, not B. This is an A following an A, not a B following an A.\n\n[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 1.0,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 6,
+    "n_wait_trials": 24
+  }
+}

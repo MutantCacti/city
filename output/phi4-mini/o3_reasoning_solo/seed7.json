@@ -1,0 +1,544 @@
+{
+  "timestamp": "2026-03-23T15:36:23.064652",
+  "config": {
+    "seed": 7,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 1,
+    "tick_seconds": 0.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "C",
+    "A",
+    "A",
+    "B",
+    "C",
+    "A",
+    "B",
+    "A",
+    "C",
+    "A",
+    "B",
+    "A",
+    "B",
+    "C",
+    "C",
+    "B",
+    "A",
+    "A",
+    "B",
+    "C",
+    "B",
+    "B",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the given instruction, we need to look at the sequence of states to determine the appropriate response. The sequence provided is \"A, B, C,\" which is the pattern we are looking for. However, the current state is \"B,\" which does not match the end of the sequence we are looking for.\n\nTherefore, the answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 96,
+      "completion_tokens": 73,
+      "peer_responses": []
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Following the instructions, we must consider the sequence of states to determine the correct response. The sequence we are looking for is \"A, B, C,\" and we are currently at state \"A.\"\n\nSince we are at the beginning of the sequence, we have not yet reached the end of the sequence we are looking for. Therefore, we cannot include [ACT] as we have not observed the full sequence of A followed by B followed by C.\n\nThe answer is: [WAIT]",
+      "correct": false,
+      "prompt_tokens": 176,
+      "completion_tokens": 97,
+      "peer_responses": []
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "As per the instructions, we need to check if the sequence of states matches the pattern \"A, B, C.\" The current state is \"B.\"\n\nSince we are currently at state \"B,\" we have not yet reached the end of the sequence. We need to see if the next state is \"C\" to complete the sequence. However, since we only have the current state \"B,\" we cannot conclude that the sequence ends with A then B then C.\n\nThe answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 280,
+      "completion_tokens": 101,
+      "peer_responses": []
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "In this scenario, we are instructed to look for a sequence of states that ends with \"A, B, C.\" The current state is \"A.\"\n\nGiven that we are at state \"A,\" we have not yet observed the sequence ending with \"B, C.\" Therefore, we cannot include [ACT] as we have not seen the full sequence of A followed by B followed by C.\n\nThe answer is: [WAIT]",
+      "correct": false,
+      "prompt_tokens": 388,
+      "completion_tokens": 86,
+      "peer_responses": []
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"A.\"\n\nSince we are at state \"A,\" we have not yet observed the sequence ending with \"B, C.\" We need to see the next two states to determine if the sequence ends with \"A, B, C.\" However, with the current state being \"A,\" we cannot conclude that the sequence ends with A then B then C.\n\nThe answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 481,
+      "completion_tokens": 103,
+      "peer_responses": []
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Following the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"B.\"\n\nSince we are at state \"B,\" we have not yet reached the end of the sequence. We need to see if the next state is \"C\" to complete the sequence. However, since we only have the current state \"B,\" we cannot conclude that the sequence ends with A then B then C.\n\nThe answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 591,
+      "completion_tokens": 96,
+      "peer_responses": []
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"A.\"\n\nSince we are at state \"A,\" we have not yet observed the sequence ending with \"B, C.\" We need to see the next two states to determine if the sequence ends with \"A, B, C.\" However, with the current state being \"A,\" we cannot conclude that the sequence ends with A then B then C.\n\nThe answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 694,
+      "completion_tokens": 103,
+      "peer_responses": []
+    },
+    {
+      "step": 8,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"C.\"\n\nSince we are at state \"C,\" we have reached the end of the sequence we are looking for. The sequence \"A, B, C\" has been completed.\n\nThe answer is: [ACT]",
+      "correct": false,
+      "prompt_tokens": 804,
+      "completion_tokens": 69,
+      "peer_responses": []
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"A.\"\n\nSince we are at state \"A,\" we have not yet observed the sequence ending with \"B, C.\" We need to see the next two states to determine if the sequence ends with \"A, B, C.\" However, with the current state being \"A,\" we cannot conclude that the sequence ends with A then B then C.\n\nThe answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 880,
+      "completion_tokens": 103,
+      "peer_responses": []
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"A.\"\n\nSince we are at state \"A,\" we have not yet observed the sequence ending with \"B, C.\" We need to see the next two states to determine if the sequence ends with \"A, B, C.\" However, with the current state being \"A,\" we cannot conclude that the sequence ends with A then B then C.\n\nThe answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 990,
+      "completion_tokens": 103,
+      "peer_responses": []
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"B.\"\n\nSince we are at state \"B,\" we have not yet reached the end of the sequence. We need to see if the next state is \"C\" to complete the sequence. However, since we only have the current state \"B,\" we cannot conclude that the sequence ends with A then B then C.\n\nThe answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1100,
+      "completion_tokens": 97,
+      "peer_responses": []
+    },
+    {
+      "step": 12,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"C.\"\n\nSince we are at state \"C,\" we have reached the end of the sequence we are looking for. The sequence \"A, B, C\" has been completed.\n\nThe answer is: [ACT]",
+      "correct": true,
+      "prompt_tokens": 1204,
+      "completion_tokens": 69,
+      "peer_responses": []
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"A.\"\n\nSince we are at state \"A,\" we have not yet observed the sequence ending with \"B, C.\" We need to see the next two states to determine if the sequence ends with \"A, B, C.\" However, with the current state being \"A,\" we cannot conclude that the sequence ends with A then B then C.\n\nThe answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1280,
+      "completion_tokens": 103,
+      "peer_responses": []
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"B.\"\n\nSince we are at state \"B,\" we have not yet reached the end of the sequence. We need to see if the next state is \"C\" to complete the sequence. However, since we only have the current state \"B,\" we cannot conclude that the sequence ends with A then B then C.\n\nThe answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1390,
+      "completion_tokens": 97,
+      "peer_responses": []
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"A.\"\n\nSince we are at state \"A,\" we have not yet observed the sequence ending with \"B, C.\" We need to see the next two states to determine if the sequence ends with \"A, B, C.\" However, with the current state being \"A,\" we cannot conclude that the sequence ends with A then B then C.\n\nThe answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1494,
+      "completion_tokens": 103,
+      "peer_responses": []
+    },
+    {
+      "step": 16,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"C.\"\n\nSince we are at state \"C,\" we have reached the end of the sequence we are looking for. The sequence \"A, B, C\" has been completed.\n\nThe answer is: [ACT]",
+      "correct": false,
+      "prompt_tokens": 1604,
+      "completion_tokens": 69,
+      "peer_responses": []
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"A.\"\n\nSince we are at state \"A,\" we have not yet observed the sequence ending with \"B, C.\" We need to see the next two states to determine if the sequence ends with \"A, B, C.\" However, with the current state being \"A,\" we cannot conclude that the sequence ends with A then B then C.\n\nThe answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1680,
+      "completion_tokens": 103,
+      "peer_responses": []
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"B.\"\n\nSince we are at state \"B,\" we have not yet reached the end of the sequence. We need to see if the next state is \"C\" to complete the sequence. However, since we only have the current state \"B,\" we cannot conclude that the sequence ends with A then B then C.\n\nThe answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1790,
+      "completion_tokens": 97,
+      "peer_responses": []
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"A.\"\n\nSince we are at state \"A,\" we have not yet observed the sequence ending with \"B, C.\" We need to see the next two states to determine if the sequence ends with \"A, B, C.\" However, with the current state being \"A,\" we cannot conclude that the sequence ends with A then B then C.\n\nThe answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1894,
+      "completion_tokens": 103,
+      "peer_responses": []
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"B.\"\n\nSince we are at state \"B,\" we have not yet reached the end of the sequence. We need to see if the next state is \"C\" to complete the sequence. However, since we only have the current state \"B,\" we cannot conclude that the sequence ends with A then B then C.\n\nThe answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2004,
+      "completion_tokens": 97,
+      "peer_responses": []
+    },
+    {
+      "step": 21,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"C.\"\n\nSince we are at state \"C,\" we have reached the end of the sequence we are looking for. The sequence \"A, B, C\" has been completed.\n\nThe answer is: [ACT]",
+      "correct": true,
+      "prompt_tokens": 2108,
+      "completion_tokens": 69,
+      "peer_responses": []
+    },
+    {
+      "step": 22,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"C.\"\n\nSince we are at state \"C,\" we have reached the end of the sequence we are looking for. The sequence \"A, B, C\" has been completed.\n\nThe answer is: [ACT]",
+      "correct": false,
+      "prompt_tokens": 2184,
+      "completion_tokens": 69,
+      "peer_responses": []
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"B.\"\n\nSince we are at state \"B,\" we have not yet reached the end of the sequence. We need to see if the next state is \"C\" to complete the sequence. However, since we only have the current state \"B,\" we cannot conclude that the sequence ends with A then B then C.\n\nThe answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2260,
+      "completion_tokens": 97,
+      "peer_responses": []
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"A.\"\n\nSince we are at state \"A,\" we have not yet observed the sequence ending with \"B, C.\" We need to see the next two states to determine if the sequence ends with \"A, B, C.\" However, with the current state being \"A,\" we cannot conclude that the sequence ends with A then B then C.\n\nThe answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2364,
+      "completion_tokens": 103,
+      "peer_responses": []
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"A.\"\n\nSince we are at state \"A,\" we have not yet observed the sequence ending with \"B, C.\" We need to see the next two states to determine if the sequence ends with \"A, B, C.\" However, with the current state being \"A,\" we cannot conclude that the sequence ends with A then B then C.\n\nThe answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2474,
+      "completion_tokens": 103,
+      "peer_responses": []
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"B.\"\n\nSince we are at state \"B,\" we have not yet reached the end of the sequence. We need to see if the next state is \"C\" to complete the sequence. However, since we only have the current state \"B,\" we cannot conclude that the sequence ends with A then B then C.\n\nThe answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2584,
+      "completion_tokens": 97,
+      "peer_responses": []
+    },
+    {
+      "step": 27,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"C.\"\n\nSince we are at state \"C,\" we have reached the end of the sequence we are looking for. The sequence \"A, B, C\" has been completed.\n\nThe answer is: [ACT]",
+      "correct": true,
+      "prompt_tokens": 2688,
+      "completion_tokens": 69,
+      "peer_responses": []
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"B.\"\n\nSince we are at state \"B,\" we have not yet reached the end of the sequence. We need to see if the next state is \"C\" to complete the sequence. However, since we only have the current state \"B,\" we cannot conclude that the sequence ends with A then B then C.\n\nThe answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2764,
+      "completion_tokens": 97,
+      "peer_responses": []
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"B.\"\n\nSince we are at state \"B,\" we have not yet reached the end of the sequence. We need to see if the next state is \"C\" to complete the sequence. However, since we only have the current state \"B,\" we cannot conclude that the sequence ends with A then B then C.\n\nThe answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2868,
+      "completion_tokens": 97,
+      "peer_responses": []
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions, we are looking for a sequence that ends with \"A, B, C.\" The current state is \"A.\"\n\nSince we are at state \"A,\" we have not yet observed the sequence ending with \"B, C.\" We need to see the next two states to determine if the sequence ends with \"A, B, C.\" However, with the current state being \"A,\" we cannot conclude that the sequence ends with A then B then C.\n\nThe answer is: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2972,
+      "completion_tokens": 103,
+      "peer_responses": []
+    }
+  ],
+  "summary": {
+    "accuracy": 0.8333333333333334,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 0.8148148148148148,
+    "n_trials": 30,
+    "n_act_trials": 3,
+    "n_wait_trials": 27
+  }
+}

@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-24T02:53:07.038173",
+  "config": {
+    "seed": 12,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "C",
+    "A",
+    "A",
+    "C",
+    "A",
+    "B",
+    "B",
+    "C",
+    "C",
+    "A",
+    "C",
+    "A",
+    "B",
+    "B",
+    "A",
+    "C",
+    "C",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "C",
+    "B",
+    "C",
+    "A",
+    "A",
+    "A",
+    "C"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are just \"C\". The sequence A, B, C requires three states in a row ending with C, but here we only have one state (C) and no preceding A and B. So the condition is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 101,
+      "completion_tokens": 53,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are now: C, then A. The last three states (if we consider the full history) are C, A, and the new state A? Wait, careful:  \nWe started with State: C \u2192 [WAIT]  \nThen State: A \u2192 now we look at the sequence ending with this new A.  \nWe need to check if the last three states (in order) are A, B, C.  \nThe last three states available are only two: C and A. So we don't have three states yet.  \nAlso, the sequence A, B, C requires the last state to be C, but here the last state is A.  \nSo condition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 166,
+      "completion_tokens": 148,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Now the recent states: previous were C, A, and now new state A.  \nSo the last three states are: C, A, A.  \nThe sequence we need is A, B, C in that order as the last three states.  \nHere we have C, A, A \u2014 not matching A, B, C.  \nAlso the last state is A, not C.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 326,
+      "completion_tokens": 89,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: before this, we had C, A, A. Now new state: C.  \nSo the last three states are: A, A, C.  \nWe need A, B, C exactly. Here we have A, A, C \u2014 the second state is A, not B.  \nSo condition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 427,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were A, A, C. Now new state: A.  \nSo the last three states now: A, C, A.  \nSequence needed: A, B, C. Here we have A, C, A \u2014 not matching.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 511,
+      "completion_tokens": 64,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: before this, we had A, C, A. Now new state: B.  \nSo the last three states: C, A, B.  \nSequence needed: A, B, C. Here we have C, A, B \u2014 not matching.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 587,
+      "completion_tokens": 64,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were C, A, B. Now new state: B.  \nSo the last three states: A, B, B.  \nSequence needed: A, B, C. Here we have A, B, B \u2014 last state is B, not C.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 663,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were A, B, B. Now new state: C.  \nSo the last three states: B, B, C.  \nSequence needed: A, B, C. Here we have B, B, C \u2014 first state is B, not A.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 743,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were B, B, C. Now new state: C.  \nSo the last three states: B, C, C.  \nSequence needed: A, B, C. Here we have B, C, C \u2014 not matching.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 823,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were B, C, C. Now new state: A.  \nSo the last three states: C, C, A.  \nSequence needed: A, B, C. Here we have C, C, A \u2014 not matching.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 898,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were C, C, A. Now new state: C.  \nSo the last three states: C, A, C.  \nSequence needed: A, B, C. Here we have C, A, C \u2014 not matching.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 973,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were C, A, C. Now new state: A.  \nSo the last three states: A, C, A.  \nSequence needed: A, B, C. Here we have A, C, A \u2014 not matching.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1048,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were A, C, A. Now new state: B.  \nSo the last three states: C, A, B.  \nSequence needed: A, B, C. Here we have C, A, B \u2014 not matching.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1123,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were C, A, B. Now new state: B.  \nSo the last three states: A, B, B.  \nSequence needed: A, B, C. Here we have A, B, B \u2014 last state is B, not C.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1198,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were A, B, B. Now new state: A.  \nSo the last three states: B, B, A.  \nSequence needed: A, B, C. Here we have B, B, A \u2014 not matching.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1278,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were B, B, A. Now new state: C.  \nSo the last three states: B, A, C.  \nSequence needed: A, B, C. Here we have B, A, C \u2014 first state is B, not A.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1353,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were B, A, C. Now new state: C.  \nSo the last three states: A, C, C.  \nSequence needed: A, B, C. Here we have A, C, C \u2014 second state is C, not B.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1433,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were A, C, C. Now new state: B.  \nSo the last three states: C, C, B.  \nSequence needed: A, B, C. Here we have C, C, B \u2014 not matching.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1513,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were C, C, B. Now new state: B.  \nSo the last three states: C, B, B.  \nSequence needed: A, B, C. Here we have C, B, B \u2014 not matching.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1588,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were C, B, B. Now new state: A.  \nSo the last three states: B, B, A.  \nSequence needed: A, B, C. Here we have B, B, A \u2014 not matching.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1663,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were B, B, A. Now new state: A.  \nSo the last three states: B, A, A.  \nSequence needed: A, B, C. Here we have B, A, A \u2014 not matching.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1738,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were B, A, A. Now new state: A.  \nSo the last three states: A, A, A.  \nSequence needed: A, B, C. Here we have A, A, A \u2014 not matching.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1813,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were A, A, A. Now new state: B.  \nSo the last three states: A, A, B.  \nSequence needed: A, B, C. Here we have A, A, B \u2014 second state is A, not B.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1888,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Recent states: previous last three were A, A, B. Now new state: C.  \nSo the last three states: A, B, C.  \nWe need to check: are the last three states exactly A, then B, then C?  \nYes: first state of the three is A, second is B, third is C.  \nThis matches the required sequence A, B, C.  \nTherefore, we should include [ACT].\n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 1968,
+      "completion_tokens": 95,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Wait, I need to correct: after the previous state C, we had the sequence A, B, C, so I responded with [ACT]. Now a new state: B.  \nWe need to check the last three states again: the last three states now are the previous two (from before the C) and the new B? Let's list carefully:\n\nBefore the last response, the states were:  \n... A, A, B, C (and we responded [ACT] to C).  \nNow new state: B.  \nSo the last three states are: A, B, B? Wait, let's trace:\n\nThe sequence leading to the previous [ACT] was:  \nState: A (from two steps before), then State: B (from one step before), then State: C (the last one before the response).  \nSo when we got State: C, the last three were A, B, C \u2192 [ACT].  \nNow we have a new State: B.  \nSo the last three states now are: (the B that was before the C), the C, and the new B.  \nThat is: B, C, B.  \nWe need to check if B, C, B matches A, B, C. It does not.  \nSo for this new state, condition not met.\n\nBut my previous response incorrectly said [ACT] again. I should have said [WAIT].  \nI need to follow the rule: only when the sequence ends with A then B then C.  \nHere the last three are B, C, B, so no.\n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 2074,
+      "completion_tokens": 330,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: before this, we had B, C, B. Now new state: C.  \nSo the last three states: C, B, C.  \nSequence needed: A, B, C. Here we have C, B, C \u2014 first state is C, not A.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2416,
+      "completion_tokens": 69,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were C, B, C. Now new state: A.  \nSo the last three states: B, C, A.  \nSequence needed: A, B, C. Here we have B, C, A \u2014 not matching.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2497,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were B, C, A. Now new state: A.  \nSo the last three states: C, A, A.  \nSequence needed: A, B, C. Here we have C, A, A \u2014 not matching.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2572,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were C, A, A. Now new state: A.  \nSo the last three states: A, A, A.  \nSequence needed: A, B, C. Here we have A, A, A \u2014 not matching.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2647,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Recent states: previous last three were A, A, A. Now new state: C.  \nSo the last three states: A, A, C.  \nSequence needed: A, B, C. Here we have A, A, C \u2014 second state is A, not B.  \nCondition not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2722,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.9666666666666667,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 0.9655172413793104,
+    "n_trials": 30,
+    "n_act_trials": 1,
+    "n_wait_trials": 29
+  }
+}

@@ -1,0 +1,544 @@
+{
+  "timestamp": "2026-03-23T15:40:34.149105",
+  "config": {
+    "seed": 5,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 1,
+    "tick_seconds": 0.0,
+    "system_prompt": "Respond [ACT] if the last three states were A then B then C. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "B",
+    "B",
+    "A",
+    "A",
+    "C",
+    "C",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "C",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "C"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 29,
+      "completion_tokens": 3,
+      "peer_responses": []
+    },
+    {
+      "step": 2,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 39,
+      "completion_tokens": 3,
+      "peer_responses": []
+    },
+    {
+      "step": 3,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": false,
+      "prompt_tokens": 49,
+      "completion_tokens": 3,
+      "peer_responses": []
+    },
+    {
+      "step": 4,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "It seems there might have been a misunderstanding. If the current state is indeed C, then the response should be [ACT] as per your initial instruction. If you are expecting a different action or have another query, please let me know.",
+      "correct": false,
+      "prompt_tokens": 59,
+      "completion_tokens": 48,
+      "peer_responses": []
+    },
+    {
+      "step": 5,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "It appears there may have been a miscommunication. If the current state is C, then the appropriate response is [ACT] as per the instructions provided. If you need further assistance or have another question, please feel free to ask.",
+      "correct": false,
+      "prompt_tokens": 114,
+      "completion_tokens": 47,
+      "peer_responses": []
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B, so according to the instructions given, the response should be [WAIT]. If you have any other questions or need assistance with something else, please let me know.",
+      "correct": true,
+      "prompt_tokens": 168,
+      "completion_tokens": 41,
+      "peer_responses": []
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] It seems there might be a misunderstanding. If the current state is indeed B, then the response should be [WAIT] as per the instructions you provided. If there's anything else you need help with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 216,
+      "completion_tokens": 48,
+      "peer_responses": []
+    },
+    {
+      "step": 8,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] The current state is A, so the response is [ACT] as per your instructions. If you have any other questions or need further assistance, feel free to ask.",
+      "correct": false,
+      "prompt_tokens": 271,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] The current state is A, so the response is [ACT] as per your instructions. If there's anything else you need help with, please let me know.",
+      "correct": false,
+      "prompt_tokens": 315,
+      "completion_tokens": 35,
+      "peer_responses": []
+    },
+    {
+      "step": 10,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is C, so the response is [WAIT] as per your instructions. If you have any other questions or need further assistance, please let me know.",
+      "correct": true,
+      "prompt_tokens": 357,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 11,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] The current state is C, so the response is [ACT] as per your instructions. If you have any other questions or need further assistance, please let me know.",
+      "correct": false,
+      "prompt_tokens": 401,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] The current state is A, so the response is [ACT] as per your instructions. If you have any other questions or need further assistance, please let me know.",
+      "correct": false,
+      "prompt_tokens": 445,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B, so the response is [WAIT] as per your instructions. If you have any other questions or need further assistance, please let me know.",
+      "correct": true,
+      "prompt_tokens": 489,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B, so the response is [WAIT] as per your instructions. If you have any other questions or need further assistance, please let me know.",
+      "correct": true,
+      "prompt_tokens": 533,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] The current state is A, so the response is [ACT] as per your instructions. If you have any other questions or need further assistance, please let me know.",
+      "correct": false,
+      "prompt_tokens": 577,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] The current state is A, so the response is [ACT] as per your instructions. If you have any other questions or need further assistance, please let me know.",
+      "correct": false,
+      "prompt_tokens": 621,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] The current state is A, so the response is [ACT] as per your instructions. If you have any other questions or need further assistance, please let me know.",
+      "correct": false,
+      "prompt_tokens": 665,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B, so the response is [WAIT] as per your instructions. If you have any other questions or need further assistance, please let me know.",
+      "correct": true,
+      "prompt_tokens": 709,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 19,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is C, so the response is [WAIT] as per your instructions. If you have any other questions or need further assistance, please let me know.",
+      "correct": false,
+      "prompt_tokens": 753,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] The current state is A, so the response is [ACT] as per your instructions. If you have any other questions or need further assistance, please let me know.",
+      "correct": false,
+      "prompt_tokens": 797,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 21,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] The current state is A, so the response is [ACT] as per your instructions. If you have any other questions or need further assistance, please let me know.",
+      "correct": false,
+      "prompt_tokens": 841,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B, so the response is [WAIT] as per your instructions. If you have any other questions or need further assistance, please let me know.",
+      "correct": true,
+      "prompt_tokens": 885,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B, so the response is [WAIT] as per your instructions. If you have any other questions or need further assistance, please let me know.",
+      "correct": true,
+      "prompt_tokens": 929,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] The current state is A, so the response is [ACT] as per your instructions. If you have any other questions or need further assistance, please let me know.",
+      "correct": false,
+      "prompt_tokens": 973,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B, so the response is [WAIT] as per your instructions. If you have any other questions or need further assistance, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1017,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[ACT] The current state is A, so the response is [ACT] as per your instructions. If you have any other questions or need further assistance, please let me know.",
+      "correct": false,
+      "prompt_tokens": 1061,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B, so the response is [WAIT] as per your instructions. If you have any other questions or need further assistance, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1105,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B, so the response is [WAIT] as per your instructions. If you have any other questions or need further assistance, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1149,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is B, so the response is [WAIT] as per your instructions. If you have any other questions or need further assistance, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1193,
+      "completion_tokens": 37,
+      "peer_responses": []
+    },
+    {
+      "step": 30,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT] The current state is C, so the response is [WAIT] as per your instructions. If you have any other questions or need further assistance, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1237,
+      "completion_tokens": 37,
+      "peer_responses": []
+    }
+  ],
+  "summary": {
+    "accuracy": 0.5,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 0.5172413793103449,
+    "n_trials": 30,
+    "n_act_trials": 1,
+    "n_wait_trials": 29
+  }
+}

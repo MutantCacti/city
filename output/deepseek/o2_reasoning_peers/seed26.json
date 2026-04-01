@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-24T00:27:27.436649",
+  "config": {
+    "seed": 26,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A or B. Your task: when you see B immediately following A, include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what was the previous state? What is the current state? Is this a B that followed an A? Then give your answer."
+  },
+  "stimulus_history": [
+    "A",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state is not defined yet (this is the first state). The current state is A. Since there is no B immediately following A, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 91,
+      "completion_tokens": 37,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The previous state was A. The current state is B. This is a B that followed an A. According to the rule, when B immediately follows A, I should include [ACT] in my response.  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 140,
+      "completion_tokens": 46,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: B  \n- Current state: A  \n- Is this a B immediately following an A? No, it's an A following a B.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 197,
+      "completion_tokens": 50,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let's check:  \n- Previous state: A  \n- Current state: B  \n- Is this a B immediately following an A? Yes, because the previous state was A.  \nSo the rule says to include [ACT] in the response.  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 259,
+      "completion_tokens": 54,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: B  \n- Current state: A  \n- Is this a B immediately following an A? No, it's A following B.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 324,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: A  \n- Current state: A  \n- Is this a B immediately following an A? No, because the current state is A, not B.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 384,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: A  \n- Current state: A  \n- Is this a B immediately following an A? No, because the current state is A, not B.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 448,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: A  \n- Current state: A  \n- Is this a B immediately following an A? No, because the current state is A, not B.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 512,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let's check:  \n- Previous state: A  \n- Current state: B  \n- Is this a B immediately following an A? Yes, because the previous state was A.  \nSo the rule says to include [ACT] in the response.  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 576,
+      "completion_tokens": 54,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: B  \n- Current state: B  \n- Is this a B immediately following an A? No, because the previous state was B, not A.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 641,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: B  \n- Current state: B  \n- Is this a B immediately following an A? No, because the previous state was B, not A.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 705,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: B  \n- Current state: A  \n- Is this a B immediately following an A? No, because the current state is A, not B.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 769,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let's check:  \n- Previous state: A  \n- Current state: B  \n- Is this a B immediately following an A? Yes, because the previous state was A.  \nSo the rule says to include [ACT] in the response.  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 833,
+      "completion_tokens": 54,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: B  \n- Current state: B  \n- Is this a B immediately following an A? No, because the previous state was B, not A.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 898,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: B  \n- Current state: B  \n- Is this a B immediately following an A? No, because the previous state was B, not A.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 962,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: B  \n- Current state: B  \n- Is this a B immediately following an A? No, because the previous state was B, not A.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1026,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: B  \n- Current state: A  \n- Is this a B immediately following an A? No, because the current state is A, not B.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1090,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let's check:  \n- Previous state: A  \n- Current state: B  \n- Is this a B immediately following an A? Yes, because the previous state was A.  \nSo the rule says to include [ACT] in the response.  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 1154,
+      "completion_tokens": 54,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: B  \n- Current state: B  \n- Is this a B immediately following an A? No, because the previous state was B, not A.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1219,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: B  \n- Current state: B  \n- Is this a B immediately following an A? No, because the previous state was B, not A.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1283,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: B  \n- Current state: B  \n- Is this a B immediately following an A? No, because the previous state was B, not A.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1347,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: B  \n- Current state: B  \n- Is this a B immediately following an A? No, because the previous state was B, not A.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1411,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: B  \n- Current state: A  \n- Is this a B immediately following an A? No, because the current state is A, not B.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1475,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: A  \n- Current state: A  \n- Is this a B immediately following an A? No, because the current state is A, not B.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1539,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: A  \n- Current state: A  \n- Is this a B immediately following an A? No, because the current state is A, not B.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1603,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let's check:  \n- Previous state: A  \n- Current state: B  \n- Is this a B immediately following an A? Yes, because the previous state was A.  \nSo the rule says to include [ACT] in the response.  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 1667,
+      "completion_tokens": 54,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: B  \n- Current state: A  \n- Is this a B immediately following an A? No, because the current state is A, not B.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1732,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let's check:  \n- Previous state: A  \n- Current state: B  \n- Is this a B immediately following an A? Yes, because the previous state was A.  \nSo the rule says to include [ACT] in the response.  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 1796,
+      "completion_tokens": 54,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: B  \n- Current state: B  \n- Is this a B immediately following an A? No, because the previous state was B, not A.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1861,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check:  \n- Previous state: B  \n- Current state: B  \n- Is this a B immediately following an A? No, because the previous state was B, not A.  \nSo the rule does not apply.  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1925,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 1.0,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 7,
+    "n_wait_trials": 23
+  }
+}

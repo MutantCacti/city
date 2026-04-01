@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-24T05:57:20.282239",
+  "config": {
+    "seed": 57,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "Respond [ACT] if the last three states were A then B then C. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "B",
+    "C",
+    "C",
+    "B",
+    "C",
+    "A",
+    "C",
+    "A",
+    "C",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "C",
+    "A",
+    "C",
+    "A",
+    "B",
+    "C",
+    "B",
+    "C",
+    "A",
+    "A",
+    "B",
+    "C",
+    "B",
+    "C",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The last three states were A, B, C, so the correct response is [ACT].",
+      "correct": false,
+      "prompt_tokens": 34,
+      "completion_tokens": 19,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were B, C, C, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 64,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were C, C, C, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 96,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were C, C, B, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 128,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were C, B, C, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 160,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were B, C, A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 192,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were C, A, C, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 224,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were A, C, A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 256,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were C, A, C, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 288,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were A, C, A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 320,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were C, A, B, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 352,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were A, B, A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 384,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were B, A, A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 416,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were A, A, A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 448,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were A, A, B, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 480,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The last three states were A, B, C, so the correct response is [ACT].",
+      "correct": true,
+      "prompt_tokens": 512,
+      "completion_tokens": 19,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were B, C, A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 542,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were C, A, C, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 574,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were A, C, A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 606,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were C, A, B, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 638,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The last three states were A, B, C, so the correct response is [ACT].",
+      "correct": true,
+      "prompt_tokens": 670,
+      "completion_tokens": 19,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were B, C, B, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 700,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were C, B, C, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 732,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were B, C, A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 764,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were C, A, A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 796,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were A, A, B, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 828,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The last three states were A, B, C, so the correct response is [ACT].",
+      "correct": true,
+      "prompt_tokens": 860,
+      "completion_tokens": 19,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were B, C, B, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 890,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were C, B, C, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 922,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were B, C, A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 954,
+      "completion_tokens": 20,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.9666666666666667,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 0.9629629629629629,
+    "n_trials": 30,
+    "n_act_trials": 3,
+    "n_wait_trials": 27
+  }
+}

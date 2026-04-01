@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-24T14:52:03.538576",
+  "config": {
+    "seed": 46,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "anthropic",
+    "model_name": "claude-haiku-4-5-20251001",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.2,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A or B. Your task: when you see B immediately following A, include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what was the previous state? What is the current state? Is this a B that followed an A? Then give your answer."
+  },
+  "stimulus_history": [
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're correct in your analysis. Since this is the first state (A) and there is no previous state to compare it to, and the current state is A (not B), the condition \"B immediately following A\" is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 161,
+      "completion_tokens": 57,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? This is the first state, so there is no previous state.\n2. What is the current state? A\n3. Is this a B that followed an A? No, this is an A, not a B.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "",
+      "correct": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? A\n2. What is the current state? B\n3. Is this a B that followed an A? Yes, the current state is B and it immediately followed A.\n\n[ACT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? B\n2. What is the current state? B\n3. Is this a B that followed an A? No, the current B followed a previous B, not an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 407,
+      "completion_tokens": 64,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? B\n2. What is the current state? B\n3. Is this a B that followed an A? No, this B followed a B, not an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? B\n2. What is the current state? A\n3. Is this a B that followed an A? No, the current state is A (not B), so the condition is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 544,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? B\n2. What is the current state? A\n3. Is this a B that followed an A? No, this is an A, not a B. The condition requires a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? A\n2. What is the current state? B\n3. Is this a B that followed an A? Yes, the current state is B and it immediately followed A.\n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 678,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? A\n2. What is the current state? B\n3. Is this a B that followed an A? Yes, the current state is B and it immediately followed A.\n\n[ACT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? B\n2. What is the current state? B\n3. Is this a B that followed an A? No, the current B followed a previous B, not an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 806,
+      "completion_tokens": 64,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? B\n2. What is the current state? B\n3. Is this a B that followed an A? No, this B followed a B, not an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? B\n2. What is the current state? A\n3. Is this a B that followed an A? No, the current state is A (not B), so the condition is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 943,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? B\n2. What is the current state? A\n3. Is this a B that followed an A? No, this is an A, not a B. The condition requires a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? A\n2. What is the current state? B\n3. Is this a B that followed an A? Yes, the current state is B and it immediately followed A.\n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 1077,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? A\n2. What is the current state? B\n3. Is this a B that followed an A? Yes, the current state is B and it immediately followed A.\n\n[ACT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? B\n2. What is the current state? B\n3. Is this a B that followed an A? No, this B followed a B, not an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? B\n2. What is the current state? B\n3. Is this a B that followed an A? No, the current B followed a previous B, not an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1390,
+      "completion_tokens": 64,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? B\n2. What is the current state? B\n3. Is this a B that followed an A? No, this B followed a B, not an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? B\n2. What is the current state? A\n3. Is this a B that followed an A? No, the current state is A (not B), so the condition is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1527,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? B\n2. What is the current state? A\n3. Is this a B that followed an A? No, this is an A, not a B. The condition requires a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? A\n2. What is the current state? B\n3. Is this a B that followed an A? Yes, the current state is B and it immediately followed A.\n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 1661,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? A\n2. What is the current state? B\n3. Is this a B that followed an A? Yes, the current state is B and it immediately followed A.\n\n[ACT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? B\n2. What is the current state? A\n3. Is this a B that followed an A? No, the current state is A (not B), so the condition is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1797,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? B\n2. What is the current state? A\n3. Is this a B that followed an A? No, this is an A, not a B. The condition requires a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? A\n2. What is the current state? B\n3. Is this a B that followed an A? Yes, the current state is B and it immediately followed A.\n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 1931,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? A\n2. What is the current state? B\n3. Is this a B that followed an A? Yes, the current state is B and it immediately followed A.\n\n[ACT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? B\n2. What is the current state? A\n3. Is this a B that followed an A? No, the current state is A (not B), so the condition is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2067,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? B\n2. What is the current state? A\n3. Is this a B that followed an A? No, this is an A, not a B. The condition requires a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? A\n2. What is the current state? A\n3. Is this a B that followed an A? No, the current state is A (not B), so the condition is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2208,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? A\n2. What is the current state? A\n3. Is this a B that followed an A? No, this is an A, not a B. The condition requires a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? A\n2. What is the current state? A\n3. Is this a B that followed an A? No, the current state is A (not B), so the condition is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2349,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? A\n2. What is the current state? A\n3. Is this a B that followed an A? No, this is an A, not a B. The condition requires a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? A\n2. What is the current state? B\n3. Is this a B that followed an A? Yes, the current state is B and it immediately followed A.\n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 2483,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? A\n2. What is the current state? B\n3. Is this a B that followed an A? Yes, the current state is B and it immediately followed A.\n\n[ACT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? B\n2. What is the current state? B\n3. Is this a B that followed an A? No, the current B followed a previous B, not an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2611,
+      "completion_tokens": 64,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? B\n2. What is the current state? B\n3. Is this a B that followed an A? No, this B followed a B, not an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? B\n2. What is the current state? B\n3. Is this a B that followed an A? No, the current B followed a previous B, not an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2740,
+      "completion_tokens": 64,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? B\n2. What is the current state? B\n3. Is this a B that followed an A? No, this B followed a B, not an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? B\n2. What is the current state? B\n3. Is this a B that followed an A? No, the current B followed a previous B, not an A.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2869,
+      "completion_tokens": 64,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? B\n2. What is the current state? B\n3. Is this a B that followed an A? No, this B followed a B, not an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? B\n2. What is the current state? A\n3. Is this a B that followed an A? No, the current state is A (not B), so the condition is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 3006,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? B\n2. What is the current state? A\n3. Is this a B that followed an A? No, this is an A, not a B. The condition requires a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? A\n2. What is the current state? B\n3. Is this a B that followed an A? Yes, the current state is B and it immediately followed A.\n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 3140,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? A\n2. What is the current state? B\n3. Is this a B that followed an A? Yes, the current state is B and it immediately followed A.\n\n[ACT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? B\n2. What is the current state? A\n3. Is this a B that followed an A? No, the current state is A (not B), so the condition is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 3276,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? B\n2. What is the current state? A\n3. Is this a B that followed an A? No, this is an A, not a B. The condition requires a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? A\n2. What is the current state? A\n3. Is this a B that followed an A? No, the current state is A (not B), so the condition is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 3350,
+      "completion_tokens": 68,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? A\n2. What is the current state? A\n3. Is this a B that followed an A? No, the current state is A (not B), so the condition is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 3491,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? A\n2. What is the current state? A\n3. Is this a B that followed an A? No, this is an A, not a B. The condition requires a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? A\n2. What is the current state? A\n3. Is this a B that followed an A? No, the current state is A (not B), so the condition is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 3632,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? A\n2. What is the current state? A\n3. Is this a B that followed an A? No, this is an A, not a B. The condition requires a B following an A.\n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? A\n2. What is the current state? A\n3. Is this a B that followed an A? No, the current state is A (not B), so the condition is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 3706,
+      "completion_tokens": 68,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "You're correct. Let me work through this:\n\n1. What was the previous state? A\n2. What is the current state? A\n3. Is this a B that followed an A? No, the current state is A (not B), so the condition is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 3847,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "Let me think through this step by step:\n\n1. What was the previous state? A\n2. What is the current state? A\n3. Is this a B that followed an A? No, this is an A, not a B. The condition requires a B following an A.\n\n[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.9666666666666667,
+    "act_accuracy": 0.8571428571428571,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 7,
+    "n_wait_trials": 23
+  }
+}

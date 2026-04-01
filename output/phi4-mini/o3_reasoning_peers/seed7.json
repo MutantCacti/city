@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-23T15:33:05.300995",
+  "config": {
+    "seed": 7,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "C",
+    "A",
+    "A",
+    "B",
+    "C",
+    "A",
+    "B",
+    "A",
+    "C",
+    "A",
+    "B",
+    "A",
+    "B",
+    "C",
+    "C",
+    "B",
+    "A",
+    "A",
+    "B",
+    "C",
+    "B",
+    "B",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C.\" Since the sequence does not end with A then B then C, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 164,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "Based on the given instruction, we need to look at the sequence of states to determine the appropriate response. The sequence provided is \"B,\" which is not followed by \"A\" then \"B\" then \"C.\" Therefore, the sequence does not end with A then B then C.\n\nThe correct response is: [WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "No problem at all. The sequence provided is \"A,\" which is the first state in the required sequence of \"A,\" \"B,\" \"C.\" However, since it is not followed by \"B\" and then \"C,\" the sequence does not complete the required pattern. Therefore, the correct response is indeed: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 271,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "Apologies for any confusion. To clarify, the sequence provided is \"A,\" which does not match the required sequence of \"A,\" \"B,\" \"C.\" Since the sequence does not end with A then B then C, the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It seems there might have been a misunderstanding. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" as a consecutive order. The sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is still: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 411,
+      "completion_tokens": 74,
+      "peer_responses": [
+        "I understand. The sequence provided is \"A,\" which is the first part of the required sequence of \"A,\" \"B,\" \"C.\" However, since it is not followed by \"B\" and then \"C,\" the sequence does not complete the required pattern. Therefore, the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "No worries at all. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" in the order of consecutive states. The sequence \"B\" does not complete the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 562,
+      "completion_tokens": 69,
+      "peer_responses": [
+        "I apologize for any confusion. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It appears there may have been a misunderstanding. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" as consecutive states. The sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is still: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 702,
+      "completion_tokens": 73,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" does not complete the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It seems there is a consistent interpretation of the instructions. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" in the order of consecutive states. The sequence \"B\" does not complete the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 849,
+      "completion_tokens": 75,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It appears there may be a misunderstanding. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" as consecutive states. The sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 998,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It seems there is a consistent interpretation of the instructions. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" in the order of consecutive states. The sequence \"B\" does not complete the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1144,
+      "completion_tokens": 75,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It appears there may be a misunderstanding. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" as consecutive states. The sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1293,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It seems there is a consistent interpretation of the instructions. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" in the order of consecutive states. The sequence \"B\" does not complete the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1439,
+      "completion_tokens": 75,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It appears there may be a misunderstanding. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" as consecutive states. The sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1588,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "It seems there is a consistent interpretation of the instructions. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" in the order of consecutive states. The sequence \"B\" does not complete the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": false,
+      "prompt_tokens": 1734,
+      "completion_tokens": 75,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It appears there may be a misunderstanding. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" as consecutive states. The sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1883,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It seems there is a consistent interpretation of the instructions. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" in the order of consecutive states. The sequence \"B\" does not complete the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2029,
+      "completion_tokens": 75,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It appears there may be a misunderstanding. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" as consecutive states. The sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2178,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It seems there is a consistent interpretation of the instructions. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" in the order of consecutive states. The sequence \"B\" does not complete the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2324,
+      "completion_tokens": 75,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It appears there may be a misunderstanding. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" as consecutive states. The sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2473,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It appears there is a consistent interpretation of the instructions. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" in the order of consecutive states. The sequence \"B\" does not complete the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2619,
+      "completion_tokens": 75,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It appears there may be a misunderstanding. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" as consecutive states. The sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2768,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It appears there is a consistent interpretation of the instructions. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" in the order of consecutive states. The sequence \"B\" does not complete the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2914,
+      "completion_tokens": 75,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "It appears there may be a misunderstanding. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" as consecutive states. The sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": false,
+      "prompt_tokens": 3063,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It appears there may be a misunderstanding. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" as consecutive states. The sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 3209,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It appears there is a consistent interpretation of the instructions. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" in the order of consecutive states. The sequence \"B\" does not complete the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 3355,
+      "completion_tokens": 75,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It appears there may be a misunderstanding. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" as consecutive states. The sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 3504,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It appears there may be a misunderstanding. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" as consecutive states. The sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 3650,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It appears there is a consistent interpretation of the instructions. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" in the order of consecutive states. The sequence \"B\" does not complete the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 3796,
+      "completion_tokens": 75,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "It appears there may be a misunderstanding. The sequence provided is \"B,\" which is not part of the required sequence \"A,\" \"B,\" \"C\" as consecutive states. The sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C.\" Therefore, the correct response is indeed: [WAIT].",
+      "correct": false,
+      "prompt_tokens": 3945,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "It appears there is a",
+      "correct": true,
+      "prompt_tokens": 4091,
+      "completion_tokens": 5,
+      "peer_responses": [
+        "I understand. The sequence provided is \"B,\" which does not match the required sequence of \"A,\" \"B,\" \"C\" as consecutive states. Since the sequence \"B\" stands alone and does not follow the pattern of ending with \"A,\" \"B,\" \"C,\" the correct response remains: [WAIT]."
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.9,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 3,
+    "n_wait_trials": 27
+  }
+}

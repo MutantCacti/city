@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-24T00:10:53.644695",
+  "config": {
+    "seed": 19,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A or B. Your task: when you see B immediately following A, include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what was the previous state? What is the current state? Is this a B that followed an A? Then give your answer."
+  },
+  "stimulus_history": [
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was the start, so there is no prior state to compare. The current state is A. Since there is no B immediately following A, the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 91,
+      "completion_tokens": 39,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was A. The current state is A. This is not a B following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 142,
+      "completion_tokens": 30,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was A. The current state is A. This is not a B following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 184,
+      "completion_tokens": 30,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was A. The current state is A. This is not a B following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 226,
+      "completion_tokens": 30,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The previous state was A. The current state is B. This is a B immediately following an A, so the correct response is [ACT].",
+      "correct": true,
+      "prompt_tokens": 326,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "I need to correct my reasoning. Let's go step by step:\n\n- The previous state was A (from the last response).\n- The current state is B.\n- This is a B that immediately follows an A.\n- Therefore, the correct response should include [ACT].\n\nSo the answer is [ACT]."
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was B. The current state is B. This is not a B immediately following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 366,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was B. The current state is B. This is not a B immediately following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 409,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was B. The current state is A. This is not a B immediately following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 520,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "I need to correct my reasoning. Let's go step by step:\n\n- The previous state was B (from the last response).\n- The current state is A.\n- This is an A, not a B. The rule only triggers when B immediately follows A.\n- Therefore, the correct response is [WAIT].\n\nSo the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The previous state was A. The current state is B. This is a B immediately following an A, so the correct response is [ACT].",
+      "correct": true,
+      "prompt_tokens": 621,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "I need to correct my reasoning. Let's go step by step:\n\n- The previous state was A (from the last response).\n- The current state is B.\n- This is a B that immediately follows an A.\n- Therefore, the correct response should include [ACT].\n\nSo the answer is [ACT]."
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was B. The current state is B. This is not a B immediately following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 661,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was B. The current state is B. This is not a B immediately following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 704,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was B. The current state is B. This is not a B immediately following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 747,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was B. The current state is A. This is not a B immediately following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 858,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "I need to correct my reasoning. Let's go step by step:\n\n- The previous state was B (from the last response).\n- The current state is A.\n- This is an A, not a B. The rule only triggers when B immediately follows A.\n- Therefore, the correct response is [WAIT].\n\nSo the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was A. The current state is A. This is not a B immediately following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 901,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was A. The current state is A. This is not a B immediately following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 944,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The previous state was A. The current state is B. This is a B immediately following an A, so the correct response is [ACT].",
+      "correct": true,
+      "prompt_tokens": 1045,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "I need to correct my reasoning. Let's go step by step:\n\n- The previous state was A (from the last response).\n- The current state is B.\n- This is a B that immediately follows an A.\n- Therefore, the correct response should include [ACT].\n\nSo the answer is [ACT]."
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was B. The current state is A. This is not a B immediately following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1154,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "I need to correct my reasoning. Let's go step by step:\n\n- The previous state was B (from the last response).\n- The current state is A.\n- This is an A, not a B. The rule only triggers when B immediately follows A.\n- Therefore, the correct response is [WAIT].\n\nSo the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was A. The current state is A. This is not a B immediately following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1197,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The previous state was A. The current state is B. This is a B immediately following an A, so the correct response is [ACT].",
+      "correct": true,
+      "prompt_tokens": 1298,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "I need to correct my reasoning. Let's go step by step:\n\n- The previous state was A (from the last response).\n- The current state is B.\n- This is a B that immediately follows an A.\n- Therefore, the correct response should include [ACT].\n\nSo the answer is [ACT]."
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was B. The current state is B. This is not a B immediately following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1338,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was B. The current state is A. This is not a B immediately following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1449,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "I need to correct my reasoning. Let's go step by step:\n\n- The previous state was B (from the last response).\n- The current state is A.\n- This is an A, not a B. The rule only triggers when B immediately follows A.\n- Therefore, the correct response is [WAIT].\n\nSo the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The previous state was A. The current state is B. This is a B immediately following an A, so the correct response is [ACT].",
+      "correct": true,
+      "prompt_tokens": 1550,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "I need to correct my reasoning. Let's go step by step:\n\n- The previous state was A (from the last response).\n- The current state is B.\n- This is a B that immediately follows an A.\n- Therefore, the correct response should include [ACT].\n\nSo the answer is [ACT]."
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was B. The current state is B. This is not a B immediately following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1590,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was B. The current state is B. This is not a B immediately following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1633,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was B. The current state is A. This is not a B immediately following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1744,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "I need to correct my reasoning. Let's go step by step:\n\n- The previous state was B (from the last response).\n- The current state is A.\n- This is an A, not a B. The rule only triggers when B immediately follows A.\n- Therefore, the correct response is [WAIT].\n\nSo the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The previous state was A. The current state is B. This is a B immediately following an A, so the correct response is [ACT].",
+      "correct": true,
+      "prompt_tokens": 1845,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "I need to correct my reasoning. Let's go step by step:\n\n- The previous state was A (from the last response).\n- The current state is B.\n- This is a B that immediately follows an A.\n- Therefore, the correct response should include [ACT].\n\nSo the answer is [ACT]."
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was B. The current state is B. This is not a B immediately following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1885,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was B. The current state is A. This is not a B immediately following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1996,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "I need to correct my reasoning. Let's go step by step:\n\n- The previous state was B (from the last response).\n- The current state is A.\n- This is an A, not a B. The rule only triggers when B immediately follows A.\n- Therefore, the correct response is [WAIT].\n\nSo the answer is [WAIT]."
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The previous state was A. The current state is B. This is a B immediately following an A, so the correct response is [ACT].",
+      "correct": true,
+      "prompt_tokens": 2097,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "I need to correct my reasoning. Let's go step by step:\n\n- The previous state was A (from the last response).\n- The current state is B.\n- This is a B that immediately follows an A.\n- Therefore, the correct response should include [ACT].\n\nSo the answer is [ACT]."
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was B. The current state is A. This is not a B immediately following an A, so the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2206,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "I need to correct my reasoning. Let's go step by step:\n\n- The previous state was B (from the last response).\n- The current state is A.\n- This is an A, not a B. The rule only triggers when B immediately follows A.\n- Therefore, the correct response is [WAIT].\n\nSo the answer is [WAIT]."
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 1.0,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 7,
+    "n_wait_trials": 23
+  }
+}

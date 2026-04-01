@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-24T03:31:30.042062",
+  "config": {
+    "seed": 43,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "B",
+    "B",
+    "A",
+    "C",
+    "B",
+    "C",
+    "A",
+    "A",
+    "A",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "C",
+    "C",
+    "C",
+    "B",
+    "A",
+    "A",
+    "C",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 186,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **B**.  \nRecent states (just this one): **B**  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with B, not C, and there's no A before this B.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 296,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **B**.  \nRecent states so far: **B** (previous), **B** (current).  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with B, not C, and there's no A before the most recent B.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 390,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **A**.  \nRecent states so far: **B**, **B**, **A**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with A, not C.  \nNo A followed immediately by B followed immediately by C is present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 517,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **C**.  \nRecent states so far: **B**, **B**, **A**, **C**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nLooking at the last three states: **B**, **A**, **C** \u2192 not A,B,C.  \nLooking further back: **B**, **B**, **A** \u2192 no.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 661,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **B**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with B, not C.  \nCheck the last three states: **A**, **C**, **B** \u2192 not A,B,C.  \nCheck before that: **B**, **A**, **C** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 815,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **C**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCheck the last three states: **B**, **C**, **C** \u2192 not A,B,C.  \nCheck the three before that: **A**, **C**, **B** \u2192 not A,B,C.  \nCheck **B**, **A**, **C** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 985,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **A**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with A, not C.  \nCheck the last three states: **C**, **B**, **A** \u2192 not A,B,C.  \nCheck before that: **B**, **C**, **B** \u2192 not A,B,C.  \nCheck before that: **A**, **C**, **B** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1158,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **A**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with A, not C.  \nCheck the last three states: **C**, **A**, **A** \u2192 not A,B,C.  \nCheck before that: **A**, **C**, **A** \u2192 not A,B,C.  \nCheck before that: **B**, **A**, **C** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1334,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **A**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with A, not C.  \nCheck the last three states: **A**, **A**, **A** \u2192 not A,B,C.  \nCheck before that: **C**, **A**, **A** \u2192 not A,B,C.  \nCheck before that: **A**, **C**, **A** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1519,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **B**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**, **B**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with B, not C.  \nCheck the last three states: **A**, **A**, **B** \u2192 not A,B,C (it's A,A,B).  \nCheck before that: **C**, **A**, **A** \u2192 not A,B,C.  \nCheck before that: **A**, **C**, **A** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "[ACT]",
+      "correct": true,
+      "prompt_tokens": 1656,
+      "completion_tokens": 3,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **C**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**, **B**, **C**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCheck the last three states: **A**, **B**, **C** \u2192 yes, that is exactly A, then B, then C in order, ending with C.  \nTherefore, the required sequence has just occurred.  \n\nAnswer: [ACT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2084,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **B**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**, **B**, **C**, **B**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with B, not C.  \nCheck the last three states: **B**, **C**, **B** \u2192 not A,B,C.  \nCheck before that: **A**, **B**, **C** \u2192 that was A,B,C, but it ended at the previous step (C), not now.  \nNow, we only check if the sequence ends with the current state being C and the two before it being A then B.  \nHere, the last three are A, B, C? Let's list:  \nPositions: ... A, B, C, B.  \nLast three: (C, B, ?) Wait carefully:  \nThe states in order from last backwards:  \nCurrent: B  \nPrevious: C  \nBefore that: B  \nSo last three: B, C, B? No, let's take them in chronological order before current:  \nThree states ending at current B: (A, C, B) \u2192 not A,B,C.  \nThree states ending at previous C: (B, B, C) \u2192 not A,B,C.  \nActually, let's list the last four: A, B, C, B.  \nLast three ending at current B: (B, C, B) \u2192 not A,B,C.  \nLast three ending at previous C: (A, B, C) \u2192 that was A,B,C, but that was at the previous step, not now.  \nWe only respond [ACT] if the sequence ends with the current state being C and the two before it being A then B.  \nHere current state is B, so no.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2316,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **C**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**, **B**, **C**, **B**, **C**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCheck the last three states: **B**, **C**, **C** \u2192 not A,B,C.  \nCheck before that: **A**, **B**, **C** \u2192 that was A,B,C, but it ended at the C two steps ago, not now.  \nNow, the last three ending at current C: (B, C, C) \u2192 not A,B,C.  \nCheck (C, B, C) \u2192 not A,B,C.  \nCheck (A, B, C) is not in the last three positions ending now.  \nSo the required sequence **A, B, C** is not present ending with this C.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2507,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **B**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**, **B**, **C**, **B**, **C**, **B**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with B, not C.  \nCheck the last three states: **C**, **B**, **B** \u2192 not A,B,C.  \nCheck before that: **B**, **C**, **B** \u2192 not A,B,C.  \nCheck before that: **C**, **B**, **C** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2701,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **A**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**, **B**, **C**, **B**, **C**, **B**, **A**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with A, not C.  \nCheck the last three states: **C**, **B**, **A** \u2192 not A,B,C.  \nCheck before that: **B**, **C**, **B** \u2192 not A,B,C.  \nCheck before that: **C**, **B**, **C** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2898,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **B**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**, **B**, **C**, **B**, **C**, **B**, **A**, **B**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with B, not C.  \nCheck the last three states: **B**, **A**, **B** \u2192 not A,B,C.  \nCheck before that: **C**, **B**, **A** \u2192 not A,B,C.  \nCheck before that: **B**, **C**, **B** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 3098,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **B**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**, **B**, **C**, **B**, **C**, **B**, **A**, **B**, **B**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with B, not C.  \nCheck the last three states: **A**, **B**, **B** \u2192 not A,B,C.  \nCheck before that: **B**, **A**, **B** \u2192 not A,B,C.  \nCheck before that: **C**, **B**, **A** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 3301,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **A**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**, **B**, **C**, **B**, **C**, **B**, **A**, **B**, **B**, **A**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with A, not C.  \nCheck the last three states: **B**, **B**, **A** \u2192 not A,B,C.  \nCheck before that: **A**, **B**, **B** \u2192 not A,B,C.  \nCheck before that: **B**, **A**, **B** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 3507,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **B**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**, **B**, **C**, **B**, **C**, **B**, **A**, **B**, **B**, **A**, **B**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with B, not C.  \nCheck the last three states: **B**, **A**, **B** \u2192 not A,B,C.  \nCheck before that: **A**, **B**, **B** \u2192 not A,B,C.  \nCheck before that: **B**, **A**, **B** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 3716,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **B**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**, **B**, **C**, **B**, **C**, **B**, **A**, **B**, **B**, **A**, **B**, **B**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with B, not C.  \nCheck the last three states: **A**, **B**, **B** \u2192 not A,B,C.  \nCheck before that: **B**, **A**, **B** \u2192 not A,B,C.  \nCheck before that: **B**, **B**, **A** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 3928,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **B**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**, **B**, **C**, **B**, **C**, **B**, **A**, **B**, **B**, **A**, **B**, **B**, **B**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with B, not C.  \nCheck the last three states: **B**, **B**, **B** \u2192 not A,B,C.  \nCheck before that: **A**, **B**, **B** \u2192 not A,B,C.  \nCheck before that: **B**, **A**, **B** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 4143,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **A**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**, **B**, **C**, **B**, **C**, **B**, **A**, **B**, **B**, **A**, **B**, **B**, **B**, **A**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with A, not C.  \nCheck the last three states: **B**, **B**, **A** \u2192 not A,B,C.  \nCheck before that: **B**, **B**, **B** \u2192 not A,B,C.  \nCheck before that: **A**, **B**, **B** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 4359,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **C**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**, **B**, **C**, **B**, **C**, **B**, **A**, **B**, **B**, **A**, **B**, **B**, **B**, **A**, **C**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCheck the last three states: **B**, **A**, **C** \u2192 not A,B,C (it's B,A,C).  \nCheck before that: **B**, **B**, **A** \u2192 not A,B,C.  \nCheck before that: **A**, **B**, **B** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present ending with this C.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 4572,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **C**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**, **B**, **C**, **B**, **C**, **B**, **A**, **B**, **B**, **A**, **B**, **B**, **B**, **A**, **C**, **C**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCheck the last three states: **A**, **C**, **C** \u2192 not A,B,C.  \nCheck before that: **B**, **A**, **C** \u2192 not A,B,C.  \nCheck before that: **B**, **B**, **A** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present ending with this C.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 4788,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **C**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**, **B**, **C**, **B**, **C**, **B**, **A**, **B**, **B**, **A**, **B**, **B**, **B**, **A**, **C**, **C**, **C**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCheck the last three states: **C**, **C**, **C** \u2192 not A,B,C.  \nCheck before that: **A**, **C**, **C** \u2192 not A,B,C.  \nCheck before that: **B**, **A**, **C** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present ending with this C.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 5015,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **B**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**, **B**, **C**, **B**, **C**, **B**, **A**, **B**, **B**, **A**, **B**, **B**, **B**, **A**, **C**, **C**, **C**, **B**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with B, not C.  \nCheck the last three states: **C**, **C**, **B** \u2192 not A,B,C.  \nCheck before that: **A**, **C**, **C** \u2192 not A,B,C.  \nCheck before that: **B**, **A**, **C** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 5245,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **A**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**, **B**, **C**, **B**, **C**, **B**, **A**, **B**, **B**, **A**, **B**, **B**, **B**, **A**, **C**, **C**, **C**, **B**, **A**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with A, not C.  \nCheck the last three states: **C**, **B**, **A** \u2192 not A,B,C.  \nCheck before that: **C**, **C**, **B** \u2192 not A,B,C.  \nCheck before that: **A**, **C**, **C** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 5478,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **A**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**, **B**, **C**, **B**, **C**, **B**, **A**, **B**, **B**, **A**, **B**, **B**, **B**, **A**, **C**, **C**, **C**, **B**, **A**, **A**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with A, not C.  \nCheck the last three states: **B**, **A**, **A** \u2192 not A,B,C.  \nCheck before that: **C**, **B**, **A** \u2192 not A,B,C.  \nCheck before that: **C**, **C**, **B** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 5706,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **C**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**, **B**, **C**, **B**, **C**, **B**, **A**, **B**, **B**, **A**, **B**, **B**, **B**, **A**, **C**, **C**, **C**, **B**, **A**, **A**, **C**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCheck the last three states: **A**, **A**, **C** \u2192 not A,B,C.  \nCheck before that: **B**, **A**, **A** \u2192 not A,B,C.  \nCheck before that: **C**, **B**, **A** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present ending with this C.  \n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 5945,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\nThe current state is **A**.  \nRecent states so far: **B**, **B**, **A**, **C**, **B**, **C**, **A**, **A**, **A**, **B**, **C**, **B**, **C**, **B**, **A**, **B**, **B**, **A**, **B**, **B**, **B**, **A**, **C**, **C**, **C**, **B**, **A**, **A**, **C**, **A**.  \nWe need the sequence **A, B, C** in that order, ending with C.  \nCurrently, the sequence ends with A, not C.  \nCheck the last three states: **A**, **C**, **A** \u2192 not A,B,C.  \nCheck before that: **B**, **A**, **A** \u2192 not A,B,C.  \nCheck before that: **C**, **B**, **A** \u2192 not A,B,C.  \nSo the required sequence **A, B, C** is not present.  \n\nAnswer: [WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 1.0,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 1,
+    "n_wait_trials": 29
+  }
+}

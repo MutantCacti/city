@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-24T03:14:59.090650",
+  "config": {
+    "seed": 39,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "C",
+    "A",
+    "B",
+    "C",
+    "A",
+    "A",
+    "B",
+    "A",
+    "C",
+    "C",
+    "B",
+    "C",
+    "A",
+    "C",
+    "A",
+    "A",
+    "A",
+    "C",
+    "B",
+    "B",
+    "B",
+    "B",
+    "C",
+    "B",
+    "C",
+    "C",
+    "C",
+    "A",
+    "C",
+    "C"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are just \"C\". There is no sequence of A, then B, then C in a row. So the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 101,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: C, then A. The sequence ends with just \"A\". There is no A, B, C in a row. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 145,
+      "completion_tokens": 37,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: C, A, B. The sequence ends with A, B. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 194,
+      "completion_tokens": 35,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The recent states are: A, B, C. Looking at the last three states in order: A (previous two steps ago), B (previous step), C (current step). That is exactly the sequence A followed by B followed by C. So I should include [ACT] in my response.\n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 241,
+      "completion_tokens": 64,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check the recent states. The last three states are: B, C, A. That sequence is B, C, A, not A, B, C. So the required sequence is not present. The answer should be [WAIT].\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 316,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: C, A, A. The last three are: C, A, A. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 383,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: A, A, B. The last three are: A, A, B. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 433,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: A, B, A. The last three are: A, B, A. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 483,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: B, A, C. The last three are: B, A, C. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 533,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: A, C, C. The last three are: A, C, C. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 583,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: C, C, B. The last three are: C, C, B. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 633,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: C, B, C. The last three are: C, B, C. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 683,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: B, C, A. The last three are: B, C, A. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 733,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: C, A, C. The last three are: C, A, C. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 783,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: A, C, A. The last three are: A, C, A. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 833,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: C, A, A. The last three are: C, A, A. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 883,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: A, A, A. The last three are: A, A, A. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 933,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: A, A, C. The last three are: A, A, C. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 983,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: A, C, B. The last three are: A, C, B. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1033,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: C, B, B. The last three are: C, B, B. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1083,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: B, B, B. The last three are: B, B, B. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1133,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: B, B, B. The last three are: B, B, B. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1183,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: B, B, C. The last three are: B, B, C. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1233,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: B, C, B. The last three are: B, C, B. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1283,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: C, B, C. The last three are: C, B, C. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1333,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: B, C, C. The last three are: B, C, C. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1383,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: C, C, C. The last three are: C, C, C. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1433,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: C, C, A. The last three are: C, C, A. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1483,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: C, A, C. The last three are: C, A, C. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1533,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are: A, C, C. The last three are: A, C, C. That is not A, B, C. So answer: [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1583,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 1.0,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 1,
+    "n_wait_trials": 29
+  }
+}

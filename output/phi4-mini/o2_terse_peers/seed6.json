@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-23T15:25:51.386909",
+  "config": {
+    "seed": 6,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "Respond [ACT] if the last two states were A then B. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "As per your instructions, since the last state was A, the response should be [ACT]. However, since you provided only the current state as A, I will follow the initial instruction and respond with [ACT].",
+      "correct": false,
+      "prompt_tokens": 32,
+      "completion_tokens": 43,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. Following your instructions, since the last state was A, the correct response is indeed [ACT].",
+      "correct": false,
+      "prompt_tokens": 87,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "I understand now. If the last state was B, then according to your instructions, the response should be [WAIT].",
+      "correct": false,
+      "prompt_tokens": 124,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for the oversight. If the last state was A, then the correct response, following your instructions, is [ACT].",
+      "correct": false,
+      "prompt_tokens": 160,
+      "completion_tokens": 26,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "That's correct. If the last state was A, then the response is [ACT] as per your instructions.",
+      "correct": false,
+      "prompt_tokens": 198,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "My apologies for any confusion. If the last state was B, then the response should indeed be [WAIT] according to your instructions.",
+      "correct": false,
+      "prompt_tokens": 232,
+      "completion_tokens": 27,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I apologize for the confusion. If the last state was A, then the response should be [ACT] as per your instructions.",
+      "correct": false,
+      "prompt_tokens": 271,
+      "completion_tokens": 26,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "I understand now. If the last state was B, then the response should be [WAIT] according to your instructions.",
+      "correct": false,
+      "prompt_tokens": 309,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the last state was B, then the response is indeed [WAIT] as per your instructions.",
+      "correct": true,
+      "prompt_tokens": 345,
+      "completion_tokens": 26,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the last state was A, then the response should be [ACT] as per your instructions.",
+      "correct": false,
+      "prompt_tokens": 383,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "I understand now. If the last state was B, then the response should be [WAIT] as per your instructions.",
+      "correct": false,
+      "prompt_tokens": 419,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the last state was B, then the response is indeed [WAIT] as per your instructions.",
+      "correct": true,
+      "prompt_tokens": 455,
+      "completion_tokens": 26,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand now. If the last state was B, then the response should be [WAIT] as per your instructions.",
+      "correct": true,
+      "prompt_tokens": 493,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the last state was A, then the response should be [ACT] as per your instructions.",
+      "correct": false,
+      "prompt_tokens": 529,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "I understand now. If the last state was B, then the response should be [WAIT] as per your instructions.",
+      "correct": false,
+      "prompt_tokens": 565,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the last state was A, then the response should be [ACT] as per your instructions.",
+      "correct": false,
+      "prompt_tokens": 601,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the last state was A, then the response is indeed [ACT] as per your instructions.",
+      "correct": false,
+      "prompt_tokens": 637,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "I understand now. If the last state was B, then the response should be [WAIT] as per your instructions.",
+      "correct": false,
+      "prompt_tokens": 673,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand now. If the last state was B, then the response is indeed [WAIT] as per your instructions.",
+      "correct": true,
+      "prompt_tokens": 709,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand now. If the last state was B, then the response should be [WAIT] as per your instructions.",
+      "correct": true,
+      "prompt_tokens": 745,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand now. If the last state was B, then the response is indeed [WAIT] as per your instructions.",
+      "correct": true,
+      "prompt_tokens": 781,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the last state was A, then the response should be [ACT] as per your instructions.",
+      "correct": false,
+      "prompt_tokens": 817,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the last state was A, then the response is indeed [ACT] as per your instructions.",
+      "correct": false,
+      "prompt_tokens": 853,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "I understand now. If the last state was B, then the response should be [WAIT] as per your instructions.",
+      "correct": false,
+      "prompt_tokens": 889,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the last state was A, then the response should be [ACT] as per your instructions.",
+      "correct": false,
+      "prompt_tokens": 925,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the last state was A, then the response is indeed [ACT] as per your instructions.",
+      "correct": false,
+      "prompt_tokens": 961,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the last state was A, then the response is indeed [ACT] as per your instructions.",
+      "correct": false,
+      "prompt_tokens": 997,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the last state was A, then the response is indeed [ACT] as per your instructions.",
+      "correct": false,
+      "prompt_tokens": 1033,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the last state was A, then the response is indeed [ACT] as per your instructions.",
+      "correct": false,
+      "prompt_tokens": 1069,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand now. If the last state was A, then the response is indeed [ACT] as per your instructions.",
+      "correct": false,
+      "prompt_tokens": 1105,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.2,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 0.2608695652173913,
+    "n_trials": 30,
+    "n_act_trials": 7,
+    "n_wait_trials": 23
+  }
+}

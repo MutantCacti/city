@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-24T17:26:20.115276",
+  "config": {
+    "seed": 24,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "anthropic",
+    "model_name": "claude-haiku-4-5-20251001",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.2,
+    "system_prompt": "Respond [ACT] if the last two states were A then B. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n\nI'm waiting to see if the next state is B. If it is, then I will have seen A followed by B, and I should respond with [ACT]. If the next state is anything other than B, the sequence resets.\n\nReady for the next state.",
+      "correct": false,
+      "prompt_tokens": 67,
+      "completion_tokens": 82,
+      "peer_responses": [
+        "[WAIT]\n\n(Only one state has been observed so far. I need to see two consecutive states of A then B to respond with [ACT].)"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n2. A\n\nThe last two states are A then A, not A then B. The sequence has reset - I'm now waiting for a new A followed by B.\n\nReady for the next state.",
+      "correct": true,
+      "prompt_tokens": 193,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are A then A, not A then B. I need the sequence to be A then B to respond with [ACT].)"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n2. A\n3. B\n\nThe last two states are A then B. This matches the trigger condition, so I respond with [ACT].\n\nThe sequence has now completed. Ready for the next state.",
+      "correct": true,
+      "prompt_tokens": 288,
+      "completion_tokens": 69,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are A then B. This matches the trigger condition.)"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n\nThe last two states are B then A, not A then B. A new potential sequence may be starting with this A. I need to wait for the next state to see if it's B (which would trigger [ACT]) or something else (which would reset the sequence).\n\nReady for the next state.",
+      "correct": false,
+      "prompt_tokens": 400,
+      "completion_tokens": 101,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then A, not A then B. I need to wait for the next state to see if a new sequence begins.)"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n\nThe last two states are A then A, not A then B. The sequence has reset again. I'm waiting for the next state to be B to complete the A then B pattern and trigger [ACT].\n\nReady for the next state.",
+      "correct": false,
+      "prompt_tokens": 545,
+      "completion_tokens": 91,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are A then A, not A then B. I need the next state to be B to trigger [ACT]. Still waiting.)"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n\nThe last two states are A then A, not A then B. I'm still waiting for the next state to be B. If it is, I will have the A then B sequence and should respond with [ACT].\n\nReady for the next state.",
+      "correct": false,
+      "prompt_tokens": 676,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are A then A, not A then B. I'm still waiting for a B to follow the A sequence.)"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[WAIT]\n\n(The last two states are A then A, not A then B. I'm still waiting for a B to follow the A sequence.)\n\nSo far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n7. A\n\nThe last two states are A then A, not A then B. Still waiting for the next state to be B to trigger [ACT].\n\nReady for the next state.",
+      "correct": false,
+      "prompt_tokens": 780,
+      "completion_tokens": 108,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "",
+      "correct": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are A then B. This matches the trigger condition.)"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n7. A\n8. B\n9. A\n\nThe last two states are B then A, not A then B. A new potential sequence may be starting with this A. I need to wait for the next state to see if it's B (which would trigger [ACT]) or something else (which would reset the sequence).\n\nReady for the next state.",
+      "correct": false,
+      "prompt_tokens": 979,
+      "completion_tokens": 121,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then A, not A then B. I need to wait for the next state to see if a new sequence begins.)"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "",
+      "correct": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are A then B. This matches the trigger condition.)"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n7. A\n8. B\n9. A\n10. B\n11. B\n\nThe last two states are B then B, not A then B. A new sequence needs to begin. I'm waiting for an A followed by a B to trigger [ACT].\n\nReady for the next state.",
+      "correct": false,
+      "prompt_tokens": 1191,
+      "completion_tokens": 109,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then B, not A then B. I need to wait for the next state to see if a new sequence begins.)"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n7. A\n8. B\n9. A\n10. B\n11. B\n12. B\n\nThe last two states are B then B, not A then B. Still waiting for a new sequence to begin with an A followed by a B.\n\nReady for the next state.",
+      "correct": true,
+      "prompt_tokens": 1343,
+      "completion_tokens": 106,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then B, not A then B. Still waiting for a new sequence to begin with an A followed by a B.)"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then A, not A then B. A potential new sequence is starting with this A. I need to wait for the next state to see if it's B.)"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n7. A\n8. B\n9. A\n10. B\n11. B\n12. B\n13. A\n14. B\n\nThe last two states are A then B. This matches the trigger condition, so I respond with [ACT].\n\nThe sequence has been completed. Ready for the next state.",
+      "correct": true,
+      "prompt_tokens": 1573,
+      "completion_tokens": 113,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are A then B. This matches the trigger condition.)"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n7. A\n8. B\n9. A\n10. B\n11. B\n12. B\n13. A\n14. B\n15. B\n\nThe last two states are B then B, not A then B. I need to wait for a new sequence to begin with an A followed by a B.\n\nReady for the next state.",
+      "correct": true,
+      "prompt_tokens": 1731,
+      "completion_tokens": 120,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then B, not A then B. I need to wait for a new sequence to begin with an A followed by a B.)"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n7. A\n8. B\n9. A\n10. B\n11. B\n12. B\n13. A\n14. B\n15. B\n16. A\n\nThe last two states are B then A, not A then B. A potential new sequence is starting with this A. I need to wait for the next state to see if it's B to trigger [ACT].\n\nReady for the next state.",
+      "correct": false,
+      "prompt_tokens": 1903,
+      "completion_tokens": 136,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then A, not A then B. A potential new sequence is starting with this A. I need to wait for the next state to see if it's B.)"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n7. A\n8. B\n9. A\n10. B\n11. B\n12. B\n13. A\n14. B\n15. B\n16. A\n17. A\n\nThe last two states are A then A, not A then B. The sequence has reset. I need to wait for the next state to be B to complete the A then B pattern and trigger [ACT].\n\nReady for the next state.",
+      "correct": false,
+      "prompt_tokens": 2096,
+      "completion_tokens": 139,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are A then A, not A then B. The sequence has reset. I need to wait for the next state to be B to complete the A then B pattern and trigger [ACT].)"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n7. A\n8. B\n9. A\n10. B\n11. B\n12. B\n13. A\n14. B\n15. B\n16. A\n17. A\n18. A\n\nThe last two states are A then A, not A then B. Still waiting for the next state to be B to trigger [ACT].\n\nReady for the next state.",
+      "correct": false,
+      "prompt_tokens": 2278,
+      "completion_tokens": 129,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are A then A, not A then B. Still waiting for the next state to be B to trigger [ACT].)"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n7. A\n8. B\n9. A\n10. B\n11. B\n12. B\n13. A\n14. B\n15. B\n16. A\n17. A\n18. A\n19. B\n\nThe last two states are A then B. This matches the trigger condition, so I respond with [ACT].\n\nThe sequence has been completed. Ready for the next state.",
+      "correct": true,
+      "prompt_tokens": 2435,
+      "completion_tokens": 133,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are A then B. This matches the trigger condition.)"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n7. A\n8. B\n9. A\n10. B\n11. B\n12. B\n13. A\n14. B\n15. B\n16. A\n17. A\n18. A\n19. B\n20. B\n\nThe last two states are B then B, not A then B. I need to wait for a new sequence to begin with an A followed by a B.\n\nReady for the next state.",
+      "correct": true,
+      "prompt_tokens": 2613,
+      "completion_tokens": 140,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then B, not A then B. I need to wait for a new sequence to begin with an A followed by a B.)"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n7. A\n8. B\n9. A\n10. B\n11. B\n12. B\n13. A\n14. B\n15. B\n16. A\n17. A\n18. A\n19. B\n20. B\n21. A\n\nThe last two states are B then A, not A then B. A potential new sequence is starting with this A. I need to wait for the next state to see if it's B to trigger [ACT].\n\nReady for the next state.",
+      "correct": false,
+      "prompt_tokens": 2805,
+      "completion_tokens": 156,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then A, not A then B. A potential new sequence is starting with this A. I need to wait for the next state to see if it's B.)"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n7. A\n8. B\n9. A\n10. B\n11. B\n12. B\n13. A\n14. B\n15. B\n16. A\n17. A\n18. A\n19. B\n20. B\n21. A\n22. B\n\nThe last two states are A then B. This matches the trigger condition, so I respond with [ACT].\n\nThe sequence has been completed. Ready for the next state.",
+      "correct": true,
+      "prompt_tokens": 2989,
+      "completion_tokens": 145,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are A then B. This matches the trigger condition.)"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n7. A\n8. B\n9. A\n10. B\n11. B\n12. B\n13. A\n14. B\n15. B\n16. A\n17. A\n18. A\n19. B\n20. B\n21. A\n22. B\n23. A\n\nThe last two states are B then A, not A then B. A potential new sequence is starting with this A. I need to wait for the next state to see if it's B to trigger [ACT].\n\nReady for the next state.",
+      "correct": false,
+      "prompt_tokens": 3186,
+      "completion_tokens": 164,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then A, not A then B. A potential new sequence is starting with this A. I need to wait for the next state to see if it's B.)"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n7. A\n8. B\n9. A\n10. B\n11. B\n12. B\n13. A\n14. B\n15. B\n16. A\n17. A\n18. A\n19. B\n20. B\n21. A\n22. B\n23. A\n24. A\n\nThe last two states are A then A, not A then B. The sequence has reset. I need to wait for the next state to be B to complete the A then B pattern and trigger [ACT].\n\nReady for the next state.",
+      "correct": false,
+      "prompt_tokens": 3407,
+      "completion_tokens": 167,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are A then A, not A then B. The sequence has reset. I need to wait for the next state to be B to complete the A then B pattern and trigger [ACT].)"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n7. A\n8. B\n9. A\n10. B\n11. B\n12. B\n13. A\n14. B\n15. B\n16. A\n17. A\n18. A\n19. B\n20. B\n21. A\n22. B\n23. A\n24. A\n25. A\n\nThe last two states are A then A, not A then B. Still waiting for the next state to be B to trigger [ACT].\n\nReady for the next state.",
+      "correct": false,
+      "prompt_tokens": 3617,
+      "completion_tokens": 157,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are A then A, not A then B. Still waiting for the next state to be B to trigger [ACT].)"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Understood. I'm tracking the sequence of states. So far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n7. A\n8. B\n9. A\n10. B\n11. B\n12. B\n13. A\n14. B\n15. B\n16. A\n17. A\n18. A\n19. B\n20. B\n21. A\n22. B\n23. A\n24. A\n25. A\n26. A\n\nThe last two states are A then A, not A then B. Still waiting for the next state to be B to trigger [ACT].\n\nReady for the next state.",
+      "correct": false,
+      "prompt_tokens": 3817,
+      "completion_tokens": 161,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are A then A, not A then B. Still waiting for the next state to be B to trigger [ACT].)"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[WAIT]\n\n(The last two states are A then A, not A then B. Still waiting for the next state to be B to trigger [ACT].)\n\nSo far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n7. A\n8. B\n9. A\n10. B\n11. B\n12. B\n13. A\n14. B\n15. B\n16. A\n17. A\n18. A\n19. B\n20. B\n21. A\n22. B\n23. A\n24. A\n25. A\n26. A\n27. A\n\nThe last two states are A then A, not A then B. Still waiting for the next state to be B to trigger [ACT].\n\nReady for the next state.",
+      "correct": false,
+      "prompt_tokens": 3984,
+      "completion_tokens": 191,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[WAIT]\n\n(The last two states are A then A, not A then B. Still waiting for the next state to be B to trigger [ACT].)\n\nSo far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n7. A\n8. B\n9. A\n10. B\n11. B\n12. B\n13. A\n14. B\n15. B\n16. A\n17. A\n18. A\n19. B\n20. B\n21. A\n22. B\n23. A\n24. A\n25. A\n26. A\n27. A\n28. A\n\nThe last two states are A then A, not A then B. Still waiting for the next state to be B to trigger [ACT].\n\nReady for the next state.",
+      "correct": false,
+      "prompt_tokens": 4218,
+      "completion_tokens": 195,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are A then A, not A then B. Still waiting for the next state to be B to trigger [ACT].)"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "[ACT]\n\n(The last two states are A then B. This matches the trigger condition.)\n\nSo far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n7. A\n8. B\n9. A\n10. B\n11. B\n12. B\n13. A\n14. B\n15. B\n16. A\n17. A\n18. A\n19. B\n20. B\n21. A\n22. B\n23. A\n24. A\n25. A\n26. A\n27. A\n28. A\n29. B\n\nThe last two states are A then B. This matches the trigger condition, so I respond with [ACT].\n\nThe sequence has been completed. Ready for the next state.",
+      "correct": true,
+      "prompt_tokens": 4441,
+      "completion_tokens": 184,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are A then B. This matches the trigger condition.)"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]\n\n(The last two states are B then B, not A then B. I need to wait for a new sequence to begin with an A followed by a B.)\n\nSo far I've observed:\n\n1. A\n2. A\n3. B\n4. A\n5. A\n6. A\n7. A\n8. B\n9. A\n10. B\n11. B\n12. B\n13. A\n14. B\n15. B\n16. A\n17. A\n18. A\n19. B\n20. B\n21. A\n22. B\n23. A\n24. A\n25. A\n26. A\n27. A\n28. A\n29. B\n30. B\n\nThe last two states are B then B, not A then B. I need to wait for a new sequence to begin with an A followed by a B.\n\nReady for the next state.",
+      "correct": true,
+      "prompt_tokens": 4670,
+      "completion_tokens": 208,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are B then B, not A then B. I need to wait for a new sequence to begin with an A followed by a B.)"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.36666666666666664,
+    "act_accuracy": 0.7142857142857143,
+    "wait_accuracy": 0.2608695652173913,
+    "n_trials": 30,
+    "n_act_trials": 7,
+    "n_wait_trials": 23
+  }
+}

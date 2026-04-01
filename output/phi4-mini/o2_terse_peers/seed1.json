@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-23T15:24:48.977704",
+  "config": {
+    "seed": 1,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "Respond [ACT] if the last two states were A then B. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "As per the instruction given, if the last two states were A then B, the response should be [WAIT]. However, since the last state provided is B, the instruction does not apply, and therefore the response should be [WAIT] as well.",
+      "correct": true,
+      "prompt_tokens": 32,
+      "completion_tokens": 51,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The instruction you've provided seems to be a continuation of a previous context where the last two states were A then B. If we are to follow the same logic and the last state was A, then the response should indeed be [WAIT].",
+      "correct": true,
+      "prompt_tokens": 95,
+      "completion_tokens": 47,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, if the instruction is to respond with [WAIT] when the last state was A, then your response is correct. If there is a specific context or set of rules you are following, please provide more details so I can assist you accordingly.",
+      "correct": true,
+      "prompt_tokens": 154,
+      "completion_tokens": 50,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last state was A, then regardless of the current state being B, the response should still be [WAIT]. If there are additional rules or contexts that need to be considered for different states, please let me know.",
+      "correct": false,
+      "prompt_tokens": 216,
+      "completion_tokens": 61,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is consistent with the instruction provided. If the rule is to respond with [WAIT] when the last state was A, then it remains [WAIT] regardless of the current state being B. If there are more complex rules or conditions that need to be applied for different states, please provide further instructions.",
+      "correct": true,
+      "prompt_tokens": 289,
+      "completion_tokens": 62,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Correct, based on the instruction you've given, if the rule is to respond with [WAIT] when the last state was A, then the response is indeed [WAIT], even though the current state is A. If there are additional layers of complexity or different scenarios that need to be addressed, please provide more details.",
+      "correct": true,
+      "prompt_tokens": 363,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is accurate according to the instruction. If the rule is to respond with [WAIT] when the last state was A, then the response is [WAIT], regardless of the current state being A. If there are more intricate rules or conditions that need to be considered for different states, please provide further instructions.",
+      "correct": true,
+      "prompt_tokens": 438,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last state was A, then the current state being B does not change the response. The response remains [WAIT]. If there are additional rules or contexts that need to be considered for different states, please let me know.",
+      "correct": false,
+      "prompt_tokens": 513,
+      "completion_tokens": 62,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is consistent with the instruction provided. If the rule is to respond with [WAIT] when the last state was A, then it remains [WAIT] regardless of the current state being B. If there are more complex rules or conditions that need to be applied for different states, please provide further instructions.",
+      "correct": true,
+      "prompt_tokens": 587,
+      "completion_tokens": 62,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is correct based on the instruction you've given. If the rule is to respond with [WAIT] when the last state was A, then the response is [WAIT], even though the current state is A. If there are additional layers of complexity or different scenarios that need to be addressed, please provide more details.",
+      "correct": true,
+      "prompt_tokens": 661,
+      "completion_tokens": 64,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is accurate according to the instruction. If the rule is to respond with [WAIT] when the last state was A, then the response is [WAIT], regardless of the current state being A. If there are more intricate rules or conditions that need to be considered for different states, please provide further instructions.",
+      "correct": true,
+      "prompt_tokens": 737,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Your response is consistent with the instruction provided. If the rule is to respond with [WAIT] when the last state was A, then the current state being B does not change the response. The response remains [WAIT]. If there are additional rules or contexts that need to be considered for different states, please let me know.",
+      "correct": false,
+      "prompt_tokens": 812,
+      "completion_tokens": 65,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is correct based on the instruction you've given. If the rule is to respond with [WAIT] when the last state was A, then the response is [WAIT], even though the current state is A. If there are additional layers of complexity or different scenarios that need to be addressed, please provide more details.",
+      "correct": true,
+      "prompt_tokens": 889,
+      "completion_tokens": 64,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is accurate according to the instruction. If the rule is to respond with [WAIT] when the last state was A, then the response is [WAIT], regardless of the current state being A. If there are more complex rules or conditions that need to be applied for different states, please provide further instructions.",
+      "correct": true,
+      "prompt_tokens": 965,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Your response is consistent with the instruction provided. If the rule is to respond with [WAIT] when the last state was A, then the current state being B does not change the response. The response remains [WAIT]. If there are additional rules or contexts that need to be considered for different states, please let me know.",
+      "correct": false,
+      "prompt_tokens": 1040,
+      "completion_tokens": 65,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is consistent with the instruction provided. If the rule is to respond with [WAIT] when the last state was A, then the current state being B does not change the response. The response remains [WAIT]. If there are additional rules or contexts that need to be considered for different states, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1117,
+      "completion_tokens": 65,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is consistent with the instruction provided. If the rule is to respond with [WAIT] when the last state was A, then the current state being B does not change the response. The response remains [WAIT]. If there are additional rules or contexts that need to be considered for different states, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1194,
+      "completion_tokens": 65,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is consistent with the instruction provided. If the rule is to respond with [WAIT] when the last state was A, then the current state being B does not change the response. The response remains [WAIT]. If there are additional rules or contexts that need to be considered for different states, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1271,
+      "completion_tokens": 65,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is consistent with the instruction provided. If the rule is to respond with [WAIT] when the last state was A, then the current state being B does not change the response. The response remains [WAIT]. If there are additional rules or contexts that need to be considered for different states, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1348,
+      "completion_tokens": 65,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is consistent with the instruction provided. If the rule is to respond with [WAIT] when the last state was A, then the current state being B does not change the response. The response remains [WAIT]. If there are additional rules or contexts that need to be considered for different states, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1425,
+      "completion_tokens": 65,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is consistent with the instruction provided. If the rule is to respond with [WAIT] when the last state was A, then the current state being B does not change the response. The response remains [WAIT]. If there are additional rules or contexts that need to be considered for different states, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1502,
+      "completion_tokens": 65,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is consistent with the instruction provided. If the rule is to respond with [WAIT] when the last state was A, then the current state being B does not change the response. The response remains [WAIT]. If there are additional rules or contexts that need to be considered for different states, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1579,
+      "completion_tokens": 65,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is correct based on the instruction you've given. If the rule is to respond with [WAIT] when the last state was A, then the response is [WAIT], even though the current state is A. If there are more intricate rules or conditions that need to be considered for different states, please provide further instructions.",
+      "correct": true,
+      "prompt_tokens": 1656,
+      "completion_tokens": 65,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is accurate according to the instruction. If the rule is to respond with [WAIT] when the last state was A, then the response is [WAIT], regardless of the current state being A. If there are additional layers of complexity or different scenarios that need to be addressed, please provide more details.",
+      "correct": true,
+      "prompt_tokens": 1733,
+      "completion_tokens": 62,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is correct based on the instruction you've given. If the rule is to respond with [WAIT] when the last state was A, then the response is [WAIT], even though the current state is A. If there are more complex rules or conditions that need to be applied for different states, please provide further instructions.",
+      "correct": true,
+      "prompt_tokens": 1807,
+      "completion_tokens": 65,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is accurate according to the instruction. If the rule is to respond with [WAIT] when the last state was A, then the response is [WAIT], regardless of the current state being A. If there are additional layers of complexity or different scenarios that need to be addressed, please provide more details.",
+      "correct": true,
+      "prompt_tokens": 1884,
+      "completion_tokens": 62,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Your response is consistent with the instruction provided. If the rule is to respond with [WAIT] when the last state was A, then the current state being B does not change the response. The response remains [WAIT]. If there are additional rules or contexts that need to be considered for different states, please let me know.",
+      "correct": false,
+      "prompt_tokens": 1958,
+      "completion_tokens": 65,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is correct based on the instruction you've given. If the rule is to respond with [WAIT] when the last state was A, then the response is [WAIT], even though the current state is A. If there are more complex rules or conditions that need to be applied for different states, please provide further instructions.",
+      "correct": true,
+      "prompt_tokens": 2035,
+      "completion_tokens": 65,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Your response is consistent with the instruction provided. If the rule is to respond with [WAIT] when the last state was A, then the current state being B does not change the response. The response remains [WAIT]. If there are additional rules or contexts that need to be considered for different states, please let me know.",
+      "correct": false,
+      "prompt_tokens": 2112,
+      "completion_tokens": 65,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is consistent with the instruction provided. If the rule is to respond with [WAIT] when the last state was A, then the current state being B does not change the response. The response remains [WAIT]. If there are additional rules or contexts that need to be considered for different states, please let me know.",
+      "correct": true,
+      "prompt_tokens": 2189,
+      "completion_tokens": 65,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.8,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 6,
+    "n_wait_trials": 24
+  }
+}

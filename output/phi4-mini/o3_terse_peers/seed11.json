@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-23T15:40:18.594746",
+  "config": {
+    "seed": 11,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "Respond [ACT] if the last three states were A then B then C. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "C",
+    "A",
+    "C",
+    "A",
+    "C",
+    "A",
+    "C",
+    "C",
+    "A",
+    "B",
+    "A",
+    "A",
+    "C",
+    "A",
+    "C",
+    "A",
+    "C",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "C",
+    "A",
+    "A",
+    "B",
+    "B",
+    "C",
+    "C",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "As per your instructions, since the last three states were A, B, and C, the response should be [ACT]. However, since you provided only one state (C), I will follow the initial instruction and respond with [WAIT]. If you need further assistance or have more states to provide, please let me know.",
+      "correct": false,
+      "prompt_tokens": 34,
+      "completion_tokens": 65,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Following the given instructions, since the last three states were A, B, and C, and you provided only one state (A), the response should be [ACT].",
+      "correct": false,
+      "prompt_tokens": 111,
+      "completion_tokens": 34,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for the confusion earlier. If the last three states were A, B, and C, then the response is indeed [ACT].",
+      "correct": false,
+      "prompt_tokens": 157,
+      "completion_tokens": 28,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 220,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "Apologies for any misunderstanding. If the last three states were A, B, and C, then the response is [ACT]."
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 273,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 329,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 385,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 441,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 497,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 553,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 609,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 665,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 721,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 777,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 833,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 889,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 945,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 1001,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 1057,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 1113,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 1169,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 1225,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": true,
+      "prompt_tokens": 1281,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 1337,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 1393,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 1449,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 1505,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 1561,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 1617,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the last three states were A, B, and C, then the response is [ACT]. If you have any more instructions or need further assistance, feel free to let me know.",
+      "correct": false,
+      "prompt_tokens": 1673,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.03333333333333333,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 0.0,
+    "n_trials": 30,
+    "n_act_trials": 1,
+    "n_wait_trials": 29
+  }
+}

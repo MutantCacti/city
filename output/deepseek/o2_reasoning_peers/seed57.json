@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-24T00:47:32.951274",
+  "config": {
+    "seed": 57,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A or B. Your task: when you see B immediately following A, include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what was the previous state? What is the current state? Is this a B that followed an A? Then give your answer."
+  },
+  "stimulus_history": [
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: None (this is the first state given).  \n- Current state: B.  \n- Is this a B that followed an A? No, because there\u2019s no previous state.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 91,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule again:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: B (from the first turn).  \n- Current state: A.  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 201,
+      "completion_tokens": 99,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: A (from the previous turn).  \n- Current state: A.  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 312,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: A (from the previous turn).  \n- Current state: B.  \n- Is this a B that followed an A? Yes, because the previous state was A and the current state is B.  \n- So the condition is met.  \n\nAnswer: **[ACT]**",
+      "correct": true,
+      "prompt_tokens": 422,
+      "completion_tokens": 99,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: B (from the previous turn).  \n- Current state: B.  \n- Is this a B that followed an A? No, because the previous state was B, not A.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 532,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: B (from the previous turn).  \n- Current state: B.  \n- Is this a B that followed an A? No, because the previous state was B, not A.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 642,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: B (from the previous turn).  \n- Current state: A.  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 752,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: A (from the previous turn).  \n- Current state: A.  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 862,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: A (from the previous turn).  \n- Current state: A.  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 972,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: A (from the previous turn).  \n- Current state: B.  \n- Is this a B that followed an A? Yes, because the previous state was A and the current state is B.  \n- So the condition is met.  \n\nAnswer: **[ACT]**",
+      "correct": true,
+      "prompt_tokens": 1082,
+      "completion_tokens": 99,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: B (from the previous turn).  \n- Current state: B.  \n- Is this a B that followed an A? No, because the previous state was B, not A.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 1192,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: B (from the previous turn).  \n- Current state: B.  \n- Is this a B that followed an A? No, because the previous state was B, not A.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 1302,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: B (from the previous turn).  \n- Current state: B.  \n- Is this a B that followed an A? No, because the previous state was B, not A.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 1412,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: B (from the previous turn).  \n- Current state: B.  \n- Is this a B that followed an A? No, because the previous state was B, not A.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 1522,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: B (from the previous turn).  \n- Current state: B.  \n- Is this a B that followed an A? No, because the previous state was B, not A.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 1632,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: B (from the previous turn).  \n- Current state: B.  \n- Is this a B that followed an A? No, because the previous state was B, not A.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 1742,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: B (from the previous turn).  \n- Current state: B.  \n- Is this a B that followed an A? No, because the previous state was B, not A.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 1852,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: B (from the previous turn).  \n- Current state: A.  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 1962,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: A (from the previous turn).  \n- Current state: A.  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 2072,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: A (from the previous turn).  \n- Current state: A.  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 2182,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: A (from the previous turn).  \n- Current state: A.  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 2292,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: A (from the previous turn).  \n- Current state: B.  \n- Is this a B that followed an A? Yes, because the previous state was A and the current state is B.  \n- So the condition is met.  \n\nAnswer: **[ACT]**",
+      "correct": true,
+      "prompt_tokens": 2402,
+      "completion_tokens": 99,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: B (from the previous turn).  \n- Current state: A.  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 2512,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: A (from the previous turn).  \n- Current state: B.  \n- Is this a B that followed an A? Yes, because the previous state was A and the current state is B.  \n- So the condition is met.  \n\nAnswer: **[ACT]**",
+      "correct": true,
+      "prompt_tokens": 2622,
+      "completion_tokens": 99,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: B (from the previous turn).  \n- Current state: A.  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 2732,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: A (from the previous turn).  \n- Current state: B.  \n- Is this a B that followed an A? Yes, because the previous state was A and the current state is B.  \n- So the condition is met.  \n\nAnswer: **[ACT]**",
+      "correct": true,
+      "prompt_tokens": 2842,
+      "completion_tokens": 99,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: B (from the previous turn).  \n- Current state: B.  \n- Is this a B that followed an A? No, because the previous state was B, not A.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 2952,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: B (from the previous turn).  \n- Current state: A.  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 3062,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: A (from the previous turn).  \n- Current state: B.  \n- Is this a B that followed an A? Yes, because the previous state was A and the current state is B.  \n- So the condition is met.  \n\nAnswer: **[ACT]**",
+      "correct": true,
+      "prompt_tokens": 3172,
+      "completion_tokens": 99,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s reason through the rule:  \n\nWe only include **[ACT]** if we see **B immediately following A**.  \nOtherwise, we include **[WAIT]**.  \n\nStep-by-step:  \n- Previous state: B (from the previous turn).  \n- Current state: A.  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n- So the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": false,
+      "prompt_tokens": 3282,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.2,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 0.0,
+    "n_trials": 30,
+    "n_act_trials": 6,
+    "n_wait_trials": 24
+  }
+}

@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-24T04:20:50.135702",
+  "config": {
+    "seed": 56,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "A",
+    "C",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "C",
+    "C",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "C",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "C",
+    "A",
+    "B",
+    "B",
+    "A",
+    "C",
+    "B",
+    "B",
+    "C"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The sequence so far: A.  \nWe need A then B then C in a row.  \nCurrently only one state (A) observed, so no ABC sequence yet.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 101,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C.  \nLast three states: A, C (only two states so far).  \nNo ABC sequence.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 155,
+      "completion_tokens": 35,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B.  \nLast three states: C, B (only three total, but not A, B, C in order).  \nCheck: The sequence A, C, B does not match A then B then C consecutively.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 202,
+      "completion_tokens": 61,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B.  \nLast three states: C, B, B.  \nNot A, B, C.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 275,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B.  \nLast three states: B, B, B.  \nNot A, B, C.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 325,
+      "completion_tokens": 40,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A.  \nLast three states: B, B, A.  \nNot A, B, C.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 377,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B.  \nLast three states: B, A, B.  \nNot A, B, C.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 431,
+      "completion_tokens": 44,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C.  \nLast three states: A, B, C.  \nYes \u2014 these are consecutive and in order: A then B then C.  \n\nAnswer: [ACT]",
+      "correct": true,
+      "prompt_tokens": 487,
+      "completion_tokens": 53,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C.  \nLast three states: B, C, C.  \nNot A, B, C.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 551,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C, A.  \nLast three states: C, C, A.  \nNot A, B, C.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 611,
+      "completion_tokens": 50,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C, A, B.  \nLast three states: C, A, B.  \nNot A, B, C (would need A, B, C in that order; here we have C, A, B).  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 673,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C, A, B, A.  \nLast three states: A, B, A.  \nNot A, B, C.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 757,
+      "completion_tokens": 54,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C, A, B, A, A.  \nLast three states: B, A, A.  \nNot A, B, C.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 823,
+      "completion_tokens": 56,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C, A, B, A, A, B.  \nLast three states: A, A, B.  \nNot A, B, C.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 891,
+      "completion_tokens": 58,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C, A, B, A, A, B, A.  \nLast three states: A, B, A.  \nNot A, B, C.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 961,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C, A, B, A, A, B, A, C.  \nLast three states: B, A, C.  \nNot A, B, C (order is B, A, C, not A, B, C).  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1033,
+      "completion_tokens": 77,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C, A, B, A, A, B, A, C, B.  \nLast three states: A, C, B.  \nNot A, B, C (order is A, C, B).  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1122,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C, A, B, A, A, B, A, C, B, A.  \nLast three states: C, B, A.  \nNot A, B, C.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1206,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C, A, B, A, A, B, A, C, B, A, A.  \nLast three states: B, A, A.  \nNot A, B, C.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1284,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C, A, B, A, A, B, A, C, B, A, A, B.  \nLast three states: A, A, B.  \nNot A, B, C.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1364,
+      "completion_tokens": 70,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C, A, B, A, A, B, A, C, B, A, A, B, A.  \nLast three states: A, B, A.  \nNot A, B, C.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1446,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C, A, B, A, A, B, A, C, B, A, A, B, A, C.  \nLast three states: B, A, C.  \nNot A, B, C (order is B, A, C).  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1530,
+      "completion_tokens": 82,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C, A, B, A, A, B, A, C, B, A, A, B, A, C, A.  \nLast three states: A, C, A.  \nNot A, B, C.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1624,
+      "completion_tokens": 76,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C, A, B, A, A, B, A, C, B, A, A, B, A, C, A, B.  \nLast three states: C, A, B.  \nNot A, B, C (order is C, A, B).  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1712,
+      "completion_tokens": 86,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C, A, B, A, A, B, A, C, B, A, A, B, A, C, A, B, B.  \nLast three states: A, B, B.  \nNot A, B, C.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1810,
+      "completion_tokens": 80,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C, A, B, A, A, B, A, C, B, A, A, B, A, C, A, B, B, A.  \nLast three states: B, B, A.  \nNot A, B, C.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1902,
+      "completion_tokens": 82,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C, A, B, A, A, B, A, C, B, A, A, B, A, C, A, B, B, A, C.  \nLast three states: B, A, C.  \nNot A, B, C (order is B, A, C).  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1996,
+      "completion_tokens": 92,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C, A, B, A, A, B, A, C, B, A, A, B, A, C, A, B, B, A, C, B.  \nLast three states: A, C, B.  \nNot A, B, C (order is A, C, B).  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2100,
+      "completion_tokens": 94,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C, A, B, A, A, B, A, C, B, A, A, B, A, C, A, B, B, A, C, B, B.  \nLast three states: C, B, B.  \nNot A, B, C.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2206,
+      "completion_tokens": 88,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Sequence so far: A, C, B, B, B, A, B, C, C, A, B, A, A, B, A, C, B, A, A, B, A, C, A, B, B, A, C, B, B, C.  \nLast three states: B, B, C.  \nNot A, B, C.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2306,
+      "completion_tokens": 90,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 1.0,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 1,
+    "n_wait_trials": 29
+  }
+}

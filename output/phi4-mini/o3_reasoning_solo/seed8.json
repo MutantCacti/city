@@ -1,0 +1,544 @@
+{
+  "timestamp": "2026-03-23T15:36:32.562366",
+  "config": {
+    "seed": 8,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 1,
+    "tick_seconds": 0.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "C",
+    "A",
+    "B",
+    "B",
+    "C",
+    "B",
+    "C",
+    "A",
+    "A",
+    "C",
+    "A",
+    "A",
+    "C",
+    "C",
+    "A",
+    "B",
+    "B",
+    "C",
+    "A",
+    "B",
+    "A",
+    "B",
+    "A",
+    "B",
+    "C",
+    "C",
+    "C",
+    "B",
+    "B",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as C.\n\nSince we are not observing the sequence A then B then C, but rather just the current state C, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 96,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as A.\n\nSince we are not observing the sequence A then B then C, but rather just the current state A, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 165,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as B.\n\nSince we are not observing the sequence A then B then C, but rather just the current state B, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 234,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as B.\n\nSince we are not observing the sequence A then B then C, but rather just the current state B, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 303,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 5,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as C.\n\nSince we are not observing the sequence A then B then C, but rather just the current state C, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 372,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as B.\n\nSince we are not observing the sequence A then B then C, but rather just the current state B, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 441,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 7,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as C.\n\nSince we are not observing the sequence A then B then C, but rather just the current state C, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 510,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 8,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as A.\n\nSince we are not observing the sequence A then B then C, but rather just the current state A, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 579,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as A.\n\nSince we are not observing the sequence A then B then C, but rather just the current state A, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 648,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 10,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as C.\n\nSince we are not observing the sequence A then B then C, but rather just the current state C, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 717,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as A.\n\nSince we are not observing the sequence A then B then C, but rather just the current state A, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 786,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as A.\n\nSince we are not observing the sequence A then B then C, but rather just the current state A, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 855,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 13,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as C.\n\nSince we are not observing the sequence A then B then C, but rather just the current state C, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 924,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 14,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as C.\n\nSince we are not observing the sequence A then B then C, but rather just the current state C, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 993,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as A.\n\nSince we are not observing the sequence A then B then C, but rather just the current state A, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1062,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as B.\n\nSince we are not observing the sequence A then B then C, but rather just the current state B, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1131,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as B.\n\nSince we are not observing the sequence A then B then C, but rather just the current state B, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1200,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 18,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as C.\n\nSince we are not observing the sequence A then B then C, but rather just the current state C, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1269,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as A.\n\nSince we are not observing the sequence A then B then C, but rather just the current state A, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1338,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as B.\n\nSince we are not observing the sequence A then B then C, but rather just the current state B, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1407,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 21,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as A.\n\nSince we are not observing the sequence A then B then C, but rather just the current state A, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1476,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as B.\n\nSince we are not observing the sequence A then B then C, but rather just the current state B, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1545,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as A.\n\nSince we are not observing the sequence A then B then C, but rather just the current state A, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1614,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as B.\n\nSince we are not observing the sequence A then B then C, but rather just the current state B, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1683,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 25,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as C.\n\nSince we are not observing the sequence A then B then C, but rather just the current state C, the appropriate response is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 1752,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 26,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as C.\n\nSince we are not observing the sequence A then B then C, but rather just the current state C, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1821,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 27,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as C.\n\nSince we are not observing the sequence A then B then C, but rather just the current state C, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1890,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as B.\n\nSince we are not observing the sequence A then B then C, but rather just the current state B, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1959,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as B.\n\nSince we are not observing the sequence A then B then C, but rather just the current state B, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2028,
+      "completion_tokens": 62,
+      "peer_responses": []
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Based on the instructions given, we are to look for a specific sequence of states: A followed by B followed by C. You have provided the current state as A.\n\nSince we are not observing the sequence A then B then C, but rather just the current state A, the appropriate response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2097,
+      "completion_tokens": 62,
+      "peer_responses": []
+    }
+  ],
+  "summary": {
+    "accuracy": 0.9666666666666667,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 1,
+    "n_wait_trials": 29
+  }
+}

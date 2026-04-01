@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-23T15:26:42.068730",
+  "config": {
+    "seed": 11,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "Respond [ACT] if the last two states were A then B. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 32,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 66,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": true,
+      "prompt_tokens": 100,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 134,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 168,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 202,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": true,
+      "prompt_tokens": 236,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 270,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 304,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 338,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 372,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": true,
+      "prompt_tokens": 406,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 440,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 474,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": true,
+      "prompt_tokens": 508,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 542,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 576,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 610,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 644,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 678,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": true,
+      "prompt_tokens": 712,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 746,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": true,
+      "prompt_tokens": 780,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 814,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 848,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 882,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": true,
+      "prompt_tokens": 916,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 950,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": true,
+      "prompt_tokens": 984,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "The response indicates that the last two states were A then B, so the action to take is [ACT].",
+      "correct": false,
+      "prompt_tokens": 1018,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.26666666666666666,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 0.0,
+    "n_trials": 30,
+    "n_act_trials": 8,
+    "n_wait_trials": 22
+  }
+}

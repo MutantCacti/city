@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-23T16:47:24.951520",
+  "config": {
+    "seed": 0,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "A",
+    "A",
+    "C",
+    "C",
+    "B",
+    "B",
+    "A",
+    "C",
+    "A",
+    "C",
+    "C",
+    "A",
+    "B",
+    "B",
+    "C",
+    "B",
+    "A",
+    "A",
+    "C",
+    "A",
+    "C",
+    "C",
+    "C",
+    "B",
+    "B",
+    "C",
+    "C",
+    "A",
+    "B",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 178,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- I just observed: A (the current state).\n- I need to check if the last three states in a row are A, then B, then C.\n- So far, I only have one state: A.\n- That's not enough for the sequence A,B,C.\n- Therefore, I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 256,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A (first), then A (second).\n- Current state: A (third).\n- The last three states are A, A, A.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 357,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C.\n- I only need to consider the last three states: A, A, C.\n- The last three are: A (first of the triple), A (second), C (third).\n- That is A, A, C, not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 436,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C.\n- Last three states: A, C, C.\n- Sequence: A, C, C.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 517,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B.\n- Last three states: C, C, B.\n- Sequence: C, C, B.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 600,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B.\n- Last three states: C, B, B.\n- Sequence: C, B, B.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 685,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A.\n- Last three states: B, B, A.\n- Sequence: B, B, A.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 783,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C.\n- Last three states: B, A, C.\n- Sequence: B, A, C.\n- That is not A, B, C (order matters: must be A then B then C).\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 872,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A.\n- Last three states: C, A, A.\n- Sequence: C, A, A.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 963,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A, C.\n- Last three states: A, C, C.\n- Sequence: A, C, C.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1056,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A, C, C.\n- Last three states: C, C, C.\n- Sequence: C, C, C.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1151,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A, C, C, A.\n- Last three states: C, C, A.\n- Sequence: C, C, A.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1257,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A, C, C, A, B.\n- Last three states: C, A, B.\n- Sequence: C, A, B.\n- That is not A, B, C (order must be A then B then C).\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1364,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A, C, C, A, B, B.\n- Last three states: A, B, B.\n- Sequence: A, B, B.\n- That is not A, B, C (third state is B, not C).\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1465,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A, C, C, A, B, B, C.\n- Last three states: B, B, C.\n- Sequence: B, B, C.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1568,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A, C, C, A, B, B, C, B.\n- Last three states: B, C, B.\n- Sequence: B, C, B.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1673,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A, C, C, A, B, B, C, B, A.\n- Last three states: C, B, A.\n- Sequence: C, B, A.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1780,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A, C, C, A, B, B, C, B, A, A.\n- Last three states: B, A, A.\n- Sequence: B, A, A.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1897,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A, C, C, A, B, B, C, B, A, A, C.\n- Last three states: A, A, C.\n- Sequence: A, A, C.\n- That is not A, B, C (second state is A, not B).\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2008,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A, C, C, A, B, B, C, B, A, A, C, A.\n- Last three states: A, C, A.\n- Sequence: A, C, A.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2121,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A, C, C, A, B, B, C, B, A, A, C, A, C.\n- Last three states: C, A, C.\n- Sequence: C, A, C.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2236,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A, C, C, A, B, B, C, B, A, A, C, A, C, C.\n- Last three states: A, C, C.\n- Sequence: A, C, C.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2353,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A, C, C, A, B, B, C, B, A, A, C, A, C, C, C.\n- Last three states: C, C, C.\n- Sequence: C, C, C.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2472,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A, C, C, A, B, B, C, B, A, A, C, A, C, C, C, B.\n- Last three states: C, C, B.\n- Sequence: C, C, B.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2593,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A, C, C, A, B, B, C, B, A, A, C, A, C, C, C, B, B.\n- Last three states: C, B, B.\n- Sequence: C, B, B.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2716,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A, C, C, A, B, B, C, B, A, A, C, A, C, C, C, B, B, C.\n- Last three states: B, B, C.\n- Sequence: B, B, C.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2841,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A, C, C, A, B, B, C, B, A, A, C, A, C, C, C, B, B, C, C.\n- Last three states: B, C, C.\n- Sequence: B, C, C.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 2968,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A, C, C, A, B, B, C, B, A, A, C, A, C, C, C, B, B, C, C, A.\n- Last three states: C, C, A.\n- Sequence: C, C, A.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 3097,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A, C, C, A, B, B, C, B, A, A, C, A, C, C, C, B, B, C, C, A, B.\n- Last three states: C, A, B.\n- Sequence: C, A, B.\n- That is not A, B, C.\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 3236,
+      "completion_tokens": 4,
+      "peer_responses": [
+        "Let's go step by step.\n\n- Previous states: A, A, A, C, C, B, B, A, C, A, C, C, A, B, B, C, B, A, A, C, A, C, C, C, B, B, C, C, A, B, B.\n- Last three states: A, B, B.\n- Sequence: A, B, B.\n- That is not A, B, C (third state is B, not C).\n- So I should respond with [WAIT].\n\nAnswer: [WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 1.0,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 0,
+    "n_wait_trials": 30
+  }
+}

@@ -34,25 +34,25 @@ PINK = '#f06292'
 LIME = '#c6ff00'
 
 CONDITION_COLORS = {
-    'o1_terse_solo': ORANGE,
-    'o1_terse_peers': BLUE,
-    'o1_reasoning_solo': GREEN,
-    'o1_reasoning_peers': PURPLE,
-    'o2_terse_solo': RED,
-    'o2_terse_peers': CYAN,
-    'o2_reasoning_solo': LIME,
-    'o2_reasoning_peers': PINK,
+    'o2_terse_solo': ORANGE,
+    'o2_terse_peers': BLUE,
+    'o2_reasoning_solo': GREEN,
+    'o2_reasoning_peers': PURPLE,
+    'o3_terse_solo': RED,
+    'o3_terse_peers': CYAN,
+    'o3_reasoning_solo': LIME,
+    'o3_reasoning_peers': PINK,
 }
 
 CONDITION_LABELS = {
-    'o1_terse_solo': 'O1 Terse Solo',
-    'o1_terse_peers': 'O1 Terse Peers',
-    'o1_reasoning_solo': 'O1 Reasoning Prompt Solo',
-    'o1_reasoning_peers': 'O1 Reasoning Prompt Peers',
     'o2_terse_solo': 'O2 Terse Solo',
     'o2_terse_peers': 'O2 Terse Peers',
     'o2_reasoning_solo': 'O2 Reasoning Prompt Solo',
     'o2_reasoning_peers': 'O2 Reasoning Prompt Peers',
+    'o3_terse_solo': 'O3 Terse Solo',
+    'o3_terse_peers': 'O3 Terse Peers',
+    'o3_reasoning_solo': 'O3 Reasoning Prompt Solo',
+    'o3_reasoning_peers': 'O3 Reasoning Prompt Peers',
 }
 
 
@@ -292,7 +292,7 @@ def plot_learning_curves(provider_dir: Path, output_dir: Path):
         _plot_accuracy_ax(ax, order_conditions, order)
 
         order_label = order.upper().replace('O', 'Order ')
-        fig.suptitle(f'Accuracy Curve — {provider} — {order_label}',
+        fig.suptitle(f'Balanced Accuracy — {provider} — {order_label}',
                      fontsize=18, fontweight='bold', color=CYAN, y=0.98)
         ax.set_title('mean ± 1 std, solid = solo, dashed = peers',
                      fontsize=11, color=FG, alpha=0.6, pad=15)

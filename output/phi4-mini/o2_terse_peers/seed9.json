@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-23T15:26:25.873640",
+  "config": {
+    "seed": 9,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "Respond [ACT] if the last two states were A then B. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "As per the instruction, since the last two states were A then B, the response should be [WAIT].",
+      "correct": true,
+      "prompt_tokens": 32,
+      "completion_tokens": 22,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Correct, based on the given instruction, if the last two states were A then B, the response should indeed be [WAIT].",
+      "correct": true,
+      "prompt_tokens": 66,
+      "completion_tokens": 26,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's right. Following the instruction, if the last two states were A then B, the current state being A would still warrant a response of [WAIT].",
+      "correct": true,
+      "prompt_tokens": 104,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, regardless of the current state, then the response to the current state B should indeed be [WAIT].",
+      "correct": false,
+      "prompt_tokens": 149,
+      "completion_tokens": 46,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is correct. As per the given instructions, if the last two states were A then B, the current state being B should result in a response of [WAIT].",
+      "correct": true,
+      "prompt_tokens": 207,
+      "completion_tokens": 35,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the instructions provided, if the last two states were A then B, the current state being A should result in a response of [WAIT].",
+      "correct": true,
+      "prompt_tokens": 254,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being A should indeed prompt a response of [WAIT].",
+      "correct": true,
+      "prompt_tokens": 302,
+      "completion_tokens": 40,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being B should indeed prompt a response of [WAIT].",
+      "correct": false,
+      "prompt_tokens": 354,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being B should indeed prompt a response of [WAIT].",
+      "correct": true,
+      "prompt_tokens": 407,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being A should indeed prompt a response of [WAIT].",
+      "correct": true,
+      "prompt_tokens": 460,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being B should indeed prompt a response of [WAIT].",
+      "correct": false,
+      "prompt_tokens": 513,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being A should indeed prompt a response of [WAIT].",
+      "correct": true,
+      "prompt_tokens": 566,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being A should indeed prompt a response of [WAIT].",
+      "correct": true,
+      "prompt_tokens": 619,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being B should indeed prompt a response of [WAIT].",
+      "correct": false,
+      "prompt_tokens": 672,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being B should indeed prompt a response of [WAIT].",
+      "correct": true,
+      "prompt_tokens": 725,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being A should indeed prompt a response of [WAIT].",
+      "correct": true,
+      "prompt_tokens": 778,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being A should indeed prompt a response of [WAIT].",
+      "correct": true,
+      "prompt_tokens": 831,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being B should indeed prompt a response of [WAIT].",
+      "correct": false,
+      "prompt_tokens": 884,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being B should indeed prompt a response of [WAIT].",
+      "correct": true,
+      "prompt_tokens": 937,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being B should indeed prompt a response of [WAIT].",
+      "correct": true,
+      "prompt_tokens": 990,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being A should indeed prompt a response of [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1043,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being A should indeed prompt a response of [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1096,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being B should indeed prompt a response of [WAIT].",
+      "correct": false,
+      "prompt_tokens": 1149,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being B should indeed prompt a response of [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1202,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being A should indeed prompt a response of [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1255,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being A should indeed prompt a response of [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1308,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being B should indeed prompt a response of [WAIT].",
+      "correct": false,
+      "prompt_tokens": 1361,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being A should indeed prompt a response of [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1414,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being A should indeed prompt a response of [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1467,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the instruction is to respond with [WAIT] when the last two states were A then B, then the current state being B should indeed prompt a response of [WAIT].",
+      "correct": false,
+      "prompt_tokens": 1520,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.7333333333333333,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 8,
+    "n_wait_trials": 22
+  }
+}

@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-23T15:38:53.061402",
+  "config": {
+    "seed": 7,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "Respond [ACT] if the last three states were A then B then C. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "C",
+    "A",
+    "A",
+    "B",
+    "C",
+    "A",
+    "B",
+    "A",
+    "C",
+    "A",
+    "B",
+    "A",
+    "B",
+    "C",
+    "C",
+    "B",
+    "A",
+    "A",
+    "B",
+    "C",
+    "B",
+    "B",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "As per your instructions, since the last three states were A, B, then C, and the current state is B, I should respond with [ACT]. However, since the current state is B, not C, my response should be [WAIT].",
+      "correct": false,
+      "prompt_tokens": 34,
+      "completion_tokens": 51,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Your response is correct. Since the current state is A, and we are waiting for the next state to determine if we should respond with [ACT] or [WAIT], the appropriate response is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 97,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. The current state is B, so according to the instructions, the response should be [WAIT].",
+      "correct": true,
+      "prompt_tokens": 150,
+      "completion_tokens": 24,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. The current state is A, and according to the instructions, the response should indeed be [ACT].",
+      "correct": false,
+      "prompt_tokens": 186,
+      "completion_tokens": 26,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for the oversight. If the current state is A, then the correct response, following the given instructions, is [ACT].",
+      "correct": false,
+      "prompt_tokens": 224,
+      "completion_tokens": 27,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I apologize for any confusion. If the current state is B, then according to the instructions, the correct response should be [WAIT]. If the sequence of states is important and we are following a pattern, we would need to know the previous states to determine the correct response. If the sequence is A, B, C, and we are currently at B, we would still respond with [WAIT] as we are not at the end of the sequence. If the sequence is not relevant and we are simply responding to the current state, then the response would be [WAIT].",
+      "correct": true,
+      "prompt_tokens": 263,
+      "completion_tokens": 115,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the current state is A, then according to the instructions, the correct response should be [ACT].",
+      "correct": false,
+      "prompt_tokens": 390,
+      "completion_tokens": 27,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I apologize for any confusion. If the current state is C, then according to the instructions, the correct response should be [WAIT], as we are not at the end of the sequence A, B, C. If the sequence is not relevant and we are simply responding to the current state, then the response would be [WAIT].",
+      "correct": true,
+      "prompt_tokens": 429,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the current state is A, then according to the instructions, the correct response should be [ACT].",
+      "correct": false,
+      "prompt_tokens": 508,
+      "completion_tokens": 27,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for the confusion. If the current state is A, then the correct response, following the given instructions, is indeed [ACT].",
+      "correct": false,
+      "prompt_tokens": 547,
+      "completion_tokens": 28,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I apologize for any confusion. If the current state is B, then the correct response, following the given instructions, is [WAIT], as we are not at the end of the sequence A, B, C. If the sequence is not relevant and we are simply responding to the current state, then the response would be [WAIT].",
+      "correct": true,
+      "prompt_tokens": 587,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is C, then the correct response, following the given instructions, is [WAIT], as we are not at the end of the sequence A, B, C. If the sequence is not relevant and we are simply responding to the current state, then the response would be [WAIT].",
+      "correct": false,
+      "prompt_tokens": 666,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the current state is A, then the correct response, following the given instructions, is [ACT].",
+      "correct": false,
+      "prompt_tokens": 745,
+      "completion_tokens": 27,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I apologize for any confusion. If the current state is B, then the correct response, following the given instructions, is [WAIT], as we are not at the end of the sequence A, B, C. If the sequence is not relevant and we are simply responding to the current state, then the response would be [WAIT].",
+      "correct": true,
+      "prompt_tokens": 784,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the current state is A, then the correct response, following the given instructions, is [ACT].",
+      "correct": false,
+      "prompt_tokens": 863,
+      "completion_tokens": 27,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I apologize for any confusion. If the current state is C, then the correct response, following the given instructions, is [WAIT], as we are not at the end of the sequence A, B, C. If the sequence is not relevant and we are simply responding to the current state, then the response would be [WAIT].",
+      "correct": true,
+      "prompt_tokens": 902,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the current state is A, then the correct response, following the given instructions, is [ACT].",
+      "correct": false,
+      "prompt_tokens": 981,
+      "completion_tokens": 27,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I apologize for any confusion. If the current state is B, then the correct response, following the given instructions, is [WAIT], as we are not at the end of the sequence A, B, C. If the sequence is not relevant and we are simply responding to the current state, then the response would be [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1020,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the current state is A, then the correct response, following the given instructions, is [ACT].",
+      "correct": false,
+      "prompt_tokens": 1099,
+      "completion_tokens": 27,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I apologize for any confusion. If the current state is B, then the correct response, following the given instructions, is [WAIT], as we are not at the end of the sequence A, B, C. If the sequence is not relevant and we are simply responding to the current state, then the response would be [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1138,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is C, then the correct response, following the given instructions, is [WAIT], as we are not at the end of the sequence A, B, C. If the sequence is not relevant and we are simply responding to the current state, then the response would be [WAIT].",
+      "correct": false,
+      "prompt_tokens": 1217,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is C, then the correct response, following the given instructions, is [WAIT], as we are not at the end of the sequence A, B, C. If the sequence is not relevant and we are simply responding to the current state, then the response would be [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1296,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, then the correct response, following the given instructions, is [WAIT], as we are not at the end of the sequence A, B, C. If the sequence is not relevant and we are simply responding to the current state, then the response would be [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1375,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the current state is A, then the correct response, following the given instructions, is [ACT].",
+      "correct": false,
+      "prompt_tokens": 1454,
+      "completion_tokens": 27,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I apologize for any confusion. If the current state is A, then the correct response, following the given instructions, is indeed [ACT].",
+      "correct": false,
+      "prompt_tokens": 1493,
+      "completion_tokens": 28,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I apologize for any confusion. If the current state is B, then the correct response, following the given instructions, is [WAIT], as we are not at the end of the sequence A, B, C. If the sequence is not relevant and we are simply responding to the current state, then the response would be [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1533,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is C, then the correct response, following the given instructions, is [WAIT], as we are not at the end of the sequence A, B, C. If the sequence is not relevant and we are simply responding to the current state, then the response would be [WAIT].",
+      "correct": false,
+      "prompt_tokens": 1612,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, then the correct response, following the given instructions, is [WAIT], as we are not at the end of the sequence A, B, C. If the sequence is not relevant and we are simply responding to the current state, then the response would be [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1691,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the current state is B, then the correct response, following the given instructions, is [WAIT], as we are not at the end of the sequence A, B, C. If the sequence is not relevant and we are simply responding to the current state, then the response would be [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1770,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the current state is A, then the correct response, following the given instructions, is [ACT].",
+      "correct": false,
+      "prompt_tokens": 1849,
+      "completion_tokens": 27,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.43333333333333335,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 0.48148148148148145,
+    "n_trials": 30,
+    "n_act_trials": 3,
+    "n_wait_trials": 27
+  }
+}

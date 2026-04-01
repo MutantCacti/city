@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-24T04:28:10.184552",
+  "config": {
+    "seed": 58,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "B",
+    "B",
+    "B",
+    "A",
+    "C",
+    "C",
+    "C",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "C",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "C",
+    "A",
+    "A",
+    "C",
+    "C",
+    "A",
+    "C",
+    "B",
+    "A",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is just: **B**  \n\nWe are looking for the sequence **A \u2192 B \u2192 C** in consecutive states.  \nRight now we only have one state (B), so the sequence A,B,C has not occurred.  \n\nTherefore, the correct response is:  \n\n**[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 101,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n\nThe last three states are B, B \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 184,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n\nThe last three states are B, B, B \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 256,
+      "completion_tokens": 68,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n\nThe last three states are B, B, A \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 336,
+      "completion_tokens": 74,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n\nThe last three states are B, A, C \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 422,
+      "completion_tokens": 80,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n\nThe last three states are A, C, C \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 514,
+      "completion_tokens": 86,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n\nThe last three states are C, C, C \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 612,
+      "completion_tokens": 92,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n\nThe last three states are C, C, B \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 716,
+      "completion_tokens": 98,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n\nThe last three states are C, B, B \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 826,
+      "completion_tokens": 104,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n10th state: A  \n\nThe last three states are B, B, A \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 942,
+      "completion_tokens": 110,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n10th state: A  \n11th state: B  \n\nThe last three states are B, A, B \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1064,
+      "completion_tokens": 116,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n10th state: A  \n11th state: B  \n12th state: A  \n\nThe last three states are A, B, A \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1192,
+      "completion_tokens": 122,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n10th state: A  \n11th state: B  \n12th state: A  \n13th state: C  \n\nThe last three states are B, A, C \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1326,
+      "completion_tokens": 128,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n10th state: A  \n11th state: B  \n12th state: A  \n13th state: C  \n14th state: A  \n\nThe last three states are A, C, A \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1466,
+      "completion_tokens": 134,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n10th state: A  \n11th state: B  \n12th state: A  \n13th state: C  \n14th state: A  \n15th state: B  \n\nThe last three states are C, A, B \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1612,
+      "completion_tokens": 140,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n10th state: A  \n11th state: B  \n12th state: A  \n13th state: C  \n14th state: A  \n15th state: B  \n16th state: A  \n\nThe last three states are A, B, A \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1764,
+      "completion_tokens": 146,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n10th state: A  \n11th state: B  \n12th state: A  \n13th state: C  \n14th state: A  \n15th state: B  \n16th state: A  \n17th state: A  \n\nThe last three states are B, A, A \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1922,
+      "completion_tokens": 152,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n10th state: A  \n11th state: B  \n12th state: A  \n13th state: C  \n14th state: A  \n15th state: B  \n16th state: A  \n17th state: A  \n18th state: B  \n\nThe last three states are A, A, B \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2086,
+      "completion_tokens": 158,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n10th state: A  \n11th state: B  \n12th state: A  \n13th state: C  \n14th state: A  \n15th state: B  \n16th state: A  \n17th state: A  \n18th state: B  \n19th state: B  \n\nThe last three states are A, B, B \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2256,
+      "completion_tokens": 164,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n10th state: A  \n11th state: B  \n12th state: A  \n13th state: C  \n14th state: A  \n15th state: B  \n16th state: A  \n17th state: A  \n18th state: B  \n19th state: B  \n20th state: B  \n\nThe last three states are B, B, B \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2432,
+      "completion_tokens": 170,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n10th state: A  \n11th state: B  \n12th state: A  \n13th state: C  \n14th state: A  \n15th state: B  \n16th state: A  \n17th state: A  \n18th state: B  \n19th state: B  \n20th state: B  \n21st state: C  \n\nThe last three states are B, B, C \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2614,
+      "completion_tokens": 176,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n10th state: A  \n11th state: B  \n12th state: A  \n13th state: C  \n14th state: A  \n15th state: B  \n16th state: A  \n17th state: A  \n18th state: B  \n19th state: B  \n20th state: B  \n21st state: C  \n22nd state: A  \n\nThe last three states are B, C, A \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2802,
+      "completion_tokens": 182,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n10th state: A  \n11th state: B  \n12th state: A  \n13th state: C  \n14th state: A  \n15th state: B  \n16th state: A  \n17th state: A  \n18th state: B  \n19th state: B  \n20th state: B  \n21st state: C  \n22nd state: A  \n23rd state: A  \n\nThe last three states are C, A, A \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2996,
+      "completion_tokens": 188,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n10th state: A  \n11th state: B  \n12th state: A  \n13th state: C  \n14th state: A  \n15th state: B  \n16th state: A  \n17th state: A  \n18th state: B  \n19th state: B  \n20th state: B  \n21st state: C  \n22nd state: A  \n23rd state: A  \n24th state: C  \n\nThe last three states are A, A, C \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3196,
+      "completion_tokens": 194,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n10th state: A  \n11th state: B  \n12th state: A  \n13th state: C  \n14th state: A  \n15th state: B  \n16th state: A  \n17th state: A  \n18th state: B  \n19th state: B  \n20th state: B  \n21st state: C  \n22nd state: A  \n23rd state: A  \n24th state: C  \n25th state: C  \n\nThe last three states are A, C, C \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3402,
+      "completion_tokens": 200,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n10th state: A  \n11th state: B  \n12th state: A  \n13th state: C  \n14th state: A  \n15th state: B  \n16th state: A  \n17th state: A  \n18th state: B  \n19th state: B  \n20th state: B  \n21st state: C  \n22nd state: A  \n23rd state: A  \n24th state: C  \n25th state: C  \n26th state: A  \n\nThe last three states are C, C, A \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3614,
+      "completion_tokens": 206,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n10th state: A  \n11th state: B  \n12th state: A  \n13th state: C  \n14th state: A  \n15th state: B  \n16th state: A  \n17th state: A  \n18th state: B  \n19th state: B  \n20th state: B  \n21st state: C  \n22nd state: A  \n23rd state: A  \n24th state: C  \n25th state: C  \n26th state: A  \n27th state: C  \n\nThe last three states are C, A, C \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3832,
+      "completion_tokens": 212,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n10th state: A  \n11th state: B  \n12th state: A  \n13th state: C  \n14th state: A  \n15th state: B  \n16th state: A  \n17th state: A  \n18th state: B  \n19th state: B  \n20th state: B  \n21st state: C  \n22nd state: A  \n23rd state: A  \n24th state: C  \n25th state: C  \n26th state: A  \n27th state: C  \n28th state: B  \n\nThe last three states are A, C, B \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 4056,
+      "completion_tokens": 218,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n10th state: A  \n11th state: B  \n12th state: A  \n13th state: C  \n14th state: A  \n15th state: B  \n16th state: A  \n17th state: A  \n18th state: B  \n19th state: B  \n20th state: B  \n21st state: C  \n22nd state: A  \n23rd state: A  \n24th state: C  \n25th state: C  \n26th state: A  \n27th state: C  \n28th state: B  \n29th state: A  \n\nThe last three states are C, B, A \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 4286,
+      "completion_tokens": 224,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s check the sequence so far:  \n\nWe have:  \n1st state: B  \n2nd state: B  \n3rd state: B  \n4th state: A  \n5th state: C  \n6th state: C  \n7th state: C  \n8th state: B  \n9th state: B  \n10th state: A  \n11th state: B  \n12th state: A  \n13th state: C  \n14th state: A  \n15th state: B  \n16th state: A  \n17th state: A  \n18th state: B  \n19th state: B  \n20th state: B  \n21st state: C  \n22nd state: A  \n23rd state: A  \n24th state: C  \n25th state: C  \n26th state: A  \n27th state: C  \n28th state: B  \n29th state: A  \n30th state: B  \n\nThe last three states are B, A, B \u2014 not A, B, C.  \n\nSo the sequence A,B,C has not occurred.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 4522,
+      "completion_tokens": 230,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 1.0,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 0,
+    "n_wait_trials": 30
+  }
+}

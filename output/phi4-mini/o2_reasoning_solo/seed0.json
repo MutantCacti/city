@@ -1,0 +1,514 @@
+{
+  "timestamp": "2026-03-23T15:22:57.246658",
+  "config": {
+    "seed": 0,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 1,
+    "tick_seconds": 0.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A or B. Your task: when you see B immediately following A, include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what was the previous state? What is the current state? Is this a B that followed an A? Then give your answer."
+  },
+  "stimulus_history": [
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is A. The current state is A. Since we don't have a subsequent state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 86,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is A. The current state is A. Since we don't have a subsequent state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 148,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is B. The current state is B. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 210,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is B. The current state is B. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 272,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is A. The current state is A. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 334,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is A. The current state is A. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 396,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is B. The current state is B. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 458,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is B. The current state is B. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 520,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is A. The current state is A. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 582,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is A. The current state is A. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 644,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is B. The current state is B. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 706,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is A. The current state is A. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 768,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is A. The current state is A. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 830,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is A. The current state is A. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 892,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is B. The current state is B. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 954,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is A. The current state is A. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1016,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is A. The current state is A. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1078,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is A. The current state is A. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1140,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is A. The current state is A. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1202,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is B. The current state is B. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 1264,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 21,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is A. The current state is A. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1326,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is B. The current state is B. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 1388,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is B. The current state is B. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1450,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is B. The current state is B. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1512,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is B. The current state is B. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1574,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is B. The current state is B. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1636,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is B. The current state is B. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1698,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is A. The current state is A. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1760,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is A. The current state is A. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1822,
+      "completion_tokens": 55,
+      "peer_responses": []
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "The previous state was not provided, as we are starting with the first state, which is B. The current state is B. Since we don't have a previous state to compare with, we cannot determine if a B followed an A. Therefore, the answer is [WAIT].",
+      "correct": false,
+      "prompt_tokens": 1884,
+      "completion_tokens": 55,
+      "peer_responses": []
+    }
+  ],
+  "summary": {
+    "accuracy": 0.7666666666666667,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 7,
+    "n_wait_trials": 23
+  }
+}

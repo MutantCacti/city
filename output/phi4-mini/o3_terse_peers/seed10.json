@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-23T15:40:05.526254",
+  "config": {
+    "seed": 10,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "Respond [ACT] if the last three states were A then B then C. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "C",
+    "A",
+    "C",
+    "C",
+    "A",
+    "C",
+    "A",
+    "A",
+    "A",
+    "C",
+    "C",
+    "B",
+    "C",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "C",
+    "A",
+    "C",
+    "A",
+    "C",
+    "C",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "As per your instructions, since the last three states were A, B, and C, the response should be [ACT]. However, since you provided only one state (C), I will follow the initial instruction and respond with [WAIT]. If you meant to provide a sequence of states, please provide the full sequence for accurate processing.",
+      "correct": false,
+      "prompt_tokens": 34,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Your response is correct based on the initial instruction. Since you provided only one state (A), the response is [WAIT]. If you have a sequence of states to provide, please do so for further processing.",
+      "correct": true,
+      "prompt_tokens": 113,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (C), the response remains [WAIT]. If you have a sequence of states that includes A, B, and C, please provide the full sequence for accurate processing.",
+      "correct": true,
+      "prompt_tokens": 167,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Yes, that's correct. Since you provided the state as C, the response is [WAIT]. If you need further assistance or have a sequence of states to provide, please let me know.",
+      "correct": true,
+      "prompt_tokens": 231,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (A), the response is indeed [WAIT]. If you have a sequence of states that includes A, B, and C, please provide the full sequence for accurate processing.",
+      "correct": true,
+      "prompt_tokens": 281,
+      "completion_tokens": 53,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Correct, since you provided the state as C, the response is [WAIT]. If you have any other requests or need assistance with a different sequence of states, feel free to let me know.",
+      "correct": true,
+      "prompt_tokens": 346,
+      "completion_tokens": 39,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (A), the response is [WAIT]. If you need assistance with a different sequence of states or have any other questions, please let me know.",
+      "correct": true,
+      "prompt_tokens": 397,
+      "completion_tokens": 48,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (A), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 457,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (A), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 528,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (C), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 599,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (C), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 670,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (B), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 741,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (C), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 812,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (B), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 883,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (A), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 954,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (B), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1025,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (B), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1096,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (A), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1167,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (B), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1238,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (C), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": false,
+      "prompt_tokens": 1309,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (A), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1380,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (C), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1451,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (A), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1522,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (C), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1593,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (C), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1664,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (A), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1735,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (A), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1806,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (B), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1877,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (A), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1948,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. As per the initial instruction, since you provided only one state (B), the response is [WAIT]. If you have a sequence of states that includes A, B, and C, or if there's anything else I can assist you with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 2019,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.9333333333333333,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 0.9655172413793104,
+    "n_trials": 30,
+    "n_act_trials": 1,
+    "n_wait_trials": 29
+  }
+}

@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-23T17:52:47.650307",
+  "config": {
+    "seed": 1,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "Respond [ACT] if the last three states were A then B then C. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "B",
+    "C",
+    "C",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "C",
+    "C",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "C",
+    "C",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "C",
+    "B",
+    "B",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states were A, B, C? No \u2014 we only have one state so far: B.  \nSo, the condition is not met.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 34,
+      "completion_tokens": 39,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The last three states so far are: B, C.  \nThat\u2019s only two states, not three.  \nCondition not met.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 85,
+      "completion_tokens": 35,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Now the last three states are: B, C, C.  \nThat\u2019s not A, B, C.  \nCondition not met.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 132,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: C, C, B.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 180,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: C, B, B.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 217,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: B, B, A.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 254,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: B, A, A.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 291,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: A, A, B.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 328,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Last three states: A, B, C.  \nYes \u2014 that matches exactly A then B then C.  \n\nCondition met.  \n\nResponse: [ACT]",
+      "correct": true,
+      "prompt_tokens": 365,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: B, C, C.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 408,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: C, C, A.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 445,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: C, A, A.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 482,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: A, A, B.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 519,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: A, B, A.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 556,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: B, A, A.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 593,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: A, A, B.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 630,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: A, B, B.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 667,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: B, B, B.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 704,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: B, B, C.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 741,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: B, C, C.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 778,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: C, C, B.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 815,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: C, B, A.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 852,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: B, A, A.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 889,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: A, A, A.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 926,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: A, A, A.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 963,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: A, A, B.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1000,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Last three states: A, B, C.  \nYes \u2014 that matches A then B then C.  \n\nCondition met.  \n\nResponse: [ACT]",
+      "correct": true,
+      "prompt_tokens": 1037,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: B, C, B.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1079,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: C, B, B.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1116,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Last three states: B, B, B.  \nNot A, B, C.  \n\nResponse: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1153,
+      "completion_tokens": 25,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 1.0,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 2,
+    "n_wait_trials": 28
+  }
+}

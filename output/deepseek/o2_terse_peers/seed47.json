@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-24T02:02:26.475264",
+  "config": {
+    "seed": 47,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "Respond [ACT] if the last two states were A then B. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "State: B  \nLast two states: A, B \u2192 matches the condition \"if the last two states were A then B.\"  \nSo I should respond [ACT].  \n\n[ACT]",
+      "correct": false,
+      "prompt_tokens": 32,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "State: B  \nLast two states: B, WAIT? Wait, the last two states before this new input are B (from the first turn) and then the response \"[WAIT]\" (which is not a state, it's an action). Actually, the user only provides \"State: ...\" and I respond with [ACT] or [WAIT]. The history of states is:  \n1. Initial: State: B \u2192 I responded [WAIT]  \n2. Now: State: B again.  \n\nThe rule says: \"if the last two states were A then B. Otherwise respond [WAIT].\"  \nWe need to track states, not responses. The last two states: first state was B, second state (now) is B. That's not \"A then B\", so I should respond [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 82,
+      "completion_tokens": 177,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: B  \nLast two states: B, B \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 271,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: A  \nLast two states: B, A \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 312,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "State: B  \nLast two states: A, B \u2192 matches \"A then B\".  \nSo respond [ACT].  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 353,
+      "completion_tokens": 28,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: B  \nLast two states: B, B \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 392,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: B  \nLast two states: B, B \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 433,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: B  \nLast two states: B, B \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 474,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: A  \nLast two states: B, A \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 515,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: A  \nLast two states: A, A \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 556,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "State: B  \nLast two states: A, B \u2192 matches \"A then B\".  \nSo respond [ACT].  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 597,
+      "completion_tokens": 28,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: B  \nLast two states: B, B \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 636,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: A  \nLast two states: B, A \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 677,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "State: B  \nLast two states: A, B \u2192 matches \"A then B\".  \nSo respond [ACT].  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 718,
+      "completion_tokens": 28,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: A  \nLast two states: B, A \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 757,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: A  \nLast two states: A, A \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 798,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "State: B  \nLast two states: A, B \u2192 matches \"A then B\".  \nSo respond [ACT].  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 839,
+      "completion_tokens": 28,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: B  \nLast two states: B, B \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 878,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: B  \nLast two states: B, B \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 919,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: A  \nLast two states: B, A \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 960,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "State: B  \nLast two states: A, B \u2192 matches \"A then B\".  \nSo respond [ACT].  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 1001,
+      "completion_tokens": 28,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: A  \nLast two states: B, A \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1040,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: A  \nLast two states: A, A \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1081,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: A  \nLast two states: A, A \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1122,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "State: B  \nLast two states: A, B \u2192 matches \"A then B\".  \nSo respond [ACT].  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 1163,
+      "completion_tokens": 28,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: B  \nLast two states: B, B \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1202,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: B  \nLast two states: B, B \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1243,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: A  \nLast two states: B, A \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1284,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: A  \nLast two states: A, A \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1325,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "State: A  \nLast two states: A, A \u2192 not A then B.  \nSo respond [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1366,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.9333333333333333,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 0.9166666666666666,
+    "n_trials": 30,
+    "n_act_trials": 6,
+    "n_wait_trials": 24
+  }
+}

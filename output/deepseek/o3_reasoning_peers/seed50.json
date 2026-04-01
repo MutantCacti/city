@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-24T03:58:43.212877",
+  "config": {
+    "seed": 50,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "C",
+    "A",
+    "C",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "C",
+    "C",
+    "C",
+    "A",
+    "A",
+    "A",
+    "C",
+    "C",
+    "B",
+    "C",
+    "B",
+    "B",
+    "C",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "C",
+    "A",
+    "C"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are just \"C\". There is no sequence of A, then B, then C in a row.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 101,
+      "completion_tokens": 39,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are C, then A. The sequence ends with A, but there is no A, B, C in a row.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 152,
+      "completion_tokens": 43,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are A, then C. The sequence ends with C, but the previous two were A and C, not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 207,
+      "completion_tokens": 46,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are C, then B. The sequence ends with B, but there is no A, B, C in a row.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 265,
+      "completion_tokens": 43,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are B, then A. The sequence ends with A, but there is no A, B, C in a row.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 320,
+      "completion_tokens": 43,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are A, then A. The sequence ends with A, but there is no A, B, C in a row.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 375,
+      "completion_tokens": 43,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are A, then B. The sequence ends with B, but the last three states are A, A, B \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 430,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are B, then B. The sequence ends with B, but the last three states are A, B, B \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 491,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are B, then A. The sequence ends with A, but the last three states are B, B, A \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 552,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are A, then C. The sequence ends with C, but the last three states are B, A, C \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 613,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are C, then C. The sequence ends with C, but the last three states are A, C, C \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 674,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are C, then C. The sequence ends with C, but the last three states are C, C, C \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 735,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are C, then A. The sequence ends with A, but the last three states are C, C, A \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 796,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are A, then A. The sequence ends with A, but the last three states are C, A, A \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 857,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are A, then A. The sequence ends with A, but the last three states are A, A, A \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 918,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are A, then C. The sequence ends with C, but the last three states are A, A, C \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 979,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are C, then C. The sequence ends with C, but the last three states are A, C, C \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1040,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are C, then B. The sequence ends with B, but the last three states are C, C, B \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1101,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are B, then C. The sequence ends with C, but the last three states are C, B, C \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1162,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are C, then B. The sequence ends with B, but the last three states are B, C, B \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1223,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are B, then B. The sequence ends with B, but the last three states are C, B, B \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1284,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are B, then C. The sequence ends with C, but the last three states are B, B, C \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1345,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are C, then B. The sequence ends with B, but the last three states are B, C, B \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1406,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are B, then A. The sequence ends with A, but the last three states are C, B, A \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1467,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are A, then B. The sequence ends with B, but the last three states are B, A, B \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1528,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are B, then A. The sequence ends with A, but the last three states are A, B, A \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1589,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are A, then A. The sequence ends with A, but the last three states are B, A, A \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1650,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are A, then C. The sequence ends with C, but the last three states are A, A, C \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1711,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are C, then A. The sequence ends with A, but the last three states are A, C, A \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1772,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "The recent states are A, then C. The sequence ends with C, but the last three states are C, A, C \u2014 not A, B, C.  \nSo I should respond with [WAIT].  \n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1833,
+      "completion_tokens": 49,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 1.0,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 0,
+    "n_wait_trials": 30
+  }
+}

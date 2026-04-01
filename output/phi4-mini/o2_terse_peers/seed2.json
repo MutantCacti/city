@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-23T15:25:05.234064",
+  "config": {
+    "seed": 2,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "Respond [ACT] if the last two states were A then B. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "As per your instructions, since the last state was A, I am responding with [WAIT].",
+      "correct": true,
+      "prompt_tokens": 32,
+      "completion_tokens": 19,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Apologies for any confusion. If the last state was A, then the correct response is [WAIT].",
+      "correct": true,
+      "prompt_tokens": 83,
+      "completion_tokens": 21,
+      "peer_responses": [
+        "I understand the pattern you've provided. If the last state was A, then the correct response is indeed [WAIT]."
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "I understand the pattern you've provided. If the last state was B, then the correct response would be [ACT]. If you need assistance with anything else, feel free to let me know!",
+      "correct": true,
+      "prompt_tokens": 154,
+      "completion_tokens": 38,
+      "peer_responses": [
+        "No problem at all. If the last state was A, then your response should be [WAIT]. If the last state was B, then the response would change accordingly. How can I assist you further?"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand the pattern you've provided. If the last state was A, then the correct response is [WAIT]. If you need assistance with anything else, feel free to let me know!",
+      "correct": true,
+      "prompt_tokens": 253,
+      "completion_tokens": 37,
+      "peer_responses": [
+        "Apologies for any confusion. If the last state was A, then the correct response is [WAIT]. If the last state was B, then the correct response would be [ACT]. If you need assistance with anything else, feel free to let me know!"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need help with, please don't hesitate to ask.",
+      "correct": true,
+      "prompt_tokens": 332,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need help with, please don't hesitate to ask."
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need help with, please don't hesitate to ask.",
+      "correct": true,
+      "prompt_tokens": 407,
+      "completion_tokens": 33,
+      "peer_responses": [
+        "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need help with, please don't hesitate to ask."
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "I understand. If the current state is B, then the response is [ACT]. If there's anything else you need help with, please don't hesitate to ask.",
+      "correct": true,
+      "prompt_tokens": 481,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is B, then the response is [ACT]. If there's anything else you need help with, please don't hesitate to ask."
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know.",
+      "correct": false,
+      "prompt_tokens": 554,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know.",
+      "correct": false,
+      "prompt_tokens": 627,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 700,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 773,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 846,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 919,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 992,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1065,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know.",
+      "correct": false,
+      "prompt_tokens": 1138,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know.",
+      "correct": false,
+      "prompt_tokens": 1211,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know.",
+      "correct": false,
+      "prompt_tokens": 1284,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1357,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1430,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1503,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know.",
+      "correct": false,
+      "prompt_tokens": 1576,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1649,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1722,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1795,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1868,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 1941,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is A, then the response is indeed [WAIT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know.",
+      "correct": true,
+      "prompt_tokens": 2014,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know.",
+      "correct": false,
+      "prompt_tokens": 2087,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know."
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know.",
+      "correct": false,
+      "prompt_tokens": 2160,
+      "completion_tokens": 32,
+      "peer_responses": [
+        "I understand. If the current state is B, then the response is indeed [ACT]. If there's anything else you need assistance with, please let me know."
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.7333333333333333,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 0.6666666666666666,
+    "n_trials": 30,
+    "n_act_trials": 6,
+    "n_wait_trials": 24
+  }
+}

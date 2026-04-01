@@ -1,0 +1,514 @@
+{
+  "timestamp": "2026-03-24T01:12:36.972799",
+  "config": {
+    "seed": 46,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 1,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A or B. Your task: when you see B immediately following A, include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what was the previous state? What is the current state? Is this a B that followed an A? Then give your answer."
+  },
+  "stimulus_history": [
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 86,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 2,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: A  \n- Current state: B  \n- This is a B that immediately followed an A.  \n- According to the rule: when B immediately follows A, include [ACT] in the response.  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 97,
+      "completion_tokens": 57,
+      "peer_responses": []
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: B  \n- Current state: B  \n- This is a B that followed a B, not an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 161,
+      "completion_tokens": 65,
+      "peer_responses": []
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: B  \n- Current state: A  \n- This is an A that followed a B, not a B following an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 233,
+      "completion_tokens": 68,
+      "peer_responses": []
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: A  \n- Current state: B  \n- This is a B that immediately followed an A.  \n- According to the rule: when B immediately follows A, include [ACT] in the response.  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 308,
+      "completion_tokens": 57,
+      "peer_responses": []
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: B  \n- Current state: B  \n- This is a B that followed a B, not an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 372,
+      "completion_tokens": 65,
+      "peer_responses": []
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: B  \n- Current state: A  \n- This is an A that followed a B, not a B following an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 444,
+      "completion_tokens": 68,
+      "peer_responses": []
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: A  \n- Current state: B  \n- This is a B that immediately followed an A.  \n- According to the rule: when B immediately follows A, include [ACT] in the response.  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 519,
+      "completion_tokens": 57,
+      "peer_responses": []
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: B  \n- Current state: B  \n- This is a B that followed a B, not an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 583,
+      "completion_tokens": 65,
+      "peer_responses": []
+    },
+    {
+      "step": 10,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: B  \n- Current state: B  \n- This is a B that followed a B, not an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 655,
+      "completion_tokens": 65,
+      "peer_responses": []
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: B  \n- Current state: B  \n- This is a B that followed a B, not an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 727,
+      "completion_tokens": 65,
+      "peer_responses": []
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: B  \n- Current state: A  \n- This is an A that followed a B, not a B following an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 799,
+      "completion_tokens": 68,
+      "peer_responses": []
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: A  \n- Current state: B  \n- This is a B that immediately followed an A.  \n- According to the rule: when B immediately follows A, include [ACT] in the response.  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 874,
+      "completion_tokens": 57,
+      "peer_responses": []
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: B  \n- Current state: A  \n- This is an A that followed a B, not a B following an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 938,
+      "completion_tokens": 68,
+      "peer_responses": []
+    },
+    {
+      "step": 15,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: A  \n- Current state: B  \n- This is a B that immediately followed an A.  \n- According to the rule: when B immediately follows A, include [ACT] in the response.  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 1013,
+      "completion_tokens": 57,
+      "peer_responses": []
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: B  \n- Current state: A  \n- This is an A that followed a B, not a B following an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 1077,
+      "completion_tokens": 68,
+      "peer_responses": []
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: A  \n- Current state: A  \n- This is an A that followed an A, not a B following an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 1152,
+      "completion_tokens": 68,
+      "peer_responses": []
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: A  \n- Current state: A  \n- This is an A that followed an A, not a B following an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 1227,
+      "completion_tokens": 68,
+      "peer_responses": []
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: A  \n- Current state: B  \n- This is a B that immediately followed an A.  \n- According to the rule: when B immediately follows A, include [ACT] in the response.  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 1302,
+      "completion_tokens": 57,
+      "peer_responses": []
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: B  \n- Current state: B  \n- This is a B that followed a B, not an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 1366,
+      "completion_tokens": 65,
+      "peer_responses": []
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: B  \n- Current state: B  \n- This is a B that followed a B, not an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 1438,
+      "completion_tokens": 65,
+      "peer_responses": []
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: B  \n- Current state: B  \n- This is a B that followed a B, not an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 1510,
+      "completion_tokens": 65,
+      "peer_responses": []
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: B  \n- Current state: A  \n- This is an A that followed a B, not a B following an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 1582,
+      "completion_tokens": 68,
+      "peer_responses": []
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: A  \n- Current state: B  \n- This is a B that immediately followed an A.  \n- According to the rule: when B immediately follows A, include [ACT] in the response.  \n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 1657,
+      "completion_tokens": 57,
+      "peer_responses": []
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: B  \n- Current state: A  \n- This is an A that followed a B, not a B following an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 1721,
+      "completion_tokens": 68,
+      "peer_responses": []
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: A  \n- Current state: A  \n- This is an A that followed an A, not a B following an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 1796,
+      "completion_tokens": 68,
+      "peer_responses": []
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: A  \n- Current state: A  \n- This is an A that followed an A, not a B following an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 1871,
+      "completion_tokens": 68,
+      "peer_responses": []
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: A  \n- Current state: A  \n- This is an A that followed an A, not a B following an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 1946,
+      "completion_tokens": 68,
+      "peer_responses": []
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: A  \n- Current state: A  \n- This is an A that followed an A, not a B following an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 2021,
+      "completion_tokens": 68,
+      "peer_responses": []
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's think through this step by step.\n\n- Previous state: A  \n- Current state: A  \n- This is an A that followed an A, not a B following an A.  \n- According to the rule: only include [ACT] when B immediately follows A. Otherwise, include [WAIT].  \n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 2096,
+      "completion_tokens": 68,
+      "peer_responses": []
+    }
+  ],
+  "summary": {
+    "accuracy": 0.26666666666666666,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 0.043478260869565216,
+    "n_trials": 30,
+    "n_act_trials": 7,
+    "n_wait_trials": 23
+  }
+}

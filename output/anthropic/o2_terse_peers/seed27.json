@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-24T17:40:22.570084",
+  "config": {
+    "seed": 27,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "anthropic",
+    "model_name": "claude-haiku-4-5-20251001",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.2,
+    "system_prompt": "Respond [ACT] if the last two states were A then B. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "A",
+    "B",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I acknowledge the current state is A. I'm waiting to see the next state to determine if the pattern A\u2192B occurs.",
+      "correct": true,
+      "prompt_tokens": 37,
+      "completion_tokens": 29,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. The last two states were A then A, not A then B. The condition for [ACT] is not met, so I respond:\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 100,
+      "completion_tokens": 40,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states were A then A, not A then B, so the condition is not met.)"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. The last two states were A then A, not A then B. The condition for [ACT] is not met, so I respond:\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 174,
+      "completion_tokens": 40,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states were A then A, not A then B, so the condition is not met.)"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "I appreciate the clarification. You're right - I need to check the last two states *before* the current state announcement. \n\nThe sequence has been: A, A, A, B\n\nBefore state B was announced, the last two states were A then A, not A then B. Therefore the condition for [ACT] is not met.\n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 271,
+      "completion_tokens": 81,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states were A then B. However, checking the sequence: the two most recent states before this one were A then A, not A then B. The condition for [ACT] is not met.)"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. The last two states before the current state A were B then A, not A then B. The condition for [ACT] is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 391,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states before the current state A were B then A, not A then B, so the condition is not met.)"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Correct! The last two states before the current state B were A then B, which matches the condition exactly.\n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 468,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states before the current state B were A then B, which matches the condition A\u2192B exactly.)"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. The last two states before the current state A were B then A, not A then B. The condition for [ACT] is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 538,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states before the current state A were B then A, not A then B, so the condition is not met.)"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Correct! The last two states before the current state B were A then B, which matches the condition exactly.\n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 615,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states before the current state B were A then B, which matches the condition A\u2192B exactly.)"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. The last two states before the current state B were B then B, not A then B. The condition for [ACT] is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 685,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states before the current state B were B then B, not A then B, so the condition is not met.)"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. The last two states before the current state B were B then B, not A then B. The condition for [ACT] is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 765,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states before the current state B were B then B, not A then B, so the condition is not met.)"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. The last two states before the current state B were B then B, not A then B. The condition for [ACT] is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 845,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states before the current state B were B then B, not A then B, so the condition is not met.)"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. The last two states before the current state B were B then B, not A then B. The condition for [ACT] is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 925,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states before the current state B were B then B, not A then B, so the condition is not met.)"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. The last two states before the current state A were B then B, not A then B. The condition for [ACT] is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1005,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states before the current state A were B then B, not A then B, so the condition is not met.)"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. The last two states before the current state A were B then A, not A then B. The condition for [ACT] is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1085,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states before the current state A were B then A, not A then B, so the condition is not met.)"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. The last two states before the current state A were A then A, not A then B. The condition for [ACT] is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1165,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states before the current state A were A then A, not A then B, so the condition is not met.)"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. The last two states before the current state A were A then A, not A then B. The condition for [ACT] is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1245,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states before the current state A were A then A, not A then B, so the condition is not met.)"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Correct! The last two states before the current state B were A then B, which matches the condition exactly.\n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 1322,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states before the current state B were A then B, which matches the condition A\u2192B exactly.)"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. The last two states before the current state A were B then A, not A then B. The condition for [ACT] is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1392,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states before the current state A were B then A, not A then B, so the condition is not met.)"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. The last two states before the current state A were A then A, not A then B. The condition for [ACT] is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1472,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states before the current state A were A then A, not A then B, so the condition is not met.)"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Correct! The last two states before the current state B were A then B, which matches the condition exactly.\n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 1549,
+      "completion_tokens": 31,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states before the current state B were A then B, which matches the condition A\u2192B exactly.)"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. The last two states before the current state A were B then A, not A then B. The condition for [ACT] is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1619,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states before the current state A were B then A, not A then B, so the condition is not met.)"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. The last two states before the current state A were A then A, not A then B. The condition for [ACT] is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1703,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states before the current state A were A then A, not A then B, so the condition is not met.)"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Understood. The last two states before the current state A were A then A, not A then B. The condition for [ACT] is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1783,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states before the current state A were A then A, not A then B, so the condition is not met.)"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "",
+      "correct": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Correct! The last two states before the current state B were A then B, which matches the condition exactly.\n\n[ACT]\n\nNow for the second state announcement (State: A):\n\nThe last two states before the current state A were B then A, not A then B, so the condition is not met.\n\n[WAIT]",
+      "correct": true,
+      "prompt_tokens": 1864,
+      "completion_tokens": 75,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states before the current state B were A then B, which matches the condition A\u2192B exactly.)"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "Understood. The last two states before the current state B were B then B, not A then B. The condition for [ACT] is not met.\n\n[WAIT]",
+      "correct": false,
+      "prompt_tokens": 1978,
+      "completion_tokens": 41,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states before the current state B were B then B, not A then B, so the condition is not met.)"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states before the current state A were B then B, not A then B, so the condition is not met.)"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Understood for the first state announcement (State: A):\n\nThe last two states before the current state A were B then B, not A then B. The condition for [ACT] is not met.\n\n[WAIT]\n\nFor the second state announcement (State: B):\n\nThe last two states before the current state B were A then B, which matches the condition exactly.\n\n[ACT]",
+      "correct": true,
+      "prompt_tokens": 2125,
+      "completion_tokens": 88,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states before the current state B were A then B, which matches the condition A\u2192B exactly.)"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        ""
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.9,
+    "act_accuracy": 0.625,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 8,
+    "n_wait_trials": 22
+  }
+}

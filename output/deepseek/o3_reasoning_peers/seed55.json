@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-24T04:17:51.692440",
+  "config": {
+    "seed": 55,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "B",
+    "C",
+    "C",
+    "C",
+    "B",
+    "B",
+    "B",
+    "B",
+    "C",
+    "B",
+    "C",
+    "C",
+    "C",
+    "B",
+    "A",
+    "B",
+    "A",
+    "B",
+    "C",
+    "A",
+    "C",
+    "A",
+    "C",
+    "B",
+    "A",
+    "B",
+    "A",
+    "C",
+    "B",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s go step by step.  \n\nThe sequence so far is just: **B**  \n\nWe need to check if the last three states in order are A, then B, then C.  \nHere, we only have one state (B), so it\u2019s impossible to have three states in a row matching A\u2192B\u2192C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 101,
+      "completion_tokens": 77,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\n1. Previous state: B  \n2. New state: C  \n\nSequence history: **B, C**  \n\nWe check the last three states: we only have two states total, so still impossible to match A\u2192B\u2192C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 190,
+      "completion_tokens": 65,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C  \nNew state: C  \n\nFull sequence now: **B, C, C**  \n\nCheck last three states: C, C, C \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 267,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C  \nNew state: C  \n\nFull sequence now: **B, C, C, C**  \n\nCheck last three states: C, C, C \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 338,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C  \nNew state: B  \n\nFull sequence now: **B, C, C, C, B**  \n\nCheck last three states: C, C, B \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 413,
+      "completion_tokens": 67,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B  \nNew state: B  \n\nFull sequence now: **B, C, C, C, B, B**  \n\nCheck last three states: C, B, B \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 492,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B  \nNew state: B  \n\nFull sequence now: **B, C, C, C, B, B, B**  \n\nCheck last three states: B, B, B \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 575,
+      "completion_tokens": 75,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B  \nNew state: B  \n\nFull sequence now: **B, C, C, C, B, B, B, B**  \n\nCheck last three states: B, B, B \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 662,
+      "completion_tokens": 79,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B  \nNew state: C  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C**  \n\nCheck last three states: B, B, C \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 753,
+      "completion_tokens": 83,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B, C  \nNew state: B  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C, B**  \n\nCheck last three states: B, C, B \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 848,
+      "completion_tokens": 87,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B, C, B  \nNew state: C  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C, B, C**  \n\nCheck last three states: B, B, C \u2014 not A, B, C.  \n\nWait, let\u2019s check carefully:  \nLast three states in order:  \n- Third last: B (from position: B, C, C, C, B, B, B, B, C, **B**, C)  \n- Second last: C (the one before the new state)  \n- Last: C (new state)  \n\nActually, I need to list them clearly:  \n\nSequence positions (oldest to newest):  \n1: B  \n2: C  \n3: C  \n4: C  \n5: B  \n6: B  \n7: B  \n8: B  \n9: C  \n10: B  \n11: C  \n\nLast three: positions 9, 10, 11 \u2192 C, B, C \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 947,
+      "completion_tokens": 253,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B, C, B, C  \nNew state: C  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C, B, C, C**  \n\nCheck last three states: B, C, C \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1212,
+      "completion_tokens": 95,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B, C, B, C, C  \nNew state: C  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C, B, C, C, C**  \n\nCheck last three states: C, C, C \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1319,
+      "completion_tokens": 99,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B, C, B, C, C, C  \nNew state: B  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C, B, C, C, C, B**  \n\nCheck last three states: C, C, B \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1430,
+      "completion_tokens": 103,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B, C, B, C, C, C, B  \nNew state: A  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C, B, C, C, C, B, A**  \n\nCheck last three states: C, B, A \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1545,
+      "completion_tokens": 107,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B, C, B, C, C, C, B, A  \nNew state: B  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B**  \n\nCheck last three states: B, A, B \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1664,
+      "completion_tokens": 111,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B  \nNew state: A  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A**  \n\nCheck last three states: A, B, A \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1787,
+      "completion_tokens": 115,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A  \nNew state: B  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B**  \n\nCheck last three states: B, A, B \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1914,
+      "completion_tokens": 119,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B  \nNew state: C  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C**  \n\nCheck last three states: A, B, C \u2014 yes, that matches A\u2192B\u2192C.  \n\nThus: **[ACT]**",
+      "correct": true,
+      "prompt_tokens": 2045,
+      "completion_tokens": 125,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C  \nNew state: A  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C, A**  \n\nCheck last three states: B, C, A \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2181,
+      "completion_tokens": 127,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C, A  \nNew state: C  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C, A, C**  \n\nCheck last three states: A, C, C \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2320,
+      "completion_tokens": 131,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C, A, C  \nNew state: A  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C, A, C, A**  \n\nCheck last three states: C, A, A \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2463,
+      "completion_tokens": 135,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C, A, C, A  \nNew state: C  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C, A, C, A, C**  \n\nCheck last three states: A, C, C \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2610,
+      "completion_tokens": 139,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C, A, C, A, C  \nNew state: B  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C, A, C, A, C, B**  \n\nCheck last three states: A, C, B \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2761,
+      "completion_tokens": 143,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C, A, C, A, C, B  \nNew state: A  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C, A, C, A, C, B, A**  \n\nCheck last three states: C, B, A \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2916,
+      "completion_tokens": 147,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C, A, C, A, C, B, A  \nNew state: B  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C, A, C, A, C, B, A, B**  \n\nCheck last three states: B, A, B \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3075,
+      "completion_tokens": 151,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C, A, C, A, C, B, A, B  \nNew state: A  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C, A, C, A, C, B, A, B, A**  \n\nCheck last three states: A, B, A \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3238,
+      "completion_tokens": 155,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C, A, C, A, C, B, A, B, A  \nNew state: C  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C, A, C, A, C, B, A, B, A, C**  \n\nCheck last three states: B, A, C \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3405,
+      "completion_tokens": 159,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C, A, C, A, C, B, A, B, A, C  \nNew state: B  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C, A, C, A, C, B, A, B, A, C, B**  \n\nCheck last three states: A, C, B \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3576,
+      "completion_tokens": 163,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s track the sequence so far:  \n\nPrevious states: B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C, A, C, A, C, B, A, B, A, C, B  \nNew state: B  \n\nFull sequence now: **B, C, C, C, B, B, B, B, C, B, C, C, C, B, A, B, A, B, C, A, C, A, C, B, A, B, A, C, B, B**  \n\nCheck last three states: C, B, B \u2014 not A, B, C.  \n\nThus: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3751,
+      "completion_tokens": 167,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 1.0,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 1,
+    "n_wait_trials": 29
+  }
+}

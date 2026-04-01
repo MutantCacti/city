@@ -1,0 +1,544 @@
+{
+  "timestamp": "2026-03-23T17:35:15.389578",
+  "config": {
+    "seed": 1,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 1,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "B",
+    "C",
+    "C",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "C",
+    "C",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "C",
+    "C",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "C",
+    "B",
+    "B",
+    "B"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 96,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 2,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 107,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 3,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 118,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 4,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 129,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 140,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 151,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 162,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "[WAIT]",
+      "correct": true,
+      "prompt_tokens": 173,
+      "completion_tokens": 4,
+      "peer_responses": []
+    },
+    {
+      "step": 9,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let's think through the recent states step by step.\n\nThe states in order are:  \nB, C, C, B, B, A, A, B, C  \n\nWe need to check if the last three states (A, B, C) form the sequence A followed by B followed by C.\n\nThe last three are:  \nState before last: A  \nSecond last: B  \nLast: C  \n\nThat is indeed A \u2192 B \u2192 C in consecutive order.\n\nTherefore, the condition is met, and I should include [ACT] in the response.\n\nAnswer: [ACT]",
+      "correct": true,
+      "prompt_tokens": 184,
+      "completion_tokens": 119,
+      "peer_responses": []
+    },
+    {
+      "step": 10,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the recent states again.\n\nThe full sequence so far:  \nB, C, C, B, B, A, A, B, C, C  \n\nWe only need to check the last three states to see if they are A, B, C in that order.\n\nLast three states:  \n- Two states ago: B  \n- Previous state: C  \n- Current state: C  \n\nSo the last three are: B, C, C \u2192 not A, B, C.\n\nTherefore, the condition is not met.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 310,
+      "completion_tokens": 115,
+      "peer_responses": []
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check the recent states.\n\nThe sequence so far:  \nB, C, C, B, B, A, A, B, C, C, A  \n\nLast three states:  \n- Two states ago: C  \n- Previous state: C  \n- Current state: A  \n\nThat's C, C, A \u2192 not A, B, C.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 432,
+      "completion_tokens": 80,
+      "peer_responses": []
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check the recent states.\n\nSequence:  \nB, C, C, B, B, A, A, B, C, C, A, A  \n\nLast three states:  \n- Two states ago: C  \n- Previous state: A  \n- Current state: A  \n\nThat's C, A, A \u2192 not A, B, C.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 519,
+      "completion_tokens": 79,
+      "peer_responses": []
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check the recent states.\n\nSequence:  \nB, C, C, B, B, A, A, B, C, C, A, A, B  \n\nLast three states:  \n- Two states ago: A  \n- Previous state: A  \n- Current state: B  \n\nThat's A, A, B \u2192 not A, B, C (needs A then B then C in consecutive order).\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 605,
+      "completion_tokens": 92,
+      "peer_responses": []
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check the recent states.\n\nSequence:  \nB, C, C, B, B, A, A, B, C, C, A, A, B, A  \n\nLast three states:  \n- Two states ago: A  \n- Previous state: B  \n- Current state: A  \n\nThat's A, B, A \u2192 not A, B, C.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 704,
+      "completion_tokens": 83,
+      "peer_responses": []
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check the recent states.\n\nSequence:  \nB, C, C, B, B, A, A, B, C, C, A, A, B, A, A  \n\nLast three states:  \n- Two states ago: B  \n- Previous state: A  \n- Current state: A  \n\nThat's B, A, A \u2192 not A, B, C.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 794,
+      "completion_tokens": 85,
+      "peer_responses": []
+    },
+    {
+      "step": 16,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check the recent states.\n\nSequence:  \nB, C, C, B, B, A, A, B, C, C, A, A, B, A, A, B  \n\nLast three states:  \n- Two states ago: A  \n- Previous state: A  \n- Current state: B  \n\nThat's A, A, B \u2192 not A, B, C.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 886,
+      "completion_tokens": 87,
+      "peer_responses": []
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check the recent states.\n\nSequence:  \nB, C, C, B, B, A, A, B, C, C, A, A, B, A, A, B, B  \n\nLast three states:  \n- Two states ago: A  \n- Previous state: B  \n- Current state: B  \n\nThat's A, B, B \u2192 not A, B, C.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 980,
+      "completion_tokens": 89,
+      "peer_responses": []
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check the recent states.\n\nSequence:  \nB, C, C, B, B, A, A, B, C, C, A, A, B, A, A, B, B, B  \n\nLast three states:  \n- Two states ago: B  \n- Previous state: B  \n- Current state: B  \n\nThat's B, B, B \u2192 not A, B, C.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1076,
+      "completion_tokens": 91,
+      "peer_responses": []
+    },
+    {
+      "step": 19,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check the recent states.\n\nSequence:  \nB, C, C, B, B, A, A, B, C, C, A, A, B, A, A, B, B, B, C  \n\nLast three states:  \n- Two states ago: B  \n- Previous state: B  \n- Current state: C  \n\nThat's B, B, C \u2192 not A, B, C.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1174,
+      "completion_tokens": 93,
+      "peer_responses": []
+    },
+    {
+      "step": 20,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check the recent states.\n\nSequence:  \nB, C, C, B, B, A, A, B, C, C, A, A, B, A, A, B, B, B, C, C  \n\nLast three states:  \n- Two states ago: B  \n- Previous state: C  \n- Current state: C  \n\nThat's B, C, C \u2192 not A, B, C.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1274,
+      "completion_tokens": 95,
+      "peer_responses": []
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check the recent states.\n\nSequence:  \nB, C, C, B, B, A, A, B, C, C, A, A, B, A, A, B, B, B, C, C, B  \n\nLast three states:  \n- Two states ago: C  \n- Previous state: C  \n- Current state: B  \n\nThat's C, C, B \u2192 not A, B, C.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1376,
+      "completion_tokens": 97,
+      "peer_responses": []
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check the recent states.\n\nSequence:  \nB, C, C, B, B, A, A, B, C, C, A, A, B, A, A, B, B, B, C, C, B, A  \n\nLast three states:  \n- Two states ago: C  \n- Previous state: B  \n- Current state: A  \n\nThat's C, B, A \u2192 not A, B, C.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1480,
+      "completion_tokens": 99,
+      "peer_responses": []
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check the recent states.\n\nSequence:  \nB, C, C, B, B, A, A, B, C, C, A, A, B, A, A, B, B, B, C, C, B, A, A  \n\nLast three states:  \n- Two states ago: B  \n- Previous state: A  \n- Current state: A  \n\nThat's B, A, A \u2192 not A, B, C.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1586,
+      "completion_tokens": 101,
+      "peer_responses": []
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check the recent states.\n\nSequence:  \nB, C, C, B, B, A, A, B, C, C, A, A, B, A, A, B, B, B, C, C, B, A, A, A  \n\nLast three states:  \n- Two states ago: A  \n- Previous state: A  \n- Current state: A  \n\nThat's A, A, A \u2192 not A, B, C.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1694,
+      "completion_tokens": 103,
+      "peer_responses": []
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check the recent states.\n\nSequence:  \nB, C, C, B, B, A, A, B, C, C, A, A, B, A, A, B, B, B, C, C, B, A, A, A, A  \n\nLast three states:  \n- Two states ago: A  \n- Previous state: A  \n- Current state: A  \n\nThat's A, A, A \u2192 not A, B, C.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1804,
+      "completion_tokens": 105,
+      "peer_responses": []
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check the recent states.\n\nSequence:  \nB, C, C, B, B, A, A, B, C, C, A, A, B, A, A, B, B, B, C, C, B, A, A, A, A, B  \n\nLast three states:  \n- Two states ago: A  \n- Previous state: A  \n- Current state: B  \n\nThat's A, A, B \u2192 not A, B, C.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1916,
+      "completion_tokens": 107,
+      "peer_responses": []
+    },
+    {
+      "step": 27,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let's check the recent states.\n\nSequence:  \nB, C, C, B, B, A, A, B, C, C, A, A, B, A, A, B, B, B, C, C, B, A, A, A, A, B, C  \n\nLast three states:  \n- Two states ago: A  \n- Previous state: B  \n- Current state: C  \n\nThat's A, B, C \u2192 yes, that is exactly the sequence A followed by B followed by C in consecutive order.\n\nTherefore, the condition is met.\n\nAnswer: [ACT]",
+      "correct": true,
+      "prompt_tokens": 2030,
+      "completion_tokens": 126,
+      "peer_responses": []
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check the recent states.\n\nSequence:  \nB, C, C, B, B, A, A, B, C, C, A, A, B, A, A, B, B, B, C, C, B, A, A, A, A, B, C, B  \n\nLast three states:  \n- Two states ago: B  \n- Previous state: C  \n- Current state: B  \n\nThat's B, C, B \u2192 not A, B, C.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2163,
+      "completion_tokens": 111,
+      "peer_responses": []
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check the recent states.\n\nSequence:  \nB, C, C, B, B, A, A, B, C, C, A, A, B, A, A, B, B, B, C, C, B, A, A, A, A, B, C, B, B  \n\nLast three states:  \n- Two states ago: C  \n- Previous state: B  \n- Current state: B  \n\nThat's C, B, B \u2192 not A, B, C.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2281,
+      "completion_tokens": 113,
+      "peer_responses": []
+    },
+    {
+      "step": 30,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's check the recent states.\n\nSequence:  \nB, C, C, B, B, A, A, B, C, C, A, A, B, A, A, B, B, B, C, C, B, A, A, A, A, B, C, B, B, B  \n\nLast three states:  \n- Two states ago: B  \n- Previous state: B  \n- Current state: B  \n\nThat's B, B, B \u2192 not A, B, C.\n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2401,
+      "completion_tokens": 115,
+      "peer_responses": []
+    }
+  ],
+  "summary": {
+    "accuracy": 1.0,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 2,
+    "n_wait_trials": 28
+  }
+}

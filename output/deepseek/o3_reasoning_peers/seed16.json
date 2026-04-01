@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-24T03:09:18.005950",
+  "config": {
+    "seed": 16,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "C",
+    "A",
+    "C",
+    "C",
+    "C",
+    "A",
+    "C",
+    "C",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "C",
+    "C",
+    "C",
+    "B",
+    "B",
+    "C",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "C",
+    "B",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's think through this step by step.  \n\nThe current state is **C**.  \nWe need to check if the last three states in a row are **A, then B, then C**.  \n\nSo far, we only have one state:  \nRecent states (in order of occurrence): C  \n\nWe don't have three states yet, so it's impossible to have A, B, C in sequence.  \n\nTherefore, the answer is **[WAIT]**.",
+      "correct": true,
+      "prompt_tokens": 101,
+      "completion_tokens": 94,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let\u2019s reason through this step by step.  \n\nWe have seen two states so far:  \n1. C  \n2. A  \n\nThe sequence of states is: C, A  \n\nWe need to check if the last three states in a row are **A, then B, then C**.  \nThe last three states would require three observations, but we only have two.  \n\nAlso, looking at the last two: A (most recent), C (previous) \u2014 that\u2019s not A, B, C in order.  \n\nSo the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 207,
+      "completion_tokens": 122,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen three states so far in order:  \n1. C  \n2. A  \n3. C  \n\nThe last three states are: A, C (and before that, C).  \nThat is: C, A, C.  \n\nWe need to check if the last three states in a row are **A, then B, then C**.  \nThe last three states are **C, A, C**, which is not A, B, C.  \n\nTherefore, the condition is not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 341,
+      "completion_tokens": 118,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's reason step by step.  \n\nWe have seen four states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n\nWe check the last three states:  \n- State 2: A  \n- State 3: C  \n- State 4: C  \n\nSo the last three are: A, C, C.  \n\nWe need the sequence **A, B, C** in the last three positions.  \nHere we have A, C, C \u2014 no B in the middle.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 471,
+      "completion_tokens": 120,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen five states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n\nCheck the last three states:  \n- State 3: C  \n- State 4: C  \n- State 5: C  \n\nSo the last three are: C, C, C.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 603,
+      "completion_tokens": 115,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen six states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n\nCheck the last three states:  \n- State 4: C  \n- State 5: C  \n- State 6: A  \n\nSo the last three are: C, C, A.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 730,
+      "completion_tokens": 119,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen seven states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n\nCheck the last three states:  \n- State 5: C  \n- State 6: A  \n- State 7: C  \n\nSo the last three are: C, A, C.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 861,
+      "completion_tokens": 123,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen eight states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n\nCheck the last three states:  \n- State 6: A  \n- State 7: C  \n- State 8: C  \n\nSo the last three are: A, C, C.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 996,
+      "completion_tokens": 127,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen nine states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n\nCheck the last three states:  \n- State 7: C  \n- State 8: C  \n- State 9: B  \n\nSo the last three are: C, C, B.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1135,
+      "completion_tokens": 131,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen ten states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n10. A  \n\nCheck the last three states:  \n- State 8: C  \n- State 9: B  \n- State 10: A  \n\nSo the last three are: C, B, A.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1278,
+      "completion_tokens": 135,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen eleven states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n10. A  \n11. A  \n\nCheck the last three states:  \n- State 9: B  \n- State 10: A  \n- State 11: A  \n\nSo the last three are: B, A, A.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1425,
+      "completion_tokens": 139,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen twelve states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n10. A  \n11. A  \n12. B  \n\nCheck the last three states:  \n- State 10: A  \n- State 11: A  \n- State 12: B  \n\nSo the last three are: A, A, B.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1576,
+      "completion_tokens": 143,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen thirteen states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n10. A  \n11. A  \n12. B  \n13. B  \n\nCheck the last three states:  \n- State 11: A  \n- State 12: B  \n- State 13: B  \n\nSo the last three are: A, B, B.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1731,
+      "completion_tokens": 147,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen fourteen states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n10. A  \n11. A  \n12. B  \n13. B  \n14. A  \n\nCheck the last three states:  \n- State 12: B  \n- State 13: B  \n- State 14: A  \n\nSo the last three are: B, B, A.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 1890,
+      "completion_tokens": 151,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen fifteen states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n10. A  \n11. A  \n12. B  \n13. B  \n14. A  \n15. C  \n\nCheck the last three states:  \n- State 13: B  \n- State 14: A  \n- State 15: C  \n\nSo the last three are: B, A, C.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2053,
+      "completion_tokens": 155,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen sixteen states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n10. A  \n11. A  \n12. B  \n13. B  \n14. A  \n15. C  \n16. C  \n\nCheck the last three states:  \n- State 14: A  \n- State 15: C  \n- State 16: C  \n\nSo the last three are: A, C, C.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2220,
+      "completion_tokens": 159,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen seventeen states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n10. A  \n11. A  \n12. B  \n13. B  \n14. A  \n15. C  \n16. C  \n17. C  \n\nCheck the last three states:  \n- State 15: C  \n- State 16: C  \n- State 17: C  \n\nSo the last three are: C, C, C.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2391,
+      "completion_tokens": 163,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen eighteen states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n10. A  \n11. A  \n12. B  \n13. B  \n14. A  \n15. C  \n16. C  \n17. C  \n18. B  \n\nCheck the last three states:  \n- State 16: C  \n- State 17: C  \n- State 18: B  \n\nSo the last three are: C, C, B.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2566,
+      "completion_tokens": 167,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen nineteen states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n10. A  \n11. A  \n12. B  \n13. B  \n14. A  \n15. C  \n16. C  \n17. C  \n18. B  \n19. B  \n\nCheck the last three states:  \n- State 17: C  \n- State 18: B  \n- State 19: B  \n\nSo the last three are: C, B, B.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2745,
+      "completion_tokens": 171,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen twenty states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n10. A  \n11. A  \n12. B  \n13. B  \n14. A  \n15. C  \n16. C  \n17. C  \n18. B  \n19. B  \n20. C  \n\nCheck the last three states:  \n- State 18: B  \n- State 19: B  \n- State 20: C  \n\nSo the last three are: B, B, C.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 2928,
+      "completion_tokens": 175,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen twenty-one states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n10. A  \n11. A  \n12. B  \n13. B  \n14. A  \n15. C  \n16. C  \n17. C  \n18. B  \n19. B  \n20. C  \n21. A  \n\nCheck the last three states:  \n- State 19: B  \n- State 20: C  \n- State 21: A  \n\nSo the last three are: B, C, A.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3115,
+      "completion_tokens": 180,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen twenty-two states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n10. A  \n11. A  \n12. B  \n13. B  \n14. A  \n15. C  \n16. C  \n17. C  \n18. B  \n19. B  \n20. C  \n21. A  \n22. A  \n\nCheck the last three states:  \n- State 20: C  \n- State 21: A  \n- State 22: A  \n\nSo the last three are: C, A, A.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3307,
+      "completion_tokens": 184,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen twenty-three states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n10. A  \n11. A  \n12. B  \n13. B  \n14. A  \n15. C  \n16. C  \n17. C  \n18. B  \n19. B  \n20. C  \n21. A  \n22. A  \n23. B  \n\nCheck the last three states:  \n- State 21: A  \n- State 22: A  \n- State 23: B  \n\nSo the last three are: A, A, B.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3503,
+      "completion_tokens": 188,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen twenty-four states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n10. A  \n11. A  \n12. B  \n13. B  \n14. A  \n15. C  \n16. C  \n17. C  \n18. B  \n19. B  \n20. C  \n21. A  \n22. A  \n23. B  \n24. A  \n\nCheck the last three states:  \n- State 22: A  \n- State 23: B  \n- State 24: A  \n\nSo the last three are: A, B, A.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3703,
+      "completion_tokens": 192,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen twenty-five states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n10. A  \n11. A  \n12. B  \n13. B  \n14. A  \n15. C  \n16. C  \n17. C  \n18. B  \n19. B  \n20. C  \n21. A  \n22. A  \n23. B  \n24. A  \n25. A  \n\nCheck the last three states:  \n- State 23: B  \n- State 24: A  \n- State 25: A  \n\nSo the last three are: B, A, A.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 3907,
+      "completion_tokens": 196,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen twenty-six states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n10. A  \n11. A  \n12. B  \n13. B  \n14. A  \n15. C  \n16. C  \n17. C  \n18. B  \n19. B  \n20. C  \n21. A  \n22. A  \n23. B  \n24. A  \n25. A  \n26. A  \n\nCheck the last three states:  \n- State 24: A  \n- State 25: A  \n- State 26: A  \n\nSo the last three are: A, A, A.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 4115,
+      "completion_tokens": 200,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen twenty-seven states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n10. A  \n11. A  \n12. B  \n13. B  \n14. A  \n15. C  \n16. C  \n17. C  \n18. B  \n19. B  \n20. C  \n21. A  \n22. A  \n23. B  \n24. A  \n25. A  \n26. A  \n27. B  \n\nCheck the last three states:  \n- State 25: A  \n- State 26: A  \n- State 27: B  \n\nSo the last three are: A, A, B.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 4327,
+      "completion_tokens": 204,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let's go step by step.  \n\nWe have seen twenty-eight states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n10. A  \n11. A  \n12. B  \n13. B  \n14. A  \n15. C  \n16. C  \n17. C  \n18. B  \n19. B  \n20. C  \n21. A  \n22. A  \n23. B  \n24. A  \n25. A  \n26. A  \n27. B  \n28. C  \n\nCheck the last three states:  \n- State 26: A  \n- State 27: B  \n- State 28: C  \n\nSo the last three are: **A, B, C** in that exact order.  \n\nThe condition is met.  \n\nAnswer: **[ACT]**",
+      "correct": true,
+      "prompt_tokens": 4543,
+      "completion_tokens": 188,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen twenty-nine states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n10. A  \n11. A  \n12. B  \n13. B  \n14. A  \n15. C  \n16. C  \n17. C  \n18. B  \n19. B  \n20. C  \n21. A  \n22. A  \n23. B  \n24. A  \n25. A  \n26. A  \n27. B  \n28. C  \n29. B  \n\nCheck the last three states:  \n- State 27: B  \n- State 28: C  \n- State 29: B  \n\nSo the last three are: B, C, B.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 4742,
+      "completion_tokens": 212,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's go step by step.  \n\nWe have seen thirty states in order:  \n1. C  \n2. A  \n3. C  \n4. C  \n5. C  \n6. A  \n7. C  \n8. C  \n9. B  \n10. A  \n11. A  \n12. B  \n13. B  \n14. A  \n15. C  \n16. C  \n17. C  \n18. B  \n19. B  \n20. C  \n21. A  \n22. A  \n23. B  \n24. A  \n25. A  \n26. A  \n27. B  \n28. C  \n29. B  \n30. A  \n\nCheck the last three states:  \n- State 28: C  \n- State 29: B  \n- State 30: A  \n\nSo the last three are: C, B, A.  \n\nWe need the last three to be **A, B, C** in that order.  \nThis is not the case.  \n\nCondition not met.  \n\nAnswer: **[WAIT]**",
+      "correct": true,
+      "prompt_tokens": 4966,
+      "completion_tokens": 215,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 1.0,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 1.0,
+    "n_trials": 30,
+    "n_act_trials": 1,
+    "n_wait_trials": 29
+  }
+}

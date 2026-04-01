@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-24T04:14:12.046673",
+  "config": {
+    "seed": 54,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A, B, or C. Your task: when you see the sequence A followed by B followed by C (three states in a row), include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what were the recent states? Does the sequence end with A then B then C? Then give your answer."
+  },
+  "stimulus_history": [
+    "A",
+    "C",
+    "B",
+    "C",
+    "B",
+    "B",
+    "B",
+    "A",
+    "C",
+    "B",
+    "C",
+    "A",
+    "C",
+    "C",
+    "C",
+    "A",
+    "B",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "C",
+    "C"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let's go step by step.  \n\nWe start with the first state:  \n- State: A  \n\nWe need to see **A \u2192 B \u2192 C** in consecutive states to trigger [ACT].  \nCurrently, we only have one state (A).  \nNo sequence of three states exists yet, so we cannot have A, B, C in a row.  \n\nThus: [WAIT]",
+      "correct": false,
+      "prompt_tokens": 101,
+      "completion_tokens": 80,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. Previous state: A  \n2. Current state: C  \n\nThe last two states are A, C.  \nWe need three consecutive states: A, then B, then C.  \nRight now, the sequence ends with A, C \u2014 B is missing in between.  \n\nSo no A\u2192B\u2192C sequence is complete.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 193,
+      "completion_tokens": 84,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. State 1: A  \n2. State 2: C  \n3. State 3: B  \n\nWe check if the last three states (A, C, B) are A\u2192B\u2192C.  \nThey are not \u2014 because the second state was C, not B.  \n\nWe also check if the last two states (C, B) could start a new A\u2192B\u2192C sequence \u2014 but the first of those two is C, not A.  \n\nSo no A\u2192B\u2192C sequence is present.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 289,
+      "completion_tokens": 125,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n\nWe check the last three states:  \n- States 2, 3, 4: C, B, C \u2192 not A\u2192B\u2192C.  \n- States 1, 2, 3: A, C, B \u2192 not A\u2192B\u2192C.  \n\nNo sequence of A then B then C in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 426,
+      "completion_tokens": 102,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n\nCheck the last three states:  \n- States 3, 4, 5: B, C, B \u2192 not A\u2192B\u2192C.  \n- States 2, 3, 4: C, B, C \u2192 not A\u2192B\u2192C.  \n- States 1, 2, 3: A, C, B \u2192 not A\u2192B\u2192C.  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 540,
+      "completion_tokens": 129,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n\nCheck the last three states:  \n- States 4, 5, 6: C, B, B \u2192 not A\u2192B\u2192C.  \n- States 3, 4, 5: B, C, B \u2192 not A\u2192B\u2192C.  \n- States 2, 3, 4: C, B, C \u2192 not A\u2192B\u2192C.  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 681,
+      "completion_tokens": 133,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n\nCheck the last three states:  \n- States 5, 6, 7: B, B, B \u2192 not A\u2192B\u2192C.  \n- States 4, 5, 6: C, B, B \u2192 not A\u2192B\u2192C.  \n- States 3, 4, 5: B, C, B \u2192 not A\u2192B\u2192C.  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 826,
+      "completion_tokens": 137,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n\nCheck the last three states:  \n- States 6, 7, 8: B, B, A \u2192 not A\u2192B\u2192C.  \n- States 5, 6, 7: B, B, B \u2192 not A\u2192B\u2192C.  \n- States 4, 5, 6: C, B, B \u2192 not A\u2192B\u2192C.  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 975,
+      "completion_tokens": 141,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n\nCheck the last three states:  \n- States 7, 8, 9: B, A, C \u2192 not A\u2192B\u2192C (first is B, not A).  \n- States 6, 7, 8: B, B, A \u2192 not A\u2192B\u2192C.  \n- States 5, 6, 7: B, B, B \u2192 not A\u2192B\u2192C.  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1128,
+      "completion_tokens": 152,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n10. B  \n\nCheck the last three states:  \n- States 8, 9, 10: A, C, B \u2192 not A\u2192B\u2192C (second is C, not B).  \n- States 7, 8, 9: B, A, C \u2192 not A\u2192B\u2192C.  \n- States 6, 7, 8: B, B, A \u2192 not A\u2192B\u2192C.  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1292,
+      "completion_tokens": 156,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n10. B  \n11. C  \n\nCheck the last three states:  \n- States 9, 10, 11: C, B, C \u2192 not A\u2192B\u2192C.  \n- States 8, 9, 10: A, C, B \u2192 not A\u2192B\u2192C (second is C, not B).  \n- States 7, 8, 9: B, A, C \u2192 not A\u2192B\u2192C.  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1460,
+      "completion_tokens": 160,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n10. B  \n11. C  \n12. A  \n\nCheck the last three states:  \n- States 10, 11, 12: B, C, A \u2192 not A\u2192B\u2192C.  \n- States 9, 10, 11: C, B, C \u2192 not A\u2192B\u2192C.  \n- States 8, 9, 10: A, C, B \u2192 not A\u2192B\u2192C (second is C, not B).  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1632,
+      "completion_tokens": 164,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n10. B  \n11. C  \n12. A  \n13. C  \n\nCheck the last three states:  \n- States 11, 12, 13: C, A, C \u2192 not A\u2192B\u2192C.  \n- States 10, 11, 12: B, C, A \u2192 not A\u2192B\u2192C.  \n- States 9, 10, 11: C, B, C \u2192 not A\u2192B\u2192C.  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1808,
+      "completion_tokens": 161,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n10. B  \n11. C  \n12. A  \n13. C  \n14. C  \n\nCheck the last three states:  \n- States 12, 13, 14: A, C, C \u2192 not A\u2192B\u2192C (second is C, not B).  \n- States 11, 12, 13: C, A, C \u2192 not A\u2192B\u2192C.  \n- States 10, 11, 12: B, C, A \u2192 not A\u2192B\u2192C.  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 1981,
+      "completion_tokens": 172,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n10. B  \n11. C  \n12. A  \n13. C  \n14. C  \n15. C  \n\nCheck the last three states:  \n- States 13, 14, 15: C, C, C \u2192 not A\u2192B\u2192C.  \n- States 12, 13, 14: A, C, C \u2192 not A\u2192B\u2192C.  \n- States 11, 12, 13: C, A, C \u2192 not A\u2192B\u2192C.  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2165,
+      "completion_tokens": 169,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n10. B  \n11. C  \n12. A  \n13. C  \n14. C  \n15. C  \n16. A  \n\nCheck the last three states:  \n- States 14, 15, 16: C, C, A \u2192 not A\u2192B\u2192C.  \n- States 13, 14, 15: C, C, C \u2192 not A\u2192B\u2192C.  \n- States 12, 13, 14: A, C, C \u2192 not A\u2192B\u2192C.  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2346,
+      "completion_tokens": 173,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n10. B  \n11. C  \n12. A  \n13. C  \n14. C  \n15. C  \n16. A  \n17. B  \n\nCheck the last three states:  \n- States 15, 16, 17: C, A, B \u2192 not A\u2192B\u2192C (first is C, not A).  \n- States 14, 15, 16: C, C, A \u2192 not A\u2192B\u2192C.  \n- States 13, 14, 15: C, C, C \u2192 not A\u2192B\u2192C.  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2531,
+      "completion_tokens": 184,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n10. B  \n11. C  \n12. A  \n13. C  \n14. C  \n15. C  \n16. A  \n17. B  \n18. A  \n\nCheck the last three states:  \n- States 16, 17, 18: A, B, A \u2192 not A\u2192B\u2192C (third is A, not C).  \n- States 15, 16, 17: C, A, B \u2192 not A\u2192B\u2192C (first is C, not A).  \n- States 14, 15, 16: C, C, A \u2192 not A\u2192B\u2192C.  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2727,
+      "completion_tokens": 195,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n10. B  \n11. C  \n12. A  \n13. C  \n14. C  \n15. C  \n16. A  \n17. B  \n18. A  \n19. B  \n\nCheck the last three states:  \n- States 17, 18, 19: B, A, B \u2192 not A\u2192B\u2192C.  \n- States 16, 17, 18: A, B, A \u2192 not A\u2192B\u2192C (third is A, not C).  \n- States 15, 16, 17: C, A, B \u2192 not A\u2192B\u2192C (first is C, not A).  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 2934,
+      "completion_tokens": 199,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n10. B  \n11. C  \n12. A  \n13. C  \n14. C  \n15. C  \n16. A  \n17. B  \n18. A  \n19. B  \n20. A  \n\nCheck the last three states:  \n- States 18, 19, 20: A, B, A \u2192 not A\u2192B\u2192C (third is A, not C).  \n- States 17, 18, 19: B, A, B \u2192 not A\u2192B\u2192C.  \n- States 16, 17, 18: A, B, A \u2192 not A\u2192B\u2192C (third is A, not C).  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 3145,
+      "completion_tokens": 203,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n10. B  \n11. C  \n12. A  \n13. C  \n14. C  \n15. C  \n16. A  \n17. B  \n18. A  \n19. B  \n20. A  \n21. B  \n\nCheck the last three states:  \n- States 19, 20, 21: B, A, B \u2192 not A\u2192B\u2192C.  \n- States 18, 19, 20: A, B, A \u2192 not A\u2192B\u2192C (third is A, not C).  \n- States 17, 18, 19: B, A, B \u2192 not A\u2192B\u2192C.  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 3360,
+      "completion_tokens": 200,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n10. B  \n11. C  \n12. A  \n13. C  \n14. C  \n15. C  \n16. A  \n17. B  \n18. A  \n19. B  \n20. A  \n21. B  \n22. B  \n\nCheck the last three states:  \n- States 20, 21, 22: A, B, B \u2192 not A\u2192B\u2192C (third is B, not C).  \n- States 19, 20, 21: B, A, B \u2192 not A\u2192B\u2192C.  \n- States 18, 19, 20: A, B, A \u2192 not A\u2192B\u2192C (third is A, not C).  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 3572,
+      "completion_tokens": 211,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n10. B  \n11. C  \n12. A  \n13. C  \n14. C  \n15. C  \n16. A  \n17. B  \n18. A  \n19. B  \n20. A  \n21. B  \n22. B  \n23. A  \n\nCheck the last three states:  \n- States 21, 22, 23: B, B, A \u2192 not A\u2192B\u2192C.  \n- States 20, 21, 22: A, B, B \u2192 not A\u2192B\u2192C (third is B, not C).  \n- States 19, 20, 21: B, A, B \u2192 not A\u2192B\u2192C.  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 3795,
+      "completion_tokens": 208,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n10. B  \n11. C  \n12. A  \n13. C  \n14. C  \n15. C  \n16. A  \n17. B  \n18. A  \n19. B  \n20. A  \n21. B  \n22. B  \n23. A  \n24. A  \n\nCheck the last three states:  \n- States 22, 23, 24: B, A, A \u2192 not A\u2192B\u2192C.  \n- States 21, 22, 23: B, B, A \u2192 not A\u2192B\u2192C.  \n- States 20, 21, 22: A, B, B \u2192 not A\u2192B\u2192C (third is B, not C).  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 4015,
+      "completion_tokens": 212,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n10. B  \n11. C  \n12. A  \n13. C  \n14. C  \n15. C  \n16. A  \n17. B  \n18. A  \n19. B  \n20. A  \n21. B  \n22. B  \n23. A  \n24. A  \n25. B  \n\nCheck the last three states:  \n- States 23, 24, 25: A, A, B \u2192 not A\u2192B\u2192C (first two are A, A, not A then B).  \n- States 22, 23, 24: B, A, A \u2192 not A\u2192B\u2192C.  \n- States 21, 22, 23: B, B, A \u2192 not A\u2192B\u2192C.  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 4239,
+      "completion_tokens": 221,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n10. B  \n11. C  \n12. A  \n13. C  \n14. C  \n15. C  \n16. A  \n17. B  \n18. A  \n19. B  \n20. A  \n21. B  \n22. B  \n23. A  \n24. A  \n25. B  \n26. A  \n\nCheck the last three states:  \n- States 24, 25, 26: A, B, A \u2192 not A\u2192B\u2192C (third is A, not C).  \n- States 23, 24, 25: A, A, B \u2192 not A\u2192B\u2192C (first two are A, A, not A then B).  \n- States 22, 23, 24: B, A, A \u2192 not A\u2192B\u2192C.  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 4472,
+      "completion_tokens": 232,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n10. B  \n11. C  \n12. A  \n13. C  \n14. C  \n15. C  \n16. A  \n17. B  \n18. A  \n19. B  \n20. A  \n21. B  \n22. B  \n23. A  \n24. A  \n25. B  \n26. A  \n27. A  \n\nCheck the last three states:  \n- States 25, 26, 27: B, A, A \u2192 not A\u2192B\u2192C.  \n- States 24, 25, 26: A, B, A \u2192 not A\u2192B\u2192C (third is A, not C).  \n- States 23, 24, 25: A, A, B \u2192 not A\u2192B\u2192C (first two are A, A, not A then B).  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 4716,
+      "completion_tokens": 236,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n10. B  \n11. C  \n12. A  \n13. C  \n14. C  \n15. C  \n16. A  \n17. B  \n18. A  \n19. B  \n20. A  \n21. B  \n22. B  \n23. A  \n24. A  \n25. B  \n26. A  \n27. A  \n28. A  \n\nCheck the last three states:  \n- States 26, 27, 28: A, A, A \u2192 not A\u2192B\u2192C.  \n- States 25, 26, 27: B, A, A \u2192 not A\u2192B\u2192C.  \n- States 24, 25, 26: A, B, A \u2192 not A\u2192B\u2192C (third is A, not C).  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 4964,
+      "completion_tokens": 228,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n10. B  \n11. C  \n12. A  \n13. C  \n14. C  \n15. C  \n16. A  \n17. B  \n18. A  \n19. B  \n20. A  \n21. B  \n22. B  \n23. A  \n24. A  \n25. B  \n26. A  \n27. A  \n28. A  \n29. C  \n\nCheck the last three states:  \n- States 27, 28, 29: A, A, C \u2192 not A\u2192B\u2192C (second is A, not B).  \n- States 26, 27, 28: A, A, A \u2192 not A\u2192B\u2192C.  \n- States 25, 26, 27: B, A, A \u2192 not A\u2192B\u2192C.  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 5204,
+      "completion_tokens": 232,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "Let's track the sequence so far:  \n\n1. A  \n2. C  \n3. B  \n4. C  \n5. B  \n6. B  \n7. B  \n8. A  \n9. C  \n10. B  \n11. C  \n12. A  \n13. C  \n14. C  \n15. C  \n16. A  \n17. B  \n18. A  \n19. B  \n20. A  \n21. B  \n22. B  \n23. A  \n24. A  \n25. B  \n26. A  \n27. A  \n28. A  \n29. C  \n30. C  \n\nCheck the last three states:  \n- States 28, 29, 30: A, C, C \u2192 not A\u2192B\u2192C (second is C, not B).  \n- States 27, 28, 29: A, A, C \u2192 not A\u2192B\u2192C (second is A, not B).  \n- States 26, 27, 28: A, A, A \u2192 not A\u2192B\u2192C.  \n\nNo A\u2192B\u2192C sequence in consecutive states.  \n\nAnswer: [WAIT]",
+      "correct": true,
+      "prompt_tokens": 5448,
+      "completion_tokens": 243,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.9666666666666667,
+    "act_accuracy": 0.0,
+    "wait_accuracy": 0.9666666666666667,
+    "n_trials": 30,
+    "n_act_trials": 0,
+    "n_wait_trials": 30
+  }
+}

@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-24T00:29:00.111962",
+  "config": {
+    "seed": 50,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "deepseek",
+    "model_name": "deepseek-chat",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.0,
+    "system_prompt": "You are participating in an experiment. You will observe a sequence of states: A or B. Your task: when you see B immediately following A, include [ACT] in your response. Otherwise, include [WAIT]. Before answering, think step by step: what was the previous state? What is the current state? Is this a B that followed an A? Then give your answer."
+  },
+  "stimulus_history": [
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: None (this is the first state observed).  \n- Current state: B.  \n- Condition for [ACT]: B immediately following A.  \n- Here, there is no previous A before this B, so it\u2019s not \u201cB immediately following A.\u201d  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 91,
+      "completion_tokens": 77,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: B (from the first step).  \n- Current state: A.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is A, not B, so the condition does not apply.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 180,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: A (from the previous step).  \n- Current state: A.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is A, not B, so the condition does not apply.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 263,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: A (from the previous step).  \n- Current state: A.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is A, not B, so the condition does not apply.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 346,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: A (from the previous step).  \n- Current state: B.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is B and it came right after A, so the condition is met.  \n\nTherefore, the correct response is **[ACT]**.",
+      "correct": true,
+      "prompt_tokens": 525,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "Let\u2019s carefully go step by step for the current input:  \n\n**Previous state**: The last state given before this was **A** (from the previous step).  \n**Current state**: Now the input says **State: B**.  \n\nCondition for [ACT]: B immediately following A.  \n- Previous state = A  \n- Current state = B  \n- Is this a B that followed an A? **Yes**.  \n\nTherefore, the correct response is **[ACT]**.  \n\n[ACT]"
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: B (from the previous step).  \n- Current state: A.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is A, not B, so the condition does not apply.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 715,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "Let's carefully go step by step for the current input:  \n\n**Previous state**: The last state given before this was **B** (from the previous step).  \n**Current state**: Now the input says **State: A**.  \n\nCondition for [ACT]: B immediately following A.  \n- Previous state = B  \n- Current state = A  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n\nTherefore, the correct response is **[WAIT]**.  \n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: A (from the previous step).  \n- Current state: A.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is A, not B, so the condition does not apply.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 798,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: A (from the previous step).  \n- Current state: B.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is B and it came right after A, so the condition is met.  \n\nTherefore, the correct response is **[ACT]**.",
+      "correct": true,
+      "prompt_tokens": 976,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "Let's carefully go step by step for the current input:  \n\n**Previous state**: The last state given before this was **A** (from the previous step).  \n**Current state**: Now the input says **State: B**.  \n\nCondition for [ACT]: B immediately following A.  \n- Previous state = A  \n- Current state = B  \n- Is this a B that followed an A? **Yes**.  \n\nTherefore, the correct response is **[ACT]**.  \n\n[ACT]"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: B (from the previous step).  \n- Current state: B.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the previous state was B, not A, so the condition is not met.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 1166,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "Let's carefully go step by step for the current input:  \n\n**Previous state**: The last state given before this was **B** (from the previous step).  \n**Current state**: Now the input says **State: B**.  \n\nCondition for [ACT]: B immediately following A.  \n- Previous state = B  \n- Current state = B  \n- Is this a B that followed an A? No, because the previous state was B, not A.  \n\nTherefore, the correct response is **[WAIT]**.  \n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: B (from the previous step).  \n- Current state: A.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is A, not B, so the condition does not apply.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 1249,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: A (from the previous step).  \n- Current state: B.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is B and it came right after A, so the condition is met.  \n\nTherefore, the correct response is **[ACT]**.",
+      "correct": true,
+      "prompt_tokens": 1427,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "Let's carefully go step by step for the current input:  \n\n**Previous state**: The last state given before this was **A** (from the previous step).  \n**Current state**: Now the input says **State: B**.  \n\nCondition for [ACT]: B immediately following A.  \n- Previous state = A  \n- Current state = B  \n- Is this a B that followed an A? **Yes**.  \n\nTherefore, the correct response is **[ACT]**.  \n\n[ACT]"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: B (from the previous step).  \n- Current state: B.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the previous state was B, not A, so the condition is not met.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 1617,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "Let's carefully go step by step for the current input:  \n\n**Previous state**: The last state given before this was **B** (from the previous step).  \n**Current state**: Now the input says **State: B**.  \n\nCondition for [ACT]: B immediately following A.  \n- Previous state = B  \n- Current state = B  \n- Is this a B that followed an A? No, because the previous state was B, not A.  \n\nTherefore, the correct response is **[WAIT]**.  \n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: B (from the previous step).  \n- Current state: B.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the previous state was B, not A, so the condition is not met.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 1700,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: B (from the previous step).  \n- Current state: A.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is A, not B, so the condition does not apply.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 1889,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "Let's carefully go step by step for the current input:  \n\n**Previous state**: The last state given before this was **B** (from the previous step).  \n**Current state**: Now the input says **State: A**.  \n\nCondition for [ACT]: B immediately following A.  \n- Previous state = B  \n- Current state = A  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n\nTherefore, the correct response is **[WAIT]**.  \n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: A (from the previous step).  \n- Current state: A.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is A, not B, so the condition does not apply.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 1972,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: A (from the previous step).  \n- Current state: A.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is A, not B, so the condition does not apply.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 2055,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: A (from the previous step).  \n- Current state: A.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is A, not B, so the condition does not apply.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 2138,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: A (from the previous step).  \n- Current state: A.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is A, not B, so the condition does not apply.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 2221,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: A (from the previous step).  \n- Current state: A.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is A, not B, so the condition does not apply.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 2304,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: A (from the previous step).  \n- Current state: A.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is A, not B, so the condition does not apply.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 2387,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: A (from the previous step).  \n- Current state: B.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is B and it came right after A, so the condition is met.  \n\nTherefore, the correct response is **[ACT]**.",
+      "correct": true,
+      "prompt_tokens": 2565,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "Let's carefully go step by step for the current input:  \n\n**Previous state**: The last state given before this was **A** (from the previous step).  \n**Current state**: Now the input says **State: B**.  \n\nCondition for [ACT]: B immediately following A.  \n- Previous state = A  \n- Current state = B  \n- Is this a B that followed an A? **Yes**.  \n\nTherefore, the correct response is **[ACT]**.  \n\n[ACT]"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: B (from the previous step).  \n- Current state: A.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is A, not B, so the condition does not apply.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 2755,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "Let's carefully go step by step for the current input:  \n\n**Previous state**: The last state given before this was **B** (from the previous step).  \n**Current state**: Now the input says **State: A**.  \n\nCondition for [ACT]: B immediately following A.  \n- Previous state = B  \n- Current state = A  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n\nTherefore, the correct response is **[WAIT]**.  \n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: A (from the previous step).  \n- Current state: A.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is A, not B, so the condition does not apply.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 2838,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: A (from the previous step).  \n- Current state: B.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is B and it came right after A, so the condition is met.  \n\nTherefore, the correct response is **[ACT]**.",
+      "correct": true,
+      "prompt_tokens": 3016,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "Let's carefully go step by step for the current input:  \n\n**Previous state**: The last state given before this was **A** (from the previous step).  \n**Current state**: Now the input says **State: B**.  \n\nCondition for [ACT]: B immediately following A.  \n- Previous state = A  \n- Current state = B  \n- Is this a B that followed an A? **Yes**.  \n\nTherefore, the correct response is **[ACT]**.  \n\n[ACT]"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: B (from the previous step).  \n- Current state: A.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is A, not B, so the condition does not apply.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 3206,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "Let's carefully go step by step for the current input:  \n\n**Previous state**: The last state given before this was **B** (from the previous step).  \n**Current state**: Now the input says **State: A**.  \n\nCondition for [ACT]: B immediately following A.  \n- Previous state = B  \n- Current state = A  \n- Is this a B that followed an A? No, because the current state is A, not B.  \n\nTherefore, the correct response is **[WAIT]**.  \n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: A (from the previous step).  \n- Current state: B.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is B and it came right after A, so the condition is met.  \n\nTherefore, the correct response is **[ACT]**.",
+      "correct": true,
+      "prompt_tokens": 3384,
+      "completion_tokens": 72,
+      "peer_responses": [
+        "Let's carefully go step by step for the current input:  \n\n**Previous state**: The last state given before this was **A** (from the previous step).  \n**Current state**: Now the input says **State: B**.  \n\nCondition for [ACT]: B immediately following A.  \n- Previous state = A  \n- Current state = B  \n- Is this a B that followed an A? **Yes**.  \n\nTherefore, the correct response is **[ACT]**.  \n\n[ACT]"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: B (from the previous step).  \n- Current state: B.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the previous state was B, not A, so the condition is not met.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 3574,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "Let's carefully go step by step for the current input:  \n\n**Previous state**: The last state given before this was **B** (from the previous step).  \n**Current state**: Now the input says **State: B**.  \n\nCondition for [ACT]: B immediately following A.  \n- Previous state = B  \n- Current state = B  \n- Is this a B that followed an A? No, because the previous state was B, not A.  \n\nTherefore, the correct response is **[WAIT]**.  \n\n[WAIT]"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: B (from the previous step).  \n- Current state: A.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is A, not B, so the condition does not apply.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 3657,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: A (from the previous step).  \n- Current state: A.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is A, not B, so the condition does not apply.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 3740,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Let\u2019s go step by step.  \n\n- Previous state: A (from the previous step).  \n- Current state: A.  \n- Condition for [ACT]: B immediately following A.  \n- Here, the current state is A, not B, so the condition does not apply.  \n\nTherefore, the correct response is **[WAIT]**.",
+      "correct": false,
+      "prompt_tokens": 3823,
+      "completion_tokens": 71,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.2,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 0.0,
+    "n_trials": 30,
+    "n_act_trials": 6,
+    "n_wait_trials": 24
+  }
+}

@@ -1,0 +1,574 @@
+{
+  "timestamp": "2026-03-24T17:13:22.218141",
+  "config": {
+    "seed": 21,
+    "n_trials": 30,
+    "p_switch": 0.5,
+    "states": [
+      "A",
+      "B"
+    ],
+    "trigger": [
+      "A",
+      "B"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "anthropic",
+    "model_name": "claude-haiku-4-5-20251001",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 1.2,
+    "system_prompt": "Respond [ACT] if the last two states were A then B. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "A",
+    "B",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I acknowledge the state B has been recorded. I'm waiting to observe the pattern of state A followed by state B before responding with [ACT]. Currently, only one state has been observed.",
+      "correct": false,
+      "prompt_tokens": 80,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "[WAIT]\n\n(Only one state has been observed so far. I need to see two consecutive states where the first is A and the second is B to respond with [ACT]. Currently, I've only seen B.)"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I acknowledge the state B has been recorded. The last two states observed are B then B, which does not match the required pattern of A then B. I will continue to [WAIT].",
+      "correct": true,
+      "prompt_tokens": 161,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states were B then B, not A then B. The condition for [ACT] has not been met.)"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[WAIT]\n\n(The last two states are now B then A, not A then B. The condition for [ACT] has not been met.)",
+      "correct": false,
+      "prompt_tokens": 209,
+      "completion_tokens": 36,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[WAIT]\n\n(The last two states are now A then A, not A then B. The condition for [ACT] has not been met.)",
+      "correct": false,
+      "prompt_tokens": 251,
+      "completion_tokens": 36,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "[ACT]\n\n(The last two states are now A then B. The condition for [ACT] has been met.)",
+      "correct": true,
+      "prompt_tokens": 293,
+      "completion_tokens": 30,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[WAIT]\n\n(The last two states are now B then B, not A then B. The condition for [ACT] has not been met.)",
+      "correct": false,
+      "prompt_tokens": 363,
+      "completion_tokens": 36,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states observed are A then B, which matches the required pattern. The condition for [ACT] has been met.)"
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I acknowledge the state A has been recorded. The last two states observed are B then A, which does not match the required pattern of A then B. I will continue to [WAIT].",
+      "correct": true,
+      "prompt_tokens": 439,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now B then A, not A then B. The condition for [ACT] has not been met.)"
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "[ACT]\n\n(The last two states are now A then B. The condition for [ACT] has been met.)",
+      "correct": true,
+      "prompt_tokens": 515,
+      "completion_tokens": 30,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are now A then B. The condition for [ACT] has been met.)"
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I acknowledge the state A has been recorded. The last two states observed are B then A, which does not match the required pattern of A then B. I will continue to [WAIT].",
+      "correct": true,
+      "prompt_tokens": 585,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now B then A, not A then B. The condition for [ACT] has not been met.)"
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I acknowledge the state A has been recorded. The last two states observed are A then A, which does not match the required pattern of A then B. I will continue to [WAIT].",
+      "correct": true,
+      "prompt_tokens": 667,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now A then A, not A then B. The condition for [ACT] has not been met.)"
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now A then A, not A then B. The condition for [ACT] has not been met.)"
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "",
+      "correct": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are now A then B. The condition for [ACT] has been met.)"
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now B then B, not A then B. The condition for [ACT] has not been met.)"
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "",
+      "correct": true,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now B then A, not A then B. The condition for [ACT] has not been met.)"
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I acknowledge the sequence of states provided. Tracking the most recent two states:\n\nThe last two states are now A then A, which does not match the required pattern of A then B. I will continue to [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1217,
+      "completion_tokens": 50,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now A then A, not A then B. The condition for [ACT] has not been met.)"
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I acknowledge the state A has been recorded. The last two states observed are A then A, which does not match the required pattern of A then B. I will continue to [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1307,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now A then A, not A then B. The condition for [ACT] has not been met.)"
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I acknowledge the state A has been recorded. The last two states observed are A then A, which does not match the required pattern of A then B. I will continue to [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1389,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now A then A, not A then B. The condition for [ACT] has not been met.)"
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I acknowledge the state A has been recorded. The last two states observed are A then A, which does not match the required pattern of A then B. I will continue to [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1471,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now A then A, not A then B. The condition for [ACT] has not been met.)"
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "",
+      "correct": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are now A then B. The condition for [ACT] has been met.)"
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I acknowledge the state A has been recorded. The last two states observed are B then A, which does not match the required pattern of A then B. I will continue to [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1613,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now B then A, not A then B. The condition for [ACT] has not been met.)"
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "[ACT]\n\n(The last two states are now A then B. The condition for [ACT] has been met.)",
+      "correct": true,
+      "prompt_tokens": 1689,
+      "completion_tokens": 30,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are now A then B. The condition for [ACT] has been met.)"
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I acknowledge the state A has been recorded. The last two states observed are B then A, which does not match the required pattern of A then B. I will continue to [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1759,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now B then A, not A then B. The condition for [ACT] has not been met.)"
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "[ACT]\n\n(The last two states are now A then B. The condition for [ACT] has been met.)",
+      "correct": true,
+      "prompt_tokens": 1835,
+      "completion_tokens": 30,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are now A then B. The condition for [ACT] has been met.)"
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I acknowledge the state A has been recorded. The last two states observed are B then A, which does not match the required pattern of A then B. I will continue to [WAIT].",
+      "correct": true,
+      "prompt_tokens": 1905,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now B then A, not A then B. The condition for [ACT] has not been met.)"
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": false,
+      "response_content": "",
+      "correct": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are now A then B. The condition for [ACT] has been met.)"
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I acknowledge the state A has been recorded. The last two states observed are B then A, which does not match the required pattern of A then B. I will continue to [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2047,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now B then A, not A then B. The condition for [ACT] has not been met.)"
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "[ACT]\n\n(The last two states are now A then B. The condition for [ACT] has been met.)",
+      "correct": true,
+      "prompt_tokens": 2123,
+      "completion_tokens": 30,
+      "peer_responses": [
+        "[ACT]\n\n(The last two states are now A then B. The condition for [ACT] has been met.)"
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "[WAIT]\n\n(The last two states are now B then B, not A then B. The condition for [ACT] has not been met.)",
+      "correct": false,
+      "prompt_tokens": 2159,
+      "completion_tokens": 36,
+      "peer_responses": [
+        ""
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I acknowledge the state A has been recorded. The last two states observed are B then A, which does not match the required pattern of A then B. I will continue to [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2235,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now B then A, not A then B. The condition for [ACT] has not been met.)"
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": false,
+      "response_content": "I acknowledge the state A has been recorded. The last two states observed are A then A, which does not match the required pattern of A then B. I will continue to [WAIT].",
+      "correct": true,
+      "prompt_tokens": 2317,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "[WAIT]\n\n(The last two states are now A then A, not A then B. The condition for [ACT] has not been met.)"
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.7333333333333333,
+    "act_accuracy": 0.625,
+    "wait_accuracy": 0.7727272727272727,
+    "n_trials": 30,
+    "n_act_trials": 8,
+    "n_wait_trials": 22
+  }
+}

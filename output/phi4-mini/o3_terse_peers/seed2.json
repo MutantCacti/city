@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-03-23T15:37:53.280787",
+  "config": {
+    "seed": 2,
+    "n_trials": 30,
+    "p_switch": 0.7,
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "trigger": [
+      "A",
+      "B",
+      "C"
+    ],
+    "act_keyword": "ACT",
+    "provider_name": "local",
+    "model_name": "phi-4-mini",
+    "base_url": null,
+    "n_instances": 2,
+    "tick_seconds": 0.0,
+    "system_prompt": "Respond [ACT] if the last three states were A then B then C. Otherwise respond [WAIT]."
+  },
+  "stimulus_history": [
+    "A",
+    "A",
+    "B",
+    "A",
+    "A",
+    "C",
+    "A",
+    "B",
+    "B",
+    "C",
+    "B",
+    "A",
+    "A",
+    "C",
+    "C",
+    "A",
+    "B",
+    "A",
+    "B",
+    "C",
+    "C",
+    "A",
+    "A",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "B",
+    "C"
+  ],
+  "trials": [
+    {
+      "step": 1,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "State: A\n\nSince you provided the state as A, I responded with [WAIT] as per the instruction. If you were to provide the next state as B, then I would respond with [ACT].",
+      "correct": false,
+      "prompt_tokens": 34,
+      "completion_tokens": 42,
+      "peer_responses": [
+        "[WAIT]"
+      ]
+    },
+    {
+      "step": 2,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for the confusion. As per your instruction, since the last three states were A, B, and C, and you provided the state as A, I should have responded with [ACT]. Thank you for pointing that out.",
+      "correct": false,
+      "prompt_tokens": 88,
+      "completion_tokens": 47,
+      "peer_responses": [
+        "[ACT]"
+      ]
+    },
+    {
+      "step": 3,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If you are indicating a sequence of states and the last three were A, B, and C, then providing the next state as A would indeed warrant a response of [ACT]. If you have any further instructions or need assistance with something else, please let me know.",
+      "correct": false,
+      "prompt_tokens": 204,
+      "completion_tokens": 60,
+      "peer_responses": [
+        "Apologies for any confusion. If you are indicating a sequence of states and the last three were A, B, and C, then providing the next state as A would indeed warrant a response of [ACT]. If you have any further instructions or need assistance with something else, please let me know."
+      ]
+    },
+    {
+      "step": 4,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "It seems there might be a misunderstanding. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response would indeed be [ACT]. If there is anything else you need help with or any other sequence of states to consider, please provide the details, and I'll assist you accordingly.",
+      "correct": false,
+      "prompt_tokens": 343,
+      "completion_tokens": 70,
+      "peer_responses": [
+        "It seems there might be a misunderstanding. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response would indeed be [ACT]. If there is anything else you need help with or any other sequence of states to consider, please provide the details, and I'll assist you accordingly."
+      ]
+    },
+    {
+      "step": 5,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I apologize for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the response should be [ACT]. If you have any other sequences or different instructions, please let me know how I can assist you further.",
+      "correct": false,
+      "prompt_tokens": 480,
+      "completion_tokens": 58,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the response should be [ACT]. If you have any other sequences or different instructions, please let me know how I can assist you further."
+      ]
+    },
+    {
+      "step": 6,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I apologize for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the response should indeed be [ACT]. If there are more sequences to follow or if you have any other instructions, please provide them and I'll be happy to assist you.",
+      "correct": false,
+      "prompt_tokens": 611,
+      "completion_tokens": 64,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the response should indeed be [ACT]. If there are more sequences to follow or if you have any other instructions, please provide them and I'll be happy to assist you."
+      ]
+    },
+    {
+      "step": 7,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "No problem at all. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is indeed [ACT]. If you have any more sequences or need assistance with something else, please let me know how I can help.",
+      "correct": false,
+      "prompt_tokens": 743,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "No problem at all. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is indeed [ACT]. If you have any more sequences or need assistance with something else, please let me know how I can help."
+      ]
+    },
+    {
+      "step": 8,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "It appears there may be a misunderstanding. If the sequence of states is A, B, C, and you are indicating that the next state is A, the correct response should be [ACT]. If the sequence is indeed progressing as A, B, C, and you are indicating A as the next state, then [ACT] is the appropriate response. If there is a different sequence or another task you need assistance with, please provide the details.",
+      "correct": false,
+      "prompt_tokens": 901,
+      "completion_tokens": 90,
+      "peer_responses": [
+        "It appears there may be a misunderstanding. If the sequence of states is A, B, C, and you are indicating that the next state is A, the correct response should be [ACT]. If the sequence is indeed progressing as A, B, C, and you are indicating A as the next state, then [ACT] is the appropriate response. If there is a different sequence or another task you need assistance with, please provide the details."
+      ]
+    },
+    {
+      "step": 9,
+      "stimulus_state": "B",
+      "recent_states": [
+        "A",
+        "B",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If you have any other sequences or need further assistance, please let me know.",
+      "correct": false,
+      "prompt_tokens": 1050,
+      "completion_tokens": 50,
+      "peer_responses": [
+        "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If you have any other sequences or need further assistance, please let me know."
+      ]
+    },
+    {
+      "step": 10,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I apologize for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, the correct response is indeed [ACT]. If there are more sequences to follow or if you have any other instructions, please provide them and I'll be happy to assist you.",
+      "correct": false,
+      "prompt_tokens": 1172,
+      "completion_tokens": 63,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, the correct response is indeed [ACT]. If there are more sequences to follow or if you have any other instructions, please provide them and I'll be happy to assist you."
+      ]
+    },
+    {
+      "step": 11,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If you have any further sequences or need assistance with anything else, please let me know.",
+      "correct": false,
+      "prompt_tokens": 1296,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If you have any further sequences or need assistance with anything else, please let me know."
+      ]
+    },
+    {
+      "step": 12,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "It seems there may be a misunderstanding. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response should be [ACT]. If there are more sequences to follow or if you have any other instructions, please let me know how I can assist you further.",
+      "correct": false,
+      "prompt_tokens": 1423,
+      "completion_tokens": 66,
+      "peer_responses": [
+        "It seems there may be a misunderstanding. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response should be [ACT]. If there are more sequences to follow or if you have any other instructions, please let me know how I can assist you further."
+      ]
+    },
+    {
+      "step": 13,
+      "stimulus_state": "A",
+      "recent_states": [
+        "B",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I apologize for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is indeed [ACT]. If you have any other sequences or need further assistance, please let me know.",
+      "correct": false,
+      "prompt_tokens": 1552,
+      "completion_tokens": 54,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is indeed [ACT]. If you have any other sequences or need further assistance, please let me know."
+      ]
+    },
+    {
+      "step": 14,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If there are more sequences to follow or if you need assistance with anything else, please provide the details.",
+      "correct": false,
+      "prompt_tokens": 1670,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If there are more sequences to follow or if you need assistance with anything else, please provide the details."
+      ]
+    },
+    {
+      "step": 15,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is indeed [ACT]. If there are more sequences to follow or if you need assistance with anything else, please let me know.",
+      "correct": false,
+      "prompt_tokens": 1793,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "Apologies for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is indeed [ACT]. If there are more sequences to follow or if you need assistance with anything else, please let me know."
+      ]
+    },
+    {
+      "step": 16,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If you have any further sequences or need assistance with anything else, please let me know.",
+      "correct": false,
+      "prompt_tokens": 1913,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If you have any further sequences or need assistance with anything else, please let me know."
+      ]
+    },
+    {
+      "step": 17,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "No problem at all. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is indeed [ACT]. If you have any other sequences or need further assistance, please let me know.",
+      "correct": false,
+      "prompt_tokens": 2027,
+      "completion_tokens": 53,
+      "peer_responses": [
+        "No problem at all. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is indeed [ACT]. If you have any other sequences or need further assistance, please let me know."
+      ]
+    },
+    {
+      "step": 18,
+      "stimulus_state": "A",
+      "recent_states": [
+        "A",
+        "B",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If there are more sequences to follow or if you need assistance with anything else, please let me know.",
+      "correct": false,
+      "prompt_tokens": 2144,
+      "completion_tokens": 55,
+      "peer_responses": [
+        "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If there are more sequences to follow or if you need assistance with anything else, please let me know."
+      ]
+    },
+    {
+      "step": 19,
+      "stimulus_state": "B",
+      "recent_states": [
+        "B",
+        "A",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is indeed [ACT]. If there are more sequences to follow or if you need assistance with anything else, please let me know.",
+      "correct": false,
+      "prompt_tokens": 2267,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "Apologies for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is indeed [ACT]. If there are more sequences to follow or if you need assistance with anything else, please let me know."
+      ]
+    },
+    {
+      "step": 20,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "B",
+        "C"
+      ],
+      "should_act": true,
+      "did_act": true,
+      "response_content": "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If you have any further sequences or need assistance with anything else, please let me know.",
+      "correct": true,
+      "prompt_tokens": 2387,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If you have any further sequences or need assistance with anything else, please let me know."
+      ]
+    },
+    {
+      "step": 21,
+      "stimulus_state": "C",
+      "recent_states": [
+        "B",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I apologize for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is indeed [ACT]. If there are more sequences to follow or if you need assistance with anything else, please let me know.",
+      "correct": false,
+      "prompt_tokens": 2507,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "I apologize for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is indeed [ACT]. If there are more sequences to follow or if you need assistance with anything else, please let me know."
+      ]
+    },
+    {
+      "step": 22,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "C",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If you have any further sequences or need assistance with anything else, please let me know.",
+      "correct": false,
+      "prompt_tokens": 2627,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If you have any further sequences or need assistance with anything else, please let me know."
+      ]
+    },
+    {
+      "step": 23,
+      "stimulus_state": "A",
+      "recent_states": [
+        "C",
+        "A",
+        "A"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is indeed [ACT]. If there are more sequences to follow or if you need assistance with anything else, please let me know.",
+      "correct": false,
+      "prompt_tokens": 2747,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "Apologies for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is indeed [ACT]. If there are more sequences to follow or if you need assistance with anything else, please let me know."
+      ]
+    },
+    {
+      "step": 24,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "A",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If you have any further sequences or need assistance with anything else, please let me know.",
+      "correct": false,
+      "prompt_tokens": 2867,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If you have any further sequences or need assistance with anything else, please let me know."
+      ]
+    },
+    {
+      "step": 25,
+      "stimulus_state": "C",
+      "recent_states": [
+        "A",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is indeed [ACT]. If there are more sequences to follow or if you need assistance with anything else, please let me know.",
+      "correct": false,
+      "prompt_tokens": 2987,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "Apologies for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is indeed [ACT]. If there are more sequences to follow or if you need assistance with anything else, please let me know."
+      ]
+    },
+    {
+      "step": 26,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If you have any further sequences or need assistance with anything else, please let me know.",
+      "correct": false,
+      "prompt_tokens": 3107,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If you have any further sequences or need assistance with anything else, please let me know."
+      ]
+    },
+    {
+      "step": 27,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is indeed [ACT]. If there are more sequences to follow or if you need assistance with anything else, please let me know.",
+      "correct": false,
+      "prompt_tokens": 3227,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "Apologies for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is indeed [ACT]. If there are more sequences to follow or if you need assistance with anything else, please let me know."
+      ]
+    },
+    {
+      "step": 28,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "C",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If you have any further sequences or need assistance with anything else, please let me know.",
+      "correct": false,
+      "prompt_tokens": 3347,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If you have any further sequences or need assistance with anything else, please let me know."
+      ]
+    },
+    {
+      "step": 29,
+      "stimulus_state": "B",
+      "recent_states": [
+        "C",
+        "C",
+        "B"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "Apologies for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is indeed [ACT]. If there are more sequences to follow or if you need assistance with anything else, please let me know.",
+      "correct": false,
+      "prompt_tokens": 3467,
+      "completion_tokens": 59,
+      "peer_responses": [
+        "Apologies for any confusion. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is indeed [ACT]. If there are more sequences to follow or if you need assistance with anything else, please let me know."
+      ]
+    },
+    {
+      "step": 30,
+      "stimulus_state": "C",
+      "recent_states": [
+        "C",
+        "B",
+        "C"
+      ],
+      "should_act": false,
+      "did_act": true,
+      "response_content": "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If you have any further sequences or need assistance with anything else, please let me know.",
+      "correct": false,
+      "prompt_tokens": 3587,
+      "completion_tokens": 52,
+      "peer_responses": [
+        "I understand. If the sequence of states is A, B, C, and you are indicating that the next state is A, then the correct response is [ACT]. If you have any further sequences or need assistance with anything else, please let me know."
+      ]
+    }
+  ],
+  "summary": {
+    "accuracy": 0.03333333333333333,
+    "act_accuracy": 1.0,
+    "wait_accuracy": 0.0,
+    "n_trials": 30,
+    "n_act_trials": 1,
+    "n_wait_trials": 29
+  }
+}
